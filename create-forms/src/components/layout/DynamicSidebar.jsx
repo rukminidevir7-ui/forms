@@ -7,83 +7,129 @@ const DynamicSidebar = ({
   activeForm,
   setActiveForm,
   goHome,
-  width
+  children
 }) => {
-
   const { themeConfig, settings } = useTheme();
   const themeColor = themeConfig.colors[settings.color].primary;
+
   const [searchQuery, setSearchQuery] = useState("");
+  const [isOpen, setIsOpen] = useState(true);
+
+  const SIDEBAR_WIDTH = 280;
+  const COLLAPSED_WIDTH = 60;
 
   const filtered = forms.filter(
-    form =>
+    (form) =>
       form.id.toLowerCase().includes(searchQuery.toLowerCase()) ||
       form.label.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
   return (
-    <nav style={{
-      width: width,
-      background: '#1a1a2e',
-      color: '#fff',
-      display: 'flex',
-      flexDirection: 'column',
-      height: '100vh',
-      position: 'sticky',
-      top: 0
-    }}>
-
-      <div style={{ padding: 20 }}>
-        <h2 style={{ margin: 0 }}>D.E.C. INFRA</h2>
-        <div style={{ fontSize: 12 }}>
-          {moduleTitle}
-        </div>
-      </div>
-
-      <button
-        onClick={goHome}
+    <div style={{ display: "flex", height: "100vh" }}>
+      
+      {/* ================= SIDEBAR ================= */}
+      <div
         style={{
-          margin: '0 20px 10px',
-          padding: 8,
-          borderRadius: 6,
-          background: '#333',
-          color: '#fff',
-          border: 'none',
-          cursor: 'pointer'
+          width: isOpen ? SIDEBAR_WIDTH : COLLAPSED_WIDTH,
+          background: "#1a1a2e",
+          color: "#fff",
+          display: "flex",
+          flexDirection: "column",
+          transition: "width 0.3s ease",
+          overflow: "hidden"
         }}
       >
-        ⬅ Back to Home
-      </button>
+        {/* Top Section */}
+        <div style={{ padding: 15, display: "flex", alignItems: "center", justifyContent: isOpen ? "space-between" : "center" }}>
+          
+          {isOpen && (
+            <div>
+              <h2 style={{ margin: 0, color: "#ffffff" }}>
+  D.E.C. INFRA
+</h2>
+<div style={{ fontSize: 12, color: "#ccc" }}>
+  {moduleTitle}
+</div>            </div>
+          )}
 
-      <div style={{ padding: '0 20px 10px' }}>
-        <input
-          placeholder="Search form..."
-          value={searchQuery}
-          onChange={(e) => setSearchQuery(e.target.value)}
-          style={{ width: '100%', padding: 8 }}
-        />
-      </div>
-
-      <div style={{ flex: 1, overflowY: 'auto' }}>
-        {filtered.map(form => (
+          {/* ☰ Toggle Button */}
           <button
-            key={form.id}
-            onClick={() => setActiveForm(form.id)}
+            onClick={() => setIsOpen(!isOpen)}
             style={{
-              padding: '10px 20px',
-              width: '100%',
-              background: activeForm === form.id ? themeColor : 'transparent',
-              color: activeForm === form.id ? '#fff' : '#ccc',
-              border: 'none',
-              textAlign: 'left',
-              cursor: 'pointer'
+              background: "transparent",
+              border: "none",
+              color: "#fff",
+              fontSize: 20,
+              cursor: "pointer"
             }}
           >
-            {form.id} – {form.label}
+            ☰
           </button>
-        ))}
+        </div>
+
+        {/* Only show full content when open */}
+        {isOpen && (
+          <>
+            <button
+              onClick={goHome}
+              style={{
+                margin: "0 20px 10px",
+                padding: 8,
+                borderRadius: 6,
+                background: "#333",
+                color: "#fff",
+                border: "none",
+                cursor: "pointer"
+              }}
+            >
+              ⬅ Back to Home
+            </button>
+
+            <div style={{ padding: "0 20px 10px" }}>
+              <input
+                placeholder="Search form..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                style={{ width: "100%", padding: 8 }}
+              />
+            </div>
+
+            <div style={{ flex: 1, overflowY: "auto" }}>
+              {filtered.map((form) => (
+                <button
+                  key={form.id}
+                  onClick={() => setActiveForm(form.id)}
+                  style={{
+                    padding: "10px 20px",
+                    width: "100%",
+                    background:
+                      activeForm === form.id ? themeColor : "transparent",
+                    color: activeForm === form.id ? "#fff" : "#ccc",
+                    border: "none",
+                    textAlign: "left",
+                    cursor: "pointer"
+                  }}
+                >
+                  {form.id} – {form.label}
+                </button>
+              ))}
+            </div>
+          </>
+        )}
       </div>
 
-    </nav>
+      {/* ================= MAIN CONTENT ================= */}
+      <div
+        style={{
+          flex: 1,
+          transition: "all 0.3s ease",
+          background: "#f4f6f9",
+          overflowY: "auto"
+        }}
+      >
+        {children}
+      </div>
+    </div>
   );
 };
 
