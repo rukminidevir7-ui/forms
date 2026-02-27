@@ -6,18 +6,21 @@ const LoginPage = ({ onLogin }) => {
   const [password, setPassword] = useState('');
 
   const handleSubmit = (e) => {
-    e.preventDefault();
-    
-    // Set your desired credentials here
-    const validEmail = "rukku1304@gmail.com";
-    const validPassword = "12345";
+  e.preventDefault();
 
-    if (email === validEmail && password === validPassword) {
-      onLogin();
-    } else {
-      alert("Invalid credentials. Hint: admin@decinfra.com / admin123");
-    }
-  };
+  const validEmail = "rukku1304@gmail.com";
+  const validPassword = "12345";
+
+  if (
+    (email === validEmail && password === validPassword) ||
+    (email === "meghana@nutrinium.in" && password === "12345") ||
+    (email === "tej@nutrinium.in" && password === "12345")
+  ) {
+    onLogin();
+  } else {
+    alert("Invalid credentials. Hint: rukku1304@gmail.com / 12345");
+  }
+};
   return (
     <div style={styles.container}>
       <div style={styles.card}>
@@ -31,7 +34,7 @@ const LoginPage = ({ onLogin }) => {
             <label style={styles.label}>Email</label>
             <input 
               type="email" 
-              placeholder="admin@decinfra.com" 
+              placeholder="email" 
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               style={styles.input} 
@@ -43,7 +46,7 @@ const LoginPage = ({ onLogin }) => {
             <label style={styles.label}>Password</label>
             <input 
               type="password" 
-              placeholder="••••••••" 
+              placeholder="password" 
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               style={styles.input} 
