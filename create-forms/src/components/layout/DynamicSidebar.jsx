@@ -25,34 +25,45 @@ const DynamicSidebar = ({
   );
 
   return (
-    <div style={{ display: "flex", height: "100vh" }}>
+    <div style={{ display: "flex" }}>
       
-      {/* ================= SIDEBAR ================= */}
+      {/* ================= FIXED SIDEBAR ================= */}
       <div
         style={{
           width: isOpen ? SIDEBAR_WIDTH : COLLAPSED_WIDTH,
           background: "#1a1a2e",
-          color: "#fff",
+          color: "#ffffff",
           display: "flex",
           flexDirection: "column",
+          position: "fixed",
+          top: 0,
+          left: 0,
+          bottom: 0,   // 👈 important
           transition: "width 0.3s ease",
-          overflow: "hidden"
+          overflow: "hidden",
+          zIndex: 1000
         }}
       >
-        {/* Top Section */}
-        <div style={{ padding: 15, display: "flex", alignItems: "center", justifyContent: isOpen ? "space-between" : "center" }}>
-          
+        {/* Header Section */}
+        <div
+          style={{
+            padding: 15,
+            display: "flex",
+            alignItems: "center",
+            justifyContent: isOpen ? "space-between" : "center"
+          }}
+        >
           {isOpen && (
             <div>
-              <h2 style={{ margin: 0, color: "#ffffff" }}>
-  D.E.C. INFRA
-</h2>
-<div style={{ fontSize: 12, color: "#ccc" }}>
-  {moduleTitle}
-</div>            </div>
+              <h2 style={{ margin: 0, color: "#fff" }}>
+                D.E.C. INFRA
+              </h2>
+              <div style={{ fontSize: 12, color: "#ccc" }}>
+                {moduleTitle}
+              </div>
+            </div>
           )}
 
-          {/* ☰ Toggle Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
             style={{
@@ -67,7 +78,6 @@ const DynamicSidebar = ({
           </button>
         </div>
 
-        {/* Only show full content when open */}
         {isOpen && (
           <>
             <button
@@ -121,10 +131,12 @@ const DynamicSidebar = ({
       {/* ================= MAIN CONTENT ================= */}
       <div
         style={{
-          flex: 1,
-          transition: "all 0.3s ease",
+          marginLeft: isOpen ? SIDEBAR_WIDTH : COLLAPSED_WIDTH,
+          transition: "margin-left 0.3s ease",
+          width: "100%",
           background: "#f4f6f9",
-          overflowY: "auto"
+          minHeight: "100vh",   
+          padding: 20
         }}
       >
         {children}
