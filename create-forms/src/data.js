@@ -84,6 +84,43 @@ export const placeholderData = {
   bgv_checklist: {
     agency_name: '{bgv.agency_name}',
     status: '{bgv.status}'
-  }
+  },
+  // NEW: Hiring Deviation (FRM-00625, 00626, 00627)
+  deviation: {
+    reason: '{deviation.reason}',
+    impact: '{deviation.impact}',
+    justification: '{deviation.justification}',
+    requested_by: '{deviation.requested_by}',
+    date: '{deviation.date}'
+  },
+  deviation_ref: '{deviation_ref}',
+  // NEW: Recruiter Vendor Empanelment (FRM-00628, 00629, 00630)
+  vendor: {
+    name: '{vendor.name}',
+    expertise: '{vendor.expertise}',
+    location: '{vendor.location}',
+    contact_person: '{vendor.contact_person}',
+    email: '{vendor.email}',
+    phone: '{vendor.phone}'
+  },
+  vendor_ref: '{vendor_ref}',
+  vendor_item: {
+    vendor_id: '{vendor_item.vendor_id}',
+    vendor_name: '{vendor_item.vendor_name}',
+    status: '{vendor_item.status}'
+  },
+  mis: {
+  reporting_period: '{mis.reporting_period}',
+  total_openings: '{mis.total_openings}',
+  closed: '{mis.closed}',
+  pending: '{mis.pending}',
+  aging_positions: '{mis.aging_positions}',
+},
+mis_approval: {
+  decision: '{mis_approval.decision}',
+  approver_name: '{mis_approval.approver_name}',
+  comments: '{mis_approval.comments}',
+},
+
   
 };

@@ -1,0 +1,99 @@
+/* SECTION */
+.approval-section {
+  margin-top: 20px;
+}
+
+.approval-title {
+  background: #2f3e52;
+  color: #fff;
+  padding: 10px 15px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+/* GRID - smaller width */
+.approval-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px; /* reduced from 40px */
+  max-width: 850px; /* limit total width */
+  margin: 0 auto; /* center */
+}
+
+/* CARD - reduced size */
+.approval-card {
+  border: 1px solid #dcdcdc;
+  border-radius: 8px;
+  padding: 18px; /* reduced from 25px */
+  background: #fafafa;
+  min-height: 280px; /* reduced from 320px */
+  display: flex;
+  flex-direction: column;
+  gap: 8px; /* reduced spacing */
+}
+/* ROLE BOX */
+.approval-role {
+  background: #eef1f5;
+  border: none;
+  padding: 6px;
+  font-weight: 600;
+  border-radius: 4px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+/* ROW */
+.approval-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.approval-row label {
+  width: 100px;
+  font-weight: 500;
+}
+
+/* INPUT LINE STYLE */
+.approval-input {
+  border: none;
+  border-bottom: 1px solid #444;
+  background: transparent;
+  flex: 1;
+  padding: 4px;
+  outline: none;
+}
+
+/* SIGNATURE FIXED BOTTOM */
+.approval-signature {
+  margin-top: 40px;
+  border-top: 1px solid #000;
+  padding-top: 8px;
+  text-align: center;
+  font-weight: 500;
+}
+
+/* PRINT MODE */
+.print-role {
+  font-weight: 600;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.print-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+
+/* PRINT SAME AS SCREEN */
+@media print {
+  .approval-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .btn-add-field,
+  .btn-remove {
+    display: none;
+  }
+}

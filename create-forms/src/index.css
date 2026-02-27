@@ -1,68 +1,245 @@
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+/* ============================================
+   ENTERPRISE THEME SYSTEM - CSS VARIABLES
+   ============================================ */
 
+:root {
+  /* Default Theme Colors (Corporate Blue) */
+  --theme-primary: #2c3e50;
+  --theme-secondary: #eef2f5;
+  --theme-text-contrast: #ffffff;
+  --theme-accent: #3498db;
+  
+  /* Typography */
+  --dynamic-font: "Times New Roman", Times, serif;
+  --base-font-size: 11px;
+  --label-font-size: 10px;
+  --heading-font-size: 16px;
+  
+  /* Layout & Spacing */
+  --table-padding: 8px;
+  --table-font-size: 11px;
+  --table-line-height: 1.5;
+  --table-border-color: #ccc;
+  --border-radius: 4px;
+  --page-width: 210mm;
+  --page-height: 297mm;
+  
+  /* Visual Effects */
+  --contrast-filter: none;
+  
+  /* Standard Colors */
+  --color-success: #27ae60;
+  --color-error: #e74c3c;
+  --color-warning: #f39c12;
+  --color-info: #3498db;
+  --color-border: #bdc3c7;
+  --color-background: #ecf0f1;
+  --color-text: #2c3e50;
+  
+  /* Transitions */
+  --transition-speed: 0.3s;
+  
+  font-family: var(--dynamic-font);
+  line-height: var(--table-line-height);
+  font-weight: 400;
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
   background-color: #242424;
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
+/* ============================================
+   GLOBAL STYLES
+   ============================================ */
+
+* {
+  box-sizing: border-box;
 }
-a:hover {
-  color: #535bf2;
+
+html, body {
+  margin: 0;
+  padding: 0;
 }
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  font-family: var(--dynamic-font);
+  background-color: #ffffff;
+  color: var(--color-text);
+  transition: background-color var(--transition-speed) ease,
+              color var(--transition-speed) ease;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #1a1a1a;
+    color: #e0e0e0;
+  }
+}
+
+/* Form Elements */
+input, select, textarea, button {
+  font-family: var(--dynamic-font);
+  font-size: var(--table-font-size);
+  border-radius: var(--border-radius);
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+input[type="number"],
+select,
+textarea {
+  border: 1px solid var(--color-border);
+  padding: var(--table-padding);
+  transition: border-color var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+input[type="date"]:focus,
+input[type="number"]:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--theme-primary);
+  box-shadow: 0 0 0 2px rgba(var(--theme-primary), 0.1);
 }
 
 button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
   cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  transition: all var(--transition-speed) ease;
+  border: 1px solid transparent;
 }
 
-@media (prefers-color-scheme: light) {
+button:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+/* ============================================
+   TYPOGRAPHY
+   ============================================ */
+
+h1 {
+  font-size: 2.5em;
+  line-height: 1.1;
+  color: var(--theme-primary);
+}
+
+h2 {
+  font-size: 2em;
+  color: var(--theme-primary);
+}
+
+h3 {
+  font-size: 1.5em;
+  color: var(--theme-primary);
+}
+
+h4 {
+  font-size: 1.2em;
+  color: var(--theme-primary);
+}
+
+p {
+  margin: 0.5em 0;
+  line-height: var(--table-line-height);
+}
+
+a {
+  font-weight: 500;
+  color: var(--theme-primary);
+  text-decoration: inherit;
+  transition: color var(--transition-speed) ease;
+}
+
+a:hover {
+  color: var(--theme-accent);
+  text-decoration: underline;
+}
+
+/* ============================================
+   UTILITY CLASSES
+   ============================================ */
+
+.no-print {
+  display: block;
+}
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+
+@media (max-width: 768px) {
   :root {
-    color: #213547;
-    background-color: #ffffff;
+    --base-font-size: 10px;
+    --label-font-size: 9px;
   }
-  a:hover {
-    color: #747bff;
+  
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="date"],
+  input[type="number"],
+  select,
+  textarea {
+    padding: 6px;
   }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --base-font-size: 9px;
+    --label-font-size: 8px;
+  }
+  
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="date"],
+  input[type="number"],
+  select,
+  textarea {
+    padding: 4px;
+  }
+}
+
+/* ============================================
+   PRINT STYLES
+   ============================================ */
+
+@media print {
+  body {
+    background-color: white;
+    color: black;
+  }
+  
+  input, select, textarea {
+    border: 1px solid black;
+    background-color: white;
+  }
+  
   button {
-    background-color: #f9f9f9;
+    display: none;
   }
 }

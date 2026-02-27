@@ -1,163 +1,293 @@
-import React, { useRef, useState, useEffect } from 'react';
-import { Formik, Form, Field } from 'formik';
+import React, { useState } from 'react';
+import { Formik, Form, Field, ErrorMessage, FieldArray } from 'formik';
 import * as Yup from 'yup';
-import FormWrapper from '../FormWrapper';
+import { v4 as uuidv4 } from 'uuid';
 import { usePrintMode } from '../PrintModeContext';
+import ModernFormWrapper from '../components/ModernFormWrapper';
+import ModernA4Template from '../components/ModernA4Template';
+import SignatureComponent from '../components/SignatureComponent';
+import '../styles/FRM00611.css';
 
 const validationSchema = Yup.object({
-  candidate: Yup.string().required('Required'),
-  designation: Yup.string().required('Required'),
-  project: Yup.string().required('Required'),
-  ctc: Yup.object({
-    fixed: Yup.number().required('Required'),
-    variable: Yup.number().required('Required'),
-  }),
-  budget_status: Yup.string().required('Required'),
+  candidateFullName: Yup.string().required('Candidate Full Name is required'),
+  candidateIDApplicationID: Yup.string().required('Candidate ID / Application ID is required'),
+  positionDesignationOffered: Yup.string().required('Position / Designation Offered is required'),
+  department: Yup.string().required('Department is required'),
+  offeredCTCSalaryPackage: Yup.string().required('Offered CTC / Salary Package is required'),
+  employmentType: Yup.string().required('Employment Type is required'),
+  proposedJoiningDate: Yup.string().required('Proposed Joining Date is required'),
+  hiringManagerName: Yup.string().required('Hiring Manager Name is required'),
+  approvalAuthorityName: Yup.string().required('Approval Authority Name is required'),
+  offerApprovalStatus: Yup.string().required('Offer Approval Status is required'),
+  approvalDate: Yup.string().required('Approval Date is required'),
+  approvalRemarks: Yup.string(),
+  customFields: Yup.array().of(Yup.object({ fieldName: Yup.string(), fieldValue: Yup.string() }))
 });
 
 const initialValues = {
-  candidate: '',
-  designation: '',
-  project: '',
-  grade: '',
-  ctc: {
-    fixed: '',
-    variable: '',
-    total: '',
-  },
-  budget_status: 'Within Budget',
-  justification: '', // If over budget
-  joining_date: '',
+  candidateFullName: '',
+  candidateIDApplicationID: '',
+  positionDesignationOffered: '',
+  department: '',
+  offeredCTCSalaryPackage: '',
+  employmentType: '',
+  proposedJoiningDate: '',
+  hiringManagerName: '',
+  approvalAuthorityName: '',
+  offerApprovalStatus: '',
+  approvalDate: '',
+  approvalRemarks: '',
+  customFields: [],
+  signatures: {
+    approvalAuthority: { type: '', data: '', name: '' }
+  }
 };
 
 const FRM00623 = () => {
   const { isPrintMode } = usePrintMode();
-  const formikRef = useRef(null);
-  const [formValues, setFormValues] = useState(initialValues);
+
+  const renderFormContent = (values, setFieldValue, errors, touched) => (
+    <ModernA4Template formId="FRM-00623" title="Offer Approval – Approval / Authorization Form" department="HR & People Ops">
+      <div className="form-section">
+        <h3 className="form-section-title">👤 Candidate Information</h3>
+        <div className="form-fields">
+          <div className="form-field">
+            <label className="form-label required">Candidate Full Name</label>
+            {isPrintMode ? (
+              <div className="print-value">{values.candidateFullName || '___________________'}</div>
+            ) : (
+              <>
+                <Field name="candidateFullName" className="form-input" placeholder="Enter candidate name" />
+                <ErrorMessage name="candidateFullName" component="div" className="form-error" />
+              </>
+            )}
+          </div>
+          <div className="form-field">
+            <label className="form-label required">Candidate ID / Application ID</label>
+            {isPrintMode ? (
+              <div className="print-value">{values.candidateIDApplicationID || '___________________'}</div>
+            ) : (
+              <>
+                <Field name="candidateIDApplicationID" className="form-input" placeholder="Enter candidate/application ID" />
+                <ErrorMessage name="candidateIDApplicationID" component="div" className="form-error" />
+              </>
+            )}
+          </div>
+        </div>
+      </div>
+
+      <div className="form-section">
+        <h3 className="form-section-title">💼 Offer Details</h3>
+        <div className="form-fields">
+          <div className="form-field">
+            <label className="form-label required">Position / Designation Offered</label>
+            {isPrintMode ? (
+              <div className="print-value">{values.positionDesignationOffered || '___________________'}</div>
+            ) : (
+              <>
+                <Field name="positionDesignationOffered" className="form-input" placeholder="E.g., Senior Developer, Manager" />
+                <ErrorMessage name="positionDesignationOffered" component="div" className="form-error" />
+              </>
+            )}
+          </div>
+          <div className="form-field">
+            <label className="form-label required">Department</label>
+            {isPrintMode ? (
+              <div className="print-value">{values.department || '___________________'}</div>
+            ) : (
+              <>
+                <Field name="department" className="form-input" placeholder="E.g., IT, HR, Finance" />
+                <ErrorMessage name="department" component="div" className="form-error" />
+              </>
+            )}
+          </div>
+          <div className="form-field">
+            <label className="form-label required">Offered CTC / Salary Package</label>
+            {isPrintMode ? (
+              <div className="print-value">{values.offeredCTCSalaryPackage || '___________________'}</div>
+            ) : (
+              <>
+                <Field name="offeredCTCSalaryPackage" className="form-input" placeholder="E.g., ₹1,500,000" />
+                <ErrorMessage name="offeredCTCSalaryPackage" component="div" className="form-error" />
+              </>
+            )}
+          </div>
+          <div className="form-field">
+            <label className="form-label required">Employment Type</label>
+            {isPrintMode ? (
+              <div className="print-value">{values.employmentType || '___________________'}</div>
+            ) : (
+              <>
+                <Field name="employmentType" as="select" className="form-input">
+                  <option value="">-- Select Type --</option>
+                  <option value="Permanent">Permanent</option>
+                  <option value="Contract">Contract</option>
+                  <option value="Intern">Intern</option>
+                </Field>
+                <ErrorMessage name="employmentType" component="div" className="form-error" />
+              </>
+            )}
+          </div>
+          <div className="form-field">
+            <label className="form-label required">Proposed Joining Date</label>
+            {isPrintMode ? (
+              <div className="print-value">{values.proposedJoiningDate || '___________________'}</div>
+            ) : (
+              <>
+                <Field name="proposedJoiningDate" type="date" className="form-input" />
+                <ErrorMessage name="proposedJoiningDate" component="div" className="form-error" />
+              </>
+            )}
+          </div>
+        </div>
+      </div>
+
+      <div className="form-section">
+        <h3 className="form-section-title">✍️ Approval Details</h3>
+        <div className="form-fields">
+          <div className="form-field">
+            <label className="form-label required">Hiring Manager Name</label>
+            {isPrintMode ? (
+              <div className="print-value">{values.hiringManagerName || '___________________'}</div>
+            ) : (
+              <>
+                <Field name="hiringManagerName" className="form-input" placeholder="Enter hiring manager name" />
+                <ErrorMessage name="hiringManagerName" component="div" className="form-error" />
+              </>
+            )}
+          </div>
+          <div className="form-field">
+            <label className="form-label required">Approval Authority Name</label>
+            {isPrintMode ? (
+              <div className="print-value">{values.approvalAuthorityName || '___________________'}</div>
+            ) : (
+              <>
+                <Field name="approvalAuthorityName" className="form-input" placeholder="Enter approval authority name" />
+                <ErrorMessage name="approvalAuthorityName" component="div" className="form-error" />
+              </>
+            )}
+          </div>
+          <div className="form-field">
+            <label className="form-label required">Offer Approval Status</label>
+            {isPrintMode ? (
+              <div className="print-value">{values.offerApprovalStatus || '___________________'}</div>
+            ) : (
+              <>
+                <Field name="offerApprovalStatus" as="select" className="form-input">
+                  <option value="">-- Select Status --</option>
+                  <option value="Approved">Approved</option>
+                  <option value="Rejected">Rejected</option>
+                  <option value="On Hold">On Hold</option>
+                </Field>
+                <ErrorMessage name="offerApprovalStatus" component="div" className="form-error" />
+              </>
+            )}
+          </div>
+          <div className="form-field">
+            <label className="form-label required">Approval Date</label>
+            {isPrintMode ? (
+              <div className="print-value">{values.approvalDate || '___________________'}</div>
+            ) : (
+              <>
+                <Field name="approvalDate" type="date" className="form-input" />
+                <ErrorMessage name="approvalDate" component="div" className="form-error" />
+              </>
+            )}
+          </div>
+          <div className="form-field full-width">
+            <label className="form-label">Approval Remarks</label>
+            {isPrintMode ? (
+              <div className="print-value">{values.approvalRemarks || '___________________'}</div>
+            ) : (
+              <>
+                <Field name="approvalRemarks" as="textarea" className="form-textarea" placeholder="Enter any remarks" rows="4" />
+                <ErrorMessage name="approvalRemarks" component="div" className="form-error" />
+              </>
+            )}
+          </div>
+        </div>
+      </div>
+
+      {!isPrintMode && (
+        <div className="form-section">
+          <h3 className="form-section-title">➕ Additional Custom Fields</h3>
+          <FieldArray name="customFields">
+            {(fieldArrayProps) => {
+              const { push, remove, form } = fieldArrayProps;
+              const { values } = form;
+              const { customFields } = values;
+              return (
+                <div>
+                  {customFields.map((field, index) => (
+                    <div key={field.id || index} className="custom-field-row">
+                      <div className="form-field">
+                        <Field name={`customFields.${index}.fieldName`} className="form-input" placeholder="Field Name" />
+                      </div>
+                      <div className="form-field" style={{ flex: 2 }}>
+                        <Field name={`customFields.${index}.fieldValue`} className="form-input" placeholder="Field Value" />
+                      </div>
+                      <button type="button" className="btn-remove" onClick={() => remove(index)}>✕ Remove</button>
+                    </div>
+                  ))}
+                  <button type="button" className="btn-add-field" onClick={() => push({ id: uuidv4(), fieldName: '', fieldValue: '' })}>➕ Add Field</button>
+                </div>
+              );
+            }}
+          </FieldArray>
+        </div>
+      )}
+
+      {isPrintMode && values.customFields && values.customFields.length > 0 && (
+        <div className="form-section">
+          <h3 className="form-section-title">➕ Additional Fields</h3>
+          <div className="form-fields">
+            {values.customFields.map((field, index) => (
+              <div key={index} className="form-field full-width custom-field-print">
+                <strong>{field.fieldName}:</strong> {field.fieldValue || '___________________'}
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+
+      <div className="form-section signatures-section">
+        <h3 className="form-section-title">✍️ Authorization</h3>
+        {!isPrintMode && (
+          <div className="signatures-container">
+            <SignatureComponent name="Approval Authority" onChange={(sig) => setFieldValue('signatures.approvalAuthority', sig)} value={values.signatures.approvalAuthority} />
+          </div>
+        )}
+        {isPrintMode && (
+          <div className="print-signatures">
+            <div className="print-signature-box">
+              <div className="sig-name">Approval Authority</div>
+              <div className="sig-space">
+                {values.signatures.approvalAuthority?.data && <img src={values.signatures.approvalAuthority.data} alt="Signature" className="print-sig-image" style={{ maxWidth: '100%', maxHeight: '80px' }} />}
+              </div>
+              <div className="sig-line"></div>
+              <div className="sig-date">{values.signatures.approvalAuthority?.name && `Name: ${values.signatures.approvalAuthority.name}`}</div>
+            </div>
+          </div>
+        )}
+      </div>
+
+      {!isPrintMode && (
+        <div className="form-actions">
+          <button type="submit" className="btn-submit">💾 Save Form</button>
+        </div>
+      )}
+    </ModernA4Template>
+  );
 
   return (
-    <FormWrapper formId="FRM-00623" version="1.0" title="Offer Approval Note">
-      <Formik
-        innerRef={formikRef}
-        initialValues={initialValues}
-        validationSchema={validationSchema}
-        onSubmit={(values) => setFormValues(values)}
-      >
-        {({ values, errors, touched, setFieldValue }) => {
-          useEffect(() => {
-            const total = Number(values.ctc.fixed || 0) + Number(values.ctc.variable || 0);
-            setFieldValue('ctc.total', total);
-            setFormValues(values);
-          }, [values.ctc.fixed, values.ctc.variable]);
-
-          if (isPrintMode) {
-            return (
-              <div className="print-view">
-                <h4 style={{ borderBottom: '1px solid #ddd' }}>PROPOSAL DETAILS</h4>
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 15, marginBottom: 20 }}>
-                   <div><strong>Candidate:</strong> {values.candidate}</div>
-                   <div><strong>Designation:</strong> {values.designation}</div>
-                   <div><strong>Project/Dept:</strong> {values.project}</div>
-                   <div><strong>Grade/Level:</strong> {values.grade || '—'}</div>
-                   <div><strong>Exp. Joining:</strong> {values.joining_date || '—'}</div>
-                </div>
-
-                <h4 style={{ borderBottom: '1px solid #ddd' }}>COMPENSATION (CTC)</h4>
-                <table style={{ width: '100%', marginBottom: 20 }}>
-                  <tbody>
-                    <tr><td><strong>Fixed Component:</strong></td><td>{values.ctc.fixed}</td></tr>
-                    <tr><td><strong>Variable/Bonus:</strong></td><td>{values.ctc.variable}</td></tr>
-                    <tr style={{ borderTop: '1px solid #000' }}>
-                      <td><strong>Total Annual CTC:</strong></td>
-                      <td><strong>{values.ctc.total}</strong></td>
-                    </tr>
-                  </tbody>
-                </table>
-
-                <div style={{ padding: 10, background: '#f5f5f5', border: '1px solid #ddd' }}>
-                   <strong>Budget Status:</strong> {values.budget_status}
-                   {values.budget_status === 'Over Budget' && (
-                     <div style={{ marginTop: 5 }}><strong>Justification:</strong> {values.justification}</div>
-                   )}
-                </div>
-
-                <div style={{ marginTop: 40, display: 'flex', justifyContent: 'space-between' }}>
-                  <div style={{ textAlign: 'center' }}><hr style={{ width: 100 }} />Hiring Manager</div>
-                  <div style={{ textAlign: 'center' }}><hr style={{ width: 100 }} />Finance Head</div>
-                  <div style={{ textAlign: 'center' }}><hr style={{ width: 100 }} />HR Head</div>
-                </div>
-              </div>
-            );
-          }
-
-          return (
-            <Form>
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20, marginBottom: 15 }}>
-                <div>
-                  <label>Candidate Name</label>
-                  <Field name="candidate" style={inputStyle} />
-                </div>
-                <div>
-                  <label>Proposed Designation</label>
-                  <Field name="designation" style={inputStyle} />
-                </div>
-                <div>
-                  <label>Project / Department</label>
-                  <Field name="project" style={inputStyle} />
-                </div>
-                <div>
-                  <label>Grade / Level</label>
-                  <Field name="grade" style={inputStyle} />
-                </div>
-                <div>
-                  <label>Expected Joining Date</label>
-                  <Field name="joining_date" type="date" style={inputStyle} />
-                </div>
-              </div>
-
-              <h4 style={{ marginBottom: 10 }}>Compensation Proposal</h4>
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 15, marginBottom: 15 }}>
-                <div>
-                  <label>Fixed CTC (Annual)</label>
-                  <Field name="ctc.fixed" type="number" style={inputStyle} />
-                </div>
-                <div>
-                  <label>Variable / Bonus</label>
-                  <Field name="ctc.variable" type="number" style={inputStyle} />
-                </div>
-                <div>
-                  <label>Total CTC</label>
-                  <input value={values.ctc.total} readOnly style={{ ...inputStyle, background: '#eee', fontWeight: 'bold' }} />
-                </div>
-              </div>
-
-              <div style={{ marginBottom: 20 }}>
-                <label>Budget Status</label>
-                <Field as="select" name="budget_status" style={inputStyle}>
-                  <option value="Within Budget">Within Budget</option>
-                  <option value="Over Budget">Over Budget (Requires Justification)</option>
-                </Field>
-              </div>
-
-              {values.budget_status === 'Over Budget' && (
-                <div style={{ marginBottom: 20 }}>
-                  <label>Budget Deviation Justification</label>
-                  <Field as="textarea" name="justification" rows="3" style={inputStyle} />
-                </div>
-              )}
-
-              <div style={{ textAlign: 'center', marginTop: 20 }}>
-                <button type="submit" style={buttonStyle}>💾 Generate Approval Note</button>
-              </div>
-            </Form>
-          );
-        }}
+    <ModernFormWrapper formId="FRM-00623" title="Offer Approval – Approval / Authorization Form">
+      <Formik initialValues={initialValues} validationSchema={validationSchema} onSubmit={(values) => { console.log('Form submitted:', values); alert('✅ Form saved successfully!'); }}>
+        {({ values, setFieldValue, errors, touched }) => (
+          <Form>{renderFormContent(values, setFieldValue, errors, touched)}</Form>
+        )}
       </Formik>
-    </FormWrapper>
+    </ModernFormWrapper>
   );
 };
-
-const inputStyle = { width: '100%', padding: '8px', marginTop: '5px', borderRadius: '4px', border: '1px solid #ccc' };
-const buttonStyle = { padding: '10px 24px', backgroundColor: '#5cb85c', color: '#fff', border: 'none', borderRadius: '4px', cursor: 'pointer' };
 
 export default FRM00623;

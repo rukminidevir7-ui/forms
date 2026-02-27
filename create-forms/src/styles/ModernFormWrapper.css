@@ -1,0 +1,185 @@
+/* ============================================
+   MODERN FORM WRAPPER - ENTERPRISE STYLING
+   Uses CSS Variables from Theme System
+   ============================================ */
+
+/* Main Container */
+.modern-form-wrapper {
+  background: white;
+  padding: 0;
+  min-height: 100vh;
+}
+
+/* Action Bar */
+.form-action-bar {
+  background: var(--theme-secondary);
+  border-bottom: 1px solid var(--color-border);
+  padding: 12px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0;
+  border-radius: 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  font-family: var(--dynamic-font);
+}
+
+.action-left,
+.action-right {
+  display: flex;
+  gap: 10px;
+}
+
+/* Action Buttons */
+.action-btn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 12px;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  font-family: var(--dynamic-font);
+}
+
+.toggle-btn {
+  background: var(--color-success);
+  color: white;
+}
+
+.toggle-btn.active {
+  background: var(--color-error);
+}
+
+.toggle-btn:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.download-btn {
+  background: var(--theme-primary);
+  color: var(--theme-text-contrast);
+}
+
+.download-btn:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.word-btn {
+  background: #2b579a;
+  color: white;
+}
+
+.word-btn:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.print-btn {
+  background: #666;
+  color: white;
+}
+
+.print-btn:hover {
+  background: #444;
+  opacity: 0.9;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+/* A4 Container */
+.a4-container {
+  width: 100%;
+  margin: 0;
+  background: transparent;
+  min-height: auto;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--dynamic-font);
+}
+
+/* A4 wrapper only in print preview mode */
+.mode-a4.a4-container {
+  max-width: 210mm;
+  margin: 0 auto;
+  background: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+
+/* A4 Page Management */
+.a4-page {
+  page-break-after: always;
+  margin-bottom: 20px;
+}
+
+.a4-page:last-child {
+  page-break-after: avoid;
+}
+
+/* ===== Modern Print Layout ===== */
+
+.modern-print-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.modern-print-row {
+  display: grid;
+  grid-template-columns: 220px 20px 1fr;
+  align-items: start;
+  font-size: 14px;
+}
+
+.print-label {
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.print-colon {
+  text-align: center;
+  font-weight: 600;
+}
+
+.print-value {
+  color: #334155;
+  word-break: break-word;
+}
+
+/* ============================================
+   PRINT MEDIA QUERY
+   ============================================ */
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+
+  .a4-container {
+    box-shadow: none;
+    padding: 0;
+    margin: 0;
+    max-width: 100%;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    background: white;
+    color: black;
+  }
+
+  :root {
+    background-color: white !important;
+  }
+}

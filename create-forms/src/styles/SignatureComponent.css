@@ -1,0 +1,150 @@
+/* GRID LAYOUT FOR SIGNATURE ROWS */
+.signature-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 per row */
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+/* BOX STYLE */
+.signature-box {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-height: 90px;
+}
+
+/* SIGNATURE INPUT */
+.signature-input {
+  border: none;
+  border-bottom: 1px solid #444;
+  background: transparent;
+  padding: 5px;
+  font-size: 14px;
+  outline: none;
+}
+
+.signature-input:focus {
+  border-bottom: 2px solid #2f3e52;
+}
+
+/* LINE */
+.signature-line {
+  height: 10px;
+}
+
+/* DATE */
+.signature-date {
+  border: none;
+  border-bottom: 1px solid #444;
+  background: transparent;
+  padding: 4px;
+  font-size: 13px;
+  outline: none;
+}
+
+/* PRINT MODE */
+.signature-box.print {
+  border-bottom: 1px solid #000;
+  padding-bottom: 10px;
+}
+
+.signature-line-print {
+  font-family: cursive;
+  font-size: 16px;
+}
+
+.signature-date-print {
+  font-size: 12px;
+  margin-top: 5px;
+}
+/* GRID - ONE ROW MAX 3 */
+.signature-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  margin-top: 20px;
+}
+
+/* CARD */
+.signature-card {
+  border: 1px solid #dcdcdc;
+  border-radius: 8px;
+  padding: 20px;
+  background: #fafafa;
+  min-height: 320px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  position: relative;
+}
+
+/* Editable Role */
+.signature-role-input {
+  background: #eef1f5;
+  border: none;
+  padding: 6px;
+  font-weight: 600;
+  border-radius: 4px;
+  text-align: center;
+}
+
+/* Inputs */
+.signature-input {
+  border: 1px solid #ccc;
+  padding: 6px;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+/* FIXED SIGNATURE TEXT AT BOTTOM */
+.signature-fixed {
+  margin-top: auto;
+  border-top: 1px solid #000;
+  padding-top: 8px;
+  text-align: center;
+  font-weight: 500;
+}
+
+/* PRINT */
+.print-role {
+  font-weight: 600;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.print-text {
+  margin-bottom: 6px;
+}
+
+.print-signature {
+  margin-top: auto;
+  border-top: 1px solid #000;
+  padding-top: 8px;
+  text-align: center;
+}
+
+/* PRINT SAME */
+@media print {
+  .signature-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .btn-add-field,
+  .btn-remove {
+    display: none;
+  }
+}
+/* MAKE PRINT SAME AS SCREEN */
+@media print {
+  .signature-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+  }
+
+  .signature-input,
+  .signature-date {
+    display: none;
+  }
+}

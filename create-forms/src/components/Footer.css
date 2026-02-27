@@ -1,0 +1,28 @@
+/* src/Footer.css */
+
+.footer-container {
+  text-align: center;
+  padding: 15px 0;
+  border-top: 3px solid #000;
+  font-family: Arial, sans-serif;
+  font-size: 15px;
+  color: #333;
+  background-color: #fff;
+
+  width: 100%;
+
+  /* ✅ Normal flow */
+  position: relative;
+
+  margin-top: 40px;
+}
+
+.footer-line {
+  margin: 5px 0;
+  line-height: 1.4;
+}
+
+.footer-label {
+  font-weight: bold;
+  color: #000;
+}

@@ -1,13 +1,14 @@
 import React, { useRef } from 'react';
-import { Document, Packer, Paragraph, HeadingLevel } from 'docx';
 import { saveAs } from 'file-saver';
 import { usePrintMode } from './PrintModeContext';
+import { ensureDocxFileName } from './utils/WordExport';
+import htmlDocx from 'html-docx-js/dist/html-docx';
 
 const FormWrapper = ({ children, formId, version, title, companyLogo }) => {
   const printRef = useRef(null);
   const { isPrintMode, setIsPrintMode } = usePrintMode();
 
-  // Download as PDF using html2canvas + jsPDF
+  // Download as PDF (your existing logic – keep for now)
   const handlePrintPDF = async () => {
     if (!printRef.current) {
       alert('Print area not found!');
@@ -15,13 +16,10 @@ const FormWrapper = ({ children, formId, version, title, companyLogo }) => {
     }
 
     try {
-      // Dynamically import to avoid build issues
       const html2canvasModule = await import('html2canvas');
       const html2canvas = html2canvasModule.default;
       const { jsPDF } = await import('jspdf');
 
-      console.log('Converting form to PDF...');
-      
       const element = printRef.current;
       const canvas = await html2canvas(element, {
         scale: 2,
@@ -32,8 +30,8 @@ const FormWrapper = ({ children, formId, version, title, companyLogo }) => {
 
       const imgData = canvas.toDataURL('image/png');
       const pdf = new jsPDF('p', 'mm', 'a4');
-      const imgWidth = 210; // A4 width in mm
-      const pageHeight = 297; // A4 height in mm
+      const imgWidth = 210;
+      const pageHeight = 297;
       const imgHeight = (canvas.height * imgWidth) / canvas.width;
 
       let heightLeft = imgHeight;
@@ -50,52 +48,64 @@ const FormWrapper = ({ children, formId, version, title, companyLogo }) => {
       }
 
       pdf.save(`${formId || 'form'}.pdf`);
-      console.log('PDF downloaded successfully!');
     } catch (err) {
       console.error('PDF download failed:', err);
-      alert('Error: Make sure html2canvas and jspdf are installed.\n\nRun: npm install html2canvas jspdf');
+      alert('Error: Make sure html2canvas and jspdf are installed.');
     }
   };
 
-  // Download as Word (.docx)
+  // ✅ UPDATED WORD EXPORT (HTML → DOCX)
   const handleDownloadWord = async () => {
-    if (!printRef.current) {
-      alert('Word export area not found!');
-      return;
-    }
+  if (!printRef.current) {
+    alert('Word export area not found!');
+    return;
+  }
 
-    try {
-      const text = printRef.current.innerText;
-      const lines = text.split('\n').filter(Boolean);
+  try {
+    const html = `
+      <!DOCTYPE html>
+      <html>
+        <head>
+          <meta charset="utf-8" />
+        </head>
 
-      const doc = new Document({
-        sections: [{
-          children: [
-            new Paragraph({
-              text: title,
-              heading: HeadingLevel.HEADING_1,
-            }),
-            new Paragraph(`Form ID: ${formId} | Version: ${version}`),
-            new Paragraph(''), // Empty line
-            ...lines.map(line => new Paragraph(line)),
-          ],
-        }],
-      });
+        <body style="font-family: Times New Roman; font-size:11pt;">
 
-      const blob = await Packer.toBlob(doc);
-      saveAs(blob, `${formId}.docx`);
-      console.log('Word document downloaded successfully!');
-    } catch (err) {
-      console.error('Word download failed:', err);
-      alert('Error downloading Word file');
-    }
-  };
+          <div style="width:100%;">
+
+            ${printRef.current.innerHTML}
+
+          </div>
+
+        </body>
+      </html>
+    `;
+
+    const blob = htmlDocx.asBlob(html);
+
+    saveAs(blob, ensureDocxFileName(formId));
+
+  } catch (err) {
+    console.error('Word download failed:', err);
+    alert('Error downloading Word file');
+  }
+};
+
 
   return (
     <div style={{ padding: 20, background: '#f5f5f5' }}>
+
       {/* Action buttons (NOT printed) */}
-      <div style={{ textAlign: 'center', marginBottom: 20, display: 'flex', gap: 10, justifyContent: 'center' }}>
-        <button 
+      <div
+        style={{
+          textAlign: 'center',
+          marginBottom: 20,
+          display: 'flex',
+          gap: 10,
+          justifyContent: 'center'
+        }}
+      >
+        <button
           onClick={() => setIsPrintMode(!isPrintMode)}
           style={{
             padding: '10px 16px',
@@ -112,7 +122,7 @@ const FormWrapper = ({ children, formId, version, title, companyLogo }) => {
 
         {isPrintMode && (
           <>
-            <button 
+            <button
               onClick={handlePrintPDF}
               style={{
                 padding: '10px 16px',
@@ -126,7 +136,8 @@ const FormWrapper = ({ children, formId, version, title, companyLogo }) => {
             >
               🖨 Print / Save PDF
             </button>
-            <button 
+
+            <button
               onClick={handleDownloadWord}
               style={{
                 padding: '10px 16px',
@@ -163,7 +174,9 @@ const FormWrapper = ({ children, formId, version, title, companyLogo }) => {
           </div>
         </div>
 
-        <h3 style={{ textAlign: 'center', margin: '30px 0' }}>{title}</h3>
+        <h3 style={{ textAlign: 'center', margin: '30px 0' }}>
+          {title}
+        </h3>
 
         {children}
 

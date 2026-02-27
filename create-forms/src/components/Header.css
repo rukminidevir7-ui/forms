@@ -1,0 +1,66 @@
+/* HEADER CONTAINER */
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 15px;       /* ✅ Reduced space */
+  background: #ffffff;
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 10px;    
+}
+
+/* LEFT LOGO */
+.header-logo {
+  height: 65px;            /* ✅ Slightly smaller */
+  width: auto;
+}
+
+/* CENTER CONTENT */
+.header-center {
+  text-align: center;
+  flex: 1;
+  padding: 0 10px;
+}
+
+.header-title {
+  font-size: 20px;         /* ✅ Reduced size */
+  font-weight: 700;
+  color: #c40000;
+  margin: 0;
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+
+.header-subtitle {
+  font-size: 18px;
+  font-weight: 700;
+  color: #c40000;
+  margin: 2px 0;
+  text-transform: uppercase;
+}
+
+.header-text {
+  font-size: 12px;
+  font-weight: 600;
+  color: #003366;
+  margin: 2px 0;
+}
+
+.header-cin {
+  font-size: 12px;
+  font-weight: 600;
+  margin: 2px 0;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .header-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .header-logo {
+    margin-bottom: 3px;
+  }
+}
+

@@ -1,187 +1,443 @@
-import React, { useRef } from 'react';
-import { Formik, Form, Field } from 'formik';
+import React, { useState } from 'react';
+import { Formik, Form, Field, ErrorMessage, FieldArray } from 'formik';
 import * as Yup from 'yup';
-import FormWrapper from '../FormWrapper';
+import { v4 as uuidv4 } from 'uuid';
 import { usePrintMode } from '../PrintModeContext';
+import ModernFormWrapper from '../components/ModernFormWrapper';
+import ModernA4Template from '../components/ModernA4Template';
+import SignatureComponent from '../components/SignatureComponent';
+import '../styles/FRM00613.css';
 
+/* =========================
+   Validation Schema
+========================= */
 const validationSchema = Yup.object({
-  stats: Yup.object({
-    total_req: Yup.number().required(),
-    total_approved: Yup.number().required()
-  }),
-  item: Yup.object({
-    req_id: Yup.string().required(),
-    site_name: Yup.string().required(),
-    status: Yup.string().required()
-  })
+  requisitionRefNo: Yup.string().required('Requisition Reference No. is required'),
+  requestingDepartment: Yup.string().required('Requesting Department is required'),
+  positionJobTitle: Yup.string().required('Position / Job Title is required'),
+  numbersOfPositionsApproved: Yup.string().required('Number of Positions Approved is required'),
+  typeOfRequirement: Yup.string().required('Type of Requirement is required'),
+  approvalStatus: Yup.string().required('Approval Status is required'),
+  approvedBy: Yup.string().required('Approved By is required'),
+  approvalDate: Yup.string().required('Approval Date is required'),
+  budgetConfirmation: Yup.string().required('Budget Confirmation is required'),
+  recruitmentStatus: Yup.string().required('Recruitment Status is required'),
+  candidateNames: Yup.string(),
+  datePositionClosed: Yup.string(),
+  remarksHRNotes: Yup.string(),
+  customFields: Yup.array().of(
+    Yup.object({
+      fieldName: Yup.string(),
+      fieldValue: Yup.string()
+    })
+  )
 });
 
+/* =========================
+   Initial Values
+========================= */
 const initialValues = {
-  stats: {
-    total_req: '',
-    total_approved: ''
-  },
-  item: {
-    req_id: '{{item.req_id}}',
-    site_name: '{{item.site_name}}',
-    status: '{{item.status}}'
+  requisitionRefNo: '',
+  requestingDepartment: '',
+  positionJobTitle: '',
+  numbersOfPositionsApproved: '',
+  typeOfRequirement: '',
+  approvalStatus: '',
+  approvedBy: '',
+  approvalDate: '',
+  budgetConfirmation: '',
+  recruitmentStatus: '',
+  candidateNames: '',
+  datePositionClosed: '',
+  remarksHRNotes: '',
+  customFields: [],
+  signatures: {
+    recruiter: { type: '', data: '', name: '' },
+    hrManager: { type: '', data: '', name: '' }
   }
 };
 
 const FRM00613 = () => {
   const { isPrintMode } = usePrintMode();
-  const formikRef = useRef(null);
-  const [formValues, setFormValues] = React.useState(initialValues);
+
+  const renderFormContent = (values, setFieldValue, errors, touched) => (
+    <ModernA4Template formId="FRM-00613" title="Manpower Tracking Summary" department="HR & People Ops">
+      {/* REQUISITION & TRACKING INFORMATION */}
+      <div className="form-section">
+        <h3 className="form-section-title">📋 Tracking Information</h3>
+        <div className="form-fields">
+          <div className="form-field">
+            <label className="form-label required">Requisition Reference No.</label>
+            {isPrintMode ? (
+              <div className="print-value">{values.requisitionRefNo || '___________________'}</div>
+            ) : (
+              <>
+                <Field
+                  name="requisitionRefNo"
+                  className="form-input"
+                  placeholder="e.g., FR-001-2024"
+                />
+                <ErrorMessage name="requisitionRefNo" component="div" className="form-error" />
+              </>
+            )}
+          </div>
+
+          <div className="form-field">
+            <label className="form-label required">Requesting Department</label>
+            {isPrintMode ? (
+              <div className="print-value">{values.requestingDepartment || '___________________'}</div>
+            ) : (
+              <>
+                <Field
+                  name="requestingDepartment"
+                  className="form-input"
+                  placeholder="e.g., IT, HR, Finance"
+                />
+                <ErrorMessage name="requestingDepartment" component="div" className="form-error" />
+              </>
+            )}
+          </div>
+
+          <div className="form-field">
+            <label className="form-label required">Position / Job Title</label>
+            {isPrintMode ? (
+              <div className="print-value">{values.positionJobTitle || '___________________'}</div>
+            ) : (
+              <>
+                <Field
+                  name="positionJobTitle"
+                  className="form-input"
+                  placeholder="e.g., Software Engineer"
+                />
+                <ErrorMessage name="positionJobTitle" component="div" className="form-error" />
+              </>
+            )}
+          </div>
+
+          <div className="form-field">
+            <label className="form-label required">Number of Positions Approved</label>
+            {isPrintMode ? (
+              <div className="print-value">{values.numbersOfPositionsApproved || '___________________'}</div>
+            ) : (
+              <>
+                <Field
+                  name="numbersOfPositionsApproved"
+                  type="number"
+                  className="form-input"
+                  placeholder="Enter number"
+                />
+                <ErrorMessage name="numbersOfPositionsApproved" component="div" className="form-error" />
+              </>
+            )}
+          </div>
+
+          <div className="form-field">
+            <label className="form-label required">Type of Requirement</label>
+            {isPrintMode ? (
+              <div className="print-value">{values.typeOfRequirement || '___________________'}</div>
+            ) : (
+              <>
+                <Field
+                  name="typeOfRequirement"
+                  as="select"
+                  className="form-input"
+                >
+                  <option value="">-- Select Option --</option>
+                  <option value="New">New</option>
+                  <option value="Replacement">Replacement</option>
+                  <option value="Temporary">Temporary</option>
+                </Field>
+                <ErrorMessage name="typeOfRequirement" component="div" className="form-error" />
+              </>
+            )}
+          </div>
+
+          <div className="form-field">
+            <label className="form-label required">Approval Status</label>
+            {isPrintMode ? (
+              <div className="print-value">{values.approvalStatus || '___________________'}</div>
+            ) : (
+              <>
+                <Field
+                  name="approvalStatus"
+                  as="select"
+                  className="form-input"
+                >
+                  <option value="">-- Select Status --</option>
+                  <option value="Approved">Approved</option>
+                  <option value="Pending">Pending</option>
+                  <option value="Rejected">Rejected</option>
+                </Field>
+                <ErrorMessage name="approvalStatus" component="div" className="form-error" />
+              </>
+            )}
+          </div>
+
+          <div className="form-field">
+            <label className="form-label required">Approved By</label>
+            {isPrintMode ? (
+              <div className="print-value">{values.approvedBy || '___________________'}</div>
+            ) : (
+              <>
+                <Field
+                  name="approvedBy"
+                  className="form-input"
+                  placeholder="Enter approver name"
+                />
+                <ErrorMessage name="approvedBy" component="div" className="form-error" />
+              </>
+            )}
+          </div>
+
+          <div className="form-field">
+            <label className="form-label required">Approval Date</label>
+            {isPrintMode ? (
+              <div className="print-value">{values.approvalDate || '___________________'}</div>
+            ) : (
+              <>
+                <Field
+                  name="approvalDate"
+                  type="date"
+                  className="form-input"
+                />
+                <ErrorMessage name="approvalDate" component="div" className="form-error" />
+              </>
+            )}
+          </div>
+
+          <div className="form-field">
+            <label className="form-label required">Budget Confirmation</label>
+            {isPrintMode ? (
+              <div className="print-value">{values.budgetConfirmation || '___________________'}</div>
+            ) : (
+              <>
+                <Field
+                  name="budgetConfirmation"
+                  as="select"
+                  className="form-input"
+                >
+                  <option value="">-- Select Option --</option>
+                  <option value="Approved">Approved</option>
+                  <option value="Not Approved">Not Approved</option>
+                </Field>
+                <ErrorMessage name="budgetConfirmation" component="div" className="form-error" />
+              </>
+            )}
+          </div>
+
+          <div className="form-field">
+            <label className="form-label required">Recruitment Status</label>
+            {isPrintMode ? (
+              <div className="print-value">{values.recruitmentStatus || '___________________'}</div>
+            ) : (
+              <>
+                <Field
+                  name="recruitmentStatus"
+                  as="select"
+                  className="form-input"
+                >
+                  <option value="">-- Select Status --</option>
+                  <option value="Open">Open</option>
+                  <option value="In Progress">In Progress</option>
+                  <option value="Closed">Closed</option>
+                </Field>
+                <ErrorMessage name="recruitmentStatus" component="div" className="form-error" />
+              </>
+            )}
+          </div>
+
+          <div className="form-field full-width">
+            <label className="form-label">Candidate Name(s) (if filled)</label>
+            {isPrintMode ? (
+              <div className="print-value">{values.candidateNames || '___________________'}</div>
+            ) : (
+              <>
+                <Field
+                  name="candidateNames"
+                  as="textarea"
+                  className="form-textarea"
+                  placeholder="Enter candidate names (comma separated)"
+                  rows="2"
+                />
+                <ErrorMessage name="candidateNames" component="div" className="form-error" />
+              </>
+            )}
+          </div>
+
+          <div className="form-field">
+            <label className="form-label">Date Position Closed</label>
+            {isPrintMode ? (
+              <div className="print-value">{values.datePositionClosed || '___________________'}</div>
+            ) : (
+              <>
+                <Field
+                  name="datePositionClosed"
+                  type="date"
+                  className="form-input"
+                />
+                <ErrorMessage name="datePositionClosed" component="div" className="form-error" />
+              </>
+            )}
+          </div>
+
+          <div className="form-field full-width">
+            <label className="form-label">Remarks / HR Notes</label>
+            {isPrintMode ? (
+              <div className="print-value">{values.remarksHRNotes || '___________________'}</div>
+            ) : (
+              <>
+                <Field
+                  name="remarksHRNotes"
+                  as="textarea"
+                  className="form-textarea"
+                  placeholder="Add any remarks or notes"
+                  rows="2"
+                />
+                <ErrorMessage name="remarksHRNotes" component="div" className="form-error" />
+              </>
+            )}
+          </div>
+        </div>
+      </div>
+
+      {/* ADDITIONAL FIELDS - Custom Fields */}
+      {!isPrintMode && (
+        <div className="form-section">
+          <h3 className="form-section-title">➕ Additional Custom Fields</h3>
+          <FieldArray name="customFields">
+            {(fieldArrayProps) => {
+              const { push, remove, form } = fieldArrayProps;
+              const { values } = form;
+              const { customFields } = values;
+              return (
+                <div>
+                  {customFields.map((field, index) => (
+                    <div key={field.id || index} className="custom-field-row">
+                      <div className="form-field">
+                        <Field
+                          name={`customFields.${index}.fieldName`}
+                          className="form-input"
+                          placeholder="Field Name"
+                        />
+                      </div>
+                      <div className="form-field" style={{ flex: 2 }}>
+                        <Field
+                          name={`customFields.${index}.fieldValue`}
+                          className="form-input"
+                          placeholder="Field Value"
+                        />
+                      </div>
+                      <button
+                        type="button"
+                        className="btn-remove"
+                        onClick={() => remove(index)}
+                      >
+                        ✕ Remove
+                      </button>
+                    </div>
+                  ))}
+                  <button
+                    type="button"
+                    className="btn-add-field"
+                    onClick={() => push({ id: uuidv4(), fieldName: '', fieldValue: '' })}
+                  >
+                    ➕ Add Field
+                  </button>
+                </div>
+              );
+            }}
+          </FieldArray>
+        </div>
+      )}
+
+      {isPrintMode && values.customFields && values.customFields.length > 0 && (
+        <div className="form-section">
+          <h3 className="form-section-title">➕ Additional Fields</h3>
+          <div className="form-fields">
+            {values.customFields.map((field, index) => (
+              <div key={index} className="form-field full-width custom-field-print">
+                <strong>{field.fieldName}:</strong> {field.fieldValue || '___________________'}
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {/* SIGNATURES */}
+      <div className="form-section signatures-section">
+        <h3 className="form-section-title">✍️ Digital Signatures & Approvals</h3>
+
+        {!isPrintMode && (
+          <div className="signatures-container">
+            <SignatureComponent
+              name="Recruitment Coordinator"
+              onChange={(sig) => setFieldValue('signatures.recruiter', sig)}
+              value={values.signatures.recruiter}
+            />
+            <SignatureComponent
+              name="HR Manager"
+              onChange={(sig) => setFieldValue('signatures.hrManager', sig)}
+              value={values.signatures.hrManager}
+            />
+          </div>
+        )}
+
+        {isPrintMode && (
+          <div className="print-signatures">
+            {['recruiter', 'hrManager'].map((role) => (
+              <div key={role} className="print-signature-box">
+                <div className="sig-name">
+                  {role === 'recruiter' && 'Recruitment Coordinator'}
+                  {role === 'hrManager' && 'HR Manager'}
+                </div>
+                <div className="sig-space">
+                  {values.signatures[role]?.data && (
+                    <img
+                      src={values.signatures[role].data}
+                      alt={`Signature - ${role}`}
+                      className="print-sig-image"
+                      style={{ maxWidth: '100%', maxHeight: '80px' }}
+                    />
+                  )}
+                </div>
+                <div className="sig-line"></div>
+                <div className="sig-date">
+                  {values.signatures[role]?.name && `Name: ${values.signatures[role].name}`}
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
+      </div>
+
+      {/* SUBMIT BUTTON - Edit Mode Only */}
+      {!isPrintMode && (
+        <div className="form-actions">
+          <button type="submit" className="btn-submit">
+            💾 Save Form
+          </button>
+        </div>
+      )}
+    </ModernA4Template>
+  );
 
   return (
-    <FormWrapper
-      formId="FRM-00613"
-      version="1.0"
-      title="Manpower Tracking Summary"
-    >
+    <ModernFormWrapper formId="FRM-00613" title="Manpower Tracking Summary">
       <Formik
-        innerRef={formikRef}
         initialValues={initialValues}
         validationSchema={validationSchema}
         onSubmit={(values) => {
-          setFormValues(values);
           console.log('Form submitted:', values);
+          alert('✅ Form saved successfully!');
         }}
       >
-        {({ values, errors, touched, isSubmitting }) => {
-          React.useEffect(() => {
-            setFormValues(values);
-          }, [values]);
-
-          // PRINT MODE: Show plain HTML
-          if (isPrintMode) {
-            return (
-              <div>
-                <div style={{ display: 'flex', gap: '10px', marginBottom: '20px' }}>
-                  <div style={{ flex: 1, border: '1px solid #ddd', padding: '10px', textAlign: 'center' }}>
-                    <div style={{ fontSize: '20px', fontWeight: 'bold' }}>{values.stats.total_req || '—'}</div>
-                    <div style={{ fontSize: '10px', color: '#666' }}>TOTAL REQUESTS</div>
-                  </div>
-                  <div style={{ flex: 1, border: '1px solid #ddd', padding: '10px', textAlign: 'center', backgroundColor: '#f9f9f9' }}>
-                    <div style={{ fontSize: '20px', fontWeight: 'bold' }}>{values.stats.total_approved || '—'}</div>
-                    <div style={{ fontSize: '10px', color: '#666' }}>TOTAL APPROVED</div>
-                  </div>
-                </div>
-
-                <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '12px' }}>
-                  <thead>
-                    <tr style={{ backgroundColor: '#333', color: '#fff' }}>
-                      <th style={{ padding: '8px', border: '1px solid #444', textAlign: 'left' }}>Req ID</th>
-                      <th style={{ padding: '8px', border: '1px solid #444', textAlign: 'left' }}>Site</th>
-                      <th style={{ padding: '8px', border: '1px solid #444', textAlign: 'left' }}>Status</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td style={{ padding: '8px', border: '1px solid #ddd' }}>{values.item.req_id || '—'}</td>
-                      <td style={{ padding: '8px', border: '1px solid #ddd' }}>{values.item.site_name || '—'}</td>
-                      <td style={{ padding: '8px', border: '1px solid #ddd', fontWeight: 'bold' }}>{values.item.status || '—'}</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            );
-          }
-
-          // EDIT MODE: Show form inputs
-          return (
-            <Form>
-              <h4 style={{ marginBottom: '20px', fontWeight: 'bold' }}>Summary Statistics</h4>
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20, marginBottom: 20 }}>
-                <div>
-                  <label style={{ fontWeight: 'bold', display: 'block', marginBottom: 8 }}>Total Requests</label>
-                  <Field
-                    name="stats.total_req"
-                    type="number"
-                    placeholder="0"
-                    style={{ width: '100%', padding: '8px', border: '1px solid #ddd', borderRadius: 4 }}
-                  />
-                  {errors.stats?.total_req && touched.stats?.total_req && (
-                    <div style={{ color: 'red', fontSize: 12, marginTop: 4 }}>{errors.stats.total_req}</div>
-                  )}
-                </div>
-
-                <div>
-                  <label style={{ fontWeight: 'bold', display: 'block', marginBottom: 8 }}>Total Approved</label>
-                  <Field
-                    name="stats.total_approved"
-                    type="number"
-                    placeholder="0"
-                    style={{ width: '100%', padding: '8px', border: '1px solid #ddd', borderRadius: 4 }}
-                  />
-                  {errors.stats?.total_approved && touched.stats?.total_approved && (
-                    <div style={{ color: 'red', fontSize: 12, marginTop: 4 }}>{errors.stats.total_approved}</div>
-                  )}
-                </div>
-              </div>
-
-              <h4 style={{ marginBottom: '20px', fontWeight: 'bold', marginTop: 30 }}>Tracking Details</h4>
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 15, marginBottom: 20 }}>
-                <div>
-                  <label style={{ fontWeight: 'bold', display: 'block', marginBottom: 8 }}>Req ID</label>
-                  <Field
-                    name="item.req_id"
-                    placeholder="Enter requisition ID"
-                    style={{ width: '100%', padding: '8px', border: '1px solid #ddd', borderRadius: 4 }}
-                  />
-                  {errors.item?.req_id && touched.item?.req_id && (
-                    <div style={{ color: 'red', fontSize: 12, marginTop: 4 }}>{errors.item.req_id}</div>
-                  )}
-                </div>
-
-                <div>
-                  <label style={{ fontWeight: 'bold', display: 'block', marginBottom: 8 }}>Site Name</label>
-                  <Field
-                    name="item.site_name"
-                    placeholder="Enter site name"
-                    style={{ width: '100%', padding: '8px', border: '1px solid #ddd', borderRadius: 4 }}
-                  />
-                  {errors.item?.site_name && touched.item?.site_name && (
-                    <div style={{ color: 'red', fontSize: 12, marginTop: 4 }}>{errors.item.site_name}</div>
-                  )}
-                </div>
-
-                <div>
-                  <label style={{ fontWeight: 'bold', display: 'block', marginBottom: 8 }}>Status</label>
-                  <Field
-                    name="item.status"
-                    placeholder="e.g., Active, Pending"
-                    style={{ width: '100%', padding: '8px', border: '1px solid #ddd', borderRadius: 4 }}
-                  />
-                  {errors.item?.status && touched.item?.status && (
-                    <div style={{ color: 'red', fontSize: 12, marginTop: 4 }}>{errors.item.status}</div>
-                  )}
-                </div>
-              </div>
-
-              <div style={{ textAlign: 'center', marginTop: 30 }}>
-                <button
-                  type="submit"
-                  style={{
-                    padding: '10px 24px',
-                    backgroundColor: '#5cb85c',
-                    color: '#fff',
-                    border: 'none',
-                    borderRadius: 4,
-                    cursor: 'pointer',
-                    fontWeight: '600',
-                    fontSize: 14
-                  }}
-                  disabled={isSubmitting}
-                >
-                  💾 Save & Preview
-                </button>
-              </div>
-            </Form>
-          );
-        }}
+        {({ values, setFieldValue, errors, touched }) => (
+          <Form>
+            {renderFormContent(values, setFieldValue, errors, touched)}
+          </Form>
+        )}
       </Formik>
-    </FormWrapper>
+    </ModernFormWrapper>
   );
 };
 

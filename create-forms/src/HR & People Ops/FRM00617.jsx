@@ -1,147 +1,238 @@
-import React, { useRef, useState, useEffect } from 'react';
-import { Formik, Form, Field } from 'formik';
+import React, { useState } from 'react';
+import { Formik, Form, Field, ErrorMessage, FieldArray } from 'formik';
 import * as Yup from 'yup';
-import FormWrapper from '../FormWrapper';
+import { v4 as uuidv4 } from 'uuid';
 import { usePrintMode } from '../PrintModeContext';
+import ModernFormWrapper from '../components/ModernFormWrapper';
+import ModernA4Template from '../components/ModernA4Template';
+import SignatureComponent from '../components/SignatureComponent';
+import '../styles/FRM00611.css';
 
 const validationSchema = Yup.object({
-  candidate: Yup.object({
-    name: Yup.string().required('Required'),
-    email: Yup.string().email('Invalid email').required('Required'),
-    application_id: Yup.string().required('Required'),
-  }),
-  consent_details: Yup.object({
-    consent_types: Yup.array().min(1, 'Select at least one consent type').required('Required'),
-    request_date: Yup.date().required('Required'),
-  }),
+  candidateFullName: Yup.string().required('Candidate Full Name is required'),
+  candidateEmailID: Yup.string().email('Invalid email').required('Candidate Email ID is required'),
+  candidateMobileNumber: Yup.string().required('Candidate Mobile Number is required'),
+  positionAppliedFor: Yup.string().required('Position Applied For is required'),
+  department: Yup.string().required('Department is required'),
+  typeOfConsent: Yup.string().required('Type of Consent is required'),
+  consentDescription: Yup.string().required('Consent Description/Purpose is required'),
+  consentGivenDate: Yup.string().required('Consent Given Date is required'),
+  recruiterName: Yup.string().required('Recruiter Name is required'),
+  customFields: Yup.array().of(Yup.object({ fieldName: Yup.string(), fieldValue: Yup.string() }))
 });
 
 const initialValues = {
-  candidate: {
-    name: '',
-    email: '',
-    application_id: '',
-  },
-  consent_details: {
-    consent_types: [], // Array for checkboxes
-    request_date: new Date().toISOString().split('T')[0],
-    remarks: '',
-  },
+  candidateFullName: '',
+  candidateEmailID: '',
+  candidateMobileNumber: '',
+  positionAppliedFor: '',
+  department: '',
+  typeOfConsent: '',
+  consentDescription: '',
+  consentGivenDate: '',
+  recruiterName: '',
+  customFields: [],
+  signatures: {
+    candidate: { type: '', data: '', name: '' }
+  }
 };
 
 const FRM00617 = () => {
   const { isPrintMode } = usePrintMode();
-  const formikRef = useRef(null);
-  const [formValues, setFormValues] = useState(initialValues);
+
+  const renderFormContent = (values, setFieldValue, errors, touched) => (
+    <ModernA4Template formId="FRM-00617" title="Candidate Consent – Request / Initiation Form" department="HR & People Ops">
+      <div className="form-section">
+        <h3 className="form-section-title">Candidate Information</h3>
+        <div className="form-fields">
+          <div className="form-field">
+            <label className="form-label required">Candidate Full Name</label>
+            {isPrintMode ? (
+              <div className="print-value">{values.candidateFullName || '___________________'}</div>
+            ) : (
+              <>
+                <Field name="candidateFullName" className="form-input" placeholder="Enter full name" />
+                <ErrorMessage name="candidateFullName" component="div" className="form-error" />
+              </>
+            )}
+          </div>
+          <div className="form-field">
+            <label className="form-label required">Candidate Email ID</label>
+            {isPrintMode ? (
+              <div className="print-value">{values.candidateEmailID || '___________________'}</div>
+            ) : (
+              <>
+                <Field name="candidateEmailID" type="email" className="form-input" placeholder="example@email.com" />
+                <ErrorMessage name="candidateEmailID" component="div" className="form-error" />
+              </>
+            )}
+          </div>
+          <div className="form-field">
+            <label className="form-label required">Candidate Mobile Number</label>
+            {isPrintMode ? (
+              <div className="print-value">{values.candidateMobileNumber || '___________________'}</div>
+            ) : (
+              <>
+                <Field name="candidateMobileNumber" className="form-input" placeholder="Enter mobile number" />
+                <ErrorMessage name="candidateMobileNumber" component="div" className="form-error" />
+              </>
+            )}
+          </div>
+          <div className="form-field">
+            <label className="form-label required">Position Applied For</label>
+            {isPrintMode ? (
+              <div className="print-value">{values.positionAppliedFor || '___________________'}</div>
+            ) : (
+              <>
+                <Field name="positionAppliedFor" className="form-input" placeholder="Enter position" />
+                <ErrorMessage name="positionAppliedFor" component="div" className="form-error" />
+              </>
+            )}
+          </div>
+          <div className="form-field">
+            <label className="form-label required">Department</label>
+            {isPrintMode ? (
+              <div className="print-value">{values.department || '___________________'}</div>
+            ) : (
+              <>
+                <Field name="department" className="form-input" placeholder="e.g., IT, HR, Finance" />
+                <ErrorMessage name="department" component="div" className="form-error" />
+              </>
+            )}
+          </div>
+          <div className="form-field">
+            <label className="form-label required">Type of Consent</label>
+            {isPrintMode ? (
+              <div className="print-value">{values.typeOfConsent || '___________________'}</div>
+            ) : (
+              <>
+                <Field name="typeOfConsent" as="select" className="form-input">
+                  <option value="">-- Select Type --</option>
+                  <option value="Interview">Interview</option>
+                  <option value="Background Check">Background Check</option>
+                  <option value="Data Usage">Data Usage</option>
+                  <option value="All">All</option>
+                </Field>
+                <ErrorMessage name="typeOfConsent" component="div" className="form-error" />
+              </>
+            )}
+          </div>
+          <div className="form-field full-width">
+            <label className="form-label required">Consent Description / Purpose</label>
+            {isPrintMode ? (
+              <div className="print-value">{values.consentDescription || '___________________'}</div>
+            ) : (
+              <>
+                <Field name="consentDescription" as="textarea" className="form-textarea" placeholder="Describe the purpose of consent" rows="2" />
+                <ErrorMessage name="consentDescription" component="div" className="form-error" />
+              </>
+            )}
+          </div>
+          <div className="form-field">
+            <label className="form-label required">Consent Given Date</label>
+            {isPrintMode ? (
+              <div className="print-value">{values.consentGivenDate || '___________________'}</div>
+            ) : (
+              <>
+                <Field name="consentGivenDate" type="date" className="form-input" />
+                <ErrorMessage name="consentGivenDate" component="div" className="form-error" />
+              </>
+            )}
+          </div>
+          <div className="form-field">
+            <label className="form-label required">Recruiter Name</label>
+            {isPrintMode ? (
+              <div className="print-value">{values.recruiterName || '___________________'}</div>
+            ) : (
+              <>
+                <Field name="recruiterName" className="form-input" placeholder="Enter recruiter name" />
+                <ErrorMessage name="recruiterName" component="div" className="form-error" />
+              </>
+            )}
+          </div>
+        </div>
+      </div>
+
+      {!isPrintMode && (
+        <div className="form-section">
+          <h3 className="form-section-title">Additional Custom Fields</h3>
+          <FieldArray name="customFields">
+            {(fieldArrayProps) => {
+              const { push, remove, form } = fieldArrayProps;
+              const { values } = form;
+              const { customFields } = values;
+              return (
+                <div>
+                  {customFields.map((field, index) => (
+                    <div key={field.id || index} className="custom-field-row">
+                      <div className="form-field">
+                        <Field name={`customFields.${index}.fieldName`} className="form-input" placeholder="Field Name" />
+                      </div>
+                      <div className="form-field" style={{ flex: 2 }}>
+                        <Field name={`customFields.${index}.fieldValue`} className="form-input" placeholder="Field Value" />
+                      </div>
+                      <button type="button" className="btn-remove" onClick={() => remove(index)}>Remove</button>
+                    </div>
+                  ))}
+                  <button type="button" className="btn-add-field" onClick={() => push({ id: uuidv4(), fieldName: '', fieldValue: '' })}>Add Field</button>
+                </div>
+              );
+            }}
+          </FieldArray>
+        </div>
+      )}
+
+      {isPrintMode && values.customFields && values.customFields.length > 0 && (
+        <div className="form-section">
+          <h3 className="form-section-title">Additional Fields</h3>
+          <div className="form-fields">
+            {values.customFields.map((field, index) => (
+              <div key={index} className="form-field full-width custom-field-print">
+                <strong>{field.fieldName}:</strong> {field.fieldValue || '___________________'}
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+
+      <div className="form-section signatures-section">
+        <h3 className="form-section-title">✍️ Candidate Signature</h3>
+        {!isPrintMode && (
+          <div className="signatures-container">
+            <SignatureComponent name="Candidate" onChange={(sig) => setFieldValue('signatures.candidate', sig)} value={values.signatures.candidate} />
+          </div>
+        )}
+        {isPrintMode && (
+          <div className="print-signatures">
+            <div className="print-signature-box">
+              <div className="sig-name">Candidate</div>
+              <div className="sig-space">
+                {values.signatures.candidate?.data && <img src={values.signatures.candidate.data} alt="Signature" className="print-sig-image" style={{ maxWidth: '100%', maxHeight: '80px' }} />}
+              </div>
+              <div className="sig-line"></div>
+              <div className="sig-date">{values.signatures.candidate?.name && `Name: ${values.signatures.candidate.name}`}</div>
+            </div>
+          </div>
+        )}
+      </div>
+
+      {!isPrintMode && (
+        <div className="form-actions">
+          <button type="submit" className="btn-submit">Save Form</button>
+        </div>
+      )}
+    </ModernA4Template>
+  );
 
   return (
-    <FormWrapper
-      formId="FRM-00617"
-      version="1.0"
-      title="Candidate Consent Request"
-    >
-      <Formik
-        innerRef={formikRef}
-        initialValues={initialValues}
-        validationSchema={validationSchema}
-        onSubmit={(values) => {
-          setFormValues(values);
-          console.log(values);
-        }}
-      >
-        {({ values, errors, touched, isSubmitting }) => {
-          useEffect(() => {
-            setFormValues(values);
-          }, [values]);
-
-          if (isPrintMode) {
-            return (
-              <div className="print-view">
-                <h4 style={{ borderBottom: '1px solid #ddd', paddingBottom: 5 }}>CANDIDATE INFORMATION</h4>
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 15, marginBottom: 20 }}>
-                  <div><strong>Name:</strong> {values.candidate.name || '—'}</div>
-                  <div><strong>Application ID:</strong> {values.candidate.application_id || '—'}</div>
-                  <div><strong>Email:</strong> {values.candidate.email || '—'}</div>
-                </div>
-
-                <h4 style={{ borderBottom: '1px solid #ddd', paddingBottom: 5 }}>CONSENT SCOPE</h4>
-                <div style={{ marginBottom: 15 }}>
-                  <strong>Requested Consents:</strong>
-                  <ul style={{ marginTop: 5 }}>
-                    {values.consent_details.consent_types.length > 0 
-                      ? values.consent_details.consent_types.map(t => <li key={t}>{t}</li>)
-                      : <li>None selected</li>}
-                  </ul>
-                </div>
-                
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 15 }}>
-                   <div><strong>Request Date:</strong> {values.consent_details.request_date || '—'}</div>
-                </div>
-                
-                <div style={{ marginTop: 15 }}>
-                  <strong>Additional Remarks:</strong>
-                  <div style={{ border: '1px solid #eee', padding: 10, marginTop: 5 }}>
-                    {values.consent_details.remarks || '—'}
-                  </div>
-                </div>
-              </div>
-            );
-          }
-
-          return (
-            <Form>
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20, marginBottom: 20 }}>
-                <div>
-                  <label>Candidate Name</label>
-                  <Field name="candidate.name" style={inputStyle} placeholder="Full Name" />
-                  {errors.candidate?.name && touched.candidate?.name && <div style={errorStyle}>{errors.candidate.name}</div>}
-                </div>
-                <div>
-                   <label>Application ID</label>
-                   <Field name="candidate.application_id" style={inputStyle} placeholder="APP-2023-XXXX" />
-                </div>
-                <div>
-                   <label>Email Address</label>
-                   <Field name="candidate.email" type="email" style={inputStyle} placeholder="candidate@example.com" />
-                </div>
-                <div>
-                   <label>Date of Request</label>
-                   <Field name="consent_details.request_date" type="date" style={inputStyle} />
-                </div>
-              </div>
-
-              <h4 style={{ marginTop: 20, borderBottom: '1px solid #eee' }}>Consent Scope</h4>
-              <div style={{ margin: '15px 0' }}>
-                <label style={{ display: 'block', marginBottom: 5 }}>Select required consents:</label>
-                <div style={{ display: 'flex', gap: 20, flexWrap: 'wrap' }}>
-                  <label><Field type="checkbox" name="consent_details.consent_types" value="Background Verification (BGV)" /> Background Verification</label>
-                  <label><Field type="checkbox" name="consent_details.consent_types" value="Data Privacy / GDPR" /> Data Privacy / GDPR</label>
-                  <label><Field type="checkbox" name="consent_details.consent_types" value="Reference Check" /> Reference Check</label>
-                  <label><Field type="checkbox" name="consent_details.consent_types" value="Medical Examination" /> Medical Exam</label>
-                </div>
-                {errors.consent_details?.consent_types && touched.consent_details?.consent_types && (
-                  <div style={errorStyle}>{errors.consent_details.consent_types}</div>
-                )}
-              </div>
-
-              <div style={{ marginBottom: 20 }}>
-                <label>Remarks / Instructions</label>
-                <Field as="textarea" name="consent_details.remarks" rows="3" style={inputStyle} />
-              </div>
-
-              <div style={{ textAlign: 'center', marginTop: 20 }}>
-                <button type="submit" disabled={isSubmitting} style={buttonStyle}>💾 Initiate Request</button>
-              </div>
-            </Form>
-          );
-        }}
+    <ModernFormWrapper formId="FRM-00617" title="Candidate Consent – Request / Initiation Form">
+      <Formik initialValues={initialValues} validationSchema={validationSchema} onSubmit={(values) => { console.log('Form submitted:', values); alert('✅ Form saved successfully!'); }}>
+        {({ values, setFieldValue, errors, touched }) => (
+          <Form>{renderFormContent(values, setFieldValue, errors, touched)}</Form>
+        )}
       </Formik>
-    </FormWrapper>
+    </ModernFormWrapper>
   );
 };
-
-const inputStyle = { width: '100%', padding: '8px', marginTop: '5px', borderRadius: '4px', border: '1px solid #ccc' };
-const errorStyle = { color: 'red', fontSize: '12px', marginTop: '2px' };
-const buttonStyle = { padding: '10px 24px', backgroundColor: '#5cb85c', color: '#fff', border: 'none', borderRadius: '4px', cursor: 'pointer' };
 
 export default FRM00617;

@@ -1,114 +1,216 @@
-import React, { useRef, useState, useEffect } from 'react';
-import { Formik, Form, Field } from 'formik';
+import React, { useState } from 'react';
+import { Formik, Form, Field, ErrorMessage, FieldArray } from 'formik';
 import * as Yup from 'yup';
-import FormWrapper from '../FormWrapper';
+import { v4 as uuidv4 } from 'uuid';
 import { usePrintMode } from '../PrintModeContext';
+import ModernFormWrapper from '../components/ModernFormWrapper';
+import ModernA4Template from '../components/ModernA4Template';
+import SignatureComponent from '../components/SignatureComponent';
+import '../styles/FRM00611.css';
 
 const validationSchema = Yup.object({
-  ref_id: Yup.string().required('Reference ID required'),
-  verification: Yup.object({
-    status: Yup.string().required('Required'),
-    received_date: Yup.date().required('Required'),
-    verifier_name: Yup.string().required('Required'),
-  }),
+  candidateFullName: Yup.string().required('Candidate Full Name is required'),
+  positionAppliedFor: Yup.string().required('Position Applied For is required'),
+  typeOfConsentRequested: Yup.string().required('Type of Consent Requested is required'),
+  consentVerified: Yup.string().required('Consent Verified is required'),
+  approvedBy: Yup.string().required('Approved By is required'),
+  approvalDate: Yup.string().required('Approval Date is required'),
+  approvalRemarks: Yup.string(),
+  customFields: Yup.array().of(Yup.object({ fieldName: Yup.string(), fieldValue: Yup.string() }))
 });
 
 const initialValues = {
-  ref_id: '',
-  verification: {
-    status: 'Pending',
-    received_date: new Date().toISOString().split('T')[0],
-    verifier_name: '',
-    comments: '',
-  },
+  candidateFullName: '',
+  positionAppliedFor: '',
+  typeOfConsentRequested: '',
+  consentVerified: '',
+  approvedBy: '',
+  approvalDate: '',
+  approvalRemarks: '',
+  customFields: [],
+  signatures: {
+    approver: { type: '', data: '', name: '' }
+  }
 };
 
 const FRM00618 = () => {
   const { isPrintMode } = usePrintMode();
-  const formikRef = useRef(null);
-  const [formValues, setFormValues] = useState(initialValues);
+
+  const renderFormContent = (values, setFieldValue, errors, touched) => (
+    <ModernA4Template formId="FRM-00618" title="Candidate Consent – Approval / Authorization Form" department="HR & People Ops">
+      <div className="form-section">
+        <h3 className="form-section-title">📋 Approval Information</h3>
+        <div className="form-fields">
+          <div className="form-field">
+            <label className="form-label required">Candidate Full Name</label>
+            {isPrintMode ? (
+              <div className="print-value">{values.candidateFullName || '___________________'}</div>
+            ) : (
+              <>
+                <Field name="candidateFullName" className="form-input" placeholder="Enter candidate name" />
+                <ErrorMessage name="candidateFullName" component="div" className="form-error" />
+              </>
+            )}
+          </div>
+          <div className="form-field">
+            <label className="form-label required">Position Applied For</label>
+            {isPrintMode ? (
+              <div className="print-value">{values.positionAppliedFor || '___________________'}</div>
+            ) : (
+              <>
+                <Field name="positionAppliedFor" className="form-input" placeholder="Enter position" />
+                <ErrorMessage name="positionAppliedFor" component="div" className="form-error" />
+              </>
+            )}
+          </div>
+          <div className="form-field">
+            <label className="form-label required">Type of Consent Requested</label>
+            {isPrintMode ? (
+              <div className="print-value">{values.typeOfConsentRequested || '___________________'}</div>
+            ) : (
+              <>
+                <Field name="typeOfConsentRequested" as="select" className="form-input">
+                  <option value="">-- Select Type --</option>
+                  <option value="Interview">Interview</option>
+                  <option value="Background Check">Background Check</option>
+                  <option value="Data Usage">Data Usage</option>
+                  <option value="All">All</option>
+                </Field>
+                <ErrorMessage name="typeOfConsentRequested" component="div" className="form-error" />
+              </>
+            )}
+          </div>
+          <div className="form-field">
+            <label className="form-label required">Consent Verified</label>
+            {isPrintMode ? (
+              <div className="print-value">{values.consentVerified || '___________________'}</div>
+            ) : (
+              <>
+                <Field name="consentVerified" as="select" className="form-input">
+                  <option value="">-- Select --</option>
+                  <option value="Yes">Yes</option>
+                  <option value="No">No</option>
+                </Field>
+                <ErrorMessage name="consentVerified" component="div" className="form-error" />
+              </>
+            )}
+          </div>
+          <div className="form-field">
+            <label className="form-label required">Approved By (HR / Manager Name)</label>
+            {isPrintMode ? (
+              <div className="print-value">{values.approvedBy || '___________________'}</div>
+            ) : (
+              <>
+                <Field name="approvedBy" className="form-input" placeholder="Enter approver name" />
+                <ErrorMessage name="approvedBy" component="div" className="form-error" />
+              </>
+            )}
+          </div>
+          <div className="form-field">
+            <label className="form-label required">Approval Date</label>
+            {isPrintMode ? (
+              <div className="print-value">{values.approvalDate || '___________________'}</div>
+            ) : (
+              <>
+                <Field name="approvalDate" type="date" className="form-input" />
+                <ErrorMessage name="approvalDate" component="div" className="form-error" />
+              </>
+            )}
+          </div>
+          <div className="form-field full-width">
+            <label className="form-label">Approval Remarks</label>
+            {isPrintMode ? (
+              <div className="print-value">{values.approvalRemarks || '___________________'}</div>
+            ) : (
+              <>
+                <Field name="approvalRemarks" as="textarea" className="form-textarea" placeholder="Add remarks" rows="2" />
+                <ErrorMessage name="approvalRemarks" component="div" className="form-error" />
+              </>
+            )}
+          </div>
+        </div>
+      </div>
+
+      {!isPrintMode && (
+        <div className="form-section">
+          <h3 className="form-section-title">➕ Additional Custom Fields</h3>
+          <FieldArray name="customFields">
+            {(fieldArrayProps) => {
+              const { push, remove, form } = fieldArrayProps;
+              const { values } = form;
+              const { customFields } = values;
+              return (
+                <div>
+                  {customFields.map((field, index) => (
+                    <div key={field.id || index} className="custom-field-row">
+                      <div className="form-field">
+                        <Field name={`customFields.${index}.fieldName`} className="form-input" placeholder="Field Name" />
+                      </div>
+                      <div className="form-field" style={{ flex: 2 }}>
+                        <Field name={`customFields.${index}.fieldValue`} className="form-input" placeholder="Field Value" />
+                      </div>
+                      <button type="button" className="btn-remove" onClick={() => remove(index)}>✕ Remove</button>
+                    </div>
+                  ))}
+                  <button type="button" className="btn-add-field" onClick={() => push({ id: uuidv4(), fieldName: '', fieldValue: '' })}>➕ Add Field</button>
+                </div>
+              );
+            }}
+          </FieldArray>
+        </div>
+      )}
+
+      {isPrintMode && values.customFields && values.customFields.length > 0 && (
+        <div className="form-section">
+          <h3 className="form-section-title">➕ Additional Fields</h3>
+          <div className="form-fields">
+            {values.customFields.map((field, index) => (
+              <div key={index} className="form-field full-width custom-field-print">
+                <strong>{field.fieldName}:</strong> {field.fieldValue || '___________________'}
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+
+      <div className="form-section signatures-section">
+        <h3 className="form-section-title">✍️ Approval Signature</h3>
+        {!isPrintMode && (
+          <div className="signatures-container">
+            <SignatureComponent name="Approver" onChange={(sig) => setFieldValue('signatures.approver', sig)} value={values.signatures.approver} />
+          </div>
+        )}
+        {isPrintMode && (
+          <div className="print-signatures">
+            <div className="print-signature-box">
+              <div className="sig-name">Approver</div>
+              <div className="sig-space">
+                {values.signatures.approver?.data && <img src={values.signatures.approver.data} alt="Signature" className="print-sig-image" style={{ maxWidth: '100%', maxHeight: '80px' }} />}
+              </div>
+              <div className="sig-line"></div>
+              <div className="sig-date">{values.signatures.approver?.name && `Name: ${values.signatures.approver.name}`}</div>
+            </div>
+          </div>
+        )}
+      </div>
+
+      {!isPrintMode && (
+        <div className="form-actions">
+          <button type="submit" className="btn-submit">💾 Save Form</button>
+        </div>
+      )}
+    </ModernA4Template>
+  );
 
   return (
-    <FormWrapper formId="FRM-00618" version="1.0" title="Consent Verification & Approval">
-      <Formik
-        innerRef={formikRef}
-        initialValues={initialValues}
-        validationSchema={validationSchema}
-        onSubmit={(values) => setFormValues(values)}
-      >
-        {({ values, errors, touched }) => {
-          useEffect(() => setFormValues(values), [values]);
-
-          if (isPrintMode) {
-            return (
-              <div>
-                <div style={{ padding: 10, background: '#f9f9f9', border: '1px solid #ddd', marginBottom: 20 }}>
-                   <strong>Request Reference ID:</strong> {values.ref_id || '—'}
-                </div>
-                
-                <h4 style={{ borderBottom: '1px solid #ddd' }}>VERIFICATION DETAILS</h4>
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20, marginTop: 15 }}>
-                  <div><strong>Verification Status:</strong> {values.verification.status}</div>
-                  <div><strong>Date Received:</strong> {values.verification.received_date}</div>
-                  <div><strong>Verified By:</strong> {values.verification.verifier_name}</div>
-                </div>
-                
-                <div style={{ marginTop: 20 }}>
-                   <strong>Comments/Deficiencies:</strong>
-                   <div style={{ border: '1px solid #eee', padding: 10, marginTop: 5 }}>
-                     {values.verification.comments || 'No comments'}
-                   </div>
-                </div>
-              </div>
-            );
-          }
-
-          return (
-            <Form>
-               <div style={{ marginBottom: 20 }}>
-                 <label>Linked Request ID (FRM-00617 Ref)</label>
-                 <Field name="ref_id" style={inputStyle} placeholder="Enter Request ID" />
-                 {errors.ref_id && touched.ref_id && <div style={errorStyle}>{errors.ref_id}</div>}
-               </div>
-
-               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20 }}>
-                 <div>
-                   <label>Verification Status</label>
-                   <Field as="select" name="verification.status" style={inputStyle}>
-                     <option value="Pending">Pending</option>
-                     <option value="Verified & Accepted">Verified & Accepted</option>
-                     <option value="Rejected / Re-sign Required">Rejected / Re-sign Required</option>
-                   </Field>
-                 </div>
-                 <div>
-                   <label>Date Received</label>
-                   <Field name="verification.received_date" type="date" style={inputStyle} />
-                 </div>
-               </div>
-
-               <div style={{ marginTop: 15 }}>
-                 <label>Verified By (HR Name)</label>
-                 <Field name="verification.verifier_name" style={inputStyle} />
-               </div>
-
-               <div style={{ marginTop: 15 }}>
-                 <label>Comments (e.g., Signature missing, document unclear)</label>
-                 <Field as="textarea" name="verification.comments" rows="3" style={inputStyle} />
-               </div>
-
-               <div style={{ textAlign: 'center', marginTop: 20 }}>
-                  <button type="submit" style={buttonStyle}>💾 Submit Verification</button>
-               </div>
-            </Form>
-          );
-        }}
+    <ModernFormWrapper formId="FRM-00618" title="Candidate Consent – Approval / Authorization Form">
+      <Formik initialValues={initialValues} validationSchema={validationSchema} onSubmit={(values) => { console.log('Form submitted:', values); alert('✅ Form saved successfully!'); }}>
+        {({ values, setFieldValue, errors, touched }) => (
+          <Form>{renderFormContent(values, setFieldValue, errors, touched)}</Form>
+        )}
       </Formik>
-    </FormWrapper>
+    </ModernFormWrapper>
   );
 };
-
-const inputStyle = { width: '100%', padding: '8px', marginTop: '5px', borderRadius: '4px', border: '1px solid #ccc' };
-const errorStyle = { color: 'red', fontSize: '12px', marginTop: '2px' };
-const buttonStyle = { padding: '10px 24px', backgroundColor: '#007bff', color: '#fff', border: 'none', borderRadius: '4px', cursor: 'pointer' };
 
 export default FRM00618;

@@ -1,0 +1,55 @@
+/* --- UNIVERSAL THEME VARIABLES --- */
+:root {
+  --dynamic-font: "Times New Roman", serif;
+  --theme-primary: #000;
+  --theme-secondary: #f0f0f0;
+  --theme-text-contrast: #fff;
+  --table-padding: 8px;
+  --table-font-size: 11px;
+  --table-border-color: #000;
+}
+
+.template-font-wrapper { font-family: var(--dynamic-font) !important; color: #000; }
+
+.universal-table { width: 100%; border-collapse: collapse; font-family: var(--dynamic-font); font-size: var(--table-font-size); margin-bottom: 20px; }
+.universal-table th { background-color: var(--theme-primary); color: var(--theme-text-contrast); padding: var(--table-padding); border: 1px solid #000; text-transform: uppercase; font-weight: 600; letter-spacing: 0.5px; }
+.universal-table td { padding: var(--table-padding); border: 1px solid var(--table-border-color); color: #000; vertical-align: middle; }
+.universal-table tr:nth-child(even) td { background-color: rgba(0, 0, 0, 0.02); }
+.row-total td { background-color: var(--theme-secondary) !important; font-weight: bold; border-top: 2px solid var(--theme-primary); }
+
+.u-input { width: 100%; border: none; background: transparent; font-family: inherit; font-size: inherit; color: inherit; outline: none; padding: 0; margin: 0; }
+.u-input:focus { background-color: rgba(255, 255, 0, 0.1); }
+.u-text-center { text-align: center; }
+.u-text-left { text-align: left; }
+.u-text-right { text-align: right; }
+
+.template-wrapper { max-width: 210mm; margin: 0 auto; background: white; min-height: 297mm; padding: 12mm; position: relative; box-sizing: border-box; }
+
+/* Make printable area simple and neutral — no card borders */
+.template-wrapper { border: none; box-shadow: none; }
+
+.template-wrapper img { max-width: 100%; height: auto; }
+
+/* A4 / print rules */
+@media print {
+  .no-print { display: none !important; }
+  body, .template-wrapper { background: white; margin: 0; padding: 0; box-shadow: none; width: 210mm; }
+  .page-break { display: block; page-break-before: always; }
+}
+
+/* Form content helpers to avoid splitting important fields */
+.form-body { width: 100%; margin: 0 auto; }
+.form-section { break-inside: avoid; page-break-inside: avoid; margin-bottom: 12px; }
+.form-row { display: flex; gap: 12px; }
+.form-row .col { flex: 1; }
+.field-label { font-weight: 600; margin-bottom: 6px; }
+.field-input { width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px; }
+
+/* Signature area - keep together and near footer */
+.signatures-area { margin-top: 18px; display: flex; gap: 18px; justify-content: space-between; }
+.signature-box { flex: 1; border: 1px dashed #ccc; padding: 12px; border-radius: 6px; min-height: 110px; background: #fafafa; }
+.signature-canvas { width: 100%; height: 80px; border: 1px solid #ddd; }
+.signature-actions { margin-top: 8px; display:flex; gap:8px; }
+
+.modern-form { max-width: 170mm; margin: 0 auto; }
+

@@ -1,0 +1,105 @@
+/* =========================================
+   ENTERPRISE A4 DOCUMENT TEMPLATE (COMPACT)
+   ========================================= */
+
+.mode-a4 .modern-a4-template {
+  width: 210mm;
+  margin: 10px auto;           /* 🔥 Only 10px outer spacing */
+  background: white;
+
+  /* 🔥 Reduce top spacing */
+  padding-top: 12px;
+
+  /* 🔥 Reduce side spacing (more content width) */
+  padding-left: 12mm;
+  padding-right: 12mm;
+
+  /* Bottom spacing */
+  padding-bottom: 15mm;
+
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* Web Mode */
+.mode-web .modern-a4-template {
+  width: 100%;
+  margin: 0;
+  padding: 20px;
+  background: white;
+}
+
+/* Header */
+.modern-a4-template > [class*="header"] {
+  border-bottom: 1px solid #ccc;   /* Slightly lighter */
+  padding-bottom: 8px;
+  margin-bottom: 15px;             /* 🔥 Reduced */
+}
+
+/* Title */
+.form-title-section {
+  text-align: center;
+  margin-bottom: 18px;             /* 🔥 Reduced */
+  border-bottom: 2px solid #1a3c5e;
+  padding-bottom: 8px;
+}
+
+.form-title {
+  font-size: 20px;                 /* Slightly tighter */
+  font-weight: bold;
+  color: #1a3c5e;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.form-meta {
+  font-size: 11px;
+  color: #666;
+  margin-top: 4px;
+}
+
+/* Sections */
+.form-section {
+  margin-bottom: 18px;             /* 🔥 Reduced vertical space */
+}
+
+.form-section-title {
+  background: #1a3c5e;
+  color: white;
+  padding: 6px 12px;               /* 🔥 Reduced height */
+  font-weight: bold;
+  margin-bottom: 12px;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+/* Fields Layout */
+.form-fields {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;                       /* 🔥 Reduced gap */
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-field.full-width {
+  grid-column: 1 / -1;
+}
+
+.form-label {
+  font-weight: bold;
+  margin-bottom: 4px;              /* 🔥 Reduced */
+  font-size: 13px;
+}
+
+.form-input,
+.form-select,
+.form-textarea {
+  padding: 6px 8px;                /* 🔥 Reduced input height */
+  border: 1px solid #aaa;
+  border-radius: 4px;
+  font-size: 13px;
+}

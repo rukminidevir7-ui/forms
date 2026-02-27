@@ -1,0 +1,525 @@
+/* ============================================
+   FRM00611 - ENTERPRISE FORM STYLING
+   Uses CSS Variables from Theme System
+   ============================================ */
+
+/* ============================================
+   🚨 FINAL GLOBAL TABLE FIX (WORKS FOR 1000 FORMS)
+   ============================================ */
+
+/* Force table to allow wrapping */
+
+/* ============================================
+   CLEAN ENTERPRISE TABLE SYSTEM
+============================================ */
+
+/* Normal Web Mode */
+.items-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: auto;   /* 🔥 normal editing */
+}
+
+.items-table th,
+.items-table td {
+  border: 1px solid #000;
+  padding: 6px 8px;
+  text-align: left;
+  vertical-align: top;
+}
+
+/* Inputs inside table */
+.items-table input,
+.items-table textarea,
+.items-table select {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* PDF Mode only */
+.mode-a4 .items-table {
+  table-layout: fixed;
+}
+/* Allow headers and cells to wrap */
+.items-table th,
+.items-table td {
+  white-space: normal !important;   /* allow wrapping */
+  word-break: break-word !important;
+  overflow-wrap: anywhere !important;
+  vertical-align: top;
+}
+
+/* Make inputs flexible */
+.items-table input,
+.items-table select {
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}
+.items-table input,
+.items-table textarea {
+  width: 100% !important;
+  box-sizing: border-box;
+}
+/* ============================================
+   WEB MODE (Normal Form Editing)
+   ============================================ */
+
+.mode-web .items-table {
+  table-layout: auto !important;
+}
+
+/* ============================================
+   PDF MODE (Stable Layout)
+   ============================================ */
+
+.mode-a4 .items-table {
+  table-layout: fixed !important;
+}
+.items-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: auto;   /* 🔥 important */
+}
+/* Prevent column shrinking */
+/* .items-table td {
+  min-width: 120px;
+  word-wrap: break-word;
+} */
+
+
+
+/* .items-table td {
+  max-width: 0;
+} */
+
+/* PRINT FIX */
+@media print {
+
+
+
+  .items-table th,
+  .items-table td {
+    white-space: normal !important;
+    word-break: break-word !important;
+    overflow: visible !important;
+  }
+
+  .items-table input,
+  .items-table select {
+    border: none !important;
+    background: none !important;
+    height: auto !important;
+  }
+
+  .items-table tr {
+    page-break-inside: avoid !important;
+  }
+
+}
+
+/* Section Styling */
+.form-section {
+  margin-bottom: 20px;
+}
+
+.form-section-title {
+  margin: 0 0 3px 0;                 /* reduced bottom space */
+  font-size: calc(var(--heading-font-size) - 6px); /* slightly smaller text */
+  font-weight: 200;
+  color: var(--theme-text-contrast);
+  background: var(--theme-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-left: 4px solid var(--theme-accent);
+
+  padding: 3px 8px;   /* 🔥 reduced from 8px 12px */
+  border-radius: var(--border-radius);
+  line-height: 1;    /* 🔥 tighter height */
+}
+
+/* Field Layout */
+.form-fields {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-field.full-width {
+  grid-column: 1 / -1;
+}
+
+/* Labels */
+.form-label {
+  font-size: var(--label-font-size);
+  font-weight: 600;
+  color: var(--color-text);
+  margin-bottom: 5px;
+  font-family: var(--dynamic-font);
+}
+
+.form-label.required::after {
+  content: ' *';
+  color: var(--color-error);
+  font-weight: bold;
+}
+
+/* Input Fields */
+.form-input,
+.form-textarea {
+  padding: var(--table-padding);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius);
+  font-size: var(--table-font-size);
+  font-family: var(--dynamic-font);
+  background: #ffffff;
+  color: var(--color-text);
+  transition: all 0.2s ease;
+  line-height: var(--table-line-height);
+  box-sizing: border-box;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+  outline: none;
+  border-color: var(--theme-primary);
+  background: #fafafa;
+}
+
+.form-input:disabled,
+.form-textarea:disabled {
+  background-color: var(--theme-secondary);
+  color: #999;
+  cursor: not-allowed;
+}
+
+/* Textarea */
+.form-textarea {
+  resize: vertical;
+  min-height: 60px;
+}
+
+/* Form Error Messages */
+.form-error {
+  color: var(--color-error);
+  font-size: 11px;
+  margin-top: 3px;
+  font-weight: 500;
+}
+
+/* Print Values */
+.print-value {
+  min-height: 30px;
+  padding: var(--table-padding);
+  background: var(--theme-secondary);
+  border: none;
+  border-bottom: 2px solid var(--color-border);
+  font-size: var(--table-font-size);
+  color: var(--color-text);
+  font-family: var(--dynamic-font);
+  line-height: var(--table-line-height);
+  white-space: normal;
+  word-break: break-word;
+}
+
+/* ============================================
+   🔥 GLOBAL TABLE FIX (FOR 1000+ FORMS)
+   ============================================ */
+
+/* Allow cell expansion */
+.items-table td {
+  vertical-align: top;
+  white-space: normal !important;
+  word-break: break-word;
+  overflow: visible !important;
+}
+
+/* Make inputs inside table expand properly */
+.items-table .form-input {
+  width: 100%;
+  min-height: 34px;
+  height: auto !important;
+  white-space: normal !important;
+  overflow: visible !important;
+}
+
+/* Prevent row splitting during print */
+@media print {
+  .items-table tr {
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+}
+
+/* Make input render full content in print */
+@media print {
+  .items-table input,
+  .items-table select {
+    border: none !important;
+    background: none !important;
+    height: auto !important;
+    white-space: normal !important;
+    overflow: visible !important;
+  }
+}
+
+/* ============================================
+   CUSTOM FIELDS STYLING
+   ============================================ */
+
+.custom-field-row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+  align-items: flex-end;
+}
+
+.custom-field-row .form-field {
+  flex: 1;
+}
+
+.btn-remove {
+  padding: var(--table-padding);
+  background-color: var(--color-error);
+  color: white;
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 600;
+  height: fit-content;
+  min-width: 70px;
+}
+
+.btn-add-field {
+  padding: 10px 16px;
+  background-color: var(--color-success);
+  color: white;
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+/* ============================================
+   SIGNATURES SECTION
+   ============================================ */
+
+.signatures-section {
+  page-break-before: avoid;
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 2px solid var(--color-border);
+}
+
+.three-column-signatures {
+  display: flex;
+  gap: 20px;
+  justify-content: center;   /* ✅ changed */
+  flex-wrap: wrap;
+}
+.signature-column {
+  flex: 1;
+  min-width: 300px;
+}
+
+/* ============================================
+   FORM ACTIONS
+   ============================================ */
+
+.form-actions {
+  text-align: center;
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 2px solid var(--color-border);
+}
+
+.btn-submit {
+  background: var(--theme-primary);
+  color: var(--theme-text-contrast);
+  border: none;
+  padding: 10px 30px;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-size: var(--table-font-size);
+  font-weight: 600;
+}
+.mode-a4 .items-table th,
+.mode-a4 .items-table td {
+  padding: 4px 6px;
+}
+/* ============================================
+   PRINT SETTINGS
+   ============================================ */
+
+@media print {
+  body {
+    background: white;
+    margin: 0;
+  }
+
+  .form-actions {
+    display: none;
+  }
+
+  .form-section-title {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}
+
+/* ============================================
+   FINAL A4 TABLE WIDTH FIX
+   ============================================ */
+
+.modern-a4-template {
+  overflow-x: hidden;
+}
+
+
+
+/* ============================================
+   🔥 FORCE REAL TABLE STRUCTURE FOR PDF
+   ============================================ */
+
+
+.items-table thead {
+  display: table-header-group !important;
+}
+
+.items-table tbody {
+  display: table-row-group !important;
+}
+
+.items-table tr {
+  display: table-row !important;
+}
+
+.items-table th,
+.items-table td {
+  display: table-cell !important;
+}
+
+
+
+@media print {
+  .items-table {
+    font-size: 11px;
+  }
+}
+
+/* ============================================
+   🚨 TABLE TEXT FIX (NO JSX CHANGE REQUIRED)
+   ============================================ */
+
+/* Make table inputs grow */
+.items-table input {
+  height: auto !important;
+  min-height: 34px;
+  padding: 6px 8px;
+  white-space: normal !important;
+  overflow: visible !important;
+  text-overflow: unset !important;
+}
+
+/* VERY IMPORTANT — allow cell to expand */
+.items-table td {
+  height: auto !important;
+  overflow: visible !important;
+}
+
+/* Allow long text to break properly */
+
+/* ============================================
+   🚨 PRINT MODE TABLE INPUT FULL TEXT FIX
+   ============================================ */
+
+.mode-a4 .items-table input,
+.mode-a4 .items-table select {
+  border: none !important;
+  background: transparent !important;
+  padding: 2px 0 !important;
+  height: auto !important;
+
+  /* 🔥 THIS MAKES FULL VALUE VISIBLE */
+  white-space: normal !important;
+  overflow: visible !important;
+  text-overflow: unset !important;
+}
+
+/* Allow table cells to expand fully */
+.mode-a4 .items-table td {
+  height: auto !important;
+  overflow: visible !important;
+  vertical-align: top !important;
+}
+
+/* ============================================
+   ✅ PROFESSIONAL TABLE FORMAT (PDF + WEB)
+   ============================================ */
+
+
+
+.items-table th,
+.items-table td {
+  border: 1px solid #000 !important;   /* 🔥 ADD THIS */
+  padding: 6px 8px !important;
+  text-align: left;
+  vertical-align: top;
+}
+
+/* Header styling */
+.items-table th {
+  background-color: #f2f2f2 !important;
+  font-weight: bold;
+}
+
+/* ============================================
+   🚨 FORCE LONG TEXT TO BREAK PROPERLY
+   ============================================ */
+
+
+/* ============================================
+   ✅ PROFESSIONAL PRINT PAGE BREAK FIX
+   Fix heading cut / blank space issue
+   ============================================ */
+
+@media print {
+
+  /* Allow sections to split naturally */
+  .form-section {
+    page-break-inside: auto !important;
+    break-inside: auto !important;
+  }
+
+  /* 🚨 VERY IMPORTANT
+     Prevent heading from separating alone */
+  .form-section-title {
+    page-break-after: avoid !important;
+    break-after: avoid !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+
+  /* Keep first content row with heading */
+  .form-section-title + .form-fields {
+    page-break-before: avoid !important;
+    break-before: avoid !important;
+  }
+
+  /* Prevent textarea block splitting badly */
+  .form-textarea,
+  .print-value {
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+
+}
