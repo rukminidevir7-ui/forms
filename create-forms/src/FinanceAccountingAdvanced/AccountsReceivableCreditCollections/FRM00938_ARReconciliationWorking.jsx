@@ -88,55 +88,147 @@ const FRM00938_ARReconciliationWorking = () => {
               title="AR RECONCILIATION WORKING"
               department="Finance & Accounting (Advanced) – Accounts Receivable, Credit & Collections"
             >
+{/* ================= GENERAL INFORMATION ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">General Information</h3>
+  <div className="form-fields">
 
-              {/* ================= GENERAL INFORMATION ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">General Information</h3>
-                <div className="form-fields">
-                  <Field name="formId" disabled className="form-input"/>
-                  <Field name="date" type="date" className="form-input"/>
-                  <Field name="department" className="form-input"/>
-                  <Field name="function" className="form-input"/>
-                  <Field name="periodStart" type="date" className="form-input"/>
-                  <Field name="periodEnd" type="date" className="form-input"/>
-                  <Field name="referenceNumber" placeholder="Reference Number" className="form-input"/>
-                  <Field name="location" placeholder="Location" className="form-input"/>
-                </div>
-              </div>
+    <div className="form-field">
+      <label className="form-label">Form ID</label>
+      <Field name="formId" disabled className="form-input"/>
+    </div>
 
-              {/* ================= SUMMARY BALANCES ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Summary Balances</h3>
-                <div className="form-fields">
-                  <Field name="openingBalance" type="number" placeholder="Opening Balance" className="form-input"/>
-                  <Field name="currency" placeholder="Currency" className="form-input"/>
-                  <Field name="totalInvoices" type="number" placeholder="Total Invoices" className="form-input"/>
-                  <Field name="totalReceipts" type="number" placeholder="Total Receipts" className="form-input"/>
-                  <Field name="adjustments" type="number" placeholder="Adjustments" className="form-input"/>
-                  <Field name="closingBalance" type="number" placeholder="Closing Balance" className="form-input"/>
-                </div>
-              </div>
+    <div className="form-field">
+      <label className="form-label">Date</label>
+      <Field name="date" type="date" className="form-input"/>
+    </div>
 
-              {/* ================= RECONCILIATION DETAILS ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Reconciliation Details</h3>
-                <div className="form-fields">
-                  <Field name="ledgerBalance" type="number" placeholder="Ledger Balance" className="form-input"/>
-                  <Field name="subLedgerBalance" type="number" placeholder="Sub-ledger Balance" className="form-input"/>
-                  <Field name="differenceAmount" type="number" placeholder="Difference Amount" className="form-input"/>
-                  <Field name="differenceReason" placeholder="Difference Reason" className="form-input"/>
-                  <Field name="reconciliationStatus" as="select" className="form-input">
-                    <option value="">Select Status</option>
-                    <option>Matched</option>
-                    <option>Pending Investigation</option>
-                    <option>Adjusted</option>
-                    <option>Escalated</option>
-                  </Field>
-                  <Field name="supportingNotes" placeholder="Supporting Notes" className="form-input"/>
-                  <Field name="comments" placeholder="Comments" className="form-input"/>
-                  <Field name="supportingReference" placeholder="Supporting Reference" className="form-input"/>
-                </div>
-              </div>
+    <div className="form-field">
+      <label className="form-label">Department</label>
+      <Field name="department" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Function</label>
+      <Field name="function" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Period Start</label>
+      <Field name="periodStart" type="date" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Period End</label>
+      <Field name="periodEnd" type="date" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Reference Number</label>
+      <Field name="referenceNumber" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Location</label>
+      <Field name="location" className="form-input"/>
+    </div>
+
+  </div>
+</div>
+
+
+{/* ================= SUMMARY BALANCES ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">Summary Balances</h3>
+  <div className="form-fields">
+
+    <div className="form-field">
+      <label className="form-label">Opening Balance</label>
+      <Field name="openingBalance" type="number" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Currency</label>
+      <Field name="currency" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Total Invoices</label>
+      <Field name="totalInvoices" type="number" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Total Receipts</label>
+      <Field name="totalReceipts" type="number" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Adjustments</label>
+      <Field name="adjustments" type="number" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Closing Balance</label>
+      <Field name="closingBalance" type="number" className="form-input"/>
+    </div>
+
+  </div>
+</div>
+
+
+{/* ================= RECONCILIATION DETAILS ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">Reconciliation Details</h3>
+  <div className="form-fields">
+
+    <div className="form-field">
+      <label className="form-label">Ledger Balance</label>
+      <Field name="ledgerBalance" type="number" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Sub-ledger Balance</label>
+      <Field name="subLedgerBalance" type="number" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Difference Amount</label>
+      <Field name="differenceAmount" type="number" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Difference Reason</label>
+      <Field name="differenceReason" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Reconciliation Status</label>
+      <Field name="reconciliationStatus" as="select" className="form-input">
+        <option value="">Select Status</option>
+        <option>Matched</option>
+        <option>Pending Investigation</option>
+        <option>Adjusted</option>
+        <option>Escalated</option>
+      </Field>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Supporting Notes</label>
+      <Field name="supportingNotes" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Comments</label>
+      <Field name="comments" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Supporting Reference</label>
+      <Field name="supportingReference" className="form-input"/>
+    </div>
+
+  </div>
+</div>
 
               {/* ================= ATTACHMENTS ================= */}
               <FormAttachments values={values}/>

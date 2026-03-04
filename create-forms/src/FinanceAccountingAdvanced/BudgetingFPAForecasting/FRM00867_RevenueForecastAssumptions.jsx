@@ -96,18 +96,38 @@ const FRM00867_RevenueForecastAssumptions = () => {
               department="Finance & Accounting – Budgeting, FP&A & Forecasting"
             >
 
-              {/* ================= BASIC INFORMATION ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Basic Information</h3>
-                <div className="form-fields">
-                  <Field name="businessUnit" placeholder="Business Unit / Segment" className="form-input"/>
-                  <Field name="forecastPeriod" placeholder="Forecast Period" className="form-input"/>
-                  <Field name="preparedBy" placeholder="Prepared By" className="form-input"/>
-                  <Field name="submissionDate" type="date" className="form-input"/>
-                  <Field name="version" placeholder="Version" className="form-input"/>
-                </div>
-              </div>
+             {/* ================= BASIC INFORMATION ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">Basic Information</h3>
+  <div className="form-fields">
 
+    <div className="form-field">
+      <label className="form-label">Business Unit / Segment</label>
+      <Field name="businessUnit" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Forecast Period</label>
+      <Field name="forecastPeriod" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Prepared By</label>
+      <Field name="preparedBy" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Submission Date</label>
+      <Field name="submissionDate" type="date" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Version</label>
+      <Field name="version" className="form-input"/>
+    </div>
+
+  </div>
+</div>
               {/* ================= KEY REVENUE ASSUMPTIONS ================= */}
               <div className="form-section">
                 <h3 className="form-section-title">Key Revenue Assumptions</h3>
@@ -218,18 +238,31 @@ const FRM00867_RevenueForecastAssumptions = () => {
                   )}
                 </FieldArray>
               </div>
+{/* ================= FORECAST METHODOLOGY ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">Forecast Methodology / Approach</h3>
+  <div className="form-fields">
 
-              {/* ================= FORECAST METHODOLOGY ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Forecast Methodology / Approach</h3>
-                <Field name="methodology" className="form-input"/>
-              </div>
+    <div className="form-field">
+      <label className="form-label">Forecast Methodology / Approach</label>
+      <Field name="methodology" className="form-input"/>
+    </div>
+
+  </div>
+</div>
 
               {/* ================= RISKS & DEPENDENCIES ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Risks, Dependencies & Constraints</h3>
-                <Field name="risksDependencies" className="form-input"/>
-              </div>
+<div className="form-section">
+  <h3 className="form-section-title">Risks, Dependencies & Constraints</h3>
+  <div className="form-fields">
+
+    <div className="form-field">
+      <label className="form-label">Risks, Dependencies & Constraints</label>
+      <Field name="risksDependencies" className="form-input"/>
+    </div>
+
+  </div>
+</div>
 
               {/* ================= CUSTOM FIELDS ================= */}
               <FormCustomFields values={values}/>

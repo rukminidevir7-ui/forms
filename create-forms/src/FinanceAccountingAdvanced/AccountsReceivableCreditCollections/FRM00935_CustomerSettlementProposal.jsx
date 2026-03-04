@@ -110,87 +110,210 @@ const FRM00935_CustomerSettlementProposal = () => {
               department="Finance & Accounting (Advanced) – Accounts Receivable, Credit & Collections"
             >
 
-              {/* ================= GENERAL INFORMATION ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">General Information</h3>
-                <div className="form-fields">
-                  <Field name="formId" disabled className="form-input"/>
-                  <Field name="date" type="date" className="form-input"/>
-                  <Field name="department" className="form-input"/>
-                  <Field name="function" className="form-input"/>
-                  <Field name="referenceNumber" placeholder="Reference Number" className="form-input"/>
-                  <Field name="location" placeholder="Location" className="form-input"/>
-                  <Field name="proposalType" placeholder="Proposal Type" className="form-input"/>
-                  <Field name="priority" as="select" className="form-input">
-                    <option value="">Select Priority</option>
-                    <option>Low</option>
-                    <option>Medium</option>
-                    <option>High</option>
-                    <option>Critical</option>
-                  </Field>
-                </div>
-              </div>
+             {/* ================= GENERAL INFORMATION ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">General Information</h3>
+  <div className="form-fields">
 
-              {/* ================= CUSTOMER DETAILS ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Customer Details</h3>
-                <div className="form-fields">
-                  <Field name="customerName" placeholder="Customer Name" className="form-input"/>
-                  <Field name="customerId" placeholder="Customer ID" className="form-input"/>
-                  <Field name="accountNumber" placeholder="Account Number" className="form-input"/>
-                  <Field name="businessAddress" placeholder="Business Address" className="form-input"/>
-                  <Field name="contactPerson" placeholder="Contact Person" className="form-input"/>
-                  <Field name="phone" placeholder="Phone" className="form-input"/>
-                </div>
-              </div>
+    <div className="form-field">
+      <label className="form-label">Form ID</label>
+      <Field name="formId" disabled className="form-input"/>
+    </div>
 
-              {/* ================= SETTLEMENT DETAILS ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Settlement Details</h3>
-                <div className="form-fields">
-                  <Field name="outstandingAmount" type="number" placeholder="Outstanding Amount" className="form-input"/>
-                  <Field name="currency" placeholder="Currency" className="form-input"/>
-                  <Field name="proposedSettlementAmount" type="number" placeholder="Proposed Settlement Amount" className="form-input"/>
-                  <Field name="settlementPercentage" type="number" placeholder="Settlement Percentage (%)" className="form-input"/>
-                  <Field name="proposedPaymentDate" type="date" className="form-input"/>
-                  <Field name="paymentTerms" placeholder="Payment Terms" className="form-input"/>
-                  <Field name="settlementReason" placeholder="Settlement Reason" className="form-input"/>
-                </div>
-              </div>
+    <div className="form-field">
+      <label className="form-label">Date</label>
+      <Field name="date" type="date" className="form-input"/>
+    </div>
 
-              {/* ================= FINANCIAL IMPACT ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Financial Impact</h3>
-                <div className="form-fields">
-                  <Field name="provisionAvailable" placeholder="Provision Available" className="form-input"/>
-                  <Field name="impactAmount" type="number" placeholder="Impact Amount" className="form-input"/>
-                  <Field name="impactDescription" placeholder="Impact Description" className="form-input"/>
-                </div>
-              </div>
+    <div className="form-field">
+      <label className="form-label">Department</label>
+      <Field name="department" className="form-input"/>
+    </div>
 
-              {/* ================= RISK ASSESSMENT ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Risk Assessment</h3>
-                <div className="form-fields">
-                  <Field name="riskLevel" as="select" className="form-input">
-                    <option value="">Select Risk Level</option>
-                    <option>Low</option>
-                    <option>Medium</option>
-                    <option>High</option>
-                    <option>Severe</option>
-                  </Field>
-                  <Field name="riskComments" placeholder="Risk Comments" className="form-input"/>
-                </div>
-              </div>
+    <div className="form-field">
+      <label className="form-label">Function</label>
+      <Field name="function" className="form-input"/>
+    </div>
 
-              {/* ================= JUSTIFICATION ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Justification</h3>
-                <div className="form-fields">
-                  <Field name="businessJustification" placeholder="Business Justification" className="form-input"/>
-                  <Field name="supportingNotes" placeholder="Supporting Notes" className="form-input"/>
-                </div>
-              </div>
+    <div className="form-field">
+      <label className="form-label">Reference Number</label>
+      <Field name="referenceNumber" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Location</label>
+      <Field name="location" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Proposal Type</label>
+      <Field name="proposalType" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Priority</label>
+      <Field name="priority" as="select" className="form-input">
+        <option value="">Select Priority</option>
+        <option>Low</option>
+        <option>Medium</option>
+        <option>High</option>
+        <option>Critical</option>
+      </Field>
+    </div>
+
+  </div>
+</div>
+
+
+{/* ================= CUSTOMER DETAILS ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">Customer Details</h3>
+  <div className="form-fields">
+
+    <div className="form-field">
+      <label className="form-label">Customer Name</label>
+      <Field name="customerName" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Customer ID</label>
+      <Field name="customerId" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Account Number</label>
+      <Field name="accountNumber" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Business Address</label>
+      <Field name="businessAddress" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Contact Person</label>
+      <Field name="contactPerson" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Phone</label>
+      <Field name="phone" className="form-input"/>
+    </div>
+
+  </div>
+</div>
+
+
+{/* ================= SETTLEMENT DETAILS ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">Settlement Details</h3>
+  <div className="form-fields">
+
+    <div className="form-field">
+      <label className="form-label">Outstanding Amount</label>
+      <Field name="outstandingAmount" type="number" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Currency</label>
+      <Field name="currency" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Proposed Settlement Amount</label>
+      <Field name="proposedSettlementAmount" type="number" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Settlement Percentage (%)</label>
+      <Field name="settlementPercentage" type="number" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Proposed Payment Date</label>
+      <Field name="proposedPaymentDate" type="date" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Payment Terms</label>
+      <Field name="paymentTerms" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Settlement Reason</label>
+      <Field name="settlementReason" className="form-input"/>
+    </div>
+
+  </div>
+</div>
+
+
+{/* ================= FINANCIAL IMPACT ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">Financial Impact</h3>
+  <div className="form-fields">
+
+    <div className="form-field">
+      <label className="form-label">Provision Available</label>
+      <Field name="provisionAvailable" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Impact Amount</label>
+      <Field name="impactAmount" type="number" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Impact Description</label>
+      <Field name="impactDescription" className="form-input"/>
+    </div>
+
+  </div>
+</div>
+
+
+{/* ================= RISK ASSESSMENT ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">Risk Assessment</h3>
+  <div className="form-fields">
+
+    <div className="form-field">
+      <label className="form-label">Risk Level</label>
+      <Field name="riskLevel" as="select" className="form-input">
+        <option value="">Select Risk Level</option>
+        <option>Low</option>
+        <option>Medium</option>
+        <option>High</option>
+        <option>Severe</option>
+      </Field>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Risk Comments</label>
+      <Field name="riskComments" className="form-input"/>
+    </div>
+
+  </div>
+</div>
+
+
+{/* ================= JUSTIFICATION ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">Justification</h3>
+  <div className="form-fields">
+
+    <div className="form-field">
+      <label className="form-label">Business Justification</label>
+      <Field name="businessJustification" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Supporting Notes</label>
+      <Field name="supportingNotes" className="form-input"/>
+    </div>
+
+  </div>
+</div>
 
               {/* ================= ATTACHMENTS ================= */}
               <FormAttachments values={values}/>

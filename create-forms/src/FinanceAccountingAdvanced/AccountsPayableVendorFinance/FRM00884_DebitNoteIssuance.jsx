@@ -124,59 +124,180 @@ const FRM00884_DebitNoteIssuance = () => {
               department="Finance & Accounting – Accounts Payable & Vendor Finance"
             >
 
-              {/* ================= DOCUMENT CONTROL ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Document Control</h3>
-                <div className="form-fields">
-                  <Field name="date" type="date" className="form-input"/>
-                  <Field name="referenceNo" placeholder="Reference No" className="form-input"/>
-                  <Field name="version" placeholder="Version" className="form-input"/>
-                </div>
-              </div>
+             {/* ================= DOCUMENT CONTROL ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">Document Control</h3>
+  <div className="form-fields">
 
-              {/* ================= VENDOR DETAILS ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Vendor Details</h3>
-                <div className="form-fields">
-                  <Field name="vendorName" placeholder="Vendor Name" className="form-input"/>
-                  <Field name="vendorCode" placeholder="Vendor Code" className="form-input"/>
-                  <Field name="contactPerson" placeholder="Contact Person" className="form-input"/>
-                  <Field name="contactDetails" placeholder="Contact Details" className="form-input"/>
-                </div>
-              </div>
+    <div className="form-field">
+      <label className="form-label">Document Date</label>
+      <Field name="date" type="date" className="form-input"/>
+    </div>
 
-              {/* ================= DEBIT NOTE DETAILS ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Debit Note Details</h3>
-                <div className="form-fields">
-                  <Field name="debitNoteNumber" placeholder="Debit Note Number" className="form-input"/>
-                  <Field name="debitNoteDate" type="date" className="form-input"/>
-                  <Field name="currency" placeholder="Currency" className="form-input"/>
-                  <Field name="totalAmount" type="number" placeholder="Total Amount" className="form-input"/>
-                </div>
-              </div>
+    <div className="form-field">
+      <label className="form-label">Reference Number</label>
+      <Field name="referenceNo" className="form-input"/>
+    </div>
 
-              {/* ================= REFERENCE TRANSACTION ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Reference Transaction</h3>
-                <div className="form-fields">
-                  <Field name="invoiceNumber" placeholder="Invoice Number" className="form-input"/>
-                  <Field name="invoiceDate" type="date" className="form-input"/>
-                  <Field name="poNumber" placeholder="PO Number" className="form-input"/>
-                  <Field name="grnNumber" placeholder="GRN Number" className="form-input"/>
-                </div>
-              </div>
+    <div className="form-field">
+      <label className="form-label">Version Number</label>
+      <Field name="version" className="form-input"/>
+    </div>
 
-              {/* ================= AMOUNT BREAKDOWN ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Amount Breakdown</h3>
-                <div className="form-fields">
-                  <Field name="originalInvoiceAmount" type="number" className="form-input"/>
-                  <Field name="amountAdjusted" type="number" className="form-input"/>
-                  <Field name="taxAmount" type="number" className="form-input"/>
-                  <Field name="netAdjustment" type="number" className="form-input"/>
-                </div>
-              </div>
+  </div>
+</div>
+{/* ================= VENDOR DETAILS ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">Vendor Details</h3>
+  <div className="form-fields">
+
+    <div className="form-field">
+      <label className="form-label">Vendor Name</label>
+      <Field
+        name="vendorName"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Vendor Code</label>
+      <Field
+        name="vendorCode"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Contact Person</label>
+      <Field
+        name="contactPerson"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Contact Details</label>
+      <Field
+        name="contactDetails"
+        className="form-input"
+      />
+    </div>
+
+  </div>
+</div>
+
+             {/* ================= DEBIT NOTE DETAILS ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">Debit Note Details</h3>
+  <div className="form-fields">
+
+    <div className="form-field">
+      <label className="form-label">Debit Note Number</label>
+      <Field name="debitNoteNumber" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Debit Note Date</label>
+      <Field name="debitNoteDate" type="date" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Currency</label>
+      <Field name="currency" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Total Debit Note Amount</label>
+      <Field name="totalAmount" type="number" className="form-input"/>
+    </div>
+
+  </div>
+</div>
+
+             {/* ================= REFERENCE TRANSACTION ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">Reference Transaction</h3>
+  <div className="form-fields">
+
+    <div className="form-field">
+      <label className="form-label">Invoice Number</label>
+      <Field
+        name="invoiceNumber"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Invoice Date</label>
+      <Field
+        name="invoiceDate"
+        type="date"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Purchase Order (PO) Number</label>
+      <Field
+        name="poNumber"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">GRN Number</label>
+      <Field
+        name="grnNumber"
+        className="form-input"
+      />
+    </div>
+
+  </div>
+</div>
+
+             {/* ================= AMOUNT BREAKDOWN ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">Amount Breakdown</h3>
+  <div className="form-fields">
+
+    <div className="form-field">
+      <label className="form-label">Original Invoice Amount</label>
+      <Field
+        name="originalInvoiceAmount"
+        type="number"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Amount Adjusted</label>
+      <Field
+        name="amountAdjusted"
+        type="number"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Tax Amount</label>
+      <Field
+        name="taxAmount"
+        type="number"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Net Adjustment</label>
+      <Field
+        name="netAdjustment"
+        type="number"
+        className="form-input"
+      />
+    </div>
+
+  </div>
+</div>
 
               {/* ================= ADDITIONAL CHARGES ================= */}
               <div className="form-section">
@@ -239,46 +360,134 @@ const FRM00884_DebitNoteIssuance = () => {
                 </FieldArray>
               </div>
 
-              {/* ================= REASON & JUSTIFICATION ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Reason & Business Justification</h3>
-                <div className="form-fields">
-                  <Field name="reasonCategory" className="form-input"/>
-                  <Field name="reasonDescription" className="form-input"/>
-                  <Field name="businessJustification" className="form-input"/>
-                </div>
-              </div>
+             {/* ================= REASON & JUSTIFICATION ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">Reason & Business Justification</h3>
+  <div className="form-fields">
 
-              {/* ================= ACCOUNTING IMPACT ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Accounting Impact</h3>
-                <div className="form-fields">
-                  <Field name="glAccount" className="form-input"/>
-                  <Field name="costCenter" className="form-input"/>
-                  <Field name="businessUnit" className="form-input"/>
-                  <Field name="impactAmount" type="number" className="form-input"/>
-                </div>
-              </div>
+    <div className="form-field">
+      <label className="form-label">Reason Category</label>
+      <Field name="reasonCategory" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Reason Description</label>
+      <Field name="reasonDescription" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Business Justification</label>
+      <Field name="businessJustification" className="form-input"/>
+    </div>
+
+  </div>
+</div>
+{/* ================= ACCOUNTING IMPACT ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">Accounting Impact</h3>
+  <div className="form-fields">
+
+    <div className="form-field">
+      <label className="form-label">General Ledger (GL) Account</label>
+      <Field
+        name="glAccount"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Cost Center</label>
+      <Field
+        name="costCenter"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Business Unit</label>
+      <Field
+        name="businessUnit"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Financial Impact Amount</label>
+      <Field
+        name="impactAmount"
+        type="number"
+        className="form-input"
+      />
+    </div>
+
+  </div>
+</div>
 
               {/* ================= COMPLIANCE REVIEW ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Compliance & Risk Review</h3>
-                <div className="form-fields">
-                  <Field name="policyCheckCompleted" placeholder="Policy Check Completed (Y/N)" className="form-input"/>
-                  <Field name="riskLevel" placeholder="Risk Level" className="form-input"/>
-                  <Field name="complianceRemarks" className="form-input"/>
-                </div>
-              </div>
+<div className="form-section">
+  <h3 className="form-section-title">Compliance & Risk Review</h3>
+  <div className="form-fields">
 
-              {/* ================= AUDIT TRAIL ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Audit Trail</h3>
-                <div className="form-fields">
-                  <Field name="createdOn" type="date" className="form-input"/>
-                  <Field name="lastUpdatedOn" type="date" className="form-input"/>
-                  <Field name="documentOwner" className="form-input"/>
-                </div>
-              </div>
+    <div className="form-field">
+      <label className="form-label">Policy Check Completed</label>
+      <Field
+        name="policyCheckCompleted"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Risk Level</label>
+      <Field
+        name="riskLevel"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Compliance Remarks</label>
+      <Field
+        name="complianceRemarks"
+        className="form-input"
+      />
+    </div>
+
+  </div>
+</div>
+
+            {/* ================= AUDIT TRAIL ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">Audit Trail</h3>
+  <div className="form-fields">
+
+    <div className="form-field">
+      <label className="form-label">Created On</label>
+      <Field
+        name="createdOn"
+        type="date"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Last Updated On</label>
+      <Field
+        name="lastUpdatedOn"
+        type="date"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Document Owner</label>
+      <Field
+        name="documentOwner"
+        className="form-input"
+      />
+    </div>
+
+  </div>
+</div>
 
               <FormCustomFields values={values}/>
               <FormAttachments values={values}/>

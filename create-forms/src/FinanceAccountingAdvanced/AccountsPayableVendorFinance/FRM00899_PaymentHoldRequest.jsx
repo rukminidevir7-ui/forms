@@ -114,39 +114,128 @@ const FRM00899_PaymentHoldRequest = () => {
               department="Finance & Accounting – Accounts Payable & Vendor Finance"
             >
 
-              {/* ================= DOCUMENT CONTROL ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Document Control</h3>
-                <div className="form-fields">
-                  <Field name="date" type="date" className="form-input"/>
-                  <Field name="referenceNo" placeholder="Reference No" className="form-input"/>
-                  <Field name="version" placeholder="Version" className="form-input"/>
-                </div>
-              </div>
+             {/* ================= DOCUMENT CONTROL ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">Document Control</h3>
+  <div className="form-fields">
 
-              {/* ================= REQUESTOR DETAILS ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Requested By</h3>
-                <div className="form-fields">
-                  <Field name="requestedBy" placeholder="Requested By" className="form-input"/>
-                  <Field name="employeeId" placeholder="Employee ID" className="form-input"/>
-                </div>
-              </div>
+    <div className="form-field">
+      <label className="form-label">Document Date</label>
+      <Field
+        name="date"
+        type="date"
+        className="form-input"
+      />
+    </div>
 
-              {/* ================= PAYMENT DETAILS ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Payment Details</h3>
-                <div className="form-fields">
-                  <Field name="vendorName" placeholder="Vendor Name" className="form-input"/>
-                  <Field name="vendorId" placeholder="Vendor ID" className="form-input"/>
-                  <Field name="invoiceNumber" placeholder="Invoice Number" className="form-input"/>
-                  <Field name="invoiceDate" type="date" className="form-input"/>
-                  <Field name="paymentAmount" type="number" placeholder="Payment Amount" className="form-input"/>
-                  <Field name="currency" placeholder="Currency" className="form-input"/>
-                  <Field name="paymentDueDate" type="date" className="form-input"/>
-                </div>
-              </div>
+    <div className="form-field">
+      <label className="form-label">Reference Number</label>
+      <Field
+        name="referenceNo"
+        className="form-input"
+      />
+    </div>
 
+    <div className="form-field">
+      <label className="form-label">Version Number</label>
+      <Field
+        name="version"
+        className="form-input"
+      />
+    </div>
+
+  </div>
+</div>
+
+             {/* ================= REQUESTOR DETAILS ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">Requested By</h3>
+  <div className="form-fields">
+
+    <div className="form-field">
+      <label className="form-label">Requested By</label>
+      <Field
+        name="requestedBy"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Employee ID</label>
+      <Field
+        name="employeeId"
+        className="form-input"
+      />
+    </div>
+
+  </div>
+</div>
+             {/* ================= PAYMENT DETAILS ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">Payment Details</h3>
+  <div className="form-fields">
+
+    <div className="form-field">
+      <label className="form-label">Vendor Name</label>
+      <Field
+        name="vendorName"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Vendor ID</label>
+      <Field
+        name="vendorId"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Invoice Number</label>
+      <Field
+        name="invoiceNumber"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Invoice Date</label>
+      <Field
+        name="invoiceDate"
+        type="date"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Payment Amount</label>
+      <Field
+        name="paymentAmount"
+        type="number"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Currency</label>
+      <Field
+        name="currency"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Payment Due Date</label>
+      <Field
+        name="paymentDueDate"
+        type="date"
+        className="form-input"
+      />
+    </div>
+
+  </div>
+</div>
               {/* ================= ADDITIONAL INVOICES ================= */}
               <div className="form-section">
                 <h3 className="form-section-title">Additional Invoices (If Any)</h3>
@@ -225,27 +314,80 @@ const FRM00899_PaymentHoldRequest = () => {
                 </FieldArray>
               </div>
 
-              {/* ================= HOLD DETAILS ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Hold Details</h3>
-                <div className="form-fields">
-                  <Field name="reasonForHold" placeholder="Reason for Hold" className="form-input"/>
-                  <Field name="holdEffectiveFrom" type="date" className="form-input"/>
-                  <Field name="expectedReleaseDate" type="date" className="form-input"/>
-                  <Field name="supportingReference" placeholder="Supporting Reference" className="form-input"/>
-                </div>
-              </div>
+             {/* ================= HOLD DETAILS ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">Hold Details</h3>
+  <div className="form-fields">
 
-              {/* ================= AUDIT TRAIL ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Audit Trail</h3>
-                <div className="form-fields">
-                  <Field name="createdOn" type="date" className="form-input"/>
-                  <Field name="lastUpdatedOn" type="date" className="form-input"/>
-                  <Field name="documentOwner" className="form-input"/>
-                </div>
-              </div>
+    <div className="form-field">
+      <label className="form-label">Reason for Hold</label>
+      <Field
+        name="reasonForHold"
+        className="form-input"
+      />
+    </div>
 
+    <div className="form-field">
+      <label className="form-label">Hold Effective From</label>
+      <Field
+        name="holdEffectiveFrom"
+        type="date"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Expected Release Date</label>
+      <Field
+        name="expectedReleaseDate"
+        type="date"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Supporting Reference</label>
+      <Field
+        name="supportingReference"
+        className="form-input"
+      />
+    </div>
+
+  </div>
+</div>
+{/* ================= AUDIT TRAIL ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">Audit Trail</h3>
+  <div className="form-fields">
+
+    <div className="form-field">
+      <label className="form-label">Created On</label>
+      <Field
+        name="createdOn"
+        type="date"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Last Updated On</label>
+      <Field
+        name="lastUpdatedOn"
+        type="date"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Document Owner</label>
+      <Field
+        name="documentOwner"
+        className="form-input"
+      />
+    </div>
+
+  </div>
+</div>
               <FormCustomFields values={values}/>
               <FormAttachments values={values}/>
 

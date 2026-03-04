@@ -111,17 +111,38 @@ const FRM00871_CashflowForecast = () => {
               department="Finance & Accounting – Budgeting, FP&A & Forecasting"
             >
 
-              {/* ================= BASIC INFORMATION ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Basic Information</h3>
-                <div className="form-fields">
-                  <Field name="businessUnit" placeholder="Business Unit / Entity" className="form-input"/>
-                  <Field name="forecastPeriod" placeholder="Forecast Period" className="form-input"/>
-                  <Field name="preparedBy" placeholder="Prepared By" className="form-input"/>
-                  <Field name="submissionDate" type="date" className="form-input"/>
-                  <Field name="version" placeholder="Version" className="form-input"/>
-                </div>
-              </div>
+             {/* ================= BASIC INFORMATION ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">Basic Information</h3>
+  <div className="form-fields">
+
+    <div className="form-field">
+      <label className="form-label">Business Unit / Entity</label>
+      <Field name="businessUnit" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Forecast Period</label>
+      <Field name="forecastPeriod" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Prepared By</label>
+      <Field name="preparedBy" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Submission Date</label>
+      <Field name="submissionDate" type="date" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Version</label>
+      <Field name="version" className="form-input"/>
+    </div>
+
+  </div>
+</div>
 
               {/* ================= CASHFLOW FORECAST DETAILS ================= */}
               <div className="form-section">
@@ -283,17 +304,28 @@ const FRM00871_CashflowForecast = () => {
                 </FieldArray>
               </div>
 
-              {/* ================= KEY ASSUMPTIONS ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Key Assumptions</h3>
-                <Field name="keyAssumptions" className="form-input"/>
-              </div>
+             {/* ================= KEY ASSUMPTIONS ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">Key Assumptions</h3>
+  <div className="form-fields">
+    <div className="form-field">
+      <label className="form-label">Key Assumptions</label>
+      <Field name="keyAssumptions" className="form-input"/>
+    </div>
+  </div>
+</div>
 
               {/* ================= RISKS & SENSITIVITIES ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Risks / Sensitivities</h3>
-                <Field name="risksSensitivities" className="form-input"/>
-              </div>
+              {/* ================= RISKS & SENSITIVITIES ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">Risks / Sensitivities</h3>
+  <div className="form-fields">
+    <div className="form-field">
+      <label className="form-label">Risks / Sensitivities</label>
+      <Field name="risksSensitivities" className="form-input"/>
+    </div>
+  </div>
+</div>
 
               {/* ================= CUSTOM FIELDS ================= */}
               <FormCustomFields values={values}/>

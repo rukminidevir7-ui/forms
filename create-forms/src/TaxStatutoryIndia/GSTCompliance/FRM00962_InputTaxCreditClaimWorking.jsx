@@ -103,68 +103,193 @@ const FRM00962_InputTaxCreditClaimWorking = () => {
             >
 
               {/* ================= GENERAL INFORMATION ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">General Information</h3>
-                <div className="form-fields">
-                  <Field name="formId" disabled className="form-input"/>
-                  <Field name="date" type="date" className="form-input"/>
-                  <Field name="department" className="form-input"/>
-                  <Field name="function" className="form-input"/>
-                  <Field name="claimPeriodFrom" type="date" className="form-input"/>
-                  <Field name="claimPeriodTo" type="date" className="form-input"/>
-                  <Field name="referenceNumber" placeholder="Reference Number" className="form-input"/>
-                  <Field name="location" placeholder="Location" className="form-input"/>
-                  <Field name="gstin" placeholder="GSTIN" className="form-input"/>
-                  <Field name="returnType" placeholder="Return Type" className="form-input"/>
-                </div>
-              </div>
+<div className="form-section">
+  <h3 className="form-section-title">General Information</h3>
+  <div className="form-fields">
 
-              {/* ================= BUSINESS DETAILS ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Business Details</h3>
-                <div className="form-fields">
-                  <Field name="legalNameOfBusiness" placeholder="Legal Name of Business" className="form-input"/>
-                  <Field name="tradeName" placeholder="Trade Name" className="form-input"/>
-                  <Field name="pan" placeholder="PAN" className="form-input"/>
-                  <Field name="contactPerson" placeholder="Contact Person" className="form-input"/>
-                  <Field name="phone" placeholder="Phone" className="form-input"/>
-                  <Field name="email" type="email" placeholder="Email" className="form-input"/>
-                </div>
-              </div>
+    <div className="form-field">
+      <label className="form-label">Form ID</label>
+      <Field name="formId" disabled className="form-input"/>
+    </div>
 
-              {/* ================= ITC SUMMARY ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">ITC Summary</h3>
-                <div className="form-fields">
-                  <Field name="eligibleITC" type="number" placeholder="Eligible ITC" className="form-input"/>
-                  <Field name="currency" placeholder="Currency" className="form-input"/>
-                  <Field name="ineligibleITC" type="number" placeholder="Ineligible ITC" className="form-input"/>
-                  <Field name="blockedCredit" type="number" placeholder="Blocked Credit" className="form-input"/>
-                  <Field name="itcClaimed" type="number" placeholder="ITC Claimed" className="form-input"/>
-                  <Field name="itcReversed" type="number" placeholder="ITC Reversed" className="form-input"/>
-                  <Field name="netITCAvailable" type="number" placeholder="Net ITC Available" className="form-input"/>
-                </div>
-              </div>
+    <div className="form-field">
+      <label className="form-label">Date</label>
+      <Field name="date" type="date" className="form-input"/>
+    </div>
 
-              {/* ================= RECONCILIATION ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Reconciliation</h3>
-                <div className="form-fields">
-                  <Field name="booksITC" type="number" placeholder="Books ITC" className="form-input"/>
-                  <Field name="returnITC" type="number" placeholder="Return ITC" className="form-input"/>
-                  <Field name="differenceAmount" type="number" placeholder="Difference Amount" className="form-input"/>
-                  <Field name="differenceReason" placeholder="Difference Reason" className="form-input"/>
-                </div>
-              </div>
+    <div className="form-field">
+      <label className="form-label">Department</label>
+      <Field name="department" className="form-input"/>
+    </div>
 
-              {/* ================= NOTES ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Notes</h3>
-                <div className="form-fields">
-                  <Field name="keyNotes" placeholder="Key Notes" className="form-input"/>
-                  <Field name="issuesObservations" placeholder="Issues / Observations" className="form-input"/>
-                </div>
-              </div>
+    <div className="form-field">
+      <label className="form-label">Function</label>
+      <Field name="function" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Claim Period From</label>
+      <Field name="claimPeriodFrom" type="date" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Claim Period To</label>
+      <Field name="claimPeriodTo" type="date" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Reference Number</label>
+      <Field name="referenceNumber" placeholder="Reference Number" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Location</label>
+      <Field name="location" placeholder="Location" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">GSTIN</label>
+      <Field name="gstin" placeholder="GSTIN" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Return Type</label>
+      <Field name="returnType" placeholder="Return Type" className="form-input"/>
+    </div>
+
+  </div>
+</div>
+
+
+{/* ================= BUSINESS DETAILS ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">Business Details</h3>
+  <div className="form-fields">
+
+    <div className="form-field">
+      <label className="form-label">Legal Name of Business</label>
+      <Field name="legalNameOfBusiness" placeholder="Legal Name of Business" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Trade Name</label>
+      <Field name="tradeName" placeholder="Trade Name" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">PAN</label>
+      <Field name="pan" placeholder="PAN" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Contact Person</label>
+      <Field name="contactPerson" placeholder="Contact Person" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Phone</label>
+      <Field name="phone" placeholder="Phone" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Email</label>
+      <Field name="email" type="email" placeholder="Email" className="form-input"/>
+    </div>
+
+  </div>
+</div>
+
+
+{/* ================= ITC SUMMARY ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">ITC Summary</h3>
+  <div className="form-fields">
+
+    <div className="form-field">
+      <label className="form-label">Eligible ITC</label>
+      <Field name="eligibleITC" type="number" placeholder="Eligible ITC" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Currency</label>
+      <Field name="currency" placeholder="Currency" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Ineligible ITC</label>
+      <Field name="ineligibleITC" type="number" placeholder="Ineligible ITC" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Blocked Credit</label>
+      <Field name="blockedCredit" type="number" placeholder="Blocked Credit" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">ITC Claimed</label>
+      <Field name="itcClaimed" type="number" placeholder="ITC Claimed" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">ITC Reversed</label>
+      <Field name="itcReversed" type="number" placeholder="ITC Reversed" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Net ITC Available</label>
+      <Field name="netITCAvailable" type="number" placeholder="Net ITC Available" className="form-input"/>
+    </div>
+
+  </div>
+</div>
+
+
+{/* ================= RECONCILIATION ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">Reconciliation</h3>
+  <div className="form-fields">
+
+    <div className="form-field">
+      <label className="form-label">Books ITC</label>
+      <Field name="booksITC" type="number" placeholder="Books ITC" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Return ITC</label>
+      <Field name="returnITC" type="number" placeholder="Return ITC" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Difference Amount</label>
+      <Field name="differenceAmount" type="number" placeholder="Difference Amount" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Difference Reason</label>
+      <Field name="differenceReason" placeholder="Difference Reason" className="form-input"/>
+    </div>
+
+  </div>
+</div>
+
+
+{/* ================= NOTES ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">Notes</h3>
+  <div className="form-fields">
+
+    <div className="form-field">
+      <label className="form-label">Key Notes</label>
+      <Field name="keyNotes" placeholder="Key Notes" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Issues / Observations</label>
+      <Field name="issuesObservations" placeholder="Issues / Observations" className="form-input"/>
+    </div>
+
+  </div>
+</div>
 
               <FormAttachments values={values}/>
               <FormCustomFields values={values}/>

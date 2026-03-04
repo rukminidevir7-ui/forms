@@ -93,67 +93,181 @@ const FRM00946_ChargebackClaimRegister = () => {
               title="CHARGEBACK / CLAIM REGISTER"
               department="Finance & Accounting (Advanced) – Accounts Receivable, Credit & Collections"
             >
+{/* ================= GENERAL INFORMATION ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">General Information</h3>
+  <div className="form-fields">
 
-              {/* ================= GENERAL INFORMATION ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">General Information</h3>
-                <div className="form-fields">
-                  <Field name="formId" disabled className="form-input"/>
-                  <Field name="date" type="date" className="form-input"/>
-                  <Field name="department" className="form-input"/>
-                  <Field name="function" className="form-input"/>
-                  <Field name="referenceNumber" placeholder="Reference Number" className="form-input"/>
-                  <Field name="location" placeholder="Location" className="form-input"/>
-                </div>
-              </div>
+    <div className="form-field">
+      <label className="form-label">Form ID</label>
+      <Field name="formId" disabled className="form-input"/>
+    </div>
 
-              {/* ================= CLAIM DETAILS ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Claim Details</h3>
-                <div className="form-fields">
-                  <Field name="claimId" placeholder="Claim ID" className="form-input"/>
-                  <Field name="claimDate" type="date" className="form-input"/>
-                  <Field name="customerName" placeholder="Customer Name" className="form-input"/>
-                  <Field name="customerId" placeholder="Customer ID" className="form-input"/>
-                  <Field name="invoiceNumber" placeholder="Invoice Number" className="form-input"/>
-                  <Field name="claimType" placeholder="Claim Type" className="form-input"/>
-                </div>
-              </div>
+    <div className="form-field">
+      <label className="form-label">Date</label>
+      <Field name="date" type="date" className="form-input"/>
+    </div>
 
-              {/* ================= FINANCIAL INFORMATION ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Financial Information</h3>
-                <div className="form-fields">
-                  <Field name="claimAmount" type="number" placeholder="Claim Amount" className="form-input"/>
-                  <Field name="currency" placeholder="Currency" className="form-input"/>
-                  <Field name="approvedAmount" type="number" placeholder="Approved Amount" className="form-input"/>
-                  <Field name="recoveredAmount" type="number" placeholder="Recovered Amount" className="form-input"/>
-                  <Field name="outstandingAmount" type="number" placeholder="Outstanding Amount" className="form-input"/>
-                  <Field name="agingBucket" placeholder="Aging Bucket" className="form-input"/>
-                </div>
-              </div>
+    <div className="form-field">
+      <label className="form-label">Department</label>
+      <Field name="department" className="form-input"/>
+    </div>
 
-              {/* ================= STATUS TRACKING ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Status Tracking</h3>
-                <div className="form-fields">
-                  <Field name="status" placeholder="Status" className="form-input"/>
-                  <Field name="priority" as="select" className="form-input">
-                    <option value="">Select Priority</option>
-                    <option>Low</option>
-                    <option>Medium</option>
-                    <option>High</option>
-                    <option>Critical</option>
-                  </Field>
-                  <Field name="assignedTo" placeholder="Assigned To" className="form-input"/>
-                  <Field name="targetResolutionDate" type="date" className="form-input"/>
-                  <Field name="resolutionSummary" placeholder="Resolution Summary" className="form-input"/>
-                  <Field name="actualClosureDate" type="date" className="form-input"/>
-                  <Field name="notes" placeholder="Notes" className="form-input"/>
-                  <Field name="comments" placeholder="Comments" className="form-input"/>
-                  <Field name="supportingReference" placeholder="Supporting Reference" className="form-input"/>
-                </div>
-              </div>
+    <div className="form-field">
+      <label className="form-label">Function</label>
+      <Field name="function" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Reference Number</label>
+      <Field name="referenceNumber" placeholder="Reference Number" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Location</label>
+      <Field name="location" placeholder="Location" className="form-input"/>
+    </div>
+
+  </div>
+</div>
+
+
+{/* ================= CLAIM DETAILS ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">Claim Details</h3>
+  <div className="form-fields">
+
+    <div className="form-field">
+      <label className="form-label">Claim ID</label>
+      <Field name="claimId" placeholder="Claim ID" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Claim Date</label>
+      <Field name="claimDate" type="date" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Customer Name</label>
+      <Field name="customerName" placeholder="Customer Name" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Customer ID</label>
+      <Field name="customerId" placeholder="Customer ID" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Invoice Number</label>
+      <Field name="invoiceNumber" placeholder="Invoice Number" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Claim Type</label>
+      <Field name="claimType" placeholder="Claim Type" className="form-input"/>
+    </div>
+
+  </div>
+</div>
+
+
+{/* ================= FINANCIAL INFORMATION ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">Financial Information</h3>
+  <div className="form-fields">
+
+    <div className="form-field">
+      <label className="form-label">Claim Amount</label>
+      <Field name="claimAmount" type="number" placeholder="Claim Amount" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Currency</label>
+      <Field name="currency" placeholder="Currency" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Approved Amount</label>
+      <Field name="approvedAmount" type="number" placeholder="Approved Amount" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Recovered Amount</label>
+      <Field name="recoveredAmount" type="number" placeholder="Recovered Amount" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Outstanding Amount</label>
+      <Field name="outstandingAmount" type="number" placeholder="Outstanding Amount" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Aging Bucket</label>
+      <Field name="agingBucket" placeholder="Aging Bucket" className="form-input"/>
+    </div>
+
+  </div>
+</div>
+
+
+{/* ================= STATUS TRACKING ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">Status Tracking</h3>
+  <div className="form-fields">
+
+    <div className="form-field">
+      <label className="form-label">Status</label>
+      <Field name="status" placeholder="Status" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Priority</label>
+      <Field name="priority" as="select" className="form-input">
+        <option value="">Select Priority</option>
+        <option>Low</option>
+        <option>Medium</option>
+        <option>High</option>
+        <option>Critical</option>
+      </Field>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Assigned To</label>
+      <Field name="assignedTo" placeholder="Assigned To" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Target Resolution Date</label>
+      <Field name="targetResolutionDate" type="date" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Resolution Summary</label>
+      <Field name="resolutionSummary" placeholder="Resolution Summary" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Actual Closure Date</label>
+      <Field name="actualClosureDate" type="date" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Notes</label>
+      <Field name="notes" placeholder="Notes" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Comments</label>
+      <Field name="comments" placeholder="Comments" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Supporting Reference</label>
+      <Field name="supportingReference" placeholder="Supporting Reference" className="form-input"/>
+    </div>
+
+  </div>
+</div>
 
               <FormAttachments values={values}/>
               <FormCustomFields values={values}/>

@@ -112,46 +112,156 @@ const FRM00901_DuplicateInvoiceCheck = () => {
               department="Finance & Accounting – Accounts Payable & Vendor Finance"
             >
 
-              {/* ================= DOCUMENT INFORMATION ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Document Information</h3>
-                <div className="form-fields">
-                  <Field name="date" type="date" className="form-input"/>
-                  <Field name="department" className="form-input"/>
-                  <Field name="preparedBy" placeholder="Prepared By" className="form-input"/>
-                  <Field name="referenceNo" placeholder="Reference No" className="form-input"/>
-                  <Field name="status" placeholder="Status" className="form-input"/>
-                </div>
-              </div>
+             {/* ================= DOCUMENT INFORMATION ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">Document Information</h3>
+  <div className="form-fields">
 
-              {/* ================= INVOICE DETAILS ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Invoice Details</h3>
-                <div className="form-fields">
-                  <Field name="vendorName" placeholder="Vendor Name" className="form-input"/>
-                  <Field name="invoiceNumber" placeholder="Invoice Number" className="form-input"/>
-                  <Field name="invoiceDate" type="date" className="form-input"/>
-                  <Field name="invoiceAmount" type="number" placeholder="Invoice Amount" className="form-input"/>
-                  <Field name="currency" placeholder="Currency" className="form-input"/>
-                  <Field name="poNumber" placeholder="PO Number" className="form-input"/>
-                </div>
-              </div>
+    <div className="form-field">
+      <label className="form-label">Document Date</label>
+      <Field
+        name="date"
+        type="date"
+        className="form-input"
+      />
+    </div>
 
-              {/* ================= DUPLICATE CHECK DETAILS ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Duplicate Check Details</h3>
-                <div className="form-fields">
-                  <Field name="checkMethod" placeholder="Check Method" className="form-input"/>
-                  <Field name="systemReference" placeholder="System Reference" className="form-input"/>
-                  <Field as="select" name="duplicateFound" className="form-input">
-                    <option value="">Duplicate Found?</option>
-                    <option value="Yes">Yes</option>
-                    <option value="No">No</option>
-                  </Field>
-                  <Field name="remarks" placeholder="Remarks" className="form-input"/>
-                </div>
-              </div>
+    <div className="form-field">
+      <label className="form-label">Department</label>
+      <Field
+        name="department"
+        className="form-input"
+      />
+    </div>
 
+    <div className="form-field">
+      <label className="form-label">Prepared By</label>
+      <Field
+        name="preparedBy"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Reference Number</label>
+      <Field
+        name="referenceNo"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Document Status</label>
+      <Field
+        name="status"
+        className="form-input"
+      />
+    </div>
+
+  </div>
+</div>
+
+             {/* ================= INVOICE DETAILS ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">Invoice Details</h3>
+  <div className="form-fields">
+
+    <div className="form-field">
+      <label className="form-label">Vendor Name</label>
+      <Field
+        name="vendorName"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Invoice Number</label>
+      <Field
+        name="invoiceNumber"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Invoice Date</label>
+      <Field
+        name="invoiceDate"
+        type="date"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Invoice Amount</label>
+      <Field
+        name="invoiceAmount"
+        type="number"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Currency</label>
+      <Field
+        name="currency"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Purchase Order (PO) Number</label>
+      <Field
+        name="poNumber"
+        className="form-input"
+      />
+    </div>
+
+  </div>
+</div>
+             {/* ================= DUPLICATE CHECK DETAILS ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">Duplicate Check Details</h3>
+  <div className="form-fields">
+
+    <div className="form-field">
+      <label className="form-label">Check Method</label>
+      <Field
+        name="checkMethod"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">System Reference</label>
+      <Field
+        name="systemReference"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Duplicate Found?</label>
+      <Field
+        as="select"
+        name="duplicateFound"
+        className="form-input"
+      >
+        <option value="">Select</option>
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+      </Field>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Remarks</label>
+      <Field
+        name="remarks"
+        className="form-input"
+      />
+    </div>
+
+  </div>
+</div>
               {/* ================= COMPARISON INVOICES ================= */}
               <div className="form-section">
                 <h3 className="form-section-title">Comparison Invoices (If Any)</h3>
@@ -230,16 +340,39 @@ const FRM00901_DuplicateInvoiceCheck = () => {
                 </FieldArray>
               </div>
 
-              {/* ================= AUDIT TRAIL ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Audit Trail</h3>
-                <div className="form-fields">
-                  <Field name="createdOn" type="date" className="form-input"/>
-                  <Field name="lastUpdatedOn" type="date" className="form-input"/>
-                  <Field name="documentOwner" className="form-input"/>
-                </div>
-              </div>
+             {/* ================= AUDIT TRAIL ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">Audit Trail</h3>
+  <div className="form-fields">
 
+    <div className="form-field">
+      <label className="form-label">Created On</label>
+      <Field
+        name="createdOn"
+        type="date"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Last Updated On</label>
+      <Field
+        name="lastUpdatedOn"
+        type="date"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Document Owner</label>
+      <Field
+        name="documentOwner"
+        className="form-input"
+      />
+    </div>
+
+  </div>
+</div>
               <FormCustomFields values={values}/>
               <FormAttachments values={values}/>
 

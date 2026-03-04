@@ -109,16 +109,49 @@ const FRM00837_BudgetSubmissionTemplate = () => {
             >
 
               {/* ================= HEADER ================= */}
-              <div className="form-section">
-                <div className="form-fields">
-                  <Field name="companyName" placeholder="Company Name" className="form-input"/>
-                  <Field name="budgetYear" placeholder="Budget Year" className="form-input"/>
-                  <Field name="businessUnit" placeholder="Business Unit / Department" className="form-input"/>
-                  <Field name="submissionDate" type="date" className="form-input"/>
-                  <Field name="preparedBy" placeholder="Prepared By" className="form-input"/>
-                  <Field name="version" placeholder="Version" className="form-input"/>
-                </div>
-              </div>
+              {/* ================= HEADER ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">Budget Submission Details</h3>
+  <div className="form-fields">
+
+    <div className="form-field">
+      <label className="form-label">Company Name</label>
+      <Field name="companyName" className="form-input"/>
+      <ErrorMessage name="companyName" component="div" className="form-error"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Budget Year</label>
+      <Field name="budgetYear" className="form-input"/>
+      <ErrorMessage name="budgetYear" component="div" className="form-error"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Business Unit / Department</label>
+      <Field name="businessUnit" className="form-input"/>
+      <ErrorMessage name="businessUnit" component="div" className="form-error"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Submission Date</label>
+      <Field name="submissionDate" type="date" className="form-input"/>
+      <ErrorMessage name="submissionDate" component="div" className="form-error"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Prepared By</label>
+      <Field name="preparedBy" className="form-input"/>
+      <ErrorMessage name="preparedBy" component="div" className="form-error"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Version</label>
+      <Field name="version" className="form-input"/>
+      <ErrorMessage name="version" component="div" className="form-error"/>
+    </div>
+
+  </div>
+</div>
 
               {/* ================= BUDGET TABLE ================= */}
               <div className="form-section">

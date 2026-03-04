@@ -119,51 +119,130 @@ const FRM00890_VendorAdvanceSettlement = () => {
             >
 
               {/* ================= DOCUMENT CONTROL ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Document Control</h3>
-                <div className="form-fields">
-                  <Field name="date" type="date" className="form-input"/>
-                  <Field name="referenceNo" placeholder="Reference No" className="form-input"/>
-                  <Field name="version" placeholder="Version" className="form-input"/>
-                </div>
-              </div>
+<div className="form-section">
+  <h3 className="form-section-title">Document Control</h3>
+  <div className="form-fields">
 
-              {/* ================= VENDOR DETAILS ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Vendor Details</h3>
-                <div className="form-fields">
-                  <Field name="vendorName" placeholder="Vendor Name" className="form-input"/>
-                  <Field name="vendorCode" placeholder="Vendor Code" className="form-input"/>
-                  <Field name="contactPerson" placeholder="Contact Person" className="form-input"/>
-                  <Field name="contactDetails" placeholder="Contact Details" className="form-input"/>
-                </div>
-              </div>
+    <div className="form-field">
+      <label className="form-label">Document Date</label>
+      <Field name="date" type="date" className="form-input"/>
+    </div>
 
-              {/* ================= BANK DETAILS ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Bank Details</h3>
-                <div className="form-fields">
-                  <Field name="bankName" placeholder="Bank Name" className="form-input"/>
-                  <Field name="bankAccountNumber" placeholder="Bank Account Number" className="form-input"/>
-                  <Field name="ifscSwift" placeholder="IFSC / SWIFT" className="form-input"/>
-                  <Field name="paymentMethod" placeholder="Payment Method" className="form-input"/>
-                </div>
-              </div>
+    <div className="form-field">
+      <label className="form-label">Reference Number</label>
+      <Field name="referenceNo" className="form-input"/>
+    </div>
 
+    <div className="form-field">
+      <label className="form-label">Version Number</label>
+      <Field name="version" className="form-input"/>
+    </div>
+
+  </div>
+</div>
+
+             {/* ================= VENDOR DETAILS ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">Vendor Details</h3>
+  <div className="form-fields">
+
+    <div className="form-field">
+      <label className="form-label">Vendor Name</label>
+      <Field name="vendorName" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Vendor Code</label>
+      <Field name="vendorCode" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Contact Person</label>
+      <Field name="contactPerson" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Contact Details</label>
+      <Field name="contactDetails" className="form-input"/>
+    </div>
+
+  </div>
+</div>
+
+             {/* ================= BANK DETAILS ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">Bank Details</h3>
+  <div className="form-fields">
+
+    <div className="form-field">
+      <label className="form-label">Bank Name</label>
+      <Field name="bankName" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Bank Account Number</label>
+      <Field name="bankAccountNumber" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">IFSC / SWIFT Code</label>
+      <Field name="ifscSwift" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Payment Method</label>
+      <Field name="paymentMethod" className="form-input"/>
+    </div>
+
+  </div>
+</div>
               {/* ================= ADVANCE DETAILS ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Advance Details</h3>
-                <div className="form-fields">
-                  <Field name="advanceReferenceNumber" placeholder="Advance Reference Number" className="form-input"/>
-                  <Field name="advanceDate" type="date" className="form-input"/>
-                  <Field name="currency" placeholder="Currency" className="form-input"/>
-                  <Field name="advanceAmount" type="number" placeholder="Advance Amount" className="form-input"/>
-                  <Field name="purpose" placeholder="Purpose" className="form-input"/>
-                  <Field name="projectCostCenter" placeholder="Project / Cost Center" className="form-input"/>
-                  <Field name="businessUnit" placeholder="Business Unit" className="form-input"/>
-                  <Field name="settlementDueDate" type="date" className="form-input"/>
-                </div>
-              </div>
+<div className="form-section">
+  <h3 className="form-section-title">Advance Details</h3>
+  <div className="form-fields">
+
+    <div className="form-field">
+      <label className="form-label">Advance Reference Number</label>
+      <Field name="advanceReferenceNumber" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Advance Date</label>
+      <Field name="advanceDate" type="date" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Currency</label>
+      <Field name="currency" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Advance Amount</label>
+      <Field name="advanceAmount" type="number" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Purpose of Advance</label>
+      <Field name="purpose" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Project / Cost Center</label>
+      <Field name="projectCostCenter" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Business Unit</label>
+      <Field name="businessUnit" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Settlement Due Date</label>
+      <Field name="settlementDueDate" type="date" className="form-input"/>
+    </div>
+
+  </div>
+</div>
 
               {/* ================= SETTLEMENT BREAKDOWN ================= */}
               <div className="form-section">
@@ -238,33 +317,93 @@ const FRM00890_VendorAdvanceSettlement = () => {
               </div>
 
               {/* ================= JUSTIFICATION ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Justification & Notes</h3>
-                <div className="form-fields">
-                  <Field name="justification" className="form-input"/>
-                </div>
-              </div>
+<div className="form-section">
+  <h3 className="form-section-title">Justification & Notes</h3>
+  <div className="form-fields">
 
-              {/* ================= COMPLIANCE & CHECKS ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Compliance & Risk Review</h3>
-                <div className="form-fields">
-                  <Field name="policyComplianceConfirmed" placeholder="Policy Compliance Confirmed (Y/N)" className="form-input"/>
-                  <Field name="supportingDocsVerified" placeholder="Supporting Documents Verified (Y/N)" className="form-input"/>
-                  <Field name="riskLevel" className="form-input"/>
-                  <Field name="complianceRemarks" className="form-input"/>
-                </div>
-              </div>
+    <div className="form-field">
+      <label className="form-label">Business Justification</label>
+      <Field
+        name="justification"
+        className="form-input"
+      />
+    </div>
 
-              {/* ================= AUDIT TRAIL ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Audit Trail</h3>
-                <div className="form-fields">
-                  <Field name="createdOn" type="date" className="form-input"/>
-                  <Field name="lastUpdatedOn" type="date" className="form-input"/>
-                  <Field name="documentOwner" className="form-input"/>
-                </div>
-              </div>
+  </div>
+</div>
+
+            {/* ================= COMPLIANCE & CHECKS ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">Compliance & Risk Review</h3>
+  <div className="form-fields">
+
+    <div className="form-field">
+      <label className="form-label">Policy Compliance Confirmed</label>
+      <Field
+        name="policyComplianceConfirmed"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Supporting Documents Verified</label>
+      <Field
+        name="supportingDocsVerified"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Risk Level</label>
+      <Field
+        name="riskLevel"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Compliance Remarks</label>
+      <Field
+        name="complianceRemarks"
+        className="form-input"
+      />
+    </div>
+
+  </div>
+</div>
+             {/* ================= AUDIT TRAIL ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">Audit Trail</h3>
+  <div className="form-fields">
+
+    <div className="form-field">
+      <label className="form-label">Created On</label>
+      <Field
+        name="createdOn"
+        type="date"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Last Updated On</label>
+      <Field
+        name="lastUpdatedOn"
+        type="date"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Document Owner</label>
+      <Field
+        name="documentOwner"
+        className="form-input"
+      />
+    </div>
+
+  </div>
+</div>
 
               <FormCustomFields values={values}/>
               <FormAttachments values={values}/>

@@ -259,8 +259,10 @@ const FRM00926_CollectionEscalation = () => {
               </div>
 
               {/* ================= ATTACHMENTS ================= */}
+                            <FormAttachments values={values}/>
+
               <div className="form-section">
-                <h3 className="form-section-title">Attachments</h3>
+                {/* <h3 className="form-section-title">Attachments</h3> */}
                 <div className="form-fields">
                   <Field name="supportingDocsAttached" placeholder="Supporting Documents Attached (Y/N)" className="form-input"/>
                   <Field name="documentReference" placeholder="Document Reference" className="form-input"/>
@@ -278,7 +280,6 @@ const FRM00926_CollectionEscalation = () => {
               </div>
 
               <FormCustomFields values={values}/>
-              <FormAttachments values={values}/>
 
               {/* ================= AUTHORIZATION ================= */}
               <div className="form-section">

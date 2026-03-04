@@ -104,83 +104,213 @@ const FRM00950_CollectionsKPIReport = () => {
               department="Finance & Accounting (Advanced) – Accounts Receivable, Credit & Collections"
             >
 
-              {/* ================= GENERAL INFORMATION ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">General Information</h3>
-                <div className="form-fields">
-                  <Field name="formId" disabled className="form-input"/>
-                  <Field name="date" type="date" className="form-input"/>
-                  <Field name="department" className="form-input"/>
-                  <Field name="function" className="form-input"/>
-                  <Field name="kpiPeriodFrom" type="date" className="form-input"/>
-                  <Field name="kpiPeriodTo" type="date" className="form-input"/>
-                  <Field name="referenceNumber" placeholder="Reference Number" className="form-input"/>
-                  <Field name="location" placeholder="Location" className="form-input"/>
-                </div>
-              </div>
+            {/* ================= GENERAL INFORMATION ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">General Information</h3>
+  <div className="form-fields">
 
-              {/* ================= KPI SUMMARY ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">KPI Summary</h3>
-                <div className="form-fields">
-                  <Field name="totalOutstanding" type="number" placeholder="Total Outstanding" className="form-input"/>
-                  <Field name="currency" placeholder="Currency" className="form-input"/>
-                  <Field name="totalCollections" type="number" placeholder="Total Collections" className="form-input"/>
-                  <Field name="collectionRate" type="number" placeholder="Collection Rate (%)" className="form-input"/>
-                  <Field name="dso" type="number" placeholder="DSO (Days Sales Outstanding)" className="form-input"/>
-                  <Field name="overduePercentage" type="number" placeholder="Overdue Percentage" className="form-input"/>
-                </div>
-              </div>
+    <div className="form-field">
+      <label className="form-label">Form ID</label>
+      <Field name="formId" disabled className="form-input"/>
+    </div>
 
-              {/* ================= AGING ANALYSIS ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Aging Analysis</h3>
-                <div className="form-fields">
-                  <Field name="currentBucket" type="number" placeholder="Current Bucket" className="form-input"/>
-                  <Field name="bucket1to30" type="number" placeholder="1–30 Days" className="form-input"/>
-                  <Field name="bucket31to60" type="number" placeholder="31–60 Days" className="form-input"/>
-                  <Field name="bucket61to90" type="number" placeholder="61–90 Days" className="form-input"/>
-                  <Field name="bucket90Plus" type="number" placeholder="90+ Days" className="form-input"/>
-                </div>
-              </div>
+    <div className="form-field">
+      <label className="form-label">Date</label>
+      <Field name="date" type="date" className="form-input"/>
+    </div>
 
-              {/* ================= PERFORMANCE METRICS ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Performance Metrics</h3>
-                <div className="form-fields">
-                  <Field name="numberOfAccounts" type="number" placeholder="Number of Accounts" className="form-input"/>
-                  <Field name="activeCustomers" type="number" placeholder="Active Customers" className="form-input"/>
-                  <Field name="disputesCount" type="number" placeholder="Disputes Count" className="form-input"/>
-                  <Field name="resolvedItems" type="number" placeholder="Resolved Items" className="form-input"/>
-                  <Field name="writeOffs" type="number" placeholder="Write-offs" className="form-input"/>
-                  <Field name="recoveryAmount" type="number" placeholder="Recovery Amount" className="form-input"/>
-                </div>
-              </div>
+    <div className="form-field">
+      <label className="form-label">Department</label>
+      <Field name="department" className="form-input"/>
+    </div>
 
-              {/* ================= COMMENTARY ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Commentary</h3>
-                <div className="form-fields">
-                  <Field name="keyObservations" placeholder="Key Observations" className="form-input"/>
-                  <Field name="issuesRisks" placeholder="Issues / Risks" className="form-input"/>
-                  <Field name="actionPlan" placeholder="Action Plan" className="form-input"/>
-                </div>
-              </div>
+    <div className="form-field">
+      <label className="form-label">Function</label>
+      <Field name="function" className="form-input"/>
+    </div>
 
-              {/* ================= ATTACHMENTS ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Attachments</h3>
-                <div className="form-fields">
-                  <Field name="supportingDocumentsAttached" as="select" className="form-input">
-                    <option value="">Supporting Documents Attached?</option>
-                    <option>Yes</option>
-                    <option>No</option>
-                  </Field>
-                  <Field name="documentReference" placeholder="Document Reference" className="form-input"/>
-                </div>
-              </div>
+    <div className="form-field">
+      <label className="form-label">KPI Period From</label>
+      <Field name="kpiPeriodFrom" type="date" className="form-input"/>
+    </div>
 
+    <div className="form-field">
+      <label className="form-label">KPI Period To</label>
+      <Field name="kpiPeriodTo" type="date" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Reference Number</label>
+      <Field name="referenceNumber" placeholder="Reference Number" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Location</label>
+      <Field name="location" placeholder="Location" className="form-input"/>
+    </div>
+
+  </div>
+</div>
+
+
+{/* ================= KPI SUMMARY ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">KPI Summary</h3>
+  <div className="form-fields">
+
+    <div className="form-field">
+      <label className="form-label">Total Outstanding</label>
+      <Field name="totalOutstanding" type="number" placeholder="Total Outstanding" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Currency</label>
+      <Field name="currency" placeholder="Currency" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Total Collections</label>
+      <Field name="totalCollections" type="number" placeholder="Total Collections" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Collection Rate (%)</label>
+      <Field name="collectionRate" type="number" placeholder="Collection Rate (%)" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">DSO (Days Sales Outstanding)</label>
+      <Field name="dso" type="number" placeholder="DSO (Days Sales Outstanding)" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Overdue Percentage</label>
+      <Field name="overduePercentage" type="number" placeholder="Overdue Percentage" className="form-input"/>
+    </div>
+
+  </div>
+</div>
+
+
+{/* ================= AGING ANALYSIS ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">Aging Analysis</h3>
+  <div className="form-fields">
+
+    <div className="form-field">
+      <label className="form-label">Current Bucket</label>
+      <Field name="currentBucket" type="number" placeholder="Current Bucket" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">1–30 Days</label>
+      <Field name="bucket1to30" type="number" placeholder="1–30 Days" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">31–60 Days</label>
+      <Field name="bucket31to60" type="number" placeholder="31–60 Days" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">61–90 Days</label>
+      <Field name="bucket61to90" type="number" placeholder="61–90 Days" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">90+ Days</label>
+      <Field name="bucket90Plus" type="number" placeholder="90+ Days" className="form-input"/>
+    </div>
+
+  </div>
+</div>
+
+
+{/* ================= PERFORMANCE METRICS ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">Performance Metrics</h3>
+  <div className="form-fields">
+
+    <div className="form-field">
+      <label className="form-label">Number of Accounts</label>
+      <Field name="numberOfAccounts" type="number" placeholder="Number of Accounts" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Active Customers</label>
+      <Field name="activeCustomers" type="number" placeholder="Active Customers" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Disputes Count</label>
+      <Field name="disputesCount" type="number" placeholder="Disputes Count" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Resolved Items</label>
+      <Field name="resolvedItems" type="number" placeholder="Resolved Items" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Write-offs</label>
+      <Field name="writeOffs" type="number" placeholder="Write-offs" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Recovery Amount</label>
+      <Field name="recoveryAmount" type="number" placeholder="Recovery Amount" className="form-input"/>
+    </div>
+
+  </div>
+</div>
+
+
+{/* ================= COMMENTARY ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">Commentary</h3>
+  <div className="form-fields">
+
+    <div className="form-field">
+      <label className="form-label">Key Observations</label>
+      <Field name="keyObservations" placeholder="Key Observations" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Issues / Risks</label>
+      <Field name="issuesRisks" placeholder="Issues / Risks" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Action Plan</label>
+      <Field name="actionPlan" placeholder="Action Plan" className="form-input"/>
+    </div>
+
+  </div>
+</div>
+
+
+{/* ================= ATTACHMENTS ================= */}
+<div className="form-section">
               <FormAttachments values={values}/>
+  <div className="form-fields">
+
+    <div className="form-field">
+      <label className="form-label">Supporting Documents Attached?</label>
+      <Field name="supportingDocumentsAttached" as="select" className="form-input">
+        <option value="">Supporting Documents Attached?</option>
+        <option>Yes</option>
+        <option>No</option>
+      </Field>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Document Reference</label>
+      <Field name="documentReference" placeholder="Document Reference" className="form-input"/>
+    </div>
+
+  </div>
+</div>
+
               <FormCustomFields values={values}/>
 
               {/* ================= AUTHORIZATION ================= */}

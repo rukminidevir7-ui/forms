@@ -119,34 +119,139 @@ const FRM00908_PaymentBatchSignOff = () => {
               department="Finance & Accounting (Advanced) – Accounts Payable & Vendor Finance"
             >
 
-              {/* ================= DOCUMENT CONTROL ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Document Control</h3>
-                <div className="form-fields">
-                  <Field name="formId" disabled className="form-input"/>
-                  <Field name="version" className="form-input"/>
-                  <Field name="effectiveDate" type="date" className="form-input"/>
-                  <Field name="department" className="form-input"/>
-                  <Field name="process" className="form-input"/>
-                </div>
-              </div>
+             {/* ================= DOCUMENT CONTROL ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">Document Control</h3>
+  <div className="form-fields">
 
+    <div className="form-field">
+      <label className="form-label">Form ID</label>
+      <Field
+        name="formId"
+        disabled
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Version</label>
+      <Field
+        name="version"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Effective Date</label>
+      <Field
+        name="effectiveDate"
+        type="date"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Department</label>
+      <Field
+        name="department"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Process</label>
+      <Field
+        name="process"
+        className="form-input"
+      />
+    </div>
+
+  </div>
+</div>
               {/* ================= BATCH DETAILS ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Batch Details</h3>
-                <div className="form-fields">
-                  <Field name="batchId" placeholder="Batch ID / Reference No" className="form-input"/>
-                  <Field name="paymentRunDate" type="date" className="form-input"/>
-                  <Field name="paymentMethod" placeholder="Payment Method" className="form-input"/>
-                  <Field name="bankAccountUsed" placeholder="Bank Account Used" className="form-input"/>
-                  <Field name="totalPayments" type="number" placeholder="Total No of Payments" className="form-input"/>
-                  <Field name="totalBatchAmount" type="number" placeholder="Total Batch Amount" className="form-input"/>
-                  <Field name="currency" placeholder="Currency" className="form-input"/>
-                  <Field name="periodFrom" type="date" className="form-input"/>
-                  <Field name="periodTo" type="date" className="form-input"/>
-                </div>
-              </div>
+<div className="form-section">
+  <h3 className="form-section-title">Batch Details</h3>
+  <div className="form-fields">
 
+    <div className="form-field">
+      <label className="form-label">Batch ID / Reference Number</label>
+      <Field
+        name="batchId"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Payment Run Date</label>
+      <Field
+        name="paymentRunDate"
+        type="date"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Payment Method</label>
+      <Field
+        name="paymentMethod"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Bank Account Used</label>
+      <Field
+        name="bankAccountUsed"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Total Number of Payments</label>
+      <Field
+        name="totalPayments"
+        type="number"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Total Batch Amount</label>
+      <Field
+        name="totalBatchAmount"
+        type="number"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Currency</label>
+      <Field
+        name="currency"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Period From</label>
+      <Field
+        name="periodFrom"
+        type="date"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Period To</label>
+      <Field
+        name="periodTo"
+        type="date"
+        className="form-input"
+      />
+    </div>
+
+  </div>
+</div>
               {/* ================= VENDOR SUMMARY ================= */}
               <div className="form-section">
                 <h3 className="form-section-title">Vendor Summary</h3>
@@ -236,40 +341,116 @@ const FRM00908_PaymentBatchSignOff = () => {
               </div>
 
               {/* ================= CONTROL & VALIDATION ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Control & Validation</h3>
-                <div className="form-fields">
-                  <Field name="threeWayMatchStatus" placeholder="Three-Way Match Status" className="form-input"/>
-                  <Field name="duplicateCheckCompleted" placeholder="Duplicate Check Completed (Y/N)" className="form-input"/>
-                  <Field name="approvalLimitsVerified" placeholder="Approval Limits Verified (Y/N)" className="form-input"/>
-                  <Field name="supportingDocsVerified" placeholder="Supporting Documents Verified (Y/N)" className="form-input"/>
-                  <Field name="exceptionNotes" placeholder="Exception Notes" className="form-input"/>
-                </div>
-              </div>
+<div className="form-section">
+  <h3 className="form-section-title">Control & Validation</h3>
+  <div className="form-fields">
 
-              {/* ================= FINAL APPROVER DECISION ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Final Approver Decision</h3>
-                <div className="form-fields">
-                  <Field as="select" name="finalDecision" className="form-input">
-                    <option value="">Select Decision</option>
-                    <option value="Approved">Approved</option>
-                    <option value="Rejected">Rejected</option>
-                    <option value="Approved with Conditions">Approved with Conditions</option>
-                  </Field>
-                  <Field name="decisionComments" placeholder="Decision Comments" className="form-input"/>
-                </div>
-              </div>
+    <div className="form-field">
+      <label className="form-label">Three-Way Match Status</label>
+      <Field
+        name="threeWayMatchStatus"
+        className="form-input"
+      />
+    </div>
 
-              {/* ================= AUDIT TRAIL ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Audit Trail</h3>
-                <div className="form-fields">
-                  <Field name="createdOn" type="date" className="form-input"/>
-                  <Field name="lastUpdatedOn" type="date" className="form-input"/>
-                  <Field name="documentOwner" className="form-input"/>
-                </div>
-              </div>
+    <div className="form-field">
+      <label className="form-label">Duplicate Check Completed</label>
+      <Field
+        name="duplicateCheckCompleted"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Approval Limits Verified</label>
+      <Field
+        name="approvalLimitsVerified"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Supporting Documents Verified</label>
+      <Field
+        name="supportingDocsVerified"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Exception Notes</label>
+      <Field
+        name="exceptionNotes"
+        className="form-input"
+      />
+    </div>
+
+  </div>
+</div>
+{/* ================= FINAL APPROVER DECISION ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">Final Approver Decision</h3>
+  <div className="form-fields">
+
+    <div className="form-field">
+      <label className="form-label">Decision</label>
+      <Field
+        as="select"
+        name="finalDecision"
+        className="form-input"
+      >
+        <option value="">Select Decision</option>
+        <option value="Approved">Approved</option>
+        <option value="Rejected">Rejected</option>
+        <option value="Approved with Conditions">
+          Approved with Conditions
+        </option>
+      </Field>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Decision Comments</label>
+      <Field
+        name="decisionComments"
+        className="form-input"
+      />
+    </div>
+
+  </div>
+</div>
+            {/* ================= AUDIT TRAIL ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">Audit Trail</h3>
+  <div className="form-fields">
+
+    <div className="form-field">
+      <label className="form-label">Created On</label>
+      <Field
+        name="createdOn"
+        type="date"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Last Updated On</label>
+      <Field
+        name="lastUpdatedOn"
+        type="date"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Document Owner</label>
+      <Field
+        name="documentOwner"
+        className="form-input"
+      />
+    </div>
+
+  </div>
+</div>
 
               <FormCustomFields values={values}/>
               <FormAttachments values={values}/>

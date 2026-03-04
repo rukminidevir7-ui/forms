@@ -113,18 +113,54 @@ const FRM00844_OpexBudgetProposal = () => {
               department="Finance & Accounting – Budgeting, FP&A & Forecasting"
             >
 
-              {/* ================= HEADER ================= */}
-              <div className="form-section">
-                <div className="form-fields">
-                  <Field name="department" placeholder="Department" className="form-input"/>
-                  <Field name="costCenter" placeholder="Cost Center" className="form-input"/>
-                  <Field name="budgetFrom" type="date" className="form-input"/>
-                  <Field name="budgetTo" type="date" className="form-input"/>
-                  <Field name="requestDate" type="date" className="form-input"/>
-                  <Field name="preparedByName" placeholder="Prepared By" className="form-input"/>
-                  <Field name="designation" placeholder="Designation" className="form-input"/>
-                </div>
-              </div>
+             {/* ================= HEADER ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">Opex Proposal Details</h3>
+  <div className="form-fields">
+
+    <div className="form-field">
+      <label className="form-label">Department</label>
+      <Field name="department" className="form-input"/>
+      <ErrorMessage name="department" component="div" className="form-error"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Cost Center</label>
+      <Field name="costCenter" className="form-input"/>
+      <ErrorMessage name="costCenter" component="div" className="form-error"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Budget Period From</label>
+      <Field name="budgetFrom" type="date" className="form-input"/>
+      <ErrorMessage name="budgetFrom" component="div" className="form-error"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Budget Period To</label>
+      <Field name="budgetTo" type="date" className="form-input"/>
+      <ErrorMessage name="budgetTo" component="div" className="form-error"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Request Date</label>
+      <Field name="requestDate" type="date" className="form-input"/>
+      <ErrorMessage name="requestDate" component="div" className="form-error"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Prepared By</label>
+      <Field name="preparedByName" className="form-input"/>
+      <ErrorMessage name="preparedByName" component="div" className="form-error"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Designation</label>
+      <Field name="designation" className="form-input"/>
+    </div>
+
+  </div>
+</div>
 
               {/* ================= BUDGET TABLE ================= */}
               <div className="form-section">
@@ -239,12 +275,28 @@ const FRM00844_OpexBudgetProposal = () => {
 
               </div>
 
-              {/* ================= TEXT SECTIONS ================= */}
-              <div className="form-section">
-                <Field name="businessJustification" placeholder="Business Justification" className="form-input"/>
-                <Field name="financialImpact" placeholder="Financial Impact / Notes" className="form-input"/>
-                <Field name="riskCompliance" placeholder="Risk / Compliance Considerations" className="form-input"/>
-              </div>
+             {/* ================= TEXT SECTIONS ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">Business & Financial Details</h3>
+  <div className="form-fields">
+
+    <div className="form-field">
+      <label className="form-label">Business Justification</label>
+      <Field name="businessJustification" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Financial Impact / Notes</label>
+      <Field name="financialImpact" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Risk / Compliance Considerations</label>
+      <Field name="riskCompliance" className="form-input"/>
+    </div>
+
+  </div>
+</div>
 
               {/* ================= CUSTOM FIELDS ================= */}
               <FormCustomFields values={values}/>

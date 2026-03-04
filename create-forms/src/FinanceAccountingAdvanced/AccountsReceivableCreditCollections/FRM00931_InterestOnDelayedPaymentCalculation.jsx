@@ -113,32 +113,76 @@ const FRM00931_InterestOnDelayedPaymentCalculation = () => {
               department="Finance & Accounting (Advanced) – Accounts Receivable, Credit & Collections"
             >
 
-              {/* ================= GENERAL INFORMATION ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">General Information</h3>
-                <div className="form-fields">
-                  <Field name="formType" as="select" className="form-input">
-                    <option value="Initiation">Initiation</option>
-                    <option value="Authorization">Authorization</option>
-                    <option value="Record">Record</option>
-                  </Field>
-                  <Field name="date" type="date" className="form-input"/>
-                  <Field name="referenceNumber" placeholder="Reference Number" className="form-input"/>
-                  <Field name="location" placeholder="Location" className="form-input"/>
-                </div>
-              </div>
+            {/* ================= GENERAL INFORMATION ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">General Information</h3>
+  <div className="form-fields">
 
-              {/* ================= CUSTOMER DETAILS ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Customer Details</h3>
-                <div className="form-fields">
-                  <Field name="customerName" placeholder="Customer Name" className="form-input"/>
-                  <Field name="customerId" placeholder="Customer ID" className="form-input"/>
-                  <Field name="accountNumber" placeholder="Account Number" className="form-input"/>
-                  <Field name="businessAddress" placeholder="Business Address" className="form-input"/>
-                </div>
-              </div>
+    <div className="form-field">
+      <label className="form-label">Form Type</label>
+      <Field name="formType" as="select" className="form-input">
+        <option value="Initiation">Initiation</option>
+        <option value="Authorization">Authorization</option>
+        <option value="Record">Record</option>
+      </Field>
+    </div>
 
+    <div className="form-field">
+      <label className="form-label">Date</label>
+      <Field
+        name="date"
+        type="date"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Reference Number</label>
+      <Field
+        name="referenceNumber"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Location</label>
+      <Field
+        name="location"
+        className="form-input"
+      />
+    </div>
+
+  </div>
+</div>
+
+
+{/* ================= CUSTOMER DETAILS ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">Customer Details</h3>
+  <div className="form-fields">
+
+    <div className="form-field">
+      <label className="form-label">Customer Name</label>
+      <Field name="customerName" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Customer ID</label>
+      <Field name="customerId" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Account Number</label>
+      <Field name="accountNumber" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Business Address</label>
+      <Field name="businessAddress" className="form-input"/>
+    </div>
+
+  </div>
+</div>
               {/* ================= INVOICE & INTEREST TABLE ================= */}
               <div className="form-section">
                 <h3 className="form-section-title">Invoice & Interest Calculation</h3>

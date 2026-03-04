@@ -81,61 +81,104 @@ const FRM00878_VendorMasterChangeRequest = () => {
               department="Finance & Accounting – Accounts Payable & Vendor Finance"
             >
 
-              {/* ================= BASIC INFORMATION ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Basic Information</h3>
-                <div className="form-fields">
-                  <Field name="date" type="date" className="form-input" />
-                  <Field name="requestId" placeholder="Request ID" className="form-input" />
-                  <Field name="department" placeholder="Department" className="form-input" />
-                  <Field name="requestedBy" placeholder="Requested By" className="form-input" />
-                  <Field name="contactDetails" placeholder="Contact Details" className="form-input" />
-                </div>
-              </div>
+             {/* ================= BASIC INFORMATION ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">Basic Information</h3>
+  <div className="form-fields">
 
-              {/* ================= VENDOR DETAILS ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Vendor Details</h3>
-                <div className="form-fields">
-                  <Field name="vendorName" placeholder="Vendor Name" className="form-input" />
-                  <Field name="vendorCode" placeholder="Vendor Code" className="form-input" />
-                  <Field name="vendorType" placeholder="Vendor Type" className="form-input" />
-                  <Field name="taxId" placeholder="Tax ID / GSTIN" className="form-input" />
-                  <Field name="address" placeholder="Address" className="form-input" />
-                  <Field name="bankDetails" placeholder="Bank Details" className="form-input" />
-                </div>
-              </div>
+    <div className="form-field">
+      <label className="form-label">Date</label>
+      <Field name="date" type="date" className="form-input" />
+    </div>
 
-              {/* ================= CHANGE DETAILS ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Change Details</h3>
-                <div className="form-fields">
+    <div className="form-field">
+      <label className="form-label">Request ID</label>
+      <Field name="requestId" className="form-input" />
+    </div>
 
-                  <Field
-                    as="select"
-                    name="changeType"
-                    className="form-input"
-                  >
-                    <option value="">Select Change Type</option>
-                    <option value="Add">Add</option>
-                    <option value="Update">Update</option>
-                    <option value="Deactivate">Deactivate</option>
-                  </Field>
+    <div className="form-field">
+      <label className="form-label">Department</label>
+      <Field name="department" className="form-input" />
+    </div>
 
-                  <Field
-                    name="fieldsToBeChanged"
-                    placeholder="Fields to be Changed"
-                    className="form-input"
-                  />
+    <div className="form-field">
+      <label className="form-label">Requested By</label>
+      <Field name="requestedBy" className="form-input" />
+    </div>
 
-                  <Field
-                    name="reasonForChange"
-                    placeholder="Reason for Change"
-                    className="form-input"
-                  />
+    <div className="form-field">
+      <label className="form-label">Contact Details</label>
+      <Field name="contactDetails" className="form-input" />
+    </div>
 
-                </div>
-              </div>
+  </div>
+</div>
+
+             {/* ================= VENDOR DETAILS ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">Vendor Details</h3>
+  <div className="form-fields">
+
+    <div className="form-field">
+      <label className="form-label">Vendor Name</label>
+      <Field name="vendorName" className="form-input" />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Vendor Code</label>
+      <Field name="vendorCode" className="form-input" />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Vendor Type</label>
+      <Field name="vendorType" className="form-input" />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Tax ID / GSTIN</label>
+      <Field name="taxId" className="form-input" />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Address</label>
+      <Field name="address" className="form-input" />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Bank Details</label>
+      <Field name="bankDetails" className="form-input" />
+    </div>
+
+  </div>
+</div>
+
+             {/* ================= CHANGE DETAILS ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">Change Details</h3>
+  <div className="form-fields">
+
+    <div className="form-field">
+      <label className="form-label">Change Type</label>
+      <Field as="select" name="changeType" className="form-input">
+        <option value="">Select Change Type</option>
+        <option value="Add">Add</option>
+        <option value="Update">Update</option>
+        <option value="Deactivate">Deactivate</option>
+      </Field>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Fields to be Changed</label>
+      <Field name="fieldsToBeChanged" className="form-input" />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Reason for Change</label>
+      <Field name="reasonForChange" className="form-input" />
+    </div>
+
+  </div>
+</div>
 
               {/* ================= CUSTOM FIELDS ================= */}
               <FormCustomFields values={values} />

@@ -125,16 +125,37 @@ const FRM00855_MonthlyPerformancePack = () => {
             >
 
               {/* ================= BASIC INFORMATION ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Basic Information</h3>
-                <div className="form-fields">
-                  <Field name="businessUnit" placeholder="Business Unit / Project" className="form-input"/>
-                  <Field name="period" placeholder="Period (Month/Year)" className="form-input"/>
-                  <Field name="preparedBy" placeholder="Prepared By" className="form-input"/>
-                  <Field name="submissionDate" type="date" className="form-input"/>
-                  <Field name="version" placeholder="Version" className="form-input"/>
-                </div>
-              </div>
+<div className="form-section">
+  <h3 className="form-section-title">Basic Information</h3>
+  <div className="form-fields">
+
+    <div className="form-field">
+      <label className="form-label">Business Unit / Project</label>
+      <Field name="businessUnit" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Period (Month / Year)</label>
+      <Field name="period" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Prepared By</label>
+      <Field name="preparedBy" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Submission Date</label>
+      <Field name="submissionDate" type="date" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Version</label>
+      <Field name="version" className="form-input"/>
+    </div>
+
+  </div>
+</div>
 
               {/* ================= FINANCIAL SUMMARY ================= */}
               <div className="form-section">
@@ -335,18 +356,31 @@ const FRM00855_MonthlyPerformancePack = () => {
                 </FieldArray>
               </div>
 
-              {/* ================= MANAGEMENT COMMENTARY ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Management Commentary & Key Insights</h3>
-                <Field name="managementCommentary" className="form-input"/>
-              </div>
+             {/* ================= MANAGEMENT COMMENTARY ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">Management Commentary & Key Insights</h3>
+  <div className="form-fields">
+
+    <div className="form-field">
+      <label className="form-label">Management Commentary</label>
+      <Field name="managementCommentary" className="form-input"/>
+    </div>
+
+  </div>
+</div>
 
               {/* ================= RISKS & ACTION ITEMS ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Risks, Issues & Action Items</h3>
-                <Field name="risksIssuesActions" className="form-input"/>
-              </div>
+<div className="form-section">
+  <h3 className="form-section-title">Risks, Issues & Action Items</h3>
+  <div className="form-fields">
 
+    <div className="form-field">
+      <label className="form-label">Risks / Issues / Action Items</label>
+      <Field name="risksIssuesActions" className="form-input"/>
+    </div>
+
+  </div>
+</div>
               {/* ================= CUSTOM FIELDS ================= */}
               <FormCustomFields values={values}/>
 

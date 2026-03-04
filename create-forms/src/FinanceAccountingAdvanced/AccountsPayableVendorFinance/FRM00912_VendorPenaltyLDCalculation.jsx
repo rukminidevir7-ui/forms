@@ -144,50 +144,149 @@ const FRM00912_VendorPenaltyLDCalculation = () => {
               department="Finance & Accounting (Advanced) – Accounts Payable & Vendor Finance"
             >
 
-              {/* 1. DOCUMENT CONTROL */}
-              <div className="form-section">
-                <h3 className="form-section-title">1. Document Control</h3>
-                <div className="form-fields">
-                  <Field name="formId" disabled className="form-input"/>
-                  <Field name="version" className="form-input"/>
-                  <Field name="effectiveDate" type="date" className="form-input"/>
-                  <Field name="preparedBy" placeholder="Prepared By" className="form-input"/>
-                  <Field name="department" className="form-input"/>
-                  <Field name="process" className="form-input"/>
-                  <Field name="confidentialityLevel" placeholder="Confidentiality Level" className="form-input"/>
-                </div>
-              </div>
+             {/* 1. DOCUMENT CONTROL */}
+<div className="form-section">
+  <h3 className="form-section-title">1. Document Control</h3>
+  <div className="form-fields">
+
+    <div className="form-field">
+      <label className="form-label">Form ID</label>
+      <Field name="formId" disabled className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Version</label>
+      <Field name="version" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Effective Date</label>
+      <Field name="effectiveDate" type="date" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Prepared By</label>
+      <Field name="preparedBy" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Department</label>
+      <Field name="department" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Process</label>
+      <Field name="process" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Confidentiality Level</label>
+      <Field name="confidentialityLevel" className="form-input"/>
+    </div>
+
+  </div>
+</div>
 
               {/* 2. REQUEST DETAILS */}
-              <div className="form-section">
-                <h3 className="form-section-title">2. Request Details</h3>
-                <div className="form-fields">
-                  <Field name="requestNumber" placeholder="Request Number" className="form-input"/>
-                  <Field name="requestDate" type="date" className="form-input"/>
-                  <Field name="projectName" placeholder="Project / Contract Name" className="form-input"/>
-                  <Field name="projectCode" placeholder="Project Code" className="form-input"/>
-                  <Field name="costCenter" placeholder="Cost Center" className="form-input"/>
-                  <Field name="vendorName" placeholder="Vendor Name" className="form-input"/>
-                  <Field name="vendorCode" placeholder="Vendor Code" className="form-input"/>
-                  <Field name="contractNumber" placeholder="Contract / PO Number" className="form-input"/>
-                  <Field name="contractValue" type="number" placeholder="Contract Value" className="form-input"/>
-                </div>
-              </div>
+<div className="form-section">
+  <h3 className="form-section-title">2. Request Details</h3>
+  <div className="form-fields">
 
-              {/* 3. PENALTY DETAILS */}
-              <div className="form-section">
-                <h3 className="form-section-title">3. Penalty / LD Details</h3>
-                <div className="form-fields">
-                  <Field name="penaltyType" placeholder="Type of Penalty" className="form-input"/>
-                  <Field name="penaltyReason" placeholder="Reason for Penalty" className="form-input"/>
-                  <Field name="nonComplianceDescription" placeholder="Description of Non-Compliance" className="form-input"/>
-                  <Field name="clauseReference" placeholder="Clause Reference" className="form-input"/>
-                  <Field name="delayDays" type="number" placeholder="Delay Period (Days)" className="form-input"/>
-                  <Field name="applicableLDPercent" type="number" placeholder="Applicable LD %" className="form-input"/>
-                  <Field name="maximumLDCap" type="number" placeholder="Maximum LD Cap" className="form-input"/>
-                  <Field name="calculationBasis" placeholder="Calculation Basis" className="form-input"/>
-                </div>
-              </div>
+    <div className="form-field">
+      <label className="form-label">Request Number</label>
+      <Field name="requestNumber" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Request Date</label>
+      <Field name="requestDate" type="date" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Project / Contract Name</label>
+      <Field name="projectName" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Project Code</label>
+      <Field name="projectCode" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Cost Center</label>
+      <Field name="costCenter" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Vendor Name</label>
+      <Field name="vendorName" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Vendor Code</label>
+      <Field name="vendorCode" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Contract / PO Number</label>
+      <Field name="contractNumber" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Contract Value</label>
+      <Field name="contractValue" type="number" className="form-input"/>
+    </div>
+
+  </div>
+</div>
+
+            {/* 3. PENALTY DETAILS */}
+<div className="form-section">
+  <h3 className="form-section-title">3. Penalty / Liquidated Damages Details</h3>
+  <div className="form-fields">
+
+    <div className="form-field">
+      <label className="form-label">Type of Penalty</label>
+      <Field name="penaltyType" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Reason for Penalty</label>
+      <Field name="penaltyReason" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Description of Non-Compliance</label>
+      <Field name="nonComplianceDescription" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Clause Reference (Contractual)</label>
+      <Field name="clauseReference" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Delay Period (Days)</label>
+      <Field name="delayDays" type="number" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Applicable LD Percentage (%)</label>
+      <Field name="applicableLDPercent" type="number" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Maximum LD Cap</label>
+      <Field name="maximumLDCap" type="number" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Calculation Basis</label>
+      <Field name="calculationBasis" className="form-input"/>
+    </div>
+
+  </div>
+</div>
 
               {/* 4. CALCULATION SECTION */}
               <div className="form-section">

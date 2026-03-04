@@ -108,17 +108,38 @@ const FRM00861_BudgetVsActualVariance = () => {
               department="Finance & Accounting – Budgeting, FP&A & Forecasting"
             >
 
-              {/* ================= HEADER SECTION ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Basic Information</h3>
-                <div className="form-fields">
-                  <Field name="businessUnit" placeholder="Business Unit / Cost Center" className="form-input"/>
-                  <Field name="period" placeholder="Period" className="form-input"/>
-                  <Field name="preparedBy" placeholder="Prepared By" className="form-input"/>
-                  <Field name="submissionDate" type="date" className="form-input"/>
-                  <Field name="version" placeholder="Version" className="form-input"/>
-                </div>
-              </div>
+             {/* ================= HEADER SECTION ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">Basic Information</h3>
+  <div className="form-fields">
+
+    <div className="form-field">
+      <label className="form-label">Business Unit / Cost Center</label>
+      <Field name="businessUnit" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Period</label>
+      <Field name="period" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Prepared By</label>
+      <Field name="preparedBy" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Submission Date</label>
+      <Field name="submissionDate" type="date" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Version</label>
+      <Field name="version" className="form-input"/>
+    </div>
+
+  </div>
+</div>
 
               {/* ================= VARIANCE ANALYSIS TABLE ================= */}
               <div className="form-section">
@@ -245,18 +266,31 @@ const FRM00861_BudgetVsActualVariance = () => {
                 </FieldArray>
               </div>
 
-              {/* ================= SUMMARY SECTION ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Summary Insights</h3>
-                <Field name="summaryInsights" className="form-input"/>
-              </div>
+             {/* ================= SUMMARY SECTION ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">Summary Insights</h3>
+  <div className="form-fields">
 
-              {/* ================= CORRECTIVE ACTIONS ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Corrective Actions / Recommendations</h3>
-                <Field name="correctiveActions" className="form-input"/>
-              </div>
+    <div className="form-field">
+      <label className="form-label">Summary Insights</label>
+      <Field name="summaryInsights" className="form-input"/>
+    </div>
 
+  </div>
+</div>
+
+             {/* ================= CORRECTIVE ACTIONS ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">Corrective Actions / Recommendations</h3>
+  <div className="form-fields">
+
+    <div className="form-field">
+      <label className="form-label">Corrective Actions / Recommendations</label>
+      <Field name="correctiveActions" className="form-input"/>
+    </div>
+
+  </div>
+</div>
               {/* ================= CUSTOM FIELDS ================= */}
               <FormCustomFields values={values}/>
 

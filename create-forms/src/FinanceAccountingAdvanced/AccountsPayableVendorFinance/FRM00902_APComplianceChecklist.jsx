@@ -93,17 +93,54 @@ const FRM00902_APComplianceChecklist = () => {
               department="Finance & Accounting – Accounts Payable"
             >
 
-              {/* ================= DOCUMENT INFORMATION ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Document Information</h3>
-                <div className="form-fields">
-                  <Field name="department" className="form-input"/>
-                  <Field name="process" className="form-input"/>
-                  <Field name="preparedBy" placeholder="Prepared By" className="form-input"/>
-                  <Field name="date" type="date" className="form-input"/>
-                  <Field name="version" placeholder="Version" className="form-input"/>
-                </div>
-              </div>
+            {/* ================= DOCUMENT INFORMATION ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">Document Information</h3>
+  <div className="form-fields">
+
+    <div className="form-field">
+      <label className="form-label">Department</label>
+      <Field
+        name="department"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Process</label>
+      <Field
+        name="process"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Prepared By</label>
+      <Field
+        name="preparedBy"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Document Date</label>
+      <Field
+        name="date"
+        type="date"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Version</label>
+      <Field
+        name="version"
+        className="form-input"
+      />
+    </div>
+
+  </div>
+</div>
 
               {/* ================= CHECKLIST TABLE ================= */}
               <div className="form-section">
@@ -209,16 +246,39 @@ const FRM00902_APComplianceChecklist = () => {
                 </FieldArray>
               </div>
 
-              {/* ================= AUDIT TRAIL ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Audit Trail</h3>
-                <div className="form-fields">
-                  <Field name="createdOn" type="date" className="form-input"/>
-                  <Field name="lastUpdatedOn" type="date" className="form-input"/>
-                  <Field name="documentOwner" className="form-input"/>
-                </div>
-              </div>
+             {/* ================= AUDIT TRAIL ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">Audit Trail</h3>
+  <div className="form-fields">
 
+    <div className="form-field">
+      <label className="form-label">Created On</label>
+      <Field
+        name="createdOn"
+        type="date"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Last Updated On</label>
+      <Field
+        name="lastUpdatedOn"
+        type="date"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Document Owner</label>
+      <Field
+        name="documentOwner"
+        className="form-input"
+      />
+    </div>
+
+  </div>
+</div>
               <FormCustomFields values={values}/>
               <FormAttachments values={values}/>
 

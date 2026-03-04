@@ -103,28 +103,73 @@ const FRM00877_ManagementReportingSignOff = () => {
               department="Finance & Accounting (Advanced) – Budgeting, FP&A & Forecasting"
             >
 
-              {/* ================= HEADER INFO ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Reporting Details</h3>
-                <div className="form-fields">
-                  <Field name="reportingPeriod" placeholder="Reporting Period" className="form-input"/>
-                  <Field name="reportType" placeholder="Report Type" className="form-input"/>
-                  <Field name="preparedBy" placeholder="Prepared By" className="form-input"/>
-                  <Field name="department" placeholder="Department" className="form-input"/>
-                  <Field name="submissionDate" type="date" className="form-input"/>
-                  <Field name="versionNumber" placeholder="Version Number" className="form-input"/>
-                  <Field name="confidentialityLevel" placeholder="Confidentiality Level" className="form-input"/>
-                  <Field name="distributionList" placeholder="Distribution List" className="form-input"/>
-                  <Field name="referenceNo" placeholder="Reference No" className="form-input"/>
-                  <Field name="formDate" type="date" className="form-input"/>
-                </div>
-              </div>
+             {/* ================= REPORTING DETAILS ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">Reporting Details</h3>
+  <div className="form-fields">
 
+    <div className="form-field">
+      <label className="form-label">Reporting Period</label>
+      <Field name="reportingPeriod" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Report Type</label>
+      <Field name="reportType" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Prepared By</label>
+      <Field name="preparedBy" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Department</label>
+      <Field name="department" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Submission Date</label>
+      <Field name="submissionDate" type="date" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Version Number</label>
+      <Field name="versionNumber" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Confidentiality Level</label>
+      <Field name="confidentialityLevel" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Distribution List</label>
+      <Field name="distributionList" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Reference Number</label>
+      <Field name="referenceNo" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Form Date</label>
+      <Field name="formDate" type="date" className="form-input"/>
+    </div>
+
+  </div>
+</div>
               {/* ================= EXECUTIVE SUMMARY ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Executive Summary</h3>
-                <Field name="executiveSummary" className="form-input"/>
-              </div>
+<div className="form-section">
+  <h3 className="form-section-title">Executive Summary</h3>
+  <div className="form-fields">
+    <div className="form-field">
+      <label className="form-label">Executive Summary</label>
+      <Field name="executiveSummary" className="form-input"/>
+    </div>
+  </div>
+</div>
 
               {/* ================= COMPLIANCE & REVIEW CHECKS ================= */}
               <div className="form-section">
@@ -220,14 +265,27 @@ const FRM00877_ManagementReportingSignOff = () => {
               </div>
 
               {/* ================= AUDIT TRAIL ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Audit Trail</h3>
-                <div className="form-fields">
-                  <Field name="createdOn" type="date" className="form-input"/>
-                  <Field name="lastUpdatedOn" type="date" className="form-input"/>
-                  <Field name="documentOwner" placeholder="Document Owner" className="form-input"/>
-                </div>
-              </div>
+<div className="form-section">
+  <h3 className="form-section-title">Audit Trail</h3>
+  <div className="form-fields">
+
+    <div className="form-field">
+      <label className="form-label">Created On</label>
+      <Field name="createdOn" type="date" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Last Updated On</label>
+      <Field name="lastUpdatedOn" type="date" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Document Owner</label>
+      <Field name="documentOwner" className="form-input"/>
+    </div>
+
+  </div>
+</div>
 
               {/* ================= CUSTOM FIELDS ================= */}
               <FormCustomFields values={values}/>

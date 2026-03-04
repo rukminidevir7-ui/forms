@@ -116,18 +116,38 @@ const FRM00852_SensitivityAnalysisSheet = () => {
               department="Finance & Accounting – Budgeting, FP&A & Forecasting"
             >
 
-              {/* ================= BASIC INFORMATION ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Basic Information</h3>
-                <div className="form-fields">
-                  <Field name="projectUnit" placeholder="Project / Business Unit" className="form-input"/>
-                  <Field name="date" type="date" className="form-input"/>
-                  <Field name="preparedBy" placeholder="Prepared By" className="form-input"/>
-                  <Field name="reviewPeriod" placeholder="Review Period" className="form-input"/>
-                  <Field name="version" placeholder="Version" className="form-input"/>
-                </div>
-              </div>
+             {/* ================= BASIC INFORMATION ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">Basic Information</h3>
+  <div className="form-fields">
 
+    <div className="form-field">
+      <label className="form-label">Project / Business Unit</label>
+      <Field name="projectUnit" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Date</label>
+      <Field name="date" type="date" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Prepared By</label>
+      <Field name="preparedBy" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Review Period</label>
+      <Field name="reviewPeriod" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Version</label>
+      <Field name="version" className="form-input"/>
+    </div>
+
+  </div>
+</div>
               {/* ================= KEY ASSUMPTIONS TABLE ================= */}
               <div className="form-section">
                 <h3 className="form-section-title">Key Assumptions Analysis</h3>
@@ -294,10 +314,17 @@ const FRM00852_SensitivityAnalysisSheet = () => {
               </div>
 
               {/* ================= RISK OBSERVATIONS ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Risk Observations & Commentary</h3>
-                <Field name="riskCommentary" className="form-input"/>
-              </div>
+<div className="form-section">
+  <h3 className="form-section-title">Risk Observations & Commentary</h3>
+  <div className="form-fields">
+
+    <div className="form-field">
+      <label className="form-label">Risk Commentary</label>
+      <Field name="riskCommentary" className="form-input"/>
+    </div>
+
+  </div>
+</div>
 
               {/* ================= CUSTOM FIELDS ================= */}
               <FormCustomFields values={values}/>

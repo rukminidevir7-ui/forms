@@ -113,17 +113,48 @@ const FRM00847_ForecastUpdate = () => {
             >
 
               {/* ================= HEADER ================= */}
-              <div className="form-section">
-                <div className="form-fields">
-                  <Field name="department" placeholder="Department" className="form-input"/>
-                  <Field name="businessUnit" placeholder="Business Unit" className="form-input"/>
-                  <Field name="forecastPeriod" placeholder="Forecast Period" className="form-input"/>
-                  <Field name="preparedByName" placeholder="Prepared By" className="form-input"/>
-                  <Field name="date" type="date" className="form-input"/>
-                  <Field name="referenceNo" placeholder="Reference No." className="form-input"/>
-                </div>
-              </div>
+<div className="form-section">
+  <h3 className="form-section-title">Forecast Update Details</h3>
+  <div className="form-fields">
 
+    <div className="form-field">
+      <label className="form-label">Department</label>
+      <Field name="department" className="form-input"/>
+      <ErrorMessage name="department" component="div" className="form-error"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Business Unit</label>
+      <Field name="businessUnit" className="form-input"/>
+      <ErrorMessage name="businessUnit" component="div" className="form-error"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Forecast Period</label>
+      <Field name="forecastPeriod" className="form-input"/>
+      <ErrorMessage name="forecastPeriod" component="div" className="form-error"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Prepared By</label>
+      <Field name="preparedByName" className="form-input"/>
+      <ErrorMessage name="preparedByName" component="div" className="form-error"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Date</label>
+      <Field name="date" type="date" className="form-input"/>
+      <ErrorMessage name="date" component="div" className="form-error"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Reference No.</label>
+      <Field name="referenceNo" className="form-input"/>
+      <ErrorMessage name="referenceNo" component="div" className="form-error"/>
+    </div>
+
+  </div>
+</div>
               {/* ================= FORECAST TABLE ================= */}
               <div className="form-section">
 
@@ -258,10 +289,22 @@ const FRM00847_ForecastUpdate = () => {
               </div>
 
               {/* ================= TEXT SECTIONS ================= */}
-              <div className="form-section">
-                <Field name="justification" placeholder="Justification / Key Assumptions" className="form-input"/>
-                <Field name="riskImpact" placeholder="Risk / Impact Assessment" className="form-input"/>
-              </div>
+<div className="form-section">
+  <h3 className="form-section-title">Justification & Risk Details</h3>
+  <div className="form-fields">
+
+    <div className="form-field">
+      <label className="form-label">Justification / Key Assumptions</label>
+      <Field name="justification" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Risk / Impact Assessment</label>
+      <Field name="riskImpact" className="form-input"/>
+    </div>
+
+  </div>
+</div>
 
               {/* ================= CUSTOM FIELDS ================= */}
               <FormCustomFields values={values}/>

@@ -108,86 +108,227 @@ const FRM00959_GSTRReconciliation = () => {
               department="Tax & Statutory (India) – GST Compliance"
             >
 
-              {/* ================= GENERAL INFORMATION ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">General Information</h3>
-                <div className="form-fields">
-                  <Field name="formId" disabled className="form-input"/>
-                  <Field name="date" type="date" className="form-input"/>
-                  <Field name="department" className="form-input"/>
-                  <Field name="function" className="form-input"/>
-                  <Field name="reconciliationPeriodFrom" type="date" className="form-input"/>
-                  <Field name="reconciliationPeriodTo" type="date" className="form-input"/>
-                  <Field name="referenceNumber" placeholder="Reference Number" className="form-input"/>
-                  <Field name="location" placeholder="Location" className="form-input"/>
-                  <Field name="gstin" placeholder="GSTIN" className="form-input"/>
-                  <Field name="returnType" placeholder="Return Type" className="form-input"/>
-                </div>
-              </div>
+             {/* ================= GENERAL INFORMATION ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">General Information</h3>
+  <div className="form-fields">
 
-              {/* ================= BUSINESS DETAILS ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Business Details</h3>
-                <div className="form-fields">
-                  <Field name="legalNameOfBusiness" placeholder="Legal Name of Business" className="form-input"/>
-                  <Field name="tradeName" placeholder="Trade Name" className="form-input"/>
-                  <Field name="pan" placeholder="PAN" className="form-input"/>
-                  <Field name="contactPerson" placeholder="Contact Person" className="form-input"/>
-                  <Field name="phone" placeholder="Phone" className="form-input"/>
-                  <Field name="email" type="email" placeholder="Email" className="form-input"/>
-                </div>
-              </div>
+    <div className="form-field">
+      <label className="form-label">Form ID</label>
+      <Field name="formId" disabled className="form-input"/>
+    </div>
 
-              {/* ================= RECONCILIATION SUMMARY ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Reconciliation Summary</h3>
-                <div className="form-fields">
-                  <Field name="booksTurnover" type="number" placeholder="Books Turnover" className="form-input"/>
-                  <Field name="gstReturnTurnover" type="number" placeholder="GST Return Turnover" className="form-input"/>
-                  <Field name="differenceAmount" type="number" placeholder="Difference Amount" className="form-input"/>
-                  <Field name="differenceReason" placeholder="Difference Reason" className="form-input"/>
-                  <Field name="outputTaxBooks" type="number" placeholder="Output Tax as per Books" className="form-input"/>
-                  <Field name="outputTaxReturn" type="number" placeholder="Output Tax as per Return" className="form-input"/>
-                  <Field name="inputTaxCreditBooks" type="number" placeholder="Input Tax Credit as per Books" className="form-input"/>
-                  <Field name="inputTaxCreditReturn" type="number" placeholder="Input Tax Credit as per Return" className="form-input"/>
-                  <Field name="netTaxDifference" type="number" placeholder="Net Tax Difference" className="form-input"/>
-                </div>
-              </div>
+    <div className="form-field">
+      <label className="form-label">Date</label>
+      <Field name="date" type="date" className="form-input"/>
+    </div>
 
-              {/* ================= ADJUSTMENTS ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Adjustments</h3>
-                <div className="form-fields">
-                  <Field name="adjustmentsIdentified" placeholder="Adjustments Identified" className="form-input"/>
-                  <Field name="adjustmentAmount" type="number" placeholder="Adjustment Amount" className="form-input"/>
-                  <Field name="adjustmentNotes" placeholder="Adjustment Notes" className="form-input"/>
-                </div>
-              </div>
+    <div className="form-field">
+      <label className="form-label">Department</label>
+      <Field name="department" className="form-input"/>
+    </div>
 
-              {/* ================= COMPLIANCE STATUS ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Compliance Status</h3>
-                <div className="form-fields">
-                  <Field name="reconciliationStatus" placeholder="Reconciliation Status" className="form-input"/>
-                  <Field name="keyIssues" placeholder="Key Issues" className="form-input"/>
-                  <Field name="actionRequired" placeholder="Action Required" className="form-input"/>
-                </div>
-              </div>
+    <div className="form-field">
+      <label className="form-label">Function</label>
+      <Field name="function" className="form-input"/>
+    </div>
 
-              {/* ================= ATTACHMENTS ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Attachments</h3>
-                <div className="form-fields">
-                  <Field name="supportingDocumentsAttached" as="select" className="form-input">
-                    <option value="">Supporting Documents Attached?</option>
-                    <option>Yes</option>
-                    <option>No</option>
-                  </Field>
-                  <Field name="documentReference" placeholder="Document Reference" className="form-input"/>
-                </div>
-              </div>
+    <div className="form-field">
+      <label className="form-label">Reconciliation Period From</label>
+      <Field name="reconciliationPeriodFrom" type="date" className="form-input"/>
+    </div>
 
+    <div className="form-field">
+      <label className="form-label">Reconciliation Period To</label>
+      <Field name="reconciliationPeriodTo" type="date" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Reference Number</label>
+      <Field name="referenceNumber" placeholder="Reference Number" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Location</label>
+      <Field name="location" placeholder="Location" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">GSTIN</label>
+      <Field name="gstin" placeholder="GSTIN" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Return Type</label>
+      <Field name="returnType" placeholder="Return Type" className="form-input"/>
+    </div>
+
+  </div>
+</div>
+
+
+{/* ================= BUSINESS DETAILS ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">Business Details</h3>
+  <div className="form-fields">
+
+    <div className="form-field">
+      <label className="form-label">Legal Name of Business</label>
+      <Field name="legalNameOfBusiness" placeholder="Legal Name of Business" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Trade Name</label>
+      <Field name="tradeName" placeholder="Trade Name" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">PAN</label>
+      <Field name="pan" placeholder="PAN" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Contact Person</label>
+      <Field name="contactPerson" placeholder="Contact Person" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Phone</label>
+      <Field name="phone" placeholder="Phone" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Email</label>
+      <Field name="email" type="email" placeholder="Email" className="form-input"/>
+    </div>
+
+  </div>
+</div>
+
+
+{/* ================= RECONCILIATION SUMMARY ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">Reconciliation Summary</h3>
+  <div className="form-fields">
+
+    <div className="form-field">
+      <label className="form-label">Books Turnover</label>
+      <Field name="booksTurnover" type="number" placeholder="Books Turnover" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">GST Return Turnover</label>
+      <Field name="gstReturnTurnover" type="number" placeholder="GST Return Turnover" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Difference Amount</label>
+      <Field name="differenceAmount" type="number" placeholder="Difference Amount" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Difference Reason</label>
+      <Field name="differenceReason" placeholder="Difference Reason" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Output Tax as per Books</label>
+      <Field name="outputTaxBooks" type="number" placeholder="Output Tax as per Books" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Output Tax as per Return</label>
+      <Field name="outputTaxReturn" type="number" placeholder="Output Tax as per Return" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Input Tax Credit as per Books</label>
+      <Field name="inputTaxCreditBooks" type="number" placeholder="Input Tax Credit as per Books" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Input Tax Credit as per Return</label>
+      <Field name="inputTaxCreditReturn" type="number" placeholder="Input Tax Credit as per Return" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Net Tax Difference</label>
+      <Field name="netTaxDifference" type="number" placeholder="Net Tax Difference" className="form-input"/>
+    </div>
+
+  </div>
+</div>
+
+
+{/* ================= ADJUSTMENTS ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">Adjustments</h3>
+  <div className="form-fields">
+
+    <div className="form-field">
+      <label className="form-label">Adjustments Identified</label>
+      <Field name="adjustmentsIdentified" placeholder="Adjustments Identified" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Adjustment Amount</label>
+      <Field name="adjustmentAmount" type="number" placeholder="Adjustment Amount" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Adjustment Notes</label>
+      <Field name="adjustmentNotes" placeholder="Adjustment Notes" className="form-input"/>
+    </div>
+
+  </div>
+</div>
+
+
+{/* ================= COMPLIANCE STATUS ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">Compliance Status</h3>
+  <div className="form-fields">
+
+    <div className="form-field">
+      <label className="form-label">Reconciliation Status</label>
+      <Field name="reconciliationStatus" placeholder="Reconciliation Status" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Key Issues</label>
+      <Field name="keyIssues" placeholder="Key Issues" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Action Required</label>
+      <Field name="actionRequired" placeholder="Action Required" className="form-input"/>
+    </div>
+
+  </div>
+</div>
+
+
+{/* ================= ATTACHMENTS ================= */}
+<div className="form-section">
               <FormAttachments values={values}/>
+  <div className="form-fields">
+
+    <div className="form-field">
+      <label className="form-label">Supporting Documents Attached?</label>
+      <Field name="supportingDocumentsAttached" as="select" className="form-input">
+        <option value="">Supporting Documents Attached?</option>
+        <option>Yes</option>
+        <option>No</option>
+      </Field>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Document Reference</label>
+      <Field name="documentReference" placeholder="Document Reference" className="form-input"/>
+    </div>
+
+  </div>
+</div>
               <FormCustomFields values={values}/>
 
               {/* ================= AUTHORIZATION ================= */}

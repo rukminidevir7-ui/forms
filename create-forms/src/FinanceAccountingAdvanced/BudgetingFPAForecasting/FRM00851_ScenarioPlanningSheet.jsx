@@ -106,28 +106,55 @@ const FRM00851_ScenarioPlanningSheet = () => {
             >
 
               {/* ================= BASIC INFORMATION ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Basic Information</h3>
-                <div className="form-fields">
-                  <Field name="scenarioName" placeholder="Scenario Name" className="form-input"/>
-                  <Field name="scenarioPeriod" placeholder="Scenario Period" className="form-input"/>
-                  <Field name="preparedBy" placeholder="Prepared By" className="form-input"/>
-                  <Field name="date" type="date" className="form-input"/>
-                  <Field name="reviewedBy" placeholder="Reviewed By" className="form-input"/>
-                  <Field name="version" placeholder="Version" className="form-input"/>
-                </div>
-              </div>
+<div className="form-section">
+  <h3 className="form-section-title">Basic Information</h3>
+  <div className="form-fields">
 
-              {/* ================= KEY ASSUMPTIONS ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Key Assumptions</h3>
-                <Field
-                  name="keyAssumptions"
-                  placeholder="Describe key assumptions used in this scenario"
-                  className="form-input"
-                />
-              </div>
+    <div className="form-field">
+      <label className="form-label">Scenario Name</label>
+      <Field name="scenarioName" className="form-input"/>
+    </div>
 
+    <div className="form-field">
+      <label className="form-label">Scenario Period</label>
+      <Field name="scenarioPeriod" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Prepared By</label>
+      <Field name="preparedBy" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Date</label>
+      <Field name="date" type="date" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Reviewed By</label>
+      <Field name="reviewedBy" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Version</label>
+      <Field name="version" className="form-input"/>
+    </div>
+
+  </div>
+</div>
+
+             {/* ================= KEY ASSUMPTIONS ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">Key Assumptions</h3>
+  <div className="form-fields">
+
+    <div className="form-field">
+      <label className="form-label">Describe Key Assumptions</label>
+      <Field name="keyAssumptions" className="form-input"/>
+    </div>
+
+  </div>
+</div>
               {/* ================= FINANCIAL IMPACT SUMMARY ================= */}
               <div className="form-section">
                 <h3 className="form-section-title">Financial Impact Summary</h3>
@@ -249,11 +276,22 @@ const FRM00851_ScenarioPlanningSheet = () => {
               </div>
 
               {/* ================= RISKS & MITIGATION ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Risks & Mitigation</h3>
-                <Field name="risks" placeholder="Risks Identified" className="form-input"/>
-                <Field name="mitigation" placeholder="Mitigation Strategy" className="form-input"/>
-              </div>
+<div className="form-section">
+  <h3 className="form-section-title">Risks & Mitigation</h3>
+  <div className="form-fields">
+
+    <div className="form-field">
+      <label className="form-label">Risks Identified</label>
+      <Field name="risks" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Mitigation Strategy</label>
+      <Field name="mitigation" className="form-input"/>
+    </div>
+
+  </div>
+</div>
 
               {/* ================= CUSTOM FIELDS ================= */}
               <FormCustomFields values={values}/>

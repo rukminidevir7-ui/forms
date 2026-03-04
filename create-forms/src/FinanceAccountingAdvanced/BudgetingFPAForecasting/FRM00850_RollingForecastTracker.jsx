@@ -157,74 +157,86 @@ const FRM00850_RollingForecastTracker = () => {
               </div>
 
               {/* ================= FINANCIAL SUMMARY ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Financial Summary</h3>
-                <div className="form-fields">
-                  <Field name="revenueForecast" type="number" className="form-input" placeholder="Revenue Forecast"/>
-                  <Field name="opexForecast" type="number" className="form-input" placeholder="Opex Forecast"/>
-                  <Field name="capexForecast" type="number" className="form-input" placeholder="Capex Forecast"/>
-                  <Field name="grossMarginForecast" type="number" className="form-input" placeholder="Gross Margin Forecast"/>
-                  <Field name="ebitdaForecast" type="number" className="form-input" placeholder="EBITDA Forecast"/>
-                  <Field name="cashFlowForecast" type="number" className="form-input" placeholder="Cash Flow Forecast"/>
-                  <Field name="totalForecastAmount" type="number" className="form-input" placeholder="Total Forecast Amount"/>
-                </div>
-              </div>
+<div className="form-section">
+  <h3 className="form-section-title">Financial Summary</h3>
+  <div className="form-fields">
 
+    {renderField(values,"revenueForecast","Revenue Forecast","number")}
+    {renderField(values,"opexForecast","Opex Forecast","number")}
+    {renderField(values,"capexForecast","Capex Forecast","number")}
+    {renderField(values,"grossMarginForecast","Gross Margin Forecast","number")}
+    {renderField(values,"ebitdaForecast","EBITDA Forecast","number")}
+    {renderField(values,"cashFlowForecast","Cash Flow Forecast","number")}
+    {renderField(values,"totalForecastAmount","Total Forecast Amount","number")}
+
+  </div>
+</div>
               {/* ================= VARIANCE TRACKING ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Variance Tracking</h3>
-                <div className="form-fields">
+<div className="form-section">
+  <h3 className="form-section-title">Variance Tracking</h3>
+  <div className="form-fields">
 
-                  <Field
-                    name="previousForecastAmount"
-                    type="number"
-                    className="form-input"
-                    placeholder="Previous Forecast Amount"
-                  />
+    {renderField(values,"previousForecastAmount","Previous Forecast Amount","number")}
 
-                  <Field
-                    name="currentForecastAmount"
-                    type="number"
-                    className="form-input"
-                    placeholder="Current Forecast Amount"
-                    onBlur={(e)=>{
-                      const result = calculateVariance(
-                        values.previousForecastAmount,
-                        e.target.value
-                      );
-                      setFieldValue("varianceAmount",result.variance);
-                      setFieldValue("variancePercent",result.percent);
-                    }}
-                  />
+    <div className="form-field">
+      <label className="form-label">Current Forecast Amount</label>
+      {isPrintMode ? (
+        <div className="print-value">{values.currentForecastAmount || "_________"}</div>
+      ) : (
+        <>
+          <Field
+            name="currentForecastAmount"
+            type="number"
+            className="form-input"
+            onBlur={(e)=>{
+              const result = calculateVariance(
+                values.previousForecastAmount,
+                e.target.value
+              );
+              setFieldValue("varianceAmount",result.variance);
+              setFieldValue("variancePercent",result.percent);
+            }}
+          />
+        </>
+      )}
+    </div>
 
-                  <Field name="varianceAmount" readOnly className="form-input" placeholder="Variance Amount"/>
-                  <Field name="variancePercent" readOnly className="form-input" placeholder="Variance %"/>
-                  <Field name="varianceReason" className="form-input" placeholder="Variance Reason"/>
+    {renderField(values,"varianceAmount","Variance Amount","number")}
+    {renderField(values,"variancePercent","Variance %","number")}
+    {renderField(values,"varianceReason","Variance Reason")}
 
-                </div>
-              </div>
+  </div>
+</div>
 
-              {/* ================= ASSUMPTIONS ================= */}
-              <div className="form-section">
-                <Field name="keyAssumptions" placeholder="Key Assumptions" className="form-input"/>
-                <Field name="keyDrivers" placeholder="Key Business Drivers" className="form-input"/>
-                <Field name="risksIdentified" placeholder="Risks Identified" className="form-input"/>
-                <Field name="opportunitiesIdentified" placeholder="Opportunities Identified" className="form-input"/>
-                <Field name="externalFactors" placeholder="External Factors" className="form-input"/>
-              </div>
+             {/* ================= ASSUMPTIONS ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">Assumptions & Drivers</h3>
+  <div className="form-fields">
 
-              {/* ================= GOVERNANCE ================= */}
-              <div className="form-section">
-                <Field name="changeDescription" placeholder="Change Description" className="form-input"/>
-                <Field name="changeReason" placeholder="Change Reason" className="form-input"/>
-                <Field name="impactAssessment" placeholder="Impact Assessment" className="form-input"/>
-                <Field name="complianceCheck" placeholder="Compliance Check" className="form-input"/>
-                <Field name="auditReferenceId" placeholder="Audit Reference ID" className="form-input"/>
-                <Field name="comments" placeholder="Comments" className="form-input"/>
-                <Field name="financeComments" placeholder="Finance Comments" className="form-input"/>
-                <Field name="managementComments" placeholder="Management Comments" className="form-input"/>
-                <Field name="additionalNotes" placeholder="Additional Notes" className="form-input"/>
-              </div>
+    {renderField(values,"keyAssumptions","Key Assumptions")}
+    {renderField(values,"keyDrivers","Key Business Drivers")}
+    {renderField(values,"risksIdentified","Risks Identified")}
+    {renderField(values,"opportunitiesIdentified","Opportunities Identified")}
+    {renderField(values,"externalFactors","External Factors")}
+
+  </div>
+</div>{/* ================= GOVERNANCE ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">Governance & Compliance</h3>
+  <div className="form-fields">
+
+    {renderField(values,"changeDescription","Change Description")}
+    {renderField(values,"changeReason","Change Reason")}
+    {renderField(values,"impactAssessment","Impact Assessment")}
+    {renderField(values,"complianceCheck","Compliance Check")}
+    {renderField(values,"auditReferenceId","Audit Reference ID")}
+    {renderField(values,"comments","Comments")}
+    {renderField(values,"financeComments","Finance Comments")}
+    {renderField(values,"managementComments","Management Comments")}
+    {renderField(values,"additionalNotes","Additional Notes")}
+
+  </div>
+</div>
 
               {/* ================= CUSTOM FIELDS ================= */}
               <FormCustomFields values={values}/>

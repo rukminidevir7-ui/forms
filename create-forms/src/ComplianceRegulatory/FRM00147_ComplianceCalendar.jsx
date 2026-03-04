@@ -164,66 +164,140 @@ const FRM00147_ComplianceCalendar = () => {
 
               {/* Compliance Schedule Details */}
               <div className="form-section">
-                <h3 className="form-section-title">2. Compliance Schedule Details</h3>
+  <h3 className="form-section-title">2. Compliance Schedule Details</h3>
 
-                {!isPrintMode && (
-                  <FieldArray name="complianceSchedule">
-                    {({ push, remove }) => (
-                      <>
-                        {values.complianceSchedule.map((entry, index) => (
-                          <div key={index} className="form-section" style={{ border: '1px solid #ddd', padding: '15px', marginBottom: '15px' }}>
-                            <div className="form-fields">
-                              <Field name={`complianceSchedule.${index}.complianceRequirement`} className="form-input" placeholder="Compliance Requirement" />
-                              <Field name={`complianceSchedule.${index}.regulatoryAuthority`} className="form-input" placeholder="Regulatory Authority" />
-                              <Field name={`complianceSchedule.${index}.dueDate`} type="date" className="form-input" />
-                              <Field as="select" name={`complianceSchedule.${index}.frequency`} className="form-input">
-                                <option value="">-- Frequency --</option>
-                                <option value="Monthly">Monthly</option>
-                                <option value="Quarterly">Quarterly</option>
-                                <option value="Half-Yearly">Half-Yearly</option>
-                                <option value="Annually">Annually</option>
-                                <option value="Ad-Hoc">Ad-Hoc</option>
-                              </Field>
-                              <Field name={`complianceSchedule.${index}.owner`} className="form-input" placeholder="Owner" />
-                              <Field as="select" name={`complianceSchedule.${index}.status`} className="form-input">
-                                <option value="">-- Status --</option>
-                                <option value="Planned">Planned</option>
-                                <option value="In Progress">In Progress</option>
-                                <option value="Completed">Completed</option>
-                                <option value="Delayed">Delayed</option>
-                              </Field>
-                              <Field name={`complianceSchedule.${index}.remarks`} className="form-input" placeholder="Remarks" />
-                            </div>
-                            <button type="button" onClick={() => remove(index)} className="btn-remove">Remove</button>
-                          </div>
-                        ))}
-                        <button type="button" onClick={() => push({
-                          complianceRequirement: '',
-                          regulatoryAuthority: '',
-                          dueDate: '',
-                          frequency: '',
-                          owner: '',
-                          status: '',
-                          remarks: ''
-                        })} className="btn-add-field">
-                          Add Compliance Entry
-                        </button>
-                      </>
-                    )}
-                  </FieldArray>
-                )}
+  {!isPrintMode && (
+    <FieldArray name="complianceSchedule">
+      {({ push, remove }) => (
+        <>
+          {values.complianceSchedule.map((entry, index) => (
+            <div 
+              key={index} 
+              className="form-section" 
+              style={{ border: '1px solid #ddd', padding: '15px', marginBottom: '15px' }}
+            >
+              <div className="form-fields">
 
-                {isPrintMode && values.complianceSchedule.map((entry, index) => (
-                  <div key={index} className="form-field full-width">
-                    <strong>{index + 1}. {entry.complianceRequirement}</strong><br/>
-                    Authority: {entry.regulatoryAuthority}<br/>
-                    Due: {entry.dueDate} | Frequency: {entry.frequency}<br/>
-                    Owner: {entry.owner} | Status: {entry.status}<br/>
-                    Remarks: {entry.remarks || '—'}
-                  </div>
-                ))}
+                <div className="form-field">
+                  <label className="form-label">Compliance Requirement</label>
+                  <Field 
+                    name={`complianceSchedule.${index}.complianceRequirement`} 
+                    className="form-input" 
+                    placeholder="Compliance Requirement" 
+                  />
+                </div>
+
+                <div className="form-field">
+                  <label className="form-label">Regulatory Authority</label>
+                  <Field 
+                    name={`complianceSchedule.${index}.regulatoryAuthority`} 
+                    className="form-input" 
+                    placeholder="Regulatory Authority" 
+                  />
+                </div>
+
+                <div className="form-field">
+                  <label className="form-label">Due Date</label>
+                  <Field 
+                    name={`complianceSchedule.${index}.dueDate`} 
+                    type="date" 
+                    className="form-input" 
+                  />
+                </div>
+
+                <div className="form-field">
+                  <label className="form-label">Frequency</label>
+                  <Field 
+                    as="select" 
+                    name={`complianceSchedule.${index}.frequency`} 
+                    className="form-input"
+                  >
+                    <option value="">-- Frequency --</option>
+                    <option value="Monthly">Monthly</option>
+                    <option value="Quarterly">Quarterly</option>
+                    <option value="Half-Yearly">Half-Yearly</option>
+                    <option value="Annually">Annually</option>
+                    <option value="Ad-Hoc">Ad-Hoc</option>
+                  </Field>
+                </div>
+
+                <div className="form-field">
+                  <label className="form-label">Owner</label>
+                  <Field 
+                    name={`complianceSchedule.${index}.owner`} 
+                    className="form-input" 
+                    placeholder="Owner" 
+                  />
+                </div>
+
+                <div className="form-field">
+                  <label className="form-label">Status</label>
+                  <Field 
+                    as="select" 
+                    name={`complianceSchedule.${index}.status`} 
+                    className="form-input"
+                  >
+                    <option value="">-- Status --</option>
+                    <option value="Planned">Planned</option>
+                    <option value="In Progress">In Progress</option>
+                    <option value="Completed">Completed</option>
+                    <option value="Delayed">Delayed</option>
+                  </Field>
+                </div>
+
+                <div className="form-field">
+                  <label className="form-label">Remarks</label>
+                  <Field 
+                    name={`complianceSchedule.${index}.remarks`} 
+                    className="form-input" 
+                    placeholder="Remarks" 
+                  />
+                </div>
 
               </div>
+
+              <button 
+                type="button" 
+                onClick={() => remove(index)} 
+                className="btn-remove"
+              >
+                Remove
+              </button>
+
+            </div>
+          ))}
+
+          <button
+            type="button"
+            onClick={() => push({
+              complianceRequirement: '',
+              regulatoryAuthority: '',
+              dueDate: '',
+              frequency: '',
+              owner: '',
+              status: '',
+              remarks: ''
+            })}
+            className="btn-add-field"
+          >
+            Add Compliance Entry
+          </button>
+        </>
+      )}
+    </FieldArray>
+  )}
+
+  {isPrintMode && values.complianceSchedule.map((entry, index) => (
+    <div key={index} className="form-field full-width">
+      <strong>{index + 1}. {entry.complianceRequirement}</strong><br/>
+      Authority: {entry.regulatoryAuthority}<br/>
+      Due: {entry.dueDate} | Frequency: {entry.frequency}<br/>
+      Owner: {entry.owner} | Status: {entry.status}<br/>
+      Remarks: {entry.remarks || '—'}
+    </div>
+  ))}
+
+</div>
 
               {/* Summary */}
               <div className="form-section">

@@ -107,16 +107,37 @@ const FRM00864_CostHeadJustification = () => {
             >
 
               {/* ================= BASIC INFORMATION ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Basic Information</h3>
-                <div className="form-fields">
-                  <Field name="businessUnit" placeholder="Business Unit / Cost Center" className="form-input"/>
-                  <Field name="period" placeholder="Period" className="form-input"/>
-                  <Field name="preparedBy" placeholder="Prepared By" className="form-input"/>
-                  <Field name="date" type="date" className="form-input"/>
-                  <Field name="version" placeholder="Version" className="form-input"/>
-                </div>
-              </div>
+<div className="form-section">
+  <h3 className="form-section-title">Basic Information</h3>
+  <div className="form-fields">
+
+    <div className="form-field">
+      <label className="form-label">Business Unit / Cost Center</label>
+      <Field name="businessUnit" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Period</label>
+      <Field name="period" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Prepared By</label>
+      <Field name="preparedBy" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Date</label>
+      <Field name="date" type="date" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Version</label>
+      <Field name="version" className="form-input"/>
+    </div>
+
+  </div>
+</div>
 
               {/* ================= COST HEAD DETAILS ================= */}
               <div className="form-section">
@@ -246,17 +267,30 @@ const FRM00864_CostHeadJustification = () => {
               </div>
 
               {/* ================= JUSTIFICATION ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Justification / Business Rationale</h3>
-                <Field name="justification" className="form-input"/>
-              </div>
+<div className="form-section">
+  <h3 className="form-section-title">Justification / Business Rationale</h3>
+  <div className="form-fields">
 
-              {/* ================= IMPACT ASSESSMENT ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Financial / Operational Impact</h3>
-                <Field name="impactAssessment" className="form-input"/>
-              </div>
+    <div className="form-field">
+      <label className="form-label">Justification / Business Rationale</label>
+      <Field name="justification" className="form-input"/>
+    </div>
 
+  </div>
+</div>
+
+             {/* ================= IMPACT ASSESSMENT ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">Financial / Operational Impact</h3>
+  <div className="form-fields">
+
+    <div className="form-field">
+      <label className="form-label">Financial / Operational Impact</label>
+      <Field name="impactAssessment" className="form-input"/>
+    </div>
+
+  </div>
+</div>
               {/* ================= CUSTOM FIELDS ================= */}
               <FormCustomFields values={values}/>
 

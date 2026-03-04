@@ -130,46 +130,128 @@ const FRM00915_VendorSettlementAgreement = () => {
               department="Finance & Accounting (Advanced) – Accounts Payable & Vendor Finance"
             >
 
-              {/* ================= 1. DOCUMENT CONTROL ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">1. Document Control</h3>
-                <div className="form-fields">
-                  <Field name="formId" disabled className="form-input"/>
-                  <Field name="version" className="form-input"/>
-                  <Field name="effectiveDate" type="date" className="form-input"/>
-                  <Field name="preparedBy" placeholder="Prepared By" className="form-input"/>
-                  <Field name="department" className="form-input"/>
-                  <Field name="process" className="form-input"/>
-                  <Field name="confidentialityLevel" placeholder="Confidentiality Level" className="form-input"/>
-                </div>
-              </div>
+             {/* ================= 1. DOCUMENT CONTROL ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">1. Document Control</h3>
+  <div className="form-fields">
 
-              {/* ================= 2. AGREEMENT DETAILS ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">2. Agreement Details</h3>
-                <div className="form-fields">
-                  <Field name="agreementNumber" placeholder="Agreement Number" className="form-input"/>
-                  <Field name="agreementDate" type="date" className="form-input"/>
-                  <Field name="projectName" placeholder="Project / Contract Name" className="form-input"/>
-                  <Field name="projectCode" placeholder="Project Code" className="form-input"/>
-                  <Field name="vendorName" placeholder="Vendor Name" className="form-input"/>
-                  <Field name="vendorCode" placeholder="Vendor Code" className="form-input"/>
-                  <Field name="contractNumber" placeholder="Contract / PO Number" className="form-input"/>
-                </div>
-              </div>
+    <div className="form-field">
+      <label className="form-label">Form ID</label>
+      <Field name="formId" disabled className="form-input"/>
+    </div>
 
-              {/* ================= 3. SETTLEMENT SUMMARY ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">3. Settlement Summary</h3>
-                <div className="form-fields">
-                  <Field name="originalContractValue" type="number" placeholder="Original Contract Value" className="form-input"/>
-                  <Field name="totalInvoicedAmount" type="number" placeholder="Total Invoiced Amount" className="form-input"/>
-                  <Field name="totalPaidAmount" type="number" placeholder="Total Paid Amount" className="form-input"/>
-                  <Field name="outstandingAmount" type="number" placeholder="Outstanding Amount" className="form-input"/>
-                  <Field name="settlementAmount" type="number" placeholder="Settlement Amount" className="form-input"/>
-                  <Field name="settlementBasis" placeholder="Settlement Basis" className="form-input"/>
-                </div>
-              </div>
+    <div className="form-field">
+      <label className="form-label">Version</label>
+      <Field name="version" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Effective Date</label>
+      <Field name="effectiveDate" type="date" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Prepared By</label>
+      <Field name="preparedBy" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Department</label>
+      <Field name="department" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Process</label>
+      <Field name="process" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Confidentiality Level</label>
+      <Field name="confidentialityLevel" className="form-input"/>
+    </div>
+
+  </div>
+</div>
+{/* ================= 2. AGREEMENT DETAILS ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">2. Agreement Details</h3>
+  <div className="form-fields">
+
+    <div className="form-field">
+      <label className="form-label">Agreement Number</label>
+      <Field name="agreementNumber" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Agreement Date</label>
+      <Field name="agreementDate" type="date" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Project / Contract Name</label>
+      <Field name="projectName" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Project Code</label>
+      <Field name="projectCode" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Vendor Name</label>
+      <Field name="vendorName" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Vendor Code</label>
+      <Field name="vendorCode" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Contract / PO Number</label>
+      <Field name="contractNumber" className="form-input"/>
+    </div>
+
+  </div>
+</div>
+
+            {/* ================= 3. SETTLEMENT SUMMARY ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">3. Settlement Summary</h3>
+  <div className="form-fields">
+
+    <div className="form-field">
+      <label className="form-label">Original Contract Value</label>
+      <Field name="originalContractValue" type="number" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Total Invoiced Amount</label>
+      <Field name="totalInvoicedAmount" type="number" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Total Paid Amount</label>
+      <Field name="totalPaidAmount" type="number" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Outstanding Amount</label>
+      <Field name="outstandingAmount" type="number" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Proposed Settlement Amount</label>
+      <Field name="settlementAmount" type="number" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Settlement Basis / Justification</label>
+      <Field name="settlementBasis" className="form-input"/>
+    </div>
+
+  </div>
+</div>
 
               {/* ================= 4. ADJUSTMENT DETAILS ================= */}
               <div className="form-section">
@@ -247,47 +329,107 @@ const FRM00915_VendorSettlementAgreement = () => {
                 </div>
               </div>
 
-              {/* ================= 5. TERMS & CONDITIONS ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">5. Terms & Conditions</h3>
-                <div className="form-fields">
-                  <Field name="settlementTerms" placeholder="Settlement Terms" className="form-input"/>
-                  <Field name="paymentMethod" placeholder="Payment Method" className="form-input"/>
-                  <Field name="settlementDate" type="date" className="form-input"/>
-                  <Field name="legalNotes" placeholder="Legal / Contractual Notes" className="form-input"/>
-                  <Field name="remarks" placeholder="Remarks" className="form-input"/>
-                </div>
-              </div>
+             {/* ================= 5. TERMS & CONDITIONS ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">Terms & Conditions</h3>
+  <div className="form-fields">
 
-              {/* ================= 6. SUPPORTING INFORMATION ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">6. Supporting Information</h3>
-                <div className="form-fields">
-                  <Field name="supportingDocsAttached" placeholder="Supporting Documents Attached (Y/N)" className="form-input"/>
-                  <Field name="referenceDocuments" placeholder="Reference Documents" className="form-input"/>
-                </div>
-              </div>
+    <div className="form-field">
+      <label className="form-label">Settlement Terms</label>
+      <Field name="settlementTerms" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Payment Method</label>
+      <Field name="paymentMethod" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Settlement Date</label>
+      <Field name="settlementDate" type="date" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Legal / Contractual Notes</label>
+      <Field name="legalNotes" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Additional Remarks</label>
+      <Field name="remarks" className="form-input"/>
+    </div>
+
+  </div>
+</div>
+
+             {/* ================= 6. SUPPORTING INFORMATION ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">Supporting Information</h3>
+  <div className="form-fields">
+
+    <div className="form-field">
+      <label className="form-label">Supporting Documents Attached</label>
+      <Field name="supportingDocsAttached" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Reference Documents</label>
+      <Field name="referenceDocuments" className="form-input"/>
+    </div>
+
+  </div>
+</div>
 
               {/* ================= 8. ERP TRACKING ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">8. ERP Tracking</h3>
-                <div className="form-fields">
-                  <Field name="workflowStatus" placeholder="Workflow Status" className="form-input"/>
-                  <Field name="approvalReferenceId" placeholder="Approval Reference ID" className="form-input"/>
-                  <Field name="postingReference" placeholder="Posting Reference" className="form-input"/>
-                  <Field name="closureDate" type="date" className="form-input"/>
-                </div>
-              </div>
+<div className="form-section">
+  <h3 className="form-section-title">ERP Tracking</h3>
+  <div className="form-fields">
 
-              {/* ================= AUDIT TRAIL ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Audit Trail</h3>
-                <div className="form-fields">
-                  <Field name="createdOn" type="date" className="form-input"/>
-                  <Field name="lastUpdatedOn" type="date" className="form-input"/>
-                  <Field name="documentOwner" className="form-input"/>
-                </div>
-              </div>
+    <div className="form-field">
+      <label className="form-label">Workflow Status</label>
+      <Field name="workflowStatus" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Approval Reference ID</label>
+      <Field name="approvalReferenceId" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">ERP Posting Reference</label>
+      <Field name="postingReference" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Closure Date</label>
+      <Field name="closureDate" type="date" className="form-input"/>
+    </div>
+
+  </div>
+</div>
+
+             {/* ================= AUDIT TRAIL ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">Audit Trail</h3>
+  <div className="form-fields">
+
+    <div className="form-field">
+      <label className="form-label">Created On</label>
+      <Field name="createdOn" type="date" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Last Updated On</label>
+      <Field name="lastUpdatedOn" type="date" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Document Owner</label>
+      <Field name="documentOwner" className="form-input"/>
+    </div>
+
+  </div>
+</div>
 
               <FormCustomFields values={values}/>
               <FormAttachments values={values}/>

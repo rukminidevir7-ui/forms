@@ -97,66 +97,179 @@ const FRM00965_EInvoiceExceptionLog = () => {
               department="Tax & Statutory (India) – GST Compliance"
             >
 
-              {/* ================= GENERAL INFORMATION ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">General Information</h3>
-                <div className="form-fields">
-                  <Field name="formId" disabled className="form-input"/>
-                  <Field name="date" type="date" className="form-input"/>
-                  <Field name="department" className="form-input"/>
-                  <Field name="function" className="form-input"/>
-                  <Field name="referenceNumber" placeholder="Reference Number" className="form-input"/>
-                  <Field name="location" placeholder="Location" className="form-input"/>
-                </div>
-              </div>
+           {/* ================= GENERAL INFORMATION ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">General Information</h3>
+  <div className="form-fields">
 
-              {/* ================= EXCEPTION DETAILS ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Exception Details</h3>
-                <div className="form-fields">
-                  <Field name="exceptionId" placeholder="Exception ID" className="form-input"/>
-                  <Field name="exceptionDate" type="date" className="form-input"/>
-                  <Field name="invoiceNumber" placeholder="Invoice Number" className="form-input"/>
-                  <Field name="customerName" placeholder="Customer Name" className="form-input"/>
-                  <Field name="gstin" placeholder="GSTIN" className="form-input"/>
-                  <Field name="errorCode" placeholder="Error Code" className="form-input"/>
-                  <Field name="errorDescription" placeholder="Error Description" className="form-input"/>
-                </div>
-              </div>
+    <div className="form-field">
+      <label className="form-label">Form ID</label>
+      <Field name="formId" disabled className="form-input"/>
+    </div>
 
-              {/* ================= FINANCIAL IMPACT ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Financial Impact</h3>
-                <div className="form-fields">
-                  <Field name="invoiceAmount" type="number" placeholder="Invoice Amount" className="form-input"/>
-                  <Field name="currency" placeholder="Currency" className="form-input"/>
-                  <Field name="taxAmount" type="number" placeholder="Tax Amount" className="form-input"/>
-                  <Field name="impactAmount" type="number" placeholder="Impact Amount" className="form-input"/>
-                </div>
-              </div>
+    <div className="form-field">
+      <label className="form-label">Date</label>
+      <Field name="date" type="date" className="form-input"/>
+    </div>
 
-              {/* ================= RESOLUTION TRACKING ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Resolution Tracking</h3>
-                <div className="form-fields">
-                  <Field name="status" placeholder="Status" className="form-input"/>
-                  <Field name="priority" placeholder="Priority" className="form-input"/>
-                  <Field name="assignedTo" placeholder="Assigned To" className="form-input"/>
-                  <Field name="targetResolutionDate" type="date" className="form-input"/>
-                  <Field name="resolutionNotes" placeholder="Resolution Notes" className="form-input"/>
-                  <Field name="actualResolutionDate" type="date" className="form-input"/>
-                </div>
-              </div>
+    <div className="form-field">
+      <label className="form-label">Department</label>
+      <Field name="department" className="form-input"/>
+    </div>
 
-              {/* ================= NOTES ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Notes</h3>
-                <div className="form-fields">
-                  <Field name="notes" placeholder="Notes" className="form-input"/>
-                  <Field name="comments" placeholder="Comments" className="form-input"/>
-                  <Field name="supportingReference" placeholder="Supporting Reference" className="form-input"/>
-                </div>
-              </div>
+    <div className="form-field">
+      <label className="form-label">Function</label>
+      <Field name="function" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Reference Number</label>
+      <Field name="referenceNumber" placeholder="Reference Number" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Location</label>
+      <Field name="location" placeholder="Location" className="form-input"/>
+    </div>
+
+  </div>
+</div>
+
+
+{/* ================= EXCEPTION DETAILS ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">Exception Details</h3>
+  <div className="form-fields">
+
+    <div className="form-field">
+      <label className="form-label">Exception ID</label>
+      <Field name="exceptionId" placeholder="Exception ID" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Exception Date</label>
+      <Field name="exceptionDate" type="date" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Invoice Number</label>
+      <Field name="invoiceNumber" placeholder="Invoice Number" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Customer Name</label>
+      <Field name="customerName" placeholder="Customer Name" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">GSTIN</label>
+      <Field name="gstin" placeholder="GSTIN" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Error Code</label>
+      <Field name="errorCode" placeholder="Error Code" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Error Description</label>
+      <Field name="errorDescription" placeholder="Error Description" className="form-input"/>
+    </div>
+
+  </div>
+</div>
+
+
+{/* ================= FINANCIAL IMPACT ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">Financial Impact</h3>
+  <div className="form-fields">
+
+    <div className="form-field">
+      <label className="form-label">Invoice Amount</label>
+      <Field name="invoiceAmount" type="number" placeholder="Invoice Amount" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Currency</label>
+      <Field name="currency" placeholder="Currency" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Tax Amount</label>
+      <Field name="taxAmount" type="number" placeholder="Tax Amount" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Impact Amount</label>
+      <Field name="impactAmount" type="number" placeholder="Impact Amount" className="form-input"/>
+    </div>
+
+  </div>
+</div>
+
+
+{/* ================= RESOLUTION TRACKING ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">Resolution Tracking</h3>
+  <div className="form-fields">
+
+    <div className="form-field">
+      <label className="form-label">Status</label>
+      <Field name="status" placeholder="Status" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Priority</label>
+      <Field name="priority" placeholder="Priority" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Assigned To</label>
+      <Field name="assignedTo" placeholder="Assigned To" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Target Resolution Date</label>
+      <Field name="targetResolutionDate" type="date" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Resolution Notes</label>
+      <Field name="resolutionNotes" placeholder="Resolution Notes" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Actual Resolution Date</label>
+      <Field name="actualResolutionDate" type="date" className="form-input"/>
+    </div>
+
+  </div>
+</div>
+
+
+{/* ================= NOTES ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">Notes</h3>
+  <div className="form-fields">
+
+    <div className="form-field">
+      <label className="form-label">Notes</label>
+      <Field name="notes" placeholder="Notes" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Comments</label>
+      <Field name="comments" placeholder="Comments" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Supporting Reference</label>
+      <Field name="supportingReference" placeholder="Supporting Reference" className="form-input"/>
+    </div>
+
+  </div>
+</div>
 
               <FormAttachments values={values}/>
               <FormCustomFields values={values}/>

@@ -99,72 +99,188 @@ const FRM00964_EInvoiceApplicabilityCheck = () => {
               department="Tax & Statutory (India) – GST Compliance"
             >
 
-              {/* ================= GENERAL INFORMATION ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">General Information</h3>
-                <div className="form-fields">
-                  <Field name="formId" disabled className="form-input"/>
-                  <Field name="date" type="date" className="form-input"/>
-                  <Field name="department" className="form-input"/>
-                  <Field name="function" className="form-input"/>
-                  <Field name="referenceNumber" placeholder="Reference Number" className="form-input"/>
-                  <Field name="location" placeholder="Location" className="form-input"/>
-                  <Field name="assessmentPeriodFrom" type="date" className="form-input"/>
-                  <Field name="assessmentPeriodTo" type="date" className="form-input"/>
-                </div>
-              </div>
+             {/* ================= GENERAL INFORMATION ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">General Information</h3>
+  <div className="form-fields">
 
-              {/* ================= BUSINESS DETAILS ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Business Details</h3>
-                <div className="form-fields">
-                  <Field name="legalNameOfBusiness" placeholder="Legal Name of Business" className="form-input"/>
-                  <Field name="tradeName" placeholder="Trade Name" className="form-input"/>
-                  <Field name="gstin" placeholder="GSTIN" className="form-input"/>
-                  <Field name="pan" placeholder="PAN" className="form-input"/>
-                  <Field name="contactPerson" placeholder="Contact Person" className="form-input"/>
-                  <Field name="phone" placeholder="Phone" className="form-input"/>
-                  <Field name="email" type="email" placeholder="Email" className="form-input"/>
-                </div>
-              </div>
+    <div className="form-field">
+      <label className="form-label">Form ID</label>
+      <Field name="formId" disabled className="form-input"/>
+    </div>
 
-              {/* ================= TURNOVER DETAILS ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Turnover Details</h3>
-                <div className="form-fields">
-                  <Field name="aggregateTurnoverPreviousFY" type="number" placeholder="Aggregate Turnover (Previous FY)" className="form-input"/>
-                  <Field name="currency" placeholder="Currency" className="form-input"/>
-                  <Field name="aggregateTurnoverCurrentFY" type="number" placeholder="Aggregate Turnover (Current FY)" className="form-input"/>
-                  <Field name="thresholdLimit" type="number" placeholder="Threshold Limit" className="form-input"/>
-                </div>
-              </div>
+    <div className="form-field">
+      <label className="form-label">Date</label>
+      <Field name="date" type="date" className="form-input"/>
+    </div>
 
-              {/* ================= APPLICABILITY ASSESSMENT ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Applicability Assessment</h3>
-                <div className="form-fields">
-                  <Field name="eInvoiceApplicable" as="select" className="form-input">
-                    <option value="">E-Invoice Applicable?</option>
-                    <option>Yes</option>
-                    <option>No</option>
-                  </Field>
-                  <Field name="applicableFromDate" type="date" className="form-input"/>
-                  <Field name="reasonBasis" placeholder="Reason / Basis" className="form-input"/>
-                  <Field name="exemptionCategory" placeholder="Exemption Category (if any)" className="form-input"/>
-                </div>
-              </div>
+    <div className="form-field">
+      <label className="form-label">Department</label>
+      <Field name="department" className="form-input"/>
+    </div>
 
-              {/* ================= COMPLIANCE STATUS ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Compliance Status</h3>
-                <div className="form-fields">
-                  <Field name="irpRegistrationStatus" placeholder="IRP Registration Status" className="form-input"/>
-                  <Field name="systemReadinessStatus" placeholder="System Readiness Status" className="form-input"/>
-                  <Field name="keyRisksIssues" placeholder="Key Risks / Issues" className="form-input"/>
-                  <Field name="actionRequired" placeholder="Action Required" className="form-input"/>
-                </div>
-              </div>
+    <div className="form-field">
+      <label className="form-label">Function</label>
+      <Field name="function" className="form-input"/>
+    </div>
 
+    <div className="form-field">
+      <label className="form-label">Reference Number</label>
+      <Field name="referenceNumber" placeholder="Reference Number" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Location</label>
+      <Field name="location" placeholder="Location" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Assessment Period From</label>
+      <Field name="assessmentPeriodFrom" type="date" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Assessment Period To</label>
+      <Field name="assessmentPeriodTo" type="date" className="form-input"/>
+    </div>
+
+  </div>
+</div>
+
+
+{/* ================= BUSINESS DETAILS ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">Business Details</h3>
+  <div className="form-fields">
+
+    <div className="form-field">
+      <label className="form-label">Legal Name of Business</label>
+      <Field name="legalNameOfBusiness" placeholder="Legal Name of Business" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Trade Name</label>
+      <Field name="tradeName" placeholder="Trade Name" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">GSTIN</label>
+      <Field name="gstin" placeholder="GSTIN" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">PAN</label>
+      <Field name="pan" placeholder="PAN" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Contact Person</label>
+      <Field name="contactPerson" placeholder="Contact Person" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Phone</label>
+      <Field name="phone" placeholder="Phone" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Email</label>
+      <Field name="email" type="email" placeholder="Email" className="form-input"/>
+    </div>
+
+  </div>
+</div>
+
+
+{/* ================= TURNOVER DETAILS ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">Turnover Details</h3>
+  <div className="form-fields">
+
+    <div className="form-field">
+      <label className="form-label">Aggregate Turnover (Previous FY)</label>
+      <Field name="aggregateTurnoverPreviousFY" type="number" placeholder="Aggregate Turnover (Previous FY)" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Currency</label>
+      <Field name="currency" placeholder="Currency" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Aggregate Turnover (Current FY)</label>
+      <Field name="aggregateTurnoverCurrentFY" type="number" placeholder="Aggregate Turnover (Current FY)" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Threshold Limit</label>
+      <Field name="thresholdLimit" type="number" placeholder="Threshold Limit" className="form-input"/>
+    </div>
+
+  </div>
+</div>
+
+
+{/* ================= APPLICABILITY ASSESSMENT ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">Applicability Assessment</h3>
+  <div className="form-fields">
+
+    <div className="form-field">
+      <label className="form-label">E-Invoice Applicable?</label>
+      <Field name="eInvoiceApplicable" as="select" className="form-input">
+        <option value="">E-Invoice Applicable?</option>
+        <option>Yes</option>
+        <option>No</option>
+      </Field>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Applicable From Date</label>
+      <Field name="applicableFromDate" type="date" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Reason / Basis</label>
+      <Field name="reasonBasis" placeholder="Reason / Basis" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Exemption Category (if any)</label>
+      <Field name="exemptionCategory" placeholder="Exemption Category (if any)" className="form-input"/>
+    </div>
+
+  </div>
+</div>
+
+
+{/* ================= COMPLIANCE STATUS ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">Compliance Status</h3>
+  <div className="form-fields">
+
+    <div className="form-field">
+      <label className="form-label">IRP Registration Status</label>
+      <Field name="irpRegistrationStatus" placeholder="IRP Registration Status" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">System Readiness Status</label>
+      <Field name="systemReadinessStatus" placeholder="System Readiness Status" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Key Risks / Issues</label>
+      <Field name="keyRisksIssues" placeholder="Key Risks / Issues" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Action Required</label>
+      <Field name="actionRequired" placeholder="Action Required" className="form-input"/>
+    </div>
+
+  </div>
+</div>
               <FormAttachments values={values}/>
               <FormCustomFields values={values}/>
 

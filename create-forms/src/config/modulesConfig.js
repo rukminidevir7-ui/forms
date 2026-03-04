@@ -780,22 +780,6 @@ import FRM01346_ECBComplianceCertificate from '../FEMARBI/ECBExternalBorrowings/
 import FRM01347_ECBRegisterUpdate from '../FEMARBI/ECBExternalBorrowings/FRM01347_ECBRegisterUpdate';
 import FRM01348_ECBRBIQueryResponse from '../FEMARBI/ECBExternalBorrowings/FRM01348_ECBRBIQueryResponse';
 // ---------- REMITTANCES ----------
-// import FRM01351_OutwardRemittanceRequest from '../FEMARBI/RemittancesCurrentAccount/FRM01351_OutwardRemittanceRequest';
-// import FRM01352_FormA2Preparation from '../FEMARBI/RemittancesCurrentAccount/FRM01352_FormA2Preparation';
-// import FRM01355_PurposeCodeSelection from '../FEMARBI/RemittancesCurrentAccount/FRM01355_PurposeCodeSelection';
-// import FRM01358_LRSApplicabilityCheck from '../FEMARBI/RemittancesCurrentAccount/FRM01358_LRSApplicabilityCheck';
-// import FRM01361_AdvanceRemittanceApproval from '../FEMARBI/RemittancesCurrentAccount/FRM01361_AdvanceRemittanceApproval';
-// import FRM01362_ImportAdvanceRemittanceTracker from '../FEMARBI/RemittancesCurrentAccount/FRM01362_ImportAdvanceRemittanceTracker';
-// import FRM01363_RoyaltyLicenseFeeRemittanceApproval from '../FEMARBI/RemittancesCurrentAccount/FRM01363_RoyaltyLicenseFeeRemittanceApproval';
-// import FRM01364_DividendRemittanceApproval from '../FEMARBI/RemittancesCurrentAccount/FRM01364_DividendRemittanceApproval';
-// import FRM01365_IntercompanyChargeRemittanceApproval from '../FEMARBI/RemittancesCurrentAccount/FRM01365_IntercompanyChargeRemittanceApproval';
-// import FRM01366_ForeignTravelRemittanceApproval from '../FEMARBI/RemittancesCurrentAccount/FRM01366_ForeignTravelRemittanceApproval';
-// import FRM01367_ForeignVendorPaymentComplianceCheck from '../FEMARBI/RemittancesCurrentAccount/FRM01367_ForeignVendorPaymentComplianceCheck';
-// import FRM01370_SanctionsAMLScreeningEvidence from '../FEMARBI/RemittancesCurrentAccount/FRM01370_SanctionsAMLScreeningEvidence';
-// import FRM01371_FEMAComplianceException from '../FEMARBI/RemittancesCurrentAccount/FRM01371_FEMAComplianceException';
-// import FRM01374_ADBankDocumentationChecklist from '../FEMARBI/RemittancesCurrentAccount/FRM01374_ADBankDocumentationChecklist';
-// import FRM01375_RemittanceRegisterUpdate from '../FEMARBI/RemittancesCurrentAccount/FRM01375_RemittanceRegisterUpdate';
-// ---------- REMITTANCES ----------
 import FRM01351_OutwardRemittanceRequest from '../FEMARBI/RemittancesCurrentAccount/FRM01351_OutwardRemittanceRequest';
 import FRM01352_FormA2Preparation from '../FEMARBI/RemittancesCurrentAccount/FRM01352_FormA2Preparation';
 import FRM01355_PurposeCodeSelection from '../FEMARBI/RemittancesCurrentAccount/FRM01355_PurposeCodeSelection';
@@ -992,7 +976,280 @@ import FRM01491_MockRecallReport from '../FoodSafetyLicensing/LabelingClaimsTrac
 import FRM01494_ConsumerComplaintIntakeFood from '../FoodSafetyLicensing/LabelingClaimsTraceability/FRM01494_ConsumerComplaintIntakeFood';
 import FRM01495_ShelfLifeStudyPlan from '../FoodSafetyLicensing/LabelingClaimsTraceability/FRM01495_ShelfLifeStudyPlan';
 import FRM01496_ShelfLifeStudyReport from '../FoodSafetyLicensing/LabelingClaimsTraceability/FRM01496_ShelfLifeStudyReport';
+//====
+import FRM01499_DINDSCApplicationChecklist from '../CorporateSecretarialAdvanced/MCAROCFilings/FRM01499_DINDSCApplicationChecklist';
+//==
+// //==============================HSE GOVERNANCE & LEGAL COMPLIANCE =================
+import FRM01781_HSEPolicyAcknowledgement from '../HSE_EHS/HSEGovernanceLegalCompliance/FRM01781_HSEPolicyAcknowledgement';
+import FRM01782_HSELegalRegisterUpdate from '../HSE_EHS/HSEGovernanceLegalCompliance/FRM01782_HSELegalRegisterUpdate';
+import FRM01783_HSEComplianceCalendarUpdate from '../HSE_EHS/HSEGovernanceLegalCompliance/FRM01783_HSEComplianceCalendarUpdate';
+import FRM01784_HSEStatutoryInspectionTracker from '../HSE_EHS/HSEGovernanceLegalCompliance/FRM01784_HSEStatutoryInspectionTracker';
+import FRM01785_SafetyCommitteeConstitution from '../HSE_EHS/HSEGovernanceLegalCompliance/FRM01785_SafetyCommitteeConstitution';
+import FRM01788_SafetyCommitteeMeetingMinutes from '../HSE_EHS/HSEGovernanceLegalCompliance/FRM01788_SafetyCommitteeMeetingMinutes';
+import FRM01789_HSEObjectivesTargets from '../HSE_EHS/HSEGovernanceLegalCompliance/FRM01789_HSEObjectivesTargets';
+import FRM01792_HSEKPIDataCapture from '../HSE_EHS/HSEGovernanceLegalCompliance/FRM01792_HSEKPIDataCapture';
+import FRM01795_HSEBudgetProposal from '../HSE_EHS/HSEGovernanceLegalCompliance/FRM01795_HSEBudgetProposal';
+import FRM01798_HSERiskRegisterUpdate from '../HSE_EHS/HSEGovernanceLegalCompliance/FRM01798_HSERiskRegisterUpdate';
+import FRM01799_HSEContractorSafetyRequirements from '../HSE_EHS/HSEGovernanceLegalCompliance/FRM01799_HSEContractorSafetyRequirements';
+import FRM01802_HSEPermitToWorkProcedureAcknowledgement from '../HSE_EHS/HSEGovernanceLegalCompliance/FRM01802_HSEPermitToWorkProcedureAcknowledgement';
+import FRM01805_HSETrainingMatrixUpdate from '../HSE_EHS/HSEGovernanceLegalCompliance/FRM01805_HSETrainingMatrixUpdate';
+import FRM01808_HSEInternalAuditPlan from '../HSE_EHS/HSEGovernanceLegalCompliance/FRM01808_HSEInternalAuditPlan';
+import FRM01809_HSEInternalAuditReport from '../HSE_EHS/HSEGovernanceLegalCompliance/FRM01809_HSEInternalAuditReport';
+import FRM01810_HSEManagementReviewMinutes from '../HSE_EHS/HSEGovernanceLegalCompliance/FRM01810_HSEManagementReviewMinutes';
+import FRM01811_SafetySuggestionKaizen from '../HSE_EHS/HSEGovernanceLegalCompliance/FRM01811_SafetySuggestionKaizen';
+import FRM01814_StopWorkAuthorityRecord from '../HSE_EHS/HSEGovernanceLegalCompliance/FRM01814_StopWorkAuthorityRecord';
+import FRM01817_SafetyNonComplianceNotice from '../HSE_EHS/HSEGovernanceLegalCompliance/FRM01817_SafetyNonComplianceNotice';
+import FRM01818_HSECorrectiveActionTracker from '../HSE_EHS/HSEGovernanceLegalCompliance/FRM01818_HSECorrectiveActionTracker';
+//================= ENVIRONMENT & ESG OPERATIONS =================
+// import FRM01975_EnvironmentalAspectImpactRegisterUpdate from '../HSE_EHS/EnvironmentESGOperations/FRM01975_EnvironmentalAspectImpactRegisterUpdate';
+// import FRM01976_WasteSegregationChecklist from '../HSE_EHS/EnvironmentESGOperations/FRM01976_WasteSegregationChecklist';
+// import FRM01977_HazardousWasteManifestChecklist from '../HSE_EHS/EnvironmentESGOperations/FRM01977_HazardousWasteManifestChecklist';
+// import FRM01978_ScrapGenerationLog from '../HSE_EHS/EnvironmentESGOperations/FRM01978_ScrapGenerationLog';
+// import FRM01979_ScrapDisposalApproval from '../HSE_EHS/EnvironmentESGOperations/FRM01979_ScrapDisposalApproval';
+// import FRM01980_EWasteDisposalCertificateLog from '../HSE_EHS/EnvironmentESGOperations/FRM01980_EWasteDisposalCertificateLog';
+// import FRM01981_PlasticWasteComplianceLog from '../HSE_EHS/EnvironmentESGOperations/FRM01981_PlasticWasteComplianceLog';
+// import FRM01982_EnergyConsumptionLog from '../HSE_EHS/EnvironmentESGOperations/FRM01982_EnergyConsumptionLog';
+// import FRM01983_AirEmissionMonitoringRequest from '../HSE_EHS/EnvironmentESGOperations/FRM01983_AirEmissionMonitoringRequest';
+// import FRM01984_StackEmissionReportLog from '../HSE_EHS/EnvironmentESGOperations/FRM01984_StackEmissionReportLog';
+// import FRM01985_EffluentWastewaterSamplingRequest from '../HSE_EHS/EnvironmentESGOperations/FRM01985_EffluentWastewaterSamplingRequest';
+// import FRM01986_EffluentTestReportLog from '../HSE_EHS/EnvironmentESGOperations/FRM01986_EffluentTestReportLog';
+// import FRM01987_NoiseMonitoringRequest from '../HSE_EHS/EnvironmentESGOperations/FRM01987_NoiseMonitoringRequest';
+// import FRM01988_NoiseMonitoringReportLog from '../HSE_EHS/EnvironmentESGOperations/FRM01988_NoiseMonitoringReportLog';
+// import FRM01989_EnvironmentalPermitConsentTracking from '../HSE_EHS/EnvironmentESGOperations/FRM01989_EnvironmentalPermitConsentTracking';
+// import FRM01992_EnvironmentalNonComplianceReport from '../HSE_EHS/EnvironmentESGOperations/FRM01992_EnvironmentalNonComplianceReport';
+// import FRM01995_EnvironmentalCAPATracker from '../HSE_EHS/EnvironmentESGOperations/FRM01995_EnvironmentalCAPATracker';
+// import FRM01996_GreenhouseGasDataCapture from '../HSE_EHS/EnvironmentESGOperations/FRM01996_GreenhouseGasDataCapture';
+// import FRM01999_ESGMetricsSubmissionPack from '../HSE_EHS/EnvironmentESGOperations/FRM01999_ESGMetricsSubmissionPack';
+// //================= PPE, TOOLS & SAFETY EQUIPMENT =================
+// import FRM01951_PPEIssueRequest from '../HSE_EHS/PPEToolsSafetyEquipment/FRM01951_PPEIssueRequest';
+// import FRM01952_PPEIssueRecord from '../HSE_EHS/PPEToolsSafetyEquipment/FRM01952_PPEIssueRecord';
+// import FRM01955_PPEReturnReplacement from '../HSE_EHS/PPEToolsSafetyEquipment/FRM01955_PPEReturnReplacement';
+// import FRM01958_PPEStockRegister from '../HSE_EHS/PPEToolsSafetyEquipment/FRM01958_PPEStockRegister';
+// import FRM01959_SafetyHarnessInspection from '../HSE_EHS/PPEToolsSafetyEquipment/FRM01959_SafetyHarnessInspection';
+// import FRM01960_GasDetectorBumpTestLog from '../HSE_EHS/PPEToolsSafetyEquipment/FRM01960_GasDetectorBumpTestLog';
+// import FRM01961_GasDetectorCalibrationLog from '../HSE_EHS/PPEToolsSafetyEquipment/FRM01961_GasDetectorCalibrationLog';
+// import FRM01962_FireExtinguisherInspectionLog from '../HSE_EHS/PPEToolsSafetyEquipment/FRM01962_FireExtinguisherInspectionLog';
+// import FRM01963_HydrantFireHoseReelTestLog from '../HSE_EHS/PPEToolsSafetyEquipment/FRM01963_HydrantFireHoseReelTestLog';
+// import FRM01964_EmergencyLightingTestLog from '../HSE_EHS/PPEToolsSafetyEquipment/FRM01964_EmergencyLightingTestLog';
+// import FRM01965_EyeWashShowerInspectionLog from '../HSE_EHS/PPEToolsSafetyEquipment/FRM01965_EyeWashShowerInspectionLog';
+// import FRM01966_SpillKitInspectionLog from '../HSE_EHS/PPEToolsSafetyEquipment/FRM01966_SpillKitInspectionLog';
+// import FRM01967_SafetySignageRequest from '../HSE_EHS/PPEToolsSafetyEquipment/FRM01967_SafetySignageRequest';
+// import FRM01968_BarricadingSignageChecklist from '../HSE_EHS/PPEToolsSafetyEquipment/FRM01968_BarricadingSignageChecklist';
+// import FRM01969_ToolboxTalkPlan from '../HSE_EHS/PPEToolsSafetyEquipment/FRM01969_ToolboxTalkPlan';
+// import FRM01970_ToolboxTalkAttendance from '../HSE_EHS/PPEToolsSafetyEquipment/FRM01970_ToolboxTalkAttendance';
+// import FRM01971_SafetyInductionAttendance from '../HSE_EHS/PPEToolsSafetyEquipment/FRM01971_SafetyInductionAttendance';
+// import FRM01972_ContractorInductionAttendance from '../HSE_EHS/PPEToolsSafetyEquipment/FRM01972_ContractorInductionAttendance';
+// import FRM01973_EmergencyEquipmentRegisterUpdate from '../HSE_EHS/PPEToolsSafetyEquipment/FRM01973_EmergencyEquipmentRegisterUpdate';
+// import FRM01974_SafetyEquipmentMaintenanceRequest from '../HSE_EHS/PPEToolsSafetyEquipment/FRM01974_SafetyEquipmentMaintenanceRequest';
+// //================= INCIDENTS, NEAR MISS & INVESTIGATIONS =================
+// import FRM01899_NearMissReport from '../HSE_EHS/IncidentsNearMissInvestigations/FRM01899_NearMissReport';
+// import FRM01902_FirstAidCaseRecord from '../HSE_EHS/IncidentsNearMissInvestigations/FRM01902_FirstAidCaseRecord';
+// import FRM01905_MedicalTreatmentCaseRecord from '../HSE_EHS/IncidentsNearMissInvestigations/FRM01905_MedicalTreatmentCaseRecord';
+// import FRM01908_LostTimeInjuryRecord from '../HSE_EHS/IncidentsNearMissInvestigations/FRM01908_LostTimeInjuryRecord';
+// import FRM01911_DangerousOccurrenceReport from '../HSE_EHS/IncidentsNearMissInvestigations/FRM01911_DangerousOccurrenceReport';
+// import FRM01914_PropertyDamageIncident from '../HSE_EHS/IncidentsNearMissInvestigations/FRM01914_PropertyDamageIncident';
+// import FRM01917_EnvironmentalIncident from '../HSE_EHS/IncidentsNearMissInvestigations/FRM01917_EnvironmentalIncident';
+// import FRM01920_RoadTrafficIncident from '../HSE_EHS/IncidentsNearMissInvestigations/FRM01920_RoadTrafficIncident';
+// import FRM01923_IncidentNotification from '../HSE_EHS/IncidentsNearMissInvestigations/FRM01923_IncidentNotification';
+// import FRM01926_IncidentInvestigationPlan from '../HSE_EHS/IncidentsNearMissInvestigations/FRM01926_IncidentInvestigationPlan';
+// import FRM01927_WitnessStatement from '../HSE_EHS/IncidentsNearMissInvestigations/FRM01927_WitnessStatement';
+// import FRM01928_InvestigationInterviewNotes from '../HSE_EHS/IncidentsNearMissInvestigations/FRM01928_InvestigationInterviewNotes';
+// import FRM01931_RCA5WhyRecord from '../HSE_EHS/IncidentsNearMissInvestigations/FRM01931_RCA5WhyRecord';
+// import FRM01934_RCAFishboneRecord from '../HSE_EHS/IncidentsNearMissInvestigations/FRM01934_RCAFishboneRecord';
+// import FRM01937_CorrectiveActionRecommendation from '../HSE_EHS/IncidentsNearMissInvestigations/FRM01937_CorrectiveActionRecommendation';
+// import FRM01938_IncidentClosureNote from '../HSE_EHS/IncidentsNearMissInvestigations/FRM01938_IncidentClosureNote';
+// import FRM01941_IncidentTrendAnalysis from '../HSE_EHS/IncidentsNearMissInvestigations/FRM01941_IncidentTrendAnalysis';
+// import FRM01944_IncidentRegisterUpdate from '../HSE_EHS/IncidentsNearMissInvestigations/FRM01944_IncidentRegisterUpdate';
+// import FRM01945_SafetyAlertLearningBulletin from '../HSE_EHS/IncidentsNearMissInvestigations/FRM01945_SafetyAlertLearningBulletin';
+// import FRM01948_RegulatoryNotificationDraft from '../HSE_EHS/IncidentsNearMissInvestigations/FRM01948_RegulatoryNotificationDraft';
+
+// //================= INSPECTIONS, AUDITS & OBSERVATIONS =================
+// import FRM01869_SafetyWalkthroughChecklist from '../HSE_EHS/InspectionsAuditsObservations/FRM01869_SafetyWalkthroughChecklist';
+// import FRM01870_AreaSafetyInspection from '../HSE_EHS/InspectionsAuditsObservations/FRM01870_AreaSafetyInspection';
+// import FRM01871_EquipmentSafetyInspection from '../HSE_EHS/InspectionsAuditsObservations/FRM01871_EquipmentSafetyInspection';
+// import FRM01872_FireSafetyInspection from '../HSE_EHS/InspectionsAuditsObservations/FRM01872_FireSafetyInspection';
+// import FRM01873_ElectricalSafetyInspection from '../HSE_EHS/InspectionsAuditsObservations/FRM01873_ElectricalSafetyInspection';
+// import FRM01874_MachineGuardingInspection from '../HSE_EHS/InspectionsAuditsObservations/FRM01874_MachineGuardingInspection';
+// import FRM01875_LadderScaffoldInspection from '../HSE_EHS/InspectionsAuditsObservations/FRM01875_LadderScaffoldInspection';
+// import FRM01876_PPEComplianceCheck from '../HSE_EHS/InspectionsAuditsObservations/FRM01876_PPEComplianceCheck';
+// import FRM01879_Housekeeping5SAudit from '../HSE_EHS/InspectionsAuditsObservations/FRM01879_Housekeeping5SAudit';
+// import FRM01880_VehicleSafetyInspection from '../HSE_EHS/InspectionsAuditsObservations/FRM01880_VehicleSafetyInspection';
+// import FRM01881_ForkliftSafetyChecklist from '../HSE_EHS/InspectionsAuditsObservations/FRM01881_ForkliftSafetyChecklist';
+// import FRM01882_GasCylinderSafetyChecklist from '../HSE_EHS/InspectionsAuditsObservations/FRM01882_GasCylinderSafetyChecklist';
+// import FRM01883_ChemicalStorageInspection from '../HSE_EHS/InspectionsAuditsObservations/FRM01883_ChemicalStorageInspection';
+// import FRM01884_MSDSAvailabilityCheck from '../HSE_EHS/InspectionsAuditsObservations/FRM01884_MSDSAvailabilityCheck';
+// import FRM01887_EmergencyExitSignageAudit from '../HSE_EHS/InspectionsAuditsObservations/FRM01887_EmergencyExitSignageAudit';
+// import FRM01888_FirstAidBoxInspection from '../HSE_EHS/InspectionsAuditsObservations/FRM01888_FirstAidBoxInspection';
+// import FRM01889_SafetyObservationCard from '../HSE_EHS/InspectionsAuditsObservations/FRM01889_SafetyObservationCard';
+// import FRM01892_UnsafeActConditionReport from '../HSE_EHS/InspectionsAuditsObservations/FRM01892_UnsafeActConditionReport';
+// import FRM01895_BehaviorBasedSafetyObservation from '../HSE_EHS/InspectionsAuditsObservations/FRM01895_BehaviorBasedSafetyObservation';
+// import FRM01898_SafetyAuditClosureReport from '../HSE_EHS/InspectionsAuditsObservations/FRM01898_SafetyAuditClosureReport';
+// //================= HAZARD, RISK & WORK PERMITS =================
+import FRM01819_HazardIdentificationReport from '../HSE_EHS/HazardRiskWorkPermits/FRM01819_HazardIdentificationReport';
+import FRM01822_JobSafetyAnalysisJSA from '../HSE_EHS/HazardRiskWorkPermits/FRM01822_JobSafetyAnalysisJSA';
+import FRM01825_JobHazardAnalysisJHA from '../HSE_EHS/HazardRiskWorkPermits/FRM01825_JobHazardAnalysisJHA';
+import FRM01828_HIRAWorksheet from '../HSE_EHS/HazardRiskWorkPermits/FRM01828_HIRAWorksheet';
+import FRM01829_RiskAssessmentNewActivity from '../HSE_EHS/HazardRiskWorkPermits/FRM01829_RiskAssessmentNewActivity';
+import FRM01830_ProcessSafetyReview from '../HSE_EHS/HazardRiskWorkPermits/FRM01830_ProcessSafetyReview';
+import FRM01833_PreTaskRiskAssessment from '../HSE_EHS/HazardRiskWorkPermits/FRM01833_PreTaskRiskAssessment';
+import FRM01834_LiftingPlan from '../HSE_EHS/HazardRiskWorkPermits/FRM01834_LiftingPlan';
+import FRM01835_CraneLiftingPermit from '../HSE_EHS/HazardRiskWorkPermits/FRM01835_CraneLiftingPermit';
+import FRM01838_HotWorkPermit from '../HSE_EHS/HazardRiskWorkPermits/FRM01838_HotWorkPermit';
+// import FRM01841_ConfinedSpaceEntryPermit from '../HSE_EHS/HazardRiskWorkPermits/FRM01841_ConfinedSpaceEntryPermit';
+// import FRM01844_WorkAtHeightPermit from '../HSE_EHS/HazardRiskWorkPermits/FRM01844_WorkAtHeightPermit';
+// import FRM01847_ElectricalIsolationLOTO from '../HSE_EHS/HazardRiskWorkPermits/FRM01847_ElectricalIsolationLOTO';
+// import FRM01850_ExcavationPermit from '../HSE_EHS/HazardRiskWorkPermits/FRM01850_ExcavationPermit';
+// import FRM01853_RadiographyPermit from '../HSE_EHS/HazardRiskWorkPermits/FRM01853_RadiographyPermit';
+// import FRM01856_PressureTestingPermit from '../HSE_EHS/HazardRiskWorkPermits/FRM01856_PressureTestingPermit';
+// import FRM01859_LineBreakingPermit from '../HSE_EHS/HazardRiskWorkPermits/FRM01859_LineBreakingPermit';
+// import FRM01862_VehicleMovementPermit from '../HSE_EHS/HazardRiskWorkPermits/FRM01862_VehicleMovementPermit';
+// import FRM01865_PermitCloseout from '../HSE_EHS/HazardRiskWorkPermits/FRM01865_PermitCloseout';
+// import FRM01868_PermitRegisterUpdate from '../HSE_EHS/HazardRiskWorkPermits/FRM01868_PermitRegisterUpdate';
+
+
 export const modulesConfig = { 
+  HSE_EHS: {
+  title: "HSE / EHS Management System",
+  width: 360,
+  forms: [
+    // // ================= HAZARD, RISK & WORK PERMITS =================
+    { id: "FRM-01819", label: "Hazard Identification Report", component: FRM01819_HazardIdentificationReport },
+    { id: "FRM-01822", label: "Job Safety Analysis (JSA)", component: FRM01822_JobSafetyAnalysisJSA },
+    { id: "FRM-01825", label: "Job Hazard Analysis (JHA)", component: FRM01825_JobHazardAnalysisJHA },
+    { id: "FRM-01828", label: "HIRA Worksheet", component: FRM01828_HIRAWorksheet },
+    { id: "FRM-01829", label: "Risk Assessment – New Activity", component: FRM01829_RiskAssessmentNewActivity },
+    { id: "FRM-01830", label: "Process Safety Review", component: FRM01830_ProcessSafetyReview },
+    { id: "FRM-01833", label: "Pre-Task Risk Assessment", component: FRM01833_PreTaskRiskAssessment },
+    { id: "FRM-01834", label: "Lifting Plan", component: FRM01834_LiftingPlan },
+    { id: "FRM-01835", label: "Crane Lifting Permit", component: FRM01835_CraneLiftingPermit },
+    { id: "FRM-01838", label: "Hot Work Permit", component: FRM01838_HotWorkPermit },
+    // { id: "FRM-01841", label: "Confined Space Entry Permit", component: FRM01841_ConfinedSpaceEntryPermit },
+    // { id: "FRM-01844", label: "Work At Height Permit", component: FRM01844_WorkAtHeightPermit },
+    // { id: "FRM-01847", label: "Electrical Isolation / LOTO", component: FRM01847_ElectricalIsolationLOTO },
+    // { id: "FRM-01850", label: "Excavation Permit", component: FRM01850_ExcavationPermit },
+    // { id: "FRM-01853", label: "Radiography Permit", component: FRM01853_RadiographyPermit },
+    // { id: "FRM-01856", label: "Pressure Testing Permit", component: FRM01856_PressureTestingPermit },
+    // { id: "FRM-01859", label: "Line Breaking Permit", component: FRM01859_LineBreakingPermit },
+    // { id: "FRM-01862", label: "Vehicle Movement Permit", component: FRM01862_VehicleMovementPermit },
+    // { id: "FRM-01865", label: "Permit Closeout", component: FRM01865_PermitCloseout },
+    // { id: "FRM-01868", label: "Permit Register Update", component: FRM01868_PermitRegisterUpdate },
+
+    // // ================= INSPECTIONS, AUDITS & OBSERVATIONS =================
+
+    // { id: "FRM-01869", label: "Safety Walkthrough Checklist", component: FRM01869_SafetyWalkthroughChecklist },
+    // { id: "FRM-01870", label: "Area Safety Inspection", component: FRM01870_AreaSafetyInspection },
+    // { id: "FRM-01871", label: "Equipment Safety Inspection", component: FRM01871_EquipmentSafetyInspection },
+    // { id: "FRM-01872", label: "Fire Safety Inspection", component: FRM01872_FireSafetyInspection },
+    // { id: "FRM-01873", label: "Electrical Safety Inspection", component: FRM01873_ElectricalSafetyInspection },
+    // { id: "FRM-01874", label: "Machine Guarding Inspection", component: FRM01874_MachineGuardingInspection },
+    // { id: "FRM-01875", label: "Ladder / Scaffold Inspection", component: FRM01875_LadderScaffoldInspection },
+    // { id: "FRM-01876", label: "PPE Compliance Check", component: FRM01876_PPEComplianceCheck },
+    // { id: "FRM-01879", label: "Housekeeping 5S Audit", component: FRM01879_Housekeeping5SAudit },
+    // { id: "FRM-01880", label: "Vehicle Safety Inspection", component: FRM01880_VehicleSafetyInspection },
+    // { id: "FRM-01881", label: "Forklift Safety Checklist", component: FRM01881_ForkliftSafetyChecklist },
+    // { id: "FRM-01882", label: "Gas Cylinder Safety Checklist", component: FRM01882_GasCylinderSafetyChecklist },
+    // { id: "FRM-01883", label: "Chemical Storage Inspection", component: FRM01883_ChemicalStorageInspection },
+    // { id: "FRM-01884", label: "MSDS Availability Check", component: FRM01884_MSDSAvailabilityCheck },
+    // { id: "FRM-01887", label: "Emergency Exit Signage Audit", component: FRM01887_EmergencyExitSignageAudit },
+    // { id: "FRM-01888", label: "First Aid Box Inspection", component: FRM01888_FirstAidBoxInspection },
+    // { id: "FRM-01889", label: "Safety Observation Card", component: FRM01889_SafetyObservationCard },
+    // { id: "FRM-01892", label: "Unsafe Act / Condition Report", component: FRM01892_UnsafeActConditionReport },
+    // { id: "FRM-01895", label: "Behavior Based Safety Observation", component: FRM01895_BehaviorBasedSafetyObservation },
+    // { id: "FRM-01898", label: "Safety Audit Closure Report", component: FRM01898_SafetyAuditClosureReport },
+
+    // // ================= INCIDENTS, NEAR MISS & INVESTIGATIONS =================
+
+    // { id: "FRM-01899", label: "Near Miss Report", component: FRM01899_NearMissReport },
+    // { id: "FRM-01902", label: "First Aid Case Record", component: FRM01902_FirstAidCaseRecord },
+    // { id: "FRM-01905", label: "Medical Treatment Case Record", component: FRM01905_MedicalTreatmentCaseRecord },
+    // { id: "FRM-01908", label: "Lost Time Injury Record", component: FRM01908_LostTimeInjuryRecord },
+    // { id: "FRM-01911", label: "Dangerous Occurrence Report", component: FRM01911_DangerousOccurrenceReport },
+    // { id: "FRM-01914", label: "Property Damage Incident", component: FRM01914_PropertyDamageIncident },
+    // { id: "FRM-01917", label: "Environmental Incident", component: FRM01917_EnvironmentalIncident },
+    // { id: "FRM-01920", label: "Road Traffic Incident", component: FRM01920_RoadTrafficIncident },
+    // { id: "FRM-01923", label: "Incident Notification", component: FRM01923_IncidentNotification },
+    // { id: "FRM-01926", label: "Incident Investigation Plan", component: FRM01926_IncidentInvestigationPlan },
+    // { id: "FRM-01927", label: "Witness Statement", component: FRM01927_WitnessStatement },
+    // { id: "FRM-01928", label: "Investigation Interview Notes", component: FRM01928_InvestigationInterviewNotes },
+    // { id: "FRM-01931", label: "RCA 5 Why Record", component: FRM01931_RCA5WhyRecord },
+    // { id: "FRM-01934", label: "RCA Fishbone Record", component: FRM01934_RCAFishboneRecord },
+    // { id: "FRM-01937", label: "Corrective Action Recommendation", component: FRM01937_CorrectiveActionRecommendation },
+    // { id: "FRM-01938", label: "Incident Closure Note", component: FRM01938_IncidentClosureNote },
+    // { id: "FRM-01941", label: "Incident Trend Analysis", component: FRM01941_IncidentTrendAnalysis },
+    // { id: "FRM-01944", label: "Incident Register Update", component: FRM01944_IncidentRegisterUpdate },
+    // { id: "FRM-01945", label: "Safety Alert / Learning Bulletin", component: FRM01945_SafetyAlertLearningBulletin },
+    // { id: "FRM-01948", label: "Regulatory Notification Draft", component: FRM01948_RegulatoryNotificationDraft },
+
+    // // ================= PPE, TOOLS & SAFETY EQUIPMENT =================
+
+    // { id: "FRM-01951", label: "PPE Issue Request", component: FRM01951_PPEIssueRequest },
+    // { id: "FRM-01952", label: "PPE Issue Record", component: FRM01952_PPEIssueRecord },
+    // { id: "FRM-01955", label: "PPE Return / Replacement", component: FRM01955_PPEReturnReplacement },
+    // { id: "FRM-01958", label: "PPE Stock Register", component: FRM01958_PPEStockRegister },
+    // { id: "FRM-01959", label: "Safety Harness Inspection", component: FRM01959_SafetyHarnessInspection },
+    // { id: "FRM-01960", label: "Gas Detector Bump Test Log", component: FRM01960_GasDetectorBumpTestLog },
+    // { id: "FRM-01961", label: "Gas Detector Calibration Log", component: FRM01961_GasDetectorCalibrationLog },
+    // { id: "FRM-01962", label: "Fire Extinguisher Inspection Log", component: FRM01962_FireExtinguisherInspectionLog },
+    // { id: "FRM-01963", label: "Hydrant / Fire Hose Reel Test Log", component: FRM01963_HydrantFireHoseReelTestLog },
+    // { id: "FRM-01964", label: "Emergency Lighting Test Log", component: FRM01964_EmergencyLightingTestLog },
+    // { id: "FRM-01965", label: "Eye Wash / Shower Inspection Log", component: FRM01965_EyeWashShowerInspectionLog },
+    // { id: "FRM-01966", label: "Spill Kit Inspection Log", component: FRM01966_SpillKitInspectionLog },
+    // { id: "FRM-01967", label: "Safety Signage Request", component: FRM01967_SafetySignageRequest },
+    // { id: "FRM-01968", label: "Barricading / Signage Checklist", component: FRM01968_BarricadingSignageChecklist },
+    // { id: "FRM-01969", label: "Toolbox Talk Plan", component: FRM01969_ToolboxTalkPlan },
+    // { id: "FRM-01970", label: "Toolbox Talk Attendance", component: FRM01970_ToolboxTalkAttendance },
+    // { id: "FRM-01971", label: "Safety Induction Attendance", component: FRM01971_SafetyInductionAttendance },
+    // { id: "FRM-01972", label: "Contractor Induction Attendance", component: FRM01972_ContractorInductionAttendance },
+    // { id: "FRM-01973", label: "Emergency Equipment Register Update", component: FRM01973_EmergencyEquipmentRegisterUpdate },
+    // { id: "FRM-01974", label: "Safety Equipment Maintenance Request", component: FRM01974_SafetyEquipmentMaintenanceRequest },
+
+    // // ================= ENVIRONMENT & ESG OPERATIONS =================
+
+    // { id: "FRM-01975", label: "Environmental Aspect & Impact Register Update", component: FRM01975_EnvironmentalAspectImpactRegisterUpdate },
+    // { id: "FRM-01976", label: "Waste Segregation Checklist", component: FRM01976_WasteSegregationChecklist },
+    // { id: "FRM-01977", label: "Hazardous Waste Manifest Checklist", component: FRM01977_HazardousWasteManifestChecklist },
+    // { id: "FRM-01978", label: "Scrap Generation Log", component: FRM01978_ScrapGenerationLog },
+    // { id: "FRM-01979", label: "Scrap Disposal Approval", component: FRM01979_ScrapDisposalApproval },
+    // { id: "FRM-01980", label: "E-Waste Disposal Certificate Log", component: FRM01980_EWasteDisposalCertificateLog },
+    // { id: "FRM-01981", label: "Plastic Waste Compliance Log", component: FRM01981_PlasticWasteComplianceLog },
+    // { id: "FRM-01982", label: "Energy Consumption Log", component: FRM01982_EnergyConsumptionLog },
+    // { id: "FRM-01983", label: "Air Emission Monitoring Request", component: FRM01983_AirEmissionMonitoringRequest },
+    // { id: "FRM-01984", label: "Stack Emission Report Log", component: FRM01984_StackEmissionReportLog },
+    // { id: "FRM-01985", label: "Effluent / Wastewater Sampling Request", component: FRM01985_EffluentWastewaterSamplingRequest },
+    // { id: "FRM-01986", label: "Effluent Test Report Log", component: FRM01986_EffluentTestReportLog },
+    // { id: "FRM-01987", label: "Noise Monitoring Request", component: FRM01987_NoiseMonitoringRequest },
+    // { id: "FRM-01988", label: "Noise Monitoring Report Log", component: FRM01988_NoiseMonitoringReportLog },
+    // { id: "FRM-01989", label: "Environmental Permit / Consent Tracking", component: FRM01989_EnvironmentalPermitConsentTracking },
+    // { id: "FRM-01992", label: "Environmental Non-Compliance Report", component: FRM01992_EnvironmentalNonComplianceReport },
+    // { id: "FRM-01995", label: "Environmental CAPA Tracker", component: FRM01995_EnvironmentalCAPATracker },
+    // { id: "FRM-01996", label: "Greenhouse Gas Data Capture", component: FRM01996_GreenhouseGasDataCapture },
+    // { id: "FRM-01999", label: "ESG Metrics Submission Pack", component: FRM01999_ESGMetricsSubmissionPack }
+
+     // ================= HSE GOVERNANCE & LEGAL COMPLIANCE =================
+    { id: "FRM-01781", label: "HSE Policy Acknowledgement", component: FRM01781_HSEPolicyAcknowledgement },
+    { id: "FRM-01782", label: "HSE Legal Register Update", component: FRM01782_HSELegalRegisterUpdate },
+    { id: "FRM-01783", label: "HSE Compliance Calendar Update", component: FRM01783_HSEComplianceCalendarUpdate },
+    { id: "FRM-01784", label: "HSE Statutory Inspection Tracker", component: FRM01784_HSEStatutoryInspectionTracker },
+    { id: "FRM-01785", label: "Safety Committee Constitution", component: FRM01785_SafetyCommitteeConstitution },
+    { id: "FRM-01788", label: "Safety Committee Meeting Minutes", component: FRM01788_SafetyCommitteeMeetingMinutes },
+    { id: "FRM-01789", label: "HSE Objectives & Targets", component: FRM01789_HSEObjectivesTargets },
+    { id: "FRM-01792", label: "HSE KPI Data Capture", component: FRM01792_HSEKPIDataCapture },
+    { id: "FRM-01795", label: "HSE Budget Proposal", component: FRM01795_HSEBudgetProposal },
+    { id: "FRM-01798", label: "HSE Risk Register Update", component: FRM01798_HSERiskRegisterUpdate },
+    { id: "FRM-01799", label: "HSE Contractor Safety Requirements", component: FRM01799_HSEContractorSafetyRequirements },
+    { id: "FRM-01802", label: "Permit To Work Procedure Acknowledgement", component: FRM01802_HSEPermitToWorkProcedureAcknowledgement },
+    { id: "FRM-01805", label: "HSE Training Matrix Update", component: FRM01805_HSETrainingMatrixUpdate },
+    { id: "FRM-01808", label: "HSE Internal Audit Plan", component: FRM01808_HSEInternalAuditPlan },
+    { id: "FRM-01809", label: "HSE Internal Audit Report", component: FRM01809_HSEInternalAuditReport },
+    { id: "FRM-01810", label: "HSE Management Review Minutes", component: FRM01810_HSEManagementReviewMinutes },
+    { id: "FRM-01811", label: "Safety Suggestion / Kaizen", component: FRM01811_SafetySuggestionKaizen },
+    { id: "FRM-01814", label: "Stop Work Authority Record", component: FRM01814_StopWorkAuthorityRecord },
+    { id: "FRM-01817", label: "Safety Non-Compliance Notice", component: FRM01817_SafetyNonComplianceNotice },
+    { id: "FRM-01818", label: "HSE Corrective Action Tracker", component: FRM01818_HSECorrectiveActionTracker },
+
+
+  ]
+},
   AdministrationGeneral: {
   title: "Administration & General",
   width: 280,
@@ -2225,5 +2482,15 @@ CorporateSecretarial: {
   ]
 },
  
+  CorporateSecretarialAdvanced: {
+  title: "Corporate & Secretarial (Advanced)",
+  width: 340,
+
+  forms: [
+
+    { id: "FRM-01499", label: "DIN / DSC Application Checklist", component: FRM01499_DINDSCApplicationChecklist },
+    
+  ]
+},
 
 };

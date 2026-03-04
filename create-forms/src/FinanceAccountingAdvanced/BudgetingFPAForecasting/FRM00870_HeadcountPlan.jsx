@@ -114,18 +114,38 @@ const FRM00870_HeadcountPlan = () => {
               department="Finance & Accounting – Budgeting, FP&A & Forecasting"
             >
 
-              {/* ================= BASIC INFORMATION ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Basic Information</h3>
-                <div className="form-fields">
-                  <Field name="businessUnit" placeholder="Business Unit / Function" className="form-input"/>
-                  <Field name="planningPeriod" placeholder="Planning Period" className="form-input"/>
-                  <Field name="preparedBy" placeholder="Prepared By" className="form-input"/>
-                  <Field name="date" type="date" className="form-input"/>
-                  <Field name="version" placeholder="Version" className="form-input"/>
-                </div>
-              </div>
+             {/* ================= BASIC INFORMATION ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">Basic Information</h3>
+  <div className="form-fields">
 
+    <div className="form-field">
+      <label className="form-label">Business Unit / Function</label>
+      <Field name="businessUnit" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Planning Period</label>
+      <Field name="planningPeriod" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Prepared By</label>
+      <Field name="preparedBy" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Date</label>
+      <Field name="date" type="date" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Version</label>
+      <Field name="version" className="form-input"/>
+    </div>
+
+  </div>
+</div>
               {/* ================= HEADCOUNT PLANNING DETAILS ================= */}
               <div className="form-section">
                 <h3 className="form-section-title">Headcount Planning Details</h3>
@@ -299,18 +319,31 @@ const FRM00870_HeadcountPlan = () => {
                 </FieldArray>
               </div>
 
-              {/* ================= KEY ASSUMPTIONS ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Key Assumptions</h3>
-                <Field name="keyAssumptions" className="form-input"/>
-              </div>
+             {/* ================= KEY ASSUMPTIONS ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">Key Assumptions</h3>
+  <div className="form-fields">
+
+    <div className="form-field">
+      <label className="form-label">Key Assumptions</label>
+      <Field name="keyAssumptions" className="form-input"/>
+    </div>
+
+  </div>
+</div>
 
               {/* ================= RISKS & CONSTRAINTS ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Risks / Constraints</h3>
-                <Field name="risksConstraints" className="form-input"/>
-              </div>
+<div className="form-section">
+  <h3 className="form-section-title">Risks / Constraints</h3>
+  <div className="form-fields">
 
+    <div className="form-field">
+      <label className="form-label">Risks / Constraints</label>
+      <Field name="risksConstraints" className="form-input"/>
+    </div>
+
+  </div>
+</div>
               {/* ================= CUSTOM FIELDS ================= */}
               <FormCustomFields values={values}/>
 

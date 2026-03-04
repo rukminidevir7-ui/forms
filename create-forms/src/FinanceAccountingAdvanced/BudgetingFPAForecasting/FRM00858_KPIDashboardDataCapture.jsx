@@ -106,17 +106,38 @@ const FRM00858_KPIDashboardDataCapture = () => {
               department="Finance & Accounting – Budgeting, FP&A & Forecasting"
             >
 
-              {/* ================= BASIC INFORMATION ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Basic Information</h3>
-                <div className="form-fields">
-                  <Field name="businessUnit" placeholder="Business Unit / Function" className="form-input"/>
-                  <Field name="reportingPeriod" placeholder="Reporting Period" className="form-input"/>
-                  <Field name="preparedBy" placeholder="Prepared By" className="form-input"/>
-                  <Field name="submissionDate" type="date" className="form-input"/>
-                  <Field name="version" placeholder="Version" className="form-input"/>
-                </div>
-              </div>
+             {/* ================= BASIC INFORMATION ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">Basic Information</h3>
+  <div className="form-fields">
+
+    <div className="form-field">
+      <label className="form-label">Business Unit / Function</label>
+      <Field name="businessUnit" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Reporting Period</label>
+      <Field name="reportingPeriod" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Prepared By</label>
+      <Field name="preparedBy" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Submission Date</label>
+      <Field name="submissionDate" type="date" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Version</label>
+      <Field name="version" className="form-input"/>
+    </div>
+
+  </div>
+</div>
 
               {/* ================= KPI DATA CAPTURE ================= */}
               <div className="form-section">
@@ -247,23 +268,30 @@ const FRM00858_KPIDashboardDataCapture = () => {
 
               </div>
 
-              {/* ================= DATA VALIDATION NOTES ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Data Validation Notes</h3>
-                <Field
-                  name="validationNotes"
-                  className="form-input"
-                />
-              </div>
+             {/* ================= DATA VALIDATION NOTES ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">Data Validation Notes</h3>
+  <div className="form-fields">
 
+    <div className="form-field">
+      <label className="form-label">Validation Notes</label>
+      <Field name="validationNotes" className="form-input"/>
+    </div>
+
+  </div>
+</div>
               {/* ================= ISSUES & ASSUMPTIONS ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Issues & Assumptions</h3>
-                <Field
-                  name="issuesAssumptions"
-                  className="form-input"
-                />
-              </div>
+<div className="form-section">
+  <h3 className="form-section-title">Issues & Assumptions</h3>
+  <div className="form-fields">
+
+    <div className="form-field">
+      <label className="form-label">Issues & Assumptions</label>
+      <Field name="issuesAssumptions" className="form-input"/>
+    </div>
+
+  </div>
+</div>
 
               {/* ================= CUSTOM FIELDS ================= */}
               <FormCustomFields values={values}/>

@@ -157,17 +157,21 @@
 
 /* Labels */
 .form-label {
-  font-size: var(--label-font-size);
-  font-weight: 600;
-  color: var(--color-text);
-  margin-bottom: 5px;
-  font-family: var(--dynamic-font);
+  font-family: "Inter", "Segoe UI", sans-serif !important;
 }
 
 .form-label.required::after {
   content: ' *';
   color: var(--color-error);
   font-weight: bold;
+}
+
+.form-input,
+.form-textarea,
+.items-table input,
+.items-table textarea,
+.items-table select {
+  font-family: "Calibri", "Segoe UI", sans-serif !important;
 }
 
 /* Input Fields */
@@ -520,6 +524,30 @@
   .print-value {
     page-break-inside: avoid !important;
     break-inside: avoid !important;
+  }
+
+}
+
+/* =========================================
+   🚨 REMOVE BLACK INPUT BACKGROUND IN PDF
+   ========================================= */
+
+@media print {
+
+  .form-input,
+  .form-textarea,
+  .items-table input,
+  .items-table textarea,
+  .items-table select {
+
+    background: transparent !important;
+    background-color: transparent !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+
+    color: #000 !important;
+    border: none !important;
+    box-shadow: none !important;
   }
 
 }

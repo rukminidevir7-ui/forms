@@ -119,30 +119,97 @@ const FRM00909_VendorQueryTicket = () => {
             >
 
               {/* ================= DOCUMENT CONTROL ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Document Control</h3>
-                <div className="form-fields">
-                  <Field name="formType" as="select" className="form-input">
-                    <option value="Initiation">Initiation</option>
-                    <option value="Approval">Approval</option>
-                  </Field>
-                  <Field name="ticketNo" placeholder="Ticket No." className="form-input"/>
-                  <Field name="date" type="date" className="form-input"/>
-                  <Field name="version" className="form-input"/>
-                </div>
-              </div>
+<div className="form-section">
+  <h3 className="form-section-title">Document Control</h3>
+  <div className="form-fields">
 
-              {/* ================= VENDOR DETAILS ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Vendor Details</h3>
-                <div className="form-fields">
-                  <Field name="vendorName" placeholder="Vendor Name" className="form-input"/>
-                  <Field name="vendorId" placeholder="Vendor ID" className="form-input"/>
-                  <Field name="contactPerson" placeholder="Contact Person" className="form-input"/>
-                  <Field name="contactNumber" placeholder="Contact Number" className="form-input"/>
-                  <Field name="email" placeholder="Email" className="form-input"/>
-                </div>
-              </div>
+    <div className="form-field">
+      <label className="form-label">Form Type</label>
+      <Field
+        name="formType"
+        as="select"
+        className="form-input"
+      >
+        <option value="Initiation">Initiation</option>
+        <option value="Approval">Approval</option>
+      </Field>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Ticket Number</label>
+      <Field
+        name="ticketNo"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Document Date</label>
+      <Field
+        name="date"
+        type="date"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Version</label>
+      <Field
+        name="version"
+        className="form-input"
+      />
+    </div>
+
+  </div>
+</div>
+
+             {/* ================= VENDOR DETAILS ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">Vendor Details</h3>
+  <div className="form-fields">
+
+    <div className="form-field">
+      <label className="form-label">Vendor Name</label>
+      <Field
+        name="vendorName"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Vendor ID</label>
+      <Field
+        name="vendorId"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Contact Person</label>
+      <Field
+        name="contactPerson"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Contact Number</label>
+      <Field
+        name="contactNumber"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Email Address</label>
+      <Field
+        name="email"
+        className="form-input"
+      />
+    </div>
+
+  </div>
+</div>
 
               {/* ================= RELATED REFERENCES ================= */}
               <div className="form-section">
@@ -221,52 +288,158 @@ const FRM00909_VendorQueryTicket = () => {
                 </FieldArray>
               </div>
 
-              {/* ================= QUERY DETAILS ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Query Details</h3>
-                <div className="form-fields">
-                  <Field name="queryCategory" placeholder="Query Category" className="form-input"/>
-                  <Field name="priority" as="select" className="form-input">
-                    <option value="">Select Priority</option>
-                    <option value="Low">Low</option>
-                    <option value="Medium">Medium</option>
-                    <option value="High">High</option>
-                    <option value="Critical">Critical</option>
-                  </Field>
-                  <Field name="queryDescription" placeholder="Query Description" className="form-input"/>
-                  <Field name="supportingDocsAttached" placeholder="Supporting Docs (Y/N)" className="form-input"/>
-                  <Field name="expectedResolutionDate" type="date" className="form-input"/>
-                </div>
-              </div>
+             {/* ================= QUERY DETAILS ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">Query Details</h3>
+  <div className="form-fields">
 
-              {/* ================= INTERNAL REVIEW ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Internal Review & Action</h3>
-                <div className="form-fields">
-                  <Field name="assignedTo" placeholder="Assigned To" className="form-input"/>
-                  <Field name="assignedDepartment" placeholder="Department" className="form-input"/>
-                  <Field name="rootCause" placeholder="Root Cause" className="form-input"/>
-                  <Field name="actionTaken" placeholder="Action Taken" className="form-input"/>
-                  <Field name="closureDate" type="date" className="form-input"/>
-                  <Field name="status" as="select" className="form-input">
-                    <option value="Open">Open</option>
-                    <option value="In Review">In Review</option>
-                    <option value="Closed">Closed</option>
-                    <option value="Escalated">Escalated</option>
-                  </Field>
-                </div>
-              </div>
+    <div className="form-field">
+      <label className="form-label">Query Category</label>
+      <Field
+        name="queryCategory"
+        className="form-input"
+      />
+    </div>
 
-              {/* ================= AUDIT TRAIL ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Audit Trail</h3>
-                <div className="form-fields">
-                  <Field name="createdOn" type="date" className="form-input"/>
-                  <Field name="lastUpdatedOn" type="date" className="form-input"/>
-                  <Field name="documentOwner" placeholder="Document Owner" className="form-input"/>
-                </div>
-              </div>
+    <div className="form-field">
+      <label className="form-label">Priority</label>
+      <Field
+        name="priority"
+        as="select"
+        className="form-input"
+      >
+        <option value="">Select Priority</option>
+        <option value="Low">Low</option>
+        <option value="Medium">Medium</option>
+        <option value="High">High</option>
+        <option value="Critical">Critical</option>
+      </Field>
+    </div>
 
+    <div className="form-field">
+      <label className="form-label">Query Description</label>
+      <Field
+        name="queryDescription"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Supporting Documents Attached</label>
+      <Field
+        name="supportingDocsAttached"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Expected Resolution Date</label>
+      <Field
+        name="expectedResolutionDate"
+        type="date"
+        className="form-input"
+      />
+    </div>
+
+  </div>
+</div>
+
+             {/* ================= INTERNAL REVIEW ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">Internal Review & Action</h3>
+  <div className="form-fields">
+
+    <div className="form-field">
+      <label className="form-label">Assigned To</label>
+      <Field
+        name="assignedTo"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Assigned Department</label>
+      <Field
+        name="assignedDepartment"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Root Cause</label>
+      <Field
+        name="rootCause"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Action Taken</label>
+      <Field
+        name="actionTaken"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Closure Date</label>
+      <Field
+        name="closureDate"
+        type="date"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Current Status</label>
+      <Field
+        name="status"
+        as="select"
+        className="form-input"
+      >
+        <option value="Open">Open</option>
+        <option value="In Review">In Review</option>
+        <option value="Closed">Closed</option>
+        <option value="Escalated">Escalated</option>
+      </Field>
+    </div>
+
+  </div>
+</div>
+
+             {/* ================= AUDIT TRAIL ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">Audit Trail</h3>
+  <div className="form-fields">
+
+    <div className="form-field">
+      <label className="form-label">Created On</label>
+      <Field
+        name="createdOn"
+        type="date"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Last Updated On</label>
+      <Field
+        name="lastUpdatedOn"
+        type="date"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Document Owner</label>
+      <Field
+        name="documentOwner"
+        className="form-input"
+      />
+    </div>
+
+  </div>
+</div>
               <FormCustomFields values={values}/>
               <FormAttachments values={values}/>
 

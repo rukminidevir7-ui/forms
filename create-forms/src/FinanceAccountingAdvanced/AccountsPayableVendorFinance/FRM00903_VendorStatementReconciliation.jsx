@@ -106,27 +106,86 @@ const FRM00903_VendorStatementReconciliation = () => {
               department="Finance & Accounting – Accounts Payable"
             >
 
-              {/* ================= DOCUMENT INFORMATION ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Document Information</h3>
-                <div className="form-fields">
-                  <Field name="date" type="date" className="form-input"/>
-                  <Field name="department" className="form-input"/>
-                  <Field name="preparedBy" placeholder="Prepared By" className="form-input"/>
-                  <Field name="version" placeholder="Version" className="form-input"/>
-                </div>
-              </div>
+             {/* ================= DOCUMENT INFORMATION ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">Document Information</h3>
+  <div className="form-fields">
 
-              {/* ================= VENDOR DETAILS ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Vendor Details</h3>
-                <div className="form-fields">
-                  <Field name="vendorName" placeholder="Vendor Name" className="form-input"/>
-                  <Field name="vendorCode" placeholder="Vendor Code" className="form-input"/>
-                  <Field name="periodCovered" placeholder="Period Covered" className="form-input"/>
-                  <Field name="currency" placeholder="Currency" className="form-input"/>
-                </div>
-              </div>
+    <div className="form-field">
+      <label className="form-label">Document Date</label>
+      <Field
+        name="date"
+        type="date"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Department</label>
+      <Field
+        name="department"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Prepared By</label>
+      <Field
+        name="preparedBy"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Version</label>
+      <Field
+        name="version"
+        className="form-input"
+      />
+    </div>
+
+  </div>
+</div>
+
+             {/* ================= VENDOR DETAILS ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">Vendor Details</h3>
+  <div className="form-fields">
+
+    <div className="form-field">
+      <label className="form-label">Vendor Name</label>
+      <Field
+        name="vendorName"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Vendor Code</label>
+      <Field
+        name="vendorCode"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Period Covered</label>
+      <Field
+        name="periodCovered"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Currency</label>
+      <Field
+        name="currency"
+        className="form-input"
+      />
+    </div>
+
+  </div>
+</div>
 
               {/* ================= RECONCILIATION TABLE ================= */}
               <div className="form-section">
@@ -237,24 +296,73 @@ const FRM00903_VendorStatementReconciliation = () => {
               </div>
 
               {/* ================= SUMMARY ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Summary</h3>
-                <div className="form-fields">
-                  <Field name="totalBooks" placeholder="Total as per Company Books" type="number" className="form-input"/>
-                  <Field name="totalVendor" placeholder="Total as per Vendor Statement" type="number" className="form-input"/>
-                  <Field name="netDifference" placeholder="Net Difference" type="number" className="form-input"/>
-                </div>
-              </div>
+<div className="form-section">
+  <h3 className="form-section-title">Summary</h3>
+  <div className="form-fields">
 
-              {/* ================= AUDIT TRAIL ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Audit Trail</h3>
-                <div className="form-fields">
-                  <Field name="createdOn" type="date" className="form-input"/>
-                  <Field name="lastUpdatedOn" type="date" className="form-input"/>
-                  <Field name="documentOwner" className="form-input"/>
-                </div>
-              </div>
+    <div className="form-field">
+      <label className="form-label">Total as per Company Books</label>
+      <Field
+        name="totalBooks"
+        type="number"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Total as per Vendor Statement</label>
+      <Field
+        name="totalVendor"
+        type="number"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Net Difference</label>
+      <Field
+        name="netDifference"
+        type="number"
+        className="form-input"
+      />
+    </div>
+
+  </div>
+</div>
+
+             {/* ================= AUDIT TRAIL ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">Audit Trail</h3>
+  <div className="form-fields">
+
+    <div className="form-field">
+      <label className="form-label">Created On</label>
+      <Field
+        name="createdOn"
+        type="date"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Last Updated On</label>
+      <Field
+        name="lastUpdatedOn"
+        type="date"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Document Owner</label>
+      <Field
+        name="documentOwner"
+        className="form-input"
+      />
+    </div>
+
+  </div>
+</div>
 
               <FormCustomFields values={values}/>
               <FormAttachments values={values}/>

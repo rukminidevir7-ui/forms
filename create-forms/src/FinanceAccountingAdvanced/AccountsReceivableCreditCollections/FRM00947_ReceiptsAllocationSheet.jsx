@@ -105,89 +105,222 @@ const FRM00947_ReceiptsAllocationSheet = () => {
             >
 
               {/* ================= GENERAL INFORMATION ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">General Information</h3>
-                <div className="form-fields">
-                  <Field name="formId" disabled className="form-input"/>
-                  <Field name="date" type="date" className="form-input"/>
-                  <Field name="department" className="form-input"/>
-                  <Field name="function" className="form-input"/>
-                  <Field name="referenceNumber" placeholder="Reference Number" className="form-input"/>
-                  <Field name="location" placeholder="Location" className="form-input"/>
-                  <Field name="allocationType" placeholder="Allocation Type" className="form-input"/>
-                  <Field name="priority" as="select" className="form-input">
-                    <option value="">Select Priority</option>
-                    <option>Low</option>
-                    <option>Medium</option>
-                    <option>High</option>
-                    <option>Critical</option>
-                  </Field>
-                </div>
-              </div>
+<div className="form-section">
+  <h3 className="form-section-title">General Information</h3>
+  <div className="form-fields">
 
-              {/* ================= CUSTOMER / PAYER DETAILS ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Customer / Payer Details</h3>
-                <div className="form-fields">
-                  <Field name="customerName" placeholder="Customer Name" className="form-input"/>
-                  <Field name="customerId" placeholder="Customer ID" className="form-input"/>
-                  <Field name="accountNumber" placeholder="Account Number" className="form-input"/>
-                  <Field name="businessAddress" placeholder="Business Address" className="form-input"/>
-                  <Field name="contactPerson" placeholder="Contact Person" className="form-input"/>
-                  <Field name="phone" placeholder="Phone" className="form-input"/>
-                </div>
-              </div>
+    <div className="form-field">
+      <label className="form-label">Form ID</label>
+      <Field name="formId" disabled className="form-input"/>
+    </div>
 
-              {/* ================= RECEIPT DETAILS ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Receipt Details</h3>
-                <div className="form-fields">
-                  <Field name="receiptNumber" placeholder="Receipt Number" className="form-input"/>
-                  <Field name="receiptDate" type="date" className="form-input"/>
-                  <Field name="receiptAmount" type="number" placeholder="Receipt Amount" className="form-input"/>
-                  <Field name="currency" placeholder="Currency" className="form-input"/>
-                  <Field name="paymentMethod" placeholder="Payment Method" className="form-input"/>
-                  <Field name="bankReference" placeholder="Bank Reference" className="form-input"/>
-                </div>
-              </div>
+    <div className="form-field">
+      <label className="form-label">Date</label>
+      <Field name="date" type="date" className="form-input"/>
+    </div>
 
-              {/* ================= ALLOCATION DETAILS ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Allocation Details</h3>
-                <div className="form-fields">
-                  <Field name="invoiceNumber" placeholder="Invoice Number" className="form-input"/>
-                  <Field name="invoiceDate" type="date" className="form-input"/>
-                  <Field name="invoiceAmount" type="number" placeholder="Invoice Amount" className="form-input"/>
-                  <Field name="allocatedAmount" type="number" placeholder="Allocated Amount" className="form-input"/>
-                  <Field name="remainingBalance" type="number" placeholder="Remaining Balance" className="form-input"/>
-                  <Field name="allocationNotes" placeholder="Allocation Notes" className="form-input"/>
-                </div>
-              </div>
+    <div className="form-field">
+      <label className="form-label">Department</label>
+      <Field name="department" className="form-input"/>
+    </div>
 
-              {/* ================= SUMMARY ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Summary</h3>
-                <div className="form-fields">
-                  <Field name="totalReceiptAmount" type="number" placeholder="Total Receipt Amount" className="form-input"/>
-                  <Field name="totalAllocated" type="number" placeholder="Total Allocated" className="form-input"/>
-                  <Field name="unallocatedBalance" type="number" placeholder="Unallocated Balance" className="form-input"/>
-                </div>
-              </div>
+    <div className="form-field">
+      <label className="form-label">Function</label>
+      <Field name="function" className="form-input"/>
+    </div>
 
-              {/* ================= ATTACHMENTS ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Attachments</h3>
-                <div className="form-fields">
-                  <Field name="supportingDocumentsAttached" as="select" className="form-input">
-                    <option value="">Supporting Documents Attached?</option>
-                    <option>Yes</option>
-                    <option>No</option>
-                  </Field>
-                  <Field name="documentReference" placeholder="Document Reference" className="form-input"/>
-                </div>
-              </div>
+    <div className="form-field">
+      <label className="form-label">Reference Number</label>
+      <Field name="referenceNumber" placeholder="Reference Number" className="form-input"/>
+    </div>
 
+    <div className="form-field">
+      <label className="form-label">Location</label>
+      <Field name="location" placeholder="Location" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Allocation Type</label>
+      <Field name="allocationType" placeholder="Allocation Type" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Priority</label>
+      <Field name="priority" as="select" className="form-input">
+        <option value="">Select Priority</option>
+        <option>Low</option>
+        <option>Medium</option>
+        <option>High</option>
+        <option>Critical</option>
+      </Field>
+    </div>
+
+  </div>
+</div>
+
+
+{/* ================= CUSTOMER / PAYER DETAILS ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">Customer / Payer Details</h3>
+  <div className="form-fields">
+
+    <div className="form-field">
+      <label className="form-label">Customer Name</label>
+      <Field name="customerName" placeholder="Customer Name" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Customer ID</label>
+      <Field name="customerId" placeholder="Customer ID" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Account Number</label>
+      <Field name="accountNumber" placeholder="Account Number" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Business Address</label>
+      <Field name="businessAddress" placeholder="Business Address" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Contact Person</label>
+      <Field name="contactPerson" placeholder="Contact Person" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Phone</label>
+      <Field name="phone" placeholder="Phone" className="form-input"/>
+    </div>
+
+  </div>
+</div>
+
+
+{/* ================= RECEIPT DETAILS ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">Receipt Details</h3>
+  <div className="form-fields">
+
+    <div className="form-field">
+      <label className="form-label">Receipt Number</label>
+      <Field name="receiptNumber" placeholder="Receipt Number" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Receipt Date</label>
+      <Field name="receiptDate" type="date" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Receipt Amount</label>
+      <Field name="receiptAmount" type="number" placeholder="Receipt Amount" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Currency</label>
+      <Field name="currency" placeholder="Currency" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Payment Method</label>
+      <Field name="paymentMethod" placeholder="Payment Method" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Bank Reference</label>
+      <Field name="bankReference" placeholder="Bank Reference" className="form-input"/>
+    </div>
+
+  </div>
+</div>
+
+
+{/* ================= ALLOCATION DETAILS ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">Allocation Details</h3>
+  <div className="form-fields">
+
+    <div className="form-field">
+      <label className="form-label">Invoice Number</label>
+      <Field name="invoiceNumber" placeholder="Invoice Number" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Invoice Date</label>
+      <Field name="invoiceDate" type="date" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Invoice Amount</label>
+      <Field name="invoiceAmount" type="number" placeholder="Invoice Amount" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Allocated Amount</label>
+      <Field name="allocatedAmount" type="number" placeholder="Allocated Amount" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Remaining Balance</label>
+      <Field name="remainingBalance" type="number" placeholder="Remaining Balance" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Allocation Notes</label>
+      <Field name="allocationNotes" placeholder="Allocation Notes" className="form-input"/>
+    </div>
+
+  </div>
+</div>
+
+
+{/* ================= SUMMARY ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">Summary</h3>
+  <div className="form-fields">
+
+    <div className="form-field">
+      <label className="form-label">Total Receipt Amount</label>
+      <Field name="totalReceiptAmount" type="number" placeholder="Total Receipt Amount" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Total Allocated</label>
+      <Field name="totalAllocated" type="number" placeholder="Total Allocated" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Unallocated Balance</label>
+      <Field name="unallocatedBalance" type="number" placeholder="Unallocated Balance" className="form-input"/>
+    </div>
+
+  </div>
+</div>
+
+
+{/* ================= ATTACHMENTS ================= */}
+<div className="form-section">
               <FormAttachments values={values}/>
+  <div className="form-fields">
+
+    <div className="form-field">
+      <label className="form-label">Supporting Documents Attached?</label>
+      <Field name="supportingDocumentsAttached" as="select" className="form-input">
+        <option value="">Supporting Documents Attached?</option>
+        <option>Yes</option>
+        <option>No</option>
+      </Field>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Document Reference</label>
+      <Field name="documentReference" placeholder="Document Reference" className="form-input"/>
+    </div>
+
+  </div>
+</div>
               <FormCustomFields values={values}/>
 
               {/* ================= AUTHORIZATION ================= */}

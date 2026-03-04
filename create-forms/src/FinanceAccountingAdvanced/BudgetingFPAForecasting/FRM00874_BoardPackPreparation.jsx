@@ -98,18 +98,38 @@ const FRM00874_BoardPackPreparation = () => {
               department="Finance & Accounting – Budgeting, FP&A & Forecasting"
             >
 
-              {/* ================= BASIC INFORMATION ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Basic Information</h3>
-                <div className="form-fields">
-                  <Field name="meetingSession" placeholder="Meeting / Board Session" className="form-input"/>
-                  <Field name="meetingDate" type="date" className="form-input"/>
-                  <Field name="preparedBy" placeholder="Prepared By" className="form-input"/>
-                  <Field name="submissionDate" type="date" className="form-input"/>
-                  <Field name="version" placeholder="Version" className="form-input"/>
-                </div>
-              </div>
+             {/* ================= BASIC INFORMATION ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">Basic Information</h3>
+  <div className="form-fields">
 
+    <div className="form-field">
+      <label className="form-label">Meeting / Board Session</label>
+      <Field name="meetingSession" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Meeting Date</label>
+      <Field name="meetingDate" type="date" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Prepared By</label>
+      <Field name="preparedBy" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Submission Date</label>
+      <Field name="submissionDate" type="date" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Version</label>
+      <Field name="version" className="form-input"/>
+    </div>
+
+  </div>
+</div>
               {/* ================= BOARD PACK CONTENTS CHECKLIST ================= */}
               <div className="form-section">
                 <h3 className="form-section-title">Board Pack Contents Checklist</h3>
@@ -225,16 +245,26 @@ const FRM00874_BoardPackPreparation = () => {
               </div>
 
               {/* ================= EXECUTIVE SUMMARY ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Key Highlights / Executive Summary</h3>
-                <Field name="executiveSummary" className="form-input"/>
-              </div>
+<div className="form-section">
+  <h3 className="form-section-title">Key Highlights / Executive Summary</h3>
+  <div className="form-fields">
+    <div className="form-field">
+      <label className="form-label">Executive Summary</label>
+      <Field name="executiveSummary" className="form-input"/>
+    </div>
+  </div>
+</div>
 
               {/* ================= RISKS / SENSITIVE MATTERS ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Risks / Sensitive Matters</h3>
-                <Field name="risksSensitiveMatters" className="form-input"/>
-              </div>
+<div className="form-section">
+  <h3 className="form-section-title">Risks / Sensitive Matters</h3>
+  <div className="form-fields">
+    <div className="form-field">
+      <label className="form-label">Risks / Sensitive Matters</label>
+      <Field name="risksSensitiveMatters" className="form-input"/>
+    </div>
+  </div>
+</div>
 
               {/* ================= CUSTOM FIELDS ================= */}
               <FormCustomFields values={values}/>

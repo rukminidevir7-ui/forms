@@ -106,78 +106,213 @@ const FRM00963_ITCReversalWorking = () => {
               department="Tax & Statutory (India) – GST Compliance"
             >
 
-              {/* ================= GENERAL INFORMATION ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">General Information</h3>
-                <div className="form-fields">
-                  <Field name="formId" disabled className="form-input"/>
-                  <Field name="date" type="date" className="form-input"/>
-                  <Field name="department" className="form-input"/>
-                  <Field name="function" className="form-input"/>
-                  <Field name="reversalPeriodFrom" type="date" className="form-input"/>
-                  <Field name="reversalPeriodTo" type="date" className="form-input"/>
-                  <Field name="referenceNumber" placeholder="Reference Number" className="form-input"/>
-                  <Field name="location" placeholder="Location" className="form-input"/>
-                  <Field name="gstin" placeholder="GSTIN" className="form-input"/>
-                  <Field name="returnType" placeholder="Return Type" className="form-input"/>
-                </div>
-              </div>
+             {/* ================= GENERAL INFORMATION ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">General Information</h3>
+  <div className="form-fields">
 
-              {/* ================= BUSINESS DETAILS ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Business Details</h3>
-                <div className="form-fields">
-                  <Field name="legalNameOfBusiness" placeholder="Legal Name of Business" className="form-input"/>
-                  <Field name="tradeName" placeholder="Trade Name" className="form-input"/>
-                  <Field name="pan" placeholder="PAN" className="form-input"/>
-                  <Field name="contactPerson" placeholder="Contact Person" className="form-input"/>
-                  <Field name="phone" placeholder="Phone" className="form-input"/>
-                  <Field name="email" type="email" placeholder="Email" className="form-input"/>
-                </div>
-              </div>
+    <div className="form-field">
+      <label className="form-label">Form ID</label>
+      <Field name="formId" disabled className="form-input"/>
+    </div>
 
-              {/* ================= REVERSAL SUMMARY ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Reversal Summary</h3>
-                <div className="form-fields">
-                  <Field name="totalITCAvailed" type="number" placeholder="Total ITC Availed" className="form-input"/>
-                  <Field name="currency" placeholder="Currency" className="form-input"/>
-                  <Field name="ineligibleITCIdentified" type="number" placeholder="Ineligible ITC Identified" className="form-input"/>
-                  <Field name="itcReversed" type="number" placeholder="ITC Reversed" className="form-input"/>
-                  <Field name="netITCAfterReversal" type="number" placeholder="Net ITC After Reversal" className="form-input"/>
-                </div>
-              </div>
+    <div className="form-field">
+      <label className="form-label">Date</label>
+      <Field name="date" type="date" className="form-input"/>
+    </div>
 
-              {/* ================= REVERSAL DETAILS ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Reversal Details</h3>
-                <div className="form-fields">
-                  <Field name="reasonForReversal" placeholder="Reason for Reversal" className="form-input"/>
-                  <Field name="applicableRuleSection" placeholder="Applicable Rule / Section" className="form-input"/>
-                  <Field name="reversalCalculationMethod" placeholder="Reversal Calculation Method" className="form-input"/>
-                  <Field name="adjustmentEntryReference" placeholder="Adjustment Entry Reference" className="form-input"/>
-                </div>
-              </div>
+    <div className="form-field">
+      <label className="form-label">Department</label>
+      <Field name="department" className="form-input"/>
+    </div>
 
-              {/* ================= RECONCILIATION ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Reconciliation</h3>
-                <div className="form-fields">
-                  <Field name="booksITC" type="number" placeholder="Books ITC" className="form-input"/>
-                  <Field name="returnITCAfterReversal" type="number" placeholder="Return ITC After Reversal" className="form-input"/>
-                  <Field name="differenceAmount" type="number" placeholder="Difference Amount" className="form-input"/>
-                  <Field name="differenceReason" placeholder="Difference Reason" className="form-input"/>
-                </div>
-              </div>
+    <div className="form-field">
+      <label className="form-label">Function</label>
+      <Field name="function" className="form-input"/>
+    </div>
 
-              {/* ================= NOTES ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Notes</h3>
-                <div className="form-fields">
-                  <Field name="keyNotes" placeholder="Key Notes" className="form-input"/>
-                  <Field name="issuesObservations" placeholder="Issues / Observations" className="form-input"/>
-                </div>
-              </div>
+    <div className="form-field">
+      <label className="form-label">Reversal Period From</label>
+      <Field name="reversalPeriodFrom" type="date" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Reversal Period To</label>
+      <Field name="reversalPeriodTo" type="date" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Reference Number</label>
+      <Field name="referenceNumber" placeholder="Reference Number" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Location</label>
+      <Field name="location" placeholder="Location" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">GSTIN</label>
+      <Field name="gstin" placeholder="GSTIN" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Return Type</label>
+      <Field name="returnType" placeholder="Return Type" className="form-input"/>
+    </div>
+
+  </div>
+</div>
+
+
+{/* ================= BUSINESS DETAILS ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">Business Details</h3>
+  <div className="form-fields">
+
+    <div className="form-field">
+      <label className="form-label">Legal Name of Business</label>
+      <Field name="legalNameOfBusiness" placeholder="Legal Name of Business" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Trade Name</label>
+      <Field name="tradeName" placeholder="Trade Name" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">PAN</label>
+      <Field name="pan" placeholder="PAN" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Contact Person</label>
+      <Field name="contactPerson" placeholder="Contact Person" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Phone</label>
+      <Field name="phone" placeholder="Phone" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Email</label>
+      <Field name="email" type="email" placeholder="Email" className="form-input"/>
+    </div>
+
+  </div>
+</div>
+
+
+{/* ================= REVERSAL SUMMARY ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">Reversal Summary</h3>
+  <div className="form-fields">
+
+    <div className="form-field">
+      <label className="form-label">Total ITC Availed</label>
+      <Field name="totalITCAvailed" type="number" placeholder="Total ITC Availed" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Currency</label>
+      <Field name="currency" placeholder="Currency" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Ineligible ITC Identified</label>
+      <Field name="ineligibleITCIdentified" type="number" placeholder="Ineligible ITC Identified" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">ITC Reversed</label>
+      <Field name="itcReversed" type="number" placeholder="ITC Reversed" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Net ITC After Reversal</label>
+      <Field name="netITCAfterReversal" type="number" placeholder="Net ITC After Reversal" className="form-input"/>
+    </div>
+
+  </div>
+</div>
+
+
+{/* ================= REVERSAL DETAILS ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">Reversal Details</h3>
+  <div className="form-fields">
+
+    <div className="form-field">
+      <label className="form-label">Reason for Reversal</label>
+      <Field name="reasonForReversal" placeholder="Reason for Reversal" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Applicable Rule / Section</label>
+      <Field name="applicableRuleSection" placeholder="Applicable Rule / Section" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Reversal Calculation Method</label>
+      <Field name="reversalCalculationMethod" placeholder="Reversal Calculation Method" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Adjustment Entry Reference</label>
+      <Field name="adjustmentEntryReference" placeholder="Adjustment Entry Reference" className="form-input"/>
+    </div>
+
+  </div>
+</div>
+
+
+{/* ================= RECONCILIATION ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">Reconciliation</h3>
+  <div className="form-fields">
+
+    <div className="form-field">
+      <label className="form-label">Books ITC</label>
+      <Field name="booksITC" type="number" placeholder="Books ITC" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Return ITC After Reversal</label>
+      <Field name="returnITCAfterReversal" type="number" placeholder="Return ITC After Reversal" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Difference Amount</label>
+      <Field name="differenceAmount" type="number" placeholder="Difference Amount" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Difference Reason</label>
+      <Field name="differenceReason" placeholder="Difference Reason" className="form-input"/>
+    </div>
+
+  </div>
+</div>
+
+
+{/* ================= NOTES ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">Notes</h3>
+  <div className="form-fields">
+
+    <div className="form-field">
+      <label className="form-label">Key Notes</label>
+      <Field name="keyNotes" placeholder="Key Notes" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Issues / Observations</label>
+      <Field name="issuesObservations" placeholder="Issues / Observations" className="form-input"/>
+    </div>
+
+  </div>
+</div>
 
               <FormAttachments values={values}/>
               <FormCustomFields values={values}/>

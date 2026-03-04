@@ -117,45 +117,182 @@ const FRM00904_APAgingActionPlan = () => {
               department="Finance & Accounting – Accounts Payable"
             >
 
-              {/* ================= DOCUMENT CONTROL ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Document Control</h3>
-                <div className="form-fields">
-                  <Field name="formId" className="form-input" disabled />
-                  <Field name="version" className="form-input"/>
-                  <Field name="effectiveDate" type="date" className="form-input"/>
-                  <Field name="preparedBy" placeholder="Prepared By" className="form-input"/>
-                  <Field name="department" className="form-input"/>
-                  <Field name="confidentialityLevel" placeholder="Confidentiality Level" className="form-input"/>
-                </div>
-              </div>
+             {/* ================= DOCUMENT CONTROL ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">Document Control</h3>
+  <div className="form-fields">
 
-              {/* ================= REFERENCE DETAILS ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Reference Details</h3>
-                <div className="form-fields">
-                  <Field name="planReferenceNumber" placeholder="Plan Reference Number" className="form-input"/>
-                  <Field name="periodFrom" type="date" className="form-input"/>
-                  <Field name="periodTo" type="date" className="form-input"/>
-                  <Field name="businessUnit" placeholder="Business Unit" className="form-input"/>
-                  <Field name="currency" placeholder="Currency" className="form-input"/>
-                  <Field name="erpDocumentId" placeholder="ERP Document ID" className="form-input"/>
-                </div>
-              </div>
+    <div className="form-field">
+      <label className="form-label">Form ID</label>
+      <Field
+        name="formId"
+        className="form-input"
+        disabled
+      />
+    </div>
 
-              {/* ================= VENDOR AGING SUMMARY ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Vendor Aging Summary</h3>
-                <div className="form-fields">
-                  <Field name="totalOutstanding" type="number" placeholder="Total Outstanding" className="form-input"/>
-                  <Field name="bucket0to30" type="number" placeholder="0–30 Days" className="form-input"/>
-                  <Field name="bucket31to60" type="number" placeholder="31–60 Days" className="form-input"/>
-                  <Field name="bucket61to90" type="number" placeholder="61–90 Days" className="form-input"/>
-                  <Field name="bucket91to180" type="number" placeholder="91–180 Days" className="form-input"/>
-                  <Field name="bucketAbove180" type="number" placeholder=">180 Days" className="form-input"/>
-                </div>
-              </div>
+    <div className="form-field">
+      <label className="form-label">Version</label>
+      <Field
+        name="version"
+        className="form-input"
+      />
+    </div>
 
+    <div className="form-field">
+      <label className="form-label">Effective Date</label>
+      <Field
+        name="effectiveDate"
+        type="date"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Prepared By</label>
+      <Field
+        name="preparedBy"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Department</label>
+      <Field
+        name="department"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Confidentiality Level</label>
+      <Field
+        name="confidentialityLevel"
+        className="form-input"
+      />
+    </div>
+
+  </div>
+</div>
+{/* ================= REFERENCE DETAILS ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">Reference Details</h3>
+  <div className="form-fields">
+
+    <div className="form-field">
+      <label className="form-label">Plan Reference Number</label>
+      <Field
+        name="planReferenceNumber"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Period From</label>
+      <Field
+        name="periodFrom"
+        type="date"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Period To</label>
+      <Field
+        name="periodTo"
+        type="date"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Business Unit</label>
+      <Field
+        name="businessUnit"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Currency</label>
+      <Field
+        name="currency"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">ERP Document ID</label>
+      <Field
+        name="erpDocumentId"
+        className="form-input"
+      />
+    </div>
+
+  </div>
+</div>
+
+             {/* ================= VENDOR AGING SUMMARY ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">Vendor Aging Summary</h3>
+  <div className="form-fields">
+
+    <div className="form-field">
+      <label className="form-label">Total Outstanding</label>
+      <Field
+        name="totalOutstanding"
+        type="number"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">0–30 Days</label>
+      <Field
+        name="bucket0to30"
+        type="number"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">31–60 Days</label>
+      <Field
+        name="bucket31to60"
+        type="number"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">61–90 Days</label>
+      <Field
+        name="bucket61to90"
+        type="number"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">91–180 Days</label>
+      <Field
+        name="bucket91to180"
+        type="number"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Above 180 Days</label>
+      <Field
+        name="bucketAbove180"
+        type="number"
+        className="form-input"
+      />
+    </div>
+
+  </div>
+</div>
               {/* ================= ACTION PLAN DETAILS ================= */}
               <div className="form-section">
                 <h3 className="form-section-title">Action Plan Details</h3>

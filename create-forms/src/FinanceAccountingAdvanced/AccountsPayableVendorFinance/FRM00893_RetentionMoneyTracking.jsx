@@ -113,30 +113,111 @@ const FRM00893_RetentionMoneyTracking = () => {
             >
 
               {/* ================= DOCUMENT CONTROL ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Document Control</h3>
-                <div className="form-fields">
-                  <Field name="date" type="date" className="form-input"/>
-                  <Field name="referenceNo" placeholder="Reference No" className="form-input"/>
-                  <Field name="version" placeholder="Version" className="form-input"/>
-                </div>
-              </div>
+<div className="form-section">
+  <h3 className="form-section-title">Document Control</h3>
+  <div className="form-fields">
 
-              {/* ================= VENDOR & CONTRACT DETAILS ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Vendor & Contract Details</h3>
-                <div className="form-fields">
-                  <Field name="vendorName" placeholder="Vendor Name" className="form-input"/>
-                  <Field name="vendorCode" placeholder="Vendor Code" className="form-input"/>
-                  <Field name="contractNumber" placeholder="Contract Number" className="form-input"/>
-                  <Field name="projectCostCenter" placeholder="Project / Cost Center" className="form-input"/>
-                  <Field name="contractValue" type="number" placeholder="Contract Value" className="form-input"/>
-                  <Field name="retentionPercent" type="number" placeholder="Retention %" className="form-input"/>
-                  <Field name="retentionCap" type="number" placeholder="Retention Cap" className="form-input"/>
-                  <Field name="currency" placeholder="Currency" className="form-input"/>
-                </div>
-              </div>
+    <div className="form-field">
+      <label className="form-label">Document Date</label>
+      <Field
+        name="date"
+        type="date"
+        className="form-input"
+      />
+    </div>
 
+    <div className="form-field">
+      <label className="form-label">Reference Number</label>
+      <Field
+        name="referenceNo"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Version Number</label>
+      <Field
+        name="version"
+        className="form-input"
+      />
+    </div>
+
+  </div>
+</div>
+             {/* ================= VENDOR & CONTRACT DETAILS ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">Vendor & Contract Details</h3>
+  <div className="form-fields">
+
+    <div className="form-field">
+      <label className="form-label">Vendor Name</label>
+      <Field
+        name="vendorName"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Vendor Code</label>
+      <Field
+        name="vendorCode"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Contract Number</label>
+      <Field
+        name="contractNumber"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Project / Cost Center</label>
+      <Field
+        name="projectCostCenter"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Contract Value</label>
+      <Field
+        name="contractValue"
+        type="number"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Retention Percentage (%)</label>
+      <Field
+        name="retentionPercent"
+        type="number"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Retention Cap Amount</label>
+      <Field
+        name="retentionCap"
+        type="number"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Currency</label>
+      <Field
+        name="currency"
+        className="form-input"
+      />
+    </div>
+
+  </div>
+</div>
               {/* ================= RETENTION LEDGER ================= */}
               <div className="form-section">
                 <h3 className="form-section-title">Retention Ledger</h3>
@@ -221,32 +302,94 @@ const FRM00893_RetentionMoneyTracking = () => {
                 </FieldArray>
               </div>
 
-              {/* ================= NOTES ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Notes</h3>
-                <Field name="notes" className="form-input"/>
-              </div>
+             {/* ================= NOTES ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">Notes</h3>
 
-              {/* ================= COMPLIANCE & CHECKS ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Compliance & Risk Review</h3>
-                <div className="form-fields">
-                  <Field name="policyComplianceConfirmed" placeholder="Policy Compliance Confirmed (Y/N)" className="form-input"/>
-                  <Field name="contractTermsVerified" placeholder="Contract Terms Verified (Y/N)" className="form-input"/>
-                  <Field name="riskLevel" className="form-input"/>
-                  <Field name="complianceRemarks" className="form-input"/>
-                </div>
-              </div>
+  <div className="form-fields">
+    <div className="form-field">
+      <label className="form-label">Additional Notes / Remarks</label>
+      <Field
+        name="notes"
+        className="form-input"
+      />
+    </div>
+  </div>
 
-              {/* ================= AUDIT TRAIL ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Audit Trail</h3>
-                <div className="form-fields">
-                  <Field name="createdOn" type="date" className="form-input"/>
-                  <Field name="lastUpdatedOn" type="date" className="form-input"/>
-                  <Field name="documentOwner" className="form-input"/>
-                </div>
-              </div>
+</div>
+             {/* ================= COMPLIANCE & CHECKS ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">Compliance & Risk Review</h3>
+  <div className="form-fields">
+
+    <div className="form-field">
+      <label className="form-label">Policy Compliance Confirmed</label>
+      <Field
+        name="policyComplianceConfirmed"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Contract Terms Verified</label>
+      <Field
+        name="contractTermsVerified"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Risk Level</label>
+      <Field
+        name="riskLevel"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Compliance Remarks</label>
+      <Field
+        name="complianceRemarks"
+        className="form-input"
+      />
+    </div>
+
+  </div>
+</div>
+
+            {/* ================= AUDIT TRAIL ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">Audit Trail</h3>
+  <div className="form-fields">
+
+    <div className="form-field">
+      <label className="form-label">Created On</label>
+      <Field
+        name="createdOn"
+        type="date"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Last Updated On</label>
+      <Field
+        name="lastUpdatedOn"
+        type="date"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Document Owner</label>
+      <Field
+        name="documentOwner"
+        className="form-input"
+      />
+    </div>
+
+  </div>
+</div>
 
               <FormCustomFields values={values}/>
               <FormAttachments values={values}/>

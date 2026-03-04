@@ -115,101 +115,282 @@ const FRM00920_CreditLimitApproval = () => {
               department="Finance & Accounting (Advanced) – Accounts Receivable, Credit & Collections"
             >
 
-              {/* ================= GENERAL INFORMATION ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">General Information</h3>
-                <div className="form-fields">
-                  <Field name="formId" disabled className="form-input"/>
-                  <Field name="date" type="date" className="form-input"/>
-                  <Field name="department" className="form-input"/>
-                  <Field name="functionName" className="form-input"/>
-                  <Field name="referenceNumber" placeholder="Reference Number" className="form-input"/>
-                  <Field name="location" placeholder="Location" className="form-input"/>
-                  <Field name="relatedProposalReference" placeholder="Related Proposal Reference" className="form-input"/>
-                  <Field name="approvalStage" className="form-input"/>
-                </div>
-              </div>
+             {/* ================= GENERAL INFORMATION ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">General Information</h3>
+  <div className="form-fields">
 
-              {/* ================= CUSTOMER DETAILS ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Customer Details</h3>
-                <div className="form-fields">
-                  <Field name="customerName" placeholder="Customer Name" className="form-input"/>
-                  <Field name="customerId" placeholder="Customer ID" className="form-input"/>
-                  <Field name="businessAddress" placeholder="Business Address" className="form-input"/>
-                  <Field name="contactPerson" placeholder="Contact Person" className="form-input"/>
-                  <Field name="phone" placeholder="Phone" className="form-input"/>
-                  <Field name="email" placeholder="Email" className="form-input"/>
-                  <Field name="taxId" placeholder="Tax ID / GST" className="form-input"/>
-                </div>
-              </div>
+    <div className="form-field">
+      <label className="form-label">Form ID</label>
+      <Field name="formId" disabled className="form-input"/>
+    </div>
 
-              {/* ================= CREDIT LIMIT INFORMATION ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Credit Limit Information</h3>
-                <div className="form-fields">
-                  <Field name="currentCreditLimit" type="number" placeholder="Current Credit Limit" className="form-input"/>
-                  <Field name="currency" placeholder="Currency" className="form-input"/>
-                  <Field name="requestedCreditLimit" type="number" placeholder="Requested Credit Limit" className="form-input"/>
-                  <Field name="recommendedCreditLimit" type="number" placeholder="Recommended Credit Limit" className="form-input"/>
-                  <Field name="approvedCreditLimit" type="number" placeholder="Approved Credit Limit" className="form-input"/>
-                  <Field name="effectiveDate" type="date" className="form-input"/>
-                  <Field name="creditPeriodDays" type="number" placeholder="Credit Period (Days)" className="form-input"/>
-                  <Field name="paymentTerms" placeholder="Payment Terms" className="form-input"/>
-                </div>
-              </div>
+    <div className="form-field">
+      <label className="form-label">Document Date</label>
+      <Field name="date" type="date" className="form-input"/>
+    </div>
 
-              {/* ================= EXPOSURE & FINANCIAL POSITION ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Exposure & Financial Position</h3>
-                <div className="form-fields">
-                  <Field name="outstandingBalance" type="number" placeholder="Outstanding Balance" className="form-input"/>
-                  <Field name="exposureAmount" type="number" placeholder="Exposure Amount" className="form-input"/>
-                  <Field name="agingSummary" placeholder="Aging Summary" className="form-input"/>
-                  <Field name="averageMonthlySales" type="number" placeholder="Average Monthly Sales" className="form-input"/>
-                  <Field name="paymentPerformanceRating" placeholder="Payment Performance Rating" className="form-input"/>
-                </div>
-              </div>
+    <div className="form-field">
+      <label className="form-label">Department</label>
+      <Field name="department" className="form-input"/>
+    </div>
 
-              {/* ================= RISK EVALUATION ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Risk Evaluation</h3>
-                <div className="form-fields">
-                  <Field name="riskRating" placeholder="Risk Rating" className="form-input"/>
-                  <Field name="riskComments" placeholder="Risk Comments" className="form-input"/>
-                  <Field name="complianceStatus" placeholder="Compliance Check Status" className="form-input"/>
-                  <Field name="internalCreditScore" placeholder="Credit Score / Internal Rating" className="form-input"/>
-                </div>
-              </div>
+    <div className="form-field">
+      <label className="form-label">Function</label>
+      <Field name="functionName" className="form-input"/>
+    </div>
 
-              {/* ================= DECISION DETAILS ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Decision Details</h3>
-                <div className="form-fields">
-                  <Field name="decisionStatus" as="select" className="form-input">
-                    <option value="">Select Decision</option>
-                    <option value="Approved">Approved</option>
-                    <option value="Rejected">Rejected</option>
-                    <option value="Conditional">Conditional</option>
-                  </Field>
-                  <Field name="decisionComments" placeholder="Decision Comments" className="form-input"/>
-                  <Field name="conditionsRemarks" placeholder="Conditions / Remarks" className="form-input"/>
-                  <Field name="validityPeriod" placeholder="Validity Period" className="form-input"/>
-                  <Field name="reviewDate" type="date" className="form-input"/>
-                </div>
-              </div>
+    <div className="form-field">
+      <label className="form-label">Reference Number</label>
+      <Field name="referenceNumber" className="form-input"/>
+    </div>
 
-              {/* ================= SYSTEM / ERP INFORMATION ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">System / Audit Information</h3>
-                <div className="form-fields">
-                  <Field name="workflowId" placeholder="Workflow ID" className="form-input"/>
-                  <Field name="version" placeholder="Version Number" className="form-input"/>
-                  <Field name="status" placeholder="Status" className="form-input"/>
-                  <Field name="lastUpdatedBy" placeholder="Last Updated By" className="form-input"/>
-                  <Field name="lastUpdatedDate" type="date" className="form-input"/>
-                </div>
-              </div>
+    <div className="form-field">
+      <label className="form-label">Location / Branch</label>
+      <Field name="location" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Related Proposal Reference</label>
+      <Field name="relatedProposalReference" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Approval Stage</label>
+      <Field name="approvalStage" className="form-input"/>
+    </div>
+
+  </div>
+</div>
+
+
+{/* ================= CUSTOMER DETAILS ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">Customer Details</h3>
+  <div className="form-fields">
+
+    <div className="form-field">
+      <label className="form-label">Customer Name</label>
+      <Field name="customerName" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Customer ID</label>
+      <Field name="customerId" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Business Address</label>
+      <Field name="businessAddress" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Contact Person</label>
+      <Field name="contactPerson" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Phone Number</label>
+      <Field name="phone" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Email Address</label>
+      <Field name="email" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Tax ID / GST Number</label>
+      <Field name="taxId" className="form-input"/>
+    </div>
+
+  </div>
+</div>
+
+
+{/* ================= CREDIT LIMIT INFORMATION ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">Credit Limit Information</h3>
+  <div className="form-fields">
+
+    <div className="form-field">
+      <label className="form-label">Current Credit Limit</label>
+      <Field name="currentCreditLimit" type="number" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Currency</label>
+      <Field name="currency" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Requested Credit Limit</label>
+      <Field name="requestedCreditLimit" type="number" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Recommended Credit Limit</label>
+      <Field name="recommendedCreditLimit" type="number" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Approved Credit Limit</label>
+      <Field name="approvedCreditLimit" type="number" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Effective Date</label>
+      <Field name="effectiveDate" type="date" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Credit Period (Days)</label>
+      <Field name="creditPeriodDays" type="number" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Payment Terms</label>
+      <Field name="paymentTerms" className="form-input"/>
+    </div>
+
+  </div>
+</div>
+
+
+{/* ================= EXPOSURE & FINANCIAL POSITION ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">Exposure & Financial Position</h3>
+  <div className="form-fields">
+
+    <div className="form-field">
+      <label className="form-label">Outstanding Balance</label>
+      <Field name="outstandingBalance" type="number" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Current Exposure Amount</label>
+      <Field name="exposureAmount" type="number" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Aging Summary</label>
+      <Field name="agingSummary" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Average Monthly Sales</label>
+      <Field name="averageMonthlySales" type="number" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Payment Performance Rating</label>
+      <Field name="paymentPerformanceRating" className="form-input"/>
+    </div>
+
+  </div>
+</div>
+
+
+{/* ================= RISK EVALUATION ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">Risk Evaluation</h3>
+  <div className="form-fields">
+
+    <div className="form-field">
+      <label className="form-label">Risk Rating</label>
+      <Field name="riskRating" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Risk Comments</label>
+      <Field name="riskComments" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Compliance Check Status</label>
+      <Field name="complianceStatus" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Internal Credit Score</label>
+      <Field name="internalCreditScore" className="form-input"/>
+    </div>
+
+  </div>
+</div>
+
+
+{/* ================= DECISION DETAILS ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">Decision Details</h3>
+  <div className="form-fields">
+
+    <div className="form-field">
+      <label className="form-label">Decision Status</label>
+      <Field name="decisionStatus" as="select" className="form-input">
+        <option value="">Select Decision</option>
+        <option value="Approved">Approved</option>
+        <option value="Rejected">Rejected</option>
+        <option value="Conditional">Conditional</option>
+      </Field>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Decision Comments</label>
+      <Field name="decisionComments" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Conditions / Remarks</label>
+      <Field name="conditionsRemarks" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Validity Period</label>
+      <Field name="validityPeriod" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Review Date</label>
+      <Field name="reviewDate" type="date" className="form-input"/>
+    </div>
+
+  </div>
+</div>
+
+
+{/* ================= SYSTEM / AUDIT INFORMATION ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">System / Audit Information</h3>
+  <div className="form-fields">
+
+    <div className="form-field">
+      <label className="form-label">Workflow ID</label>
+      <Field name="workflowId" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Version Number</label>
+      <Field name="version" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Current Status</label>
+      <Field name="status" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Last Updated By</label>
+      <Field name="lastUpdatedBy" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Last Updated Date</label>
+      <Field name="lastUpdatedDate" type="date" className="form-input"/>
+    </div>
+
+  </div>
+</div>
 
               <FormCustomFields values={values}/>
               <FormAttachments values={values}/>

@@ -122,55 +122,105 @@ const FRM00925_CollectionsCallLog = () => {
               title="COLLECTIONS CALL LOG"
               department="Finance & Accounting (Advanced) – Accounts Receivable, Credit & Collections"
             >
+{/* ================= CONTACT INFORMATION ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">Contact Information</h3>
+  <div className="form-fields">
 
-              {/* ================= GENERAL INFORMATION ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">General Information</h3>
-                <div className="form-fields">
-                  <Field name="date" type="date" className="form-input"/>
-                  <Field name="referenceNumber" placeholder="Reference Number" className="form-input"/>
-                  <Field name="location" placeholder="Location" className="form-input"/>
-                </div>
-              </div>
+    <div className="form-field">
+      <label className="form-label">Contact Person</label>
+      <Field
+        name="contactPerson"
+        className="form-input"
+      />
+    </div>
 
-              {/* ================= CUSTOMER DETAILS ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Customer Details</h3>
-                <div className="form-fields">
-                  <Field name="customerName" placeholder="Customer Name" className="form-input"/>
-                  <Field name="customerId" placeholder="Customer ID" className="form-input"/>
-                  <Field name="accountNumber" placeholder="Account Number" className="form-input"/>
-                  <Field name="contactPerson" placeholder="Contact Person" className="form-input"/>
-                  <Field name="phone" placeholder="Phone" className="form-input"/>
-                </div>
-              </div>
+    <div className="form-field">
+      <label className="form-label">Phone Number</label>
+      <Field
+        name="phone"
+        className="form-input"
+      />
+    </div>
 
-              {/* ================= CALL INFORMATION ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Call Information</h3>
-                <div className="form-fields">
-                  <Field name="callDate" type="date" className="form-input"/>
-                  <Field name="callTime" type="time" className="form-input"/>
-                  <Field name="callType" placeholder="Call Type" className="form-input"/>
-                  <Field name="callStatus" placeholder="Call Status" className="form-input"/>
-                  <Field name="collectorName" placeholder="Collector Name" className="form-input"/>
-                  <Field name="collectorId" placeholder="Collector ID" className="form-input"/>
-                </div>
-              </div>
+    <div className="form-field">
+      <label className="form-label">Email Address</label>
+      <Field
+        name="email"
+        className="form-input"
+      />
+    </div>
 
-              {/* ================= DISCUSSION DETAILS ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Discussion Details</h3>
-                <div className="form-fields">
-                  <Field name="outstandingAmount" type="number" placeholder="Outstanding Amount" className="form-input"/>
-                  <Field name="currency" placeholder="Currency" className="form-input"/>
-                  <Field name="promiseToPayDate" type="date" className="form-input"/>
-                  <Field name="promiseAmount" type="number" placeholder="Promise Amount" className="form-input"/>
-                  <Field name="discussionSummary" placeholder="Discussion Summary" className="form-input"/>
-                  <Field name="followUpAction" placeholder="Follow-up Action" className="form-input"/>
-                  <Field name="nextFollowUpDate" type="date" className="form-input"/>
-                </div>
-              </div>
+    <div className="form-field">
+      <label className="form-label">Tax ID / GST Number</label>
+      <Field
+        name="taxId"
+        className="form-input"
+      />
+    </div>
+
+  </div>
+</div>
+
+
+{/* ================= ATTACHMENTS ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">Attachments</h3>
+  <div className="form-fields">
+
+    <div className="form-field">
+      <label className="form-label">Supporting Documents Attached</label>
+      <Field
+        name="supportingDocsAttached"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Document Reference</label>
+      <Field
+        name="documentReference"
+        className="form-input"
+      />
+    </div>
+
+  </div>
+</div>
+
+
+{/* ================= AUDIT TRAIL ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">Audit Trail</h3>
+  <div className="form-fields">
+
+    <div className="form-field">
+      <label className="form-label">Created On</label>
+      <Field
+        name="createdOn"
+        type="date"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Last Updated On</label>
+      <Field
+        name="lastUpdatedOn"
+        type="date"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Document Owner</label>
+      <Field
+        name="documentOwner"
+        className="form-input"
+      />
+    </div>
+
+  </div>
+</div>
 
               {/* ================= FOLLOW-UP HISTORY ================= */}
               <div className="form-section">
@@ -238,25 +288,215 @@ const FRM00925_CollectionsCallLog = () => {
                 </FieldArray>
               </div>
 
-              {/* ================= OUTCOME ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Outcome</h3>
-                <div className="form-fields">
-                  <Field name="callOutcome" placeholder="Call Outcome" className="form-input"/>
-                  <Field name="remarks" placeholder="Remarks" className="form-input"/>
-                </div>
-              </div>
+             {/* ================= GENERAL INFORMATION ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">General Information</h3>
+  <div className="form-fields">
 
-              {/* ================= AUDIT TRAIL ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Audit Trail</h3>
-                <div className="form-fields">
-                  <Field name="createdOn" type="date" className="form-input"/>
-                  <Field name="lastUpdatedOn" type="date" className="form-input"/>
-                  <Field name="documentOwner" placeholder="Document Owner" className="form-input"/>
-                </div>
-              </div>
+    <div className="form-field">
+      <label className="form-label">Record Date</label>
+      <Field
+        name="date"
+        type="date"
+        className="form-input"
+      />
+    </div>
 
+    <div className="form-field">
+      <label className="form-label">Reference Number</label>
+      <Field
+        name="referenceNumber"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Location / Branch</label>
+      <Field
+        name="location"
+        className="form-input"
+      />
+    </div>
+
+  </div>
+</div>
+
+
+{/* ================= CUSTOMER DETAILS ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">Customer Details</h3>
+  <div className="form-fields">
+
+    <div className="form-field">
+      <label className="form-label">Customer Name</label>
+      <Field
+        name="customerName"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Customer ID</label>
+      <Field
+        name="customerId"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Account Number</label>
+      <Field
+        name="accountNumber"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Contact Person</label>
+      <Field
+        name="contactPerson"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Phone Number</label>
+      <Field
+        name="phone"
+        className="form-input"
+      />
+    </div>
+
+  </div>
+</div>
+
+
+{/* ================= CALL INFORMATION ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">Call Information</h3>
+  <div className="form-fields">
+
+    <div className="form-field">
+      <label className="form-label">Call Date</label>
+      <Field
+        name="callDate"
+        type="date"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Call Time</label>
+      <Field
+        name="callTime"
+        type="time"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Call Type</label>
+      <Field
+        name="callType"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Call Status</label>
+      <Field
+        name="callStatus"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Collector Name</label>
+      <Field
+        name="collectorName"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Collector ID</label>
+      <Field
+        name="collectorId"
+        className="form-input"
+      />
+    </div>
+
+  </div>
+</div>
+
+
+{/* ================= DISCUSSION DETAILS ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">Discussion Details</h3>
+  <div className="form-fields">
+
+    <div className="form-field">
+      <label className="form-label">Outstanding Amount</label>
+      <Field
+        name="outstandingAmount"
+        type="number"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Currency</label>
+      <Field
+        name="currency"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Promise to Pay Date</label>
+      <Field
+        name="promiseToPayDate"
+        type="date"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Promised Amount</label>
+      <Field
+        name="promiseAmount"
+        type="number"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Discussion Summary</label>
+      <Field
+        name="discussionSummary"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Follow-Up Action</label>
+      <Field
+        name="followUpAction"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Next Follow-Up Date</label>
+      <Field
+        name="nextFollowUpDate"
+        type="date"
+        className="form-input"
+      />
+    </div>
+
+  </div>
+</div>
               <FormCustomFields values={values}/>
               <FormAttachments values={values}/>
 

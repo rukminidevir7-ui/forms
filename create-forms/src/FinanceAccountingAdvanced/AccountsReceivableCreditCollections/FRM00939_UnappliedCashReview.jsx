@@ -101,72 +101,185 @@ const FRM00939_UnappliedCashReview = () => {
               department="Finance & Accounting (Advanced) – Accounts Receivable, Credit & Collections"
             >
 
-              {/* ================= GENERAL INFORMATION ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">General Information</h3>
-                <div className="form-fields">
-                  <Field name="formId" disabled className="form-input"/>
-                  <Field name="date" type="date" className="form-input"/>
-                  <Field name="department" className="form-input"/>
-                  <Field name="function" className="form-input"/>
-                  <Field name="referenceNumber" placeholder="Reference Number" className="form-input"/>
-                  <Field name="location" placeholder="Location" className="form-input"/>
-                  <Field name="reviewPeriod" placeholder="Review Period" className="form-input"/>
-                  <Field name="priority" as="select" className="form-input">
-                    <option value="">Select Priority</option>
-                    <option>Low</option>
-                    <option>Medium</option>
-                    <option>High</option>
-                    <option>Critical</option>
-                  </Field>
-                </div>
-              </div>
+             {/* ================= GENERAL INFORMATION ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">General Information</h3>
+  <div className="form-fields">
 
-              {/* ================= CUSTOMER / PAYER DETAILS ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Customer / Payer Details</h3>
-                <div className="form-fields">
-                  <Field name="customerName" placeholder="Customer Name" className="form-input"/>
-                  <Field name="customerId" placeholder="Customer ID" className="form-input"/>
-                  <Field name="accountNumber" placeholder="Account Number" className="form-input"/>
-                  <Field name="businessAddress" placeholder="Business Address" className="form-input"/>
-                  <Field name="contactPerson" placeholder="Contact Person" className="form-input"/>
-                  <Field name="phone" placeholder="Phone" className="form-input"/>
-                </div>
-              </div>
+    <div className="form-field">
+      <label className="form-label">Form ID</label>
+      <Field name="formId" disabled className="form-input"/>
+    </div>
 
-              {/* ================= CASH DETAILS ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Cash Details</h3>
-                <div className="form-fields">
-                  <Field name="receiptNumber" placeholder="Receipt Number" className="form-input"/>
-                  <Field name="receiptDate" type="date" className="form-input"/>
-                  <Field name="unappliedAmount" type="number" placeholder="Unapplied Amount" className="form-input"/>
-                  <Field name="currency" placeholder="Currency" className="form-input"/>
-                  <Field name="paymentMethod" placeholder="Payment Method" className="form-input"/>
-                  <Field name="bankReference" placeholder="Bank Reference" className="form-input"/>
-                </div>
-              </div>
+    <div className="form-field">
+      <label className="form-label">Date</label>
+      <Field name="date" type="date" className="form-input"/>
+    </div>
 
-              {/* ================= REVIEW DETAILS ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Review Details</h3>
-                <div className="form-fields">
-                  <Field name="reasonForUnappliedCash" placeholder="Reason for Unapplied Cash" className="form-input"/>
-                  <Field name="investigationSummary" placeholder="Investigation Summary" className="form-input"/>
-                  <Field name="recommendedAction" placeholder="Recommended Action" className="form-input"/>
-                  <Field name="targetResolutionDate" type="date" className="form-input"/>
-                </div>
-              </div>
+    <div className="form-field">
+      <label className="form-label">Department</label>
+      <Field name="department" className="form-input"/>
+    </div>
 
-              {/* ================= FINANCIAL IMPACT ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Financial Impact</h3>
-                <div className="form-fields">
-                  <Field name="impactAmount" type="number" placeholder="Impact Amount" className="form-input"/>
-                  <Field name="impactDescription" placeholder="Impact Description" className="form-input"/>
-                </div>
-              </div>
+    <div className="form-field">
+      <label className="form-label">Function</label>
+      <Field name="function" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Reference Number</label>
+      <Field name="referenceNumber" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Location</label>
+      <Field name="location" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Review Period</label>
+      <Field name="reviewPeriod" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Priority</label>
+      <Field name="priority" as="select" className="form-input">
+        <option value="">Select Priority</option>
+        <option>Low</option>
+        <option>Medium</option>
+        <option>High</option>
+        <option>Critical</option>
+      </Field>
+    </div>
+
+  </div>
+</div>
+
+
+{/* ================= CUSTOMER / PAYER DETAILS ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">Customer / Payer Details</h3>
+  <div className="form-fields">
+
+    <div className="form-field">
+      <label className="form-label">Customer Name</label>
+      <Field name="customerName" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Customer ID</label>
+      <Field name="customerId" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Account Number</label>
+      <Field name="accountNumber" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Business Address</label>
+      <Field name="businessAddress" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Contact Person</label>
+      <Field name="contactPerson" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Phone</label>
+      <Field name="phone" className="form-input"/>
+    </div>
+
+  </div>
+</div>
+
+
+{/* ================= CASH DETAILS ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">Cash Details</h3>
+  <div className="form-fields">
+
+    <div className="form-field">
+      <label className="form-label">Receipt Number</label>
+      <Field name="receiptNumber" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Receipt Date</label>
+      <Field name="receiptDate" type="date" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Unapplied Amount</label>
+      <Field name="unappliedAmount" type="number" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Currency</label>
+      <Field name="currency" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Payment Method</label>
+      <Field name="paymentMethod" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Bank Reference</label>
+      <Field name="bankReference" className="form-input"/>
+    </div>
+
+  </div>
+</div>
+
+
+{/* ================= REVIEW DETAILS ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">Review Details</h3>
+  <div className="form-fields">
+
+    <div className="form-field">
+      <label className="form-label">Reason for Unapplied Cash</label>
+      <Field name="reasonForUnappliedCash" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Investigation Summary</label>
+      <Field name="investigationSummary" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Recommended Action</label>
+      <Field name="recommendedAction" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Target Resolution Date</label>
+      <Field name="targetResolutionDate" type="date" className="form-input"/>
+    </div>
+
+  </div>
+</div>
+
+
+{/* ================= FINANCIAL IMPACT ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">Financial Impact</h3>
+  <div className="form-fields">
+
+    <div className="form-field">
+      <label className="form-label">Impact Amount</label>
+      <Field name="impactAmount" type="number" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Impact Description</label>
+      <Field name="impactDescription" className="form-input"/>
+    </div>
+
+  </div>
+</div>
 
               {/* ================= ATTACHMENTS ================= */}
               <div className="form-section">

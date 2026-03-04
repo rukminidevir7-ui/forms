@@ -126,55 +126,182 @@ const FRM00929_DisputeResolutionTracker = () => {
             >
 
               {/* ================= GENERAL INFORMATION ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">General Information</h3>
-                <div className="form-fields">
-                  <Field name="date" type="date" className="form-input"/>
-                  <Field name="referenceNumber" placeholder="Reference Number" className="form-input"/>
-                  <Field name="location" placeholder="Location" className="form-input"/>
-                </div>
-              </div>
+<div className="form-section">
+  <h3 className="form-section-title">General Information</h3>
+  <div className="form-fields">
 
-              {/* ================= DISPUTE DETAILS ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Dispute Details</h3>
-                <div className="form-fields">
-                  <Field name="disputeId" placeholder="Dispute ID" className="form-input"/>
-                  <Field name="disputeDate" type="date" className="form-input"/>
-                  <Field name="customerName" placeholder="Customer Name" className="form-input"/>
-                  <Field name="customerId" placeholder="Customer ID" className="form-input"/>
-                  <Field name="invoiceNumber" placeholder="Invoice Number" className="form-input"/>
-                  <Field name="invoiceDate" type="date" className="form-input"/>
-                </div>
-              </div>
+    <div className="form-field">
+      <label className="form-label">Record Date</label>
+      <Field
+        name="date"
+        type="date"
+        className="form-input"
+      />
+    </div>
 
-              {/* ================= FINANCIAL INFORMATION ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Financial Information</h3>
-                <div className="form-fields">
-                  <Field name="disputeAmount" type="number" placeholder="Dispute Amount" className="form-input"/>
-                  <Field name="currency" placeholder="Currency" className="form-input"/>
-                  <Field name="outstandingAmount" type="number" placeholder="Outstanding Amount" className="form-input"/>
-                  <Field name="agingBucket" placeholder="Aging Bucket" className="form-input"/>
-                  <Field name="disputeReason" placeholder="Dispute Reason" className="form-input"/>
-                  <Field name="disputeDescription" placeholder="Description / Details" className="form-input"/>
-                  <Field name="supportingEvidence" placeholder="Supporting Evidence" className="form-input"/>
-                </div>
-              </div>
+    <div className="form-field">
+      <label className="form-label">Reference Number</label>
+      <Field
+        name="referenceNumber"
+        className="form-input"
+      />
+    </div>
 
-              {/* ================= RESOLUTION TRACKING ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Resolution Tracking</h3>
-                <div className="form-fields">
-                  <Field name="assignedTo" placeholder="Assigned To" className="form-input"/>
-                  <Field name="priority" placeholder="Priority" className="form-input"/>
-                  <Field name="status" placeholder="Status" className="form-input"/>
-                  <Field name="targetResolutionDate" type="date" className="form-input"/>
-                  <Field name="resolutionSummary" placeholder="Resolution Summary" className="form-input"/>
-                  <Field name="actualResolutionDate" type="date" className="form-input"/>
-                </div>
-              </div>
+    <div className="form-field">
+      <label className="form-label">Location / Branch</label>
+      <Field
+        name="location"
+        className="form-input"
+      />
+    </div>
 
+  </div>
+</div>
+
+
+{/* ================= DISPUTE DETAILS ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">Dispute Details</h3>
+  <div className="form-fields">
+
+    <div className="form-field">
+      <label className="form-label">Dispute ID</label>
+      <Field name="disputeId" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Dispute Date</label>
+      <Field name="disputeDate" type="date" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Customer Name</label>
+      <Field name="customerName" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Customer ID</label>
+      <Field name="customerId" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Invoice Number</label>
+      <Field name="invoiceNumber" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Invoice Date</label>
+      <Field name="invoiceDate" type="date" className="form-input"/>
+    </div>
+
+  </div>
+</div>
+
+
+{/* ================= FINANCIAL INFORMATION ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">Financial Information</h3>
+  <div className="form-fields">
+
+    <div className="form-field">
+      <label className="form-label">Disputed Amount</label>
+      <Field
+        name="disputeAmount"
+        type="number"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Currency</label>
+      <Field
+        name="currency"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Outstanding Amount</label>
+      <Field
+        name="outstandingAmount"
+        type="number"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Aging Bucket</label>
+      <Field
+        name="agingBucket"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Dispute Reason</label>
+      <Field
+        name="disputeReason"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Dispute Description / Details</label>
+      <Field
+        name="disputeDescription"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Supporting Evidence</label>
+      <Field
+        name="supportingEvidence"
+        className="form-input"
+      />
+    </div>
+
+  </div>
+</div>
+
+
+{/* ================= RESOLUTION TRACKING ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">Resolution Tracking</h3>
+  <div className="form-fields">
+
+    <div className="form-field">
+      <label className="form-label">Assigned To</label>
+      <Field name="assignedTo" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Priority Level</label>
+      <Field name="priority" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Current Status</label>
+      <Field name="status" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Target Resolution Date</label>
+      <Field name="targetResolutionDate" type="date" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Resolution Summary</label>
+      <Field name="resolutionSummary" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Actual Resolution Date</label>
+      <Field name="actualResolutionDate" type="date" className="form-input"/>
+    </div>
+
+  </div>
+</div>
               {/* ================= RESOLUTION ACTIONS TABLE ================= */}
               <div className="form-section">
                 <h3 className="form-section-title">Resolution Actions</h3>
@@ -256,25 +383,64 @@ const FRM00929_DisputeResolutionTracker = () => {
                 </FieldArray>
               </div>
 
-              {/* ================= CLOSURE ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Closure</h3>
-                <div className="form-fields">
-                  <Field name="closureStatus" placeholder="Closure Status" className="form-input"/>
-                  <Field name="closureComments" placeholder="Closure Comments" className="form-input"/>
-                </div>
-              </div>
+             {/* ================= CLOSURE ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">Closure</h3>
+  <div className="form-fields">
 
-              {/* ================= AUDIT TRAIL ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Audit Trail</h3>
-                <div className="form-fields">
-                  <Field name="createdOn" type="date" className="form-input"/>
-                  <Field name="lastUpdatedOn" type="date" className="form-input"/>
-                  <Field name="documentOwner" className="form-input"/>
-                </div>
-              </div>
+    <div className="form-field">
+      <label className="form-label">Closure Status</label>
+      <Field
+        name="closureStatus"
+        className="form-input"
+      />
+    </div>
 
+    <div className="form-field">
+      <label className="form-label">Closure Comments</label>
+      <Field
+        name="closureComments"
+        className="form-input"
+      />
+    </div>
+
+  </div>
+</div>
+
+
+{/* ================= AUDIT TRAIL ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">Audit Trail</h3>
+  <div className="form-fields">
+
+    <div className="form-field">
+      <label className="form-label">Created On</label>
+      <Field
+        name="createdOn"
+        type="date"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Last Updated On</label>
+      <Field
+        name="lastUpdatedOn"
+        type="date"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Document Owner</label>
+      <Field
+        name="documentOwner"
+        className="form-input"
+      />
+    </div>
+
+  </div>
+</div>
               <FormCustomFields values={values}/>
               <FormAttachments values={values}/>
 

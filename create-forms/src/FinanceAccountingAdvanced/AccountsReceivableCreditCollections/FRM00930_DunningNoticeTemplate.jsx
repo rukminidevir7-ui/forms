@@ -116,28 +116,76 @@ const FRM00930_DunningNoticeTemplate = () => {
             >
 
               {/* ================= GENERAL INFORMATION ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">General Information</h3>
-                <div className="form-fields">
-                  <Field name="date" type="date" className="form-input"/>
-                  <Field name="referenceNumber" placeholder="Reference Number" className="form-input"/>
-                  <Field name="noticeLevel" placeholder="Notice Level" className="form-input"/>
-                </div>
-              </div>
+<div className="form-section">
+  <h3 className="form-section-title">General Information</h3>
+  <div className="form-fields">
 
-              {/* ================= CUSTOMER DETAILS ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Customer Details</h3>
-                <div className="form-fields">
-                  <Field name="customerName" placeholder="Customer Name" className="form-input"/>
-                  <Field name="customerId" placeholder="Customer ID" className="form-input"/>
-                  <Field name="businessAddress" placeholder="Business Address" className="form-input"/>
-                  <Field name="contactPerson" placeholder="Contact Person" className="form-input"/>
-                  <Field name="phone" placeholder="Phone" className="form-input"/>
-                  <Field name="email" placeholder="Email" className="form-input"/>
-                </div>
-              </div>
+    <div className="form-field">
+      <label className="form-label">Notice Date</label>
+      <Field
+        name="date"
+        type="date"
+        className="form-input"
+      />
+    </div>
 
+    <div className="form-field">
+      <label className="form-label">Reference Number</label>
+      <Field
+        name="referenceNumber"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Notice Level</label>
+      <Field
+        name="noticeLevel"
+        className="form-input"
+      />
+    </div>
+
+  </div>
+</div>
+
+
+{/* ================= CUSTOMER DETAILS ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">Customer Details</h3>
+  <div className="form-fields">
+
+    <div className="form-field">
+      <label className="form-label">Customer Name</label>
+      <Field name="customerName" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Customer ID</label>
+      <Field name="customerId" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Business Address</label>
+      <Field name="businessAddress" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Contact Person</label>
+      <Field name="contactPerson" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Phone Number</label>
+      <Field name="phone" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Email Address</label>
+      <Field name="email" className="form-input"/>
+    </div>
+
+  </div>
+</div>
               {/* ================= INVOICE DETAILS ================= */}
               <div className="form-section">
                 <h3 className="form-section-title">Invoice Details</h3>
@@ -225,36 +273,106 @@ const FRM00930_DunningNoticeTemplate = () => {
                 </FieldArray>
               </div>
 
-              {/* ================= NOTICE CONTENT ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Notice Content</h3>
-                <div className="form-fields">
-                  <Field name="noticeMessage" placeholder="Notice Message" className="form-input"/>
-                  <Field name="paymentInstructions" placeholder="Payment Instructions" className="form-input"/>
-                  <Field name="escalationNote" placeholder="Escalation Note" className="form-input"/>
-                </div>
-              </div>
+             {/* ================= NOTICE CONTENT ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">Notice Content</h3>
+  <div className="form-fields">
 
-              {/* ================= FOLLOW-UP ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Follow-up</h3>
-                <div className="form-fields">
-                  <Field name="nextFollowUpDate" type="date" className="form-input"/>
-                  <Field name="assignedTo" placeholder="Assigned To" className="form-input"/>
-                  <Field name="comments" placeholder="Comments" className="form-input"/>
-                </div>
-              </div>
+    <div className="form-field">
+      <label className="form-label">Notice Message</label>
+      <Field
+        name="noticeMessage"
+        className="form-input"
+      />
+    </div>
 
-              {/* ================= AUDIT TRAIL ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Audit Trail</h3>
-                <div className="form-fields">
-                  <Field name="createdOn" type="date" className="form-input"/>
-                  <Field name="lastUpdatedOn" type="date" className="form-input"/>
-                  <Field name="documentOwner" className="form-input"/>
-                </div>
-              </div>
+    <div className="form-field">
+      <label className="form-label">Payment Instructions</label>
+      <Field
+        name="paymentInstructions"
+        className="form-input"
+      />
+    </div>
 
+    <div className="form-field">
+      <label className="form-label">Escalation Note</label>
+      <Field
+        name="escalationNote"
+        className="form-input"
+      />
+    </div>
+
+  </div>
+</div>
+
+
+{/* ================= FOLLOW-UP ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">Follow-Up</h3>
+  <div className="form-fields">
+
+    <div className="form-field">
+      <label className="form-label">Next Follow-Up Date</label>
+      <Field
+        name="nextFollowUpDate"
+        type="date"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Assigned To</label>
+      <Field
+        name="assignedTo"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Comments</label>
+      <Field
+        name="comments"
+        className="form-input"
+      />
+    </div>
+
+  </div>
+</div>
+
+
+{/* ================= AUDIT TRAIL ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">Audit Trail</h3>
+  <div className="form-fields">
+
+    <div className="form-field">
+      <label className="form-label">Created On</label>
+      <Field
+        name="createdOn"
+        type="date"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Last Updated On</label>
+      <Field
+        name="lastUpdatedOn"
+        type="date"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Document Owner</label>
+      <Field
+        name="documentOwner"
+        className="form-input"
+      />
+    </div>
+
+  </div>
+</div>
               <FormCustomFields values={values}/>
               <FormAttachments values={values}/>
 

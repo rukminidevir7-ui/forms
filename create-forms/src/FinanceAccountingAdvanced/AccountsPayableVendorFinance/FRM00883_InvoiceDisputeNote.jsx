@@ -106,42 +106,108 @@ const FRM00883_InvoiceDisputeNote = () => {
               department="Finance & Accounting – Accounts Payable & Vendor Finance"
             >
 
-              {/* ================= DOCUMENT HEADER ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Document Information</h3>
-                <div className="form-fields">
-                  <Field name="date" type="date" className="form-input"/>
-                  <Field name="referenceNo" placeholder="Reference No" className="form-input"/>
-                  <Field name="version" placeholder="Version" className="form-input"/>
-                </div>
-              </div>
+             {/* ================= DOCUMENT HEADER ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">Document Information</h3>
+  <div className="form-fields">
 
-              {/* ================= INVOICE DETAILS ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Invoice Details</h3>
-                <div className="form-fields">
-                  <Field name="vendorName" placeholder="Vendor Name" className="form-input"/>
-                  <Field name="invoiceNumber" placeholder="Invoice Number" className="form-input"/>
-                  <Field name="invoiceDate" type="date" className="form-input"/>
-                  <Field name="invoiceAmount" type="number" placeholder="Invoice Amount" className="form-input"/>
-                  <Field name="poNumber" placeholder="PO Number" className="form-input"/>
-                  <Field name="grnNumber" placeholder="GRN Number" className="form-input"/>
-                  <Field name="currency" placeholder="Currency" className="form-input"/>
-                  <Field name="paymentTerms" placeholder="Payment Terms" className="form-input"/>
-                </div>
-              </div>
+    <div className="form-field">
+      <label className="form-label">Document Date</label>
+      <Field name="date" type="date" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Reference Number</label>
+      <Field name="referenceNo" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Version Number</label>
+      <Field name="version" className="form-input"/>
+    </div>
+
+  </div>
+</div>
+             {/* ================= INVOICE DETAILS ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">Invoice Details</h3>
+  <div className="form-fields">
+
+    <div className="form-field">
+      <label className="form-label">Vendor Name</label>
+      <Field name="vendorName" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Invoice Number</label>
+      <Field name="invoiceNumber" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Invoice Date</label>
+      <Field name="invoiceDate" type="date" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Invoice Amount</label>
+      <Field name="invoiceAmount" type="number" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">PO Number</label>
+      <Field name="poNumber" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">GRN Number</label>
+      <Field name="grnNumber" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Currency</label>
+      <Field name="currency" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Payment Terms</label>
+      <Field name="paymentTerms" className="form-input"/>
+    </div>
+
+  </div>
+</div>
 
               {/* ================= DISPUTE DETAILS ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Dispute Details</h3>
-                <div className="form-fields">
-                  <Field name="disputeCategory" placeholder="Dispute Category" className="form-input"/>
-                  <Field name="disputeIdentifiedDate" type="date" className="form-input"/>
-                  <Field name="amountUnderDispute" type="number" placeholder="Amount Under Dispute" className="form-input"/>
-                  <Field name="description" placeholder="Description of Issue" className="form-input"/>
-                  <Field name="supportingRef" placeholder="Supporting Documents Reference" className="form-input"/>
-                </div>
-              </div>
+<div className="form-section">
+  <h3 className="form-section-title">Dispute Details</h3>
+  <div className="form-fields">
+
+    <div className="form-field">
+      <label className="form-label">Dispute Category</label>
+      <Field name="disputeCategory" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Dispute Identified Date</label>
+      <Field name="disputeIdentifiedDate" type="date" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Amount Under Dispute</label>
+      <Field name="amountUnderDispute" type="number" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Description of Issue</label>
+      <Field name="description" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Supporting Document Reference</label>
+      <Field name="supportingRef" className="form-input"/>
+    </div>
+
+  </div>
+</div>
 
               {/* ================= RESOLUTION TRACKING TABLE ================= */}
               <div className="form-section">

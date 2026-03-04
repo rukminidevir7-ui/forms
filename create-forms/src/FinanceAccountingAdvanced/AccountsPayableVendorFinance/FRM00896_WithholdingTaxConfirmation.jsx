@@ -120,29 +120,109 @@ const FRM00896_WithholdingTaxConfirmation = () => {
             >
 
               {/* ================= DOCUMENT CONTROL ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Document Control</h3>
-                <div className="form-fields">
-                  <Field name="date" type="date" className="form-input"/>
-                  <Field name="referenceNo" placeholder="Reference No" className="form-input"/>
-                  <Field name="version" placeholder="Version" className="form-input"/>
-                </div>
-              </div>
+<div className="form-section">
+  <h3 className="form-section-title">Document Control</h3>
+  <div className="form-fields">
 
-              {/* ================= VENDOR DETAILS ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Vendor Details</h3>
-                <div className="form-fields">
-                  <Field name="vendorName" placeholder="Vendor Name" className="form-input"/>
-                  <Field name="vendorCode" placeholder="Vendor Code" className="form-input"/>
-                  <Field name="panTaxId" placeholder="PAN / Tax ID" className="form-input"/>
-                  <Field name="country" placeholder="Country" className="form-input"/>
-                  <Field name="address" placeholder="Address" className="form-input"/>
-                  <Field name="contactPerson" placeholder="Contact Person" className="form-input"/>
-                  <Field name="contactDetails" placeholder="Contact Details" className="form-input"/>
-                  <Field name="vendorCategory" placeholder="Vendor Category" className="form-input"/>
-                </div>
-              </div>
+    <div className="form-field">
+      <label className="form-label">Document Date</label>
+      <Field
+        name="date"
+        type="date"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Reference Number</label>
+      <Field
+        name="referenceNo"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Version Number</label>
+      <Field
+        name="version"
+        className="form-input"
+      />
+    </div>
+
+  </div>
+</div>
+
+            {/* ================= VENDOR DETAILS ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">Vendor Details</h3>
+  <div className="form-fields">
+
+    <div className="form-field">
+      <label className="form-label">Vendor Name</label>
+      <Field
+        name="vendorName"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Vendor Code</label>
+      <Field
+        name="vendorCode"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">PAN / Tax Identification Number</label>
+      <Field
+        name="panTaxId"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Country</label>
+      <Field
+        name="country"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Registered Address</label>
+      <Field
+        name="address"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Contact Person</label>
+      <Field
+        name="contactPerson"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Contact Details</label>
+      <Field
+        name="contactDetails"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Vendor Category</label>
+      <Field
+        name="vendorCategory"
+        className="form-input"
+      />
+    </div>
+
+  </div>
+</div>
 
               {/* ================= TRANSACTION DETAILS ================= */}
               <div className="form-section">
@@ -231,36 +311,127 @@ const FRM00896_WithholdingTaxConfirmation = () => {
                 </FieldArray>
               </div>
 
-              {/* ================= COMPLIANCE & VERIFICATION ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Compliance & Verification</h3>
-                <div className="form-fields">
-                  <Field name="lowerNilCertificate" placeholder="Lower/Nil Certificate (Y/N)" className="form-input"/>
-                  <Field name="certificateNumber" placeholder="Certificate Number" className="form-input"/>
-                  <Field name="validTill" type="date" className="form-input"/>
-                  <Field name="taxResidencyStatus" placeholder="Tax Residency Status" className="form-input"/>
-                  <Field name="policyComplianceConfirmed" placeholder="Policy Compliance Confirmed (Y/N)" className="form-input"/>
-                  <Field name="supportingDocsVerified" placeholder="Supporting Documents Verified (Y/N)" className="form-input"/>
-                  <Field name="riskLevel" className="form-input"/>
-                  <Field name="complianceRemarks" className="form-input"/>
-                </div>
-              </div>
+             {/* ================= COMPLIANCE & VERIFICATION ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">Compliance & Verification</h3>
+  <div className="form-fields">
 
-              {/* ================= NOTES ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Notes</h3>
-                <Field name="notes" className="form-input"/>
-              </div>
+    <div className="form-field">
+      <label className="form-label">Lower / Nil Tax Certificate Available</label>
+      <Field
+        name="lowerNilCertificate"
+        className="form-input"
+      />
+    </div>
 
-              {/* ================= AUDIT TRAIL ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Audit Trail</h3>
-                <div className="form-fields">
-                  <Field name="createdOn" type="date" className="form-input"/>
-                  <Field name="lastUpdatedOn" type="date" className="form-input"/>
-                  <Field name="documentOwner" className="form-input"/>
-                </div>
-              </div>
+    <div className="form-field">
+      <label className="form-label">Certificate Number</label>
+      <Field
+        name="certificateNumber"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Certificate Valid Till</label>
+      <Field
+        name="validTill"
+        type="date"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Tax Residency Status</label>
+      <Field
+        name="taxResidencyStatus"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Policy Compliance Confirmed</label>
+      <Field
+        name="policyComplianceConfirmed"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Supporting Documents Verified</label>
+      <Field
+        name="supportingDocsVerified"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Risk Level</label>
+      <Field
+        name="riskLevel"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Compliance Remarks</label>
+      <Field
+        name="complianceRemarks"
+        className="form-input"
+      />
+    </div>
+
+  </div>
+</div>
+
+             {/* ================= NOTES ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">Notes</h3>
+
+  <div className="form-fields">
+    <div className="form-field">
+      <label className="form-label">Additional Notes / Remarks</label>
+      <Field
+        name="notes"
+        className="form-input"
+      />
+    </div>
+  </div>
+
+</div>
+{/* ================= AUDIT TRAIL ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">Audit Trail</h3>
+  <div className="form-fields">
+
+    <div className="form-field">
+      <label className="form-label">Created On</label>
+      <Field
+        name="createdOn"
+        type="date"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Last Updated On</label>
+      <Field
+        name="lastUpdatedOn"
+        type="date"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Document Owner</label>
+      <Field
+        name="documentOwner"
+        className="form-input"
+      />
+    </div>
+
+  </div>
+</div>
 
               <FormCustomFields values={values}/>
               <FormAttachments values={values}/>

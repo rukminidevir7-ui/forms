@@ -117,30 +117,92 @@ const FRM00934_BadDebtWriteOffRequest = () => {
               department="Finance & Accounting (Advanced) – Accounts Receivable, Credit & Collections"
             >
 
-              {/* ================= GENERAL INFORMATION ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">General Information</h3>
-                <div className="form-fields">
-                  <Field name="formId" disabled className="form-input"/>
-                  <Field name="date" type="date" className="form-input"/>
-                  <Field name="department" className="form-input"/>
-                  <Field name="function" className="form-input"/>
-                  <Field name="referenceNumber" placeholder="Reference Number" className="form-input"/>
-                  <Field name="location" placeholder="Location" className="form-input"/>
-                </div>
-              </div>
+            {/* ================= GENERAL INFORMATION ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">General Information</h3>
+  <div className="form-fields">
 
-              {/* ================= CUSTOMER DETAILS ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Customer Details</h3>
-                <div className="form-fields">
-                  <Field name="customerName" placeholder="Customer Name" className="form-input"/>
-                  <Field name="customerId" placeholder="Customer ID" className="form-input"/>
-                  <Field name="accountNumber" placeholder="Account Number" className="form-input"/>
-                  <Field name="businessAddress" placeholder="Business Address" className="form-input"/>
-                </div>
-              </div>
+    <div className="form-field">
+      <label className="form-label">Form ID</label>
+      <Field
+        name="formId"
+        disabled
+        className="form-input"
+      />
+    </div>
 
+    <div className="form-field">
+      <label className="form-label">Date</label>
+      <Field
+        name="date"
+        type="date"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Department</label>
+      <Field
+        name="department"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Function</label>
+      <Field
+        name="function"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Reference Number</label>
+      <Field
+        name="referenceNumber"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Location</label>
+      <Field
+        name="location"
+        className="form-input"
+      />
+    </div>
+
+  </div>
+</div>
+
+
+{/* ================= CUSTOMER DETAILS ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">Customer Details</h3>
+  <div className="form-fields">
+
+    <div className="form-field">
+      <label className="form-label">Customer Name</label>
+      <Field name="customerName" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Customer ID</label>
+      <Field name="customerId" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Account Number</label>
+      <Field name="accountNumber" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Business Address</label>
+      <Field name="businessAddress" className="form-input"/>
+    </div>
+
+  </div>
+</div>
               {/* ================= INVOICE / DEBT DETAILS ================= */}
               <div className="form-section">
                 <h3 className="form-section-title">Invoice / Debt Details</h3>
@@ -229,26 +291,81 @@ const FRM00934_BadDebtWriteOffRequest = () => {
                 </FieldArray>
               </div>
 
-              {/* ================= WRITE-OFF DETAILS ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Write-off Details</h3>
-                <div className="form-fields">
-                  <Field name="writeOffAmount" type="number" placeholder="Write-off Amount" className="form-input"/>
-                  <Field name="writeOffDate" type="date" className="form-input"/>
-                  <Field name="reasonForWriteOff" placeholder="Reason for Write-off" className="form-input"/>
-                  <Field name="recoveryActionsTaken" placeholder="Recovery Actions Taken" className="form-input"/>
-                </div>
-              </div>
+             {/* ================= WRITE-OFF DETAILS ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">Write-Off Details</h3>
+  <div className="form-fields">
 
-              {/* ================= FINANCIAL IMPACT ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Financial Impact</h3>
-                <div className="form-fields">
-                  <Field name="provisionAvailable" placeholder="Provision Available" className="form-input"/>
-                  <Field name="impactAmount" type="number" placeholder="Impact Amount" className="form-input"/>
-                  <Field name="impactDescription" placeholder="Impact Description" className="form-input"/>
-                </div>
-              </div>
+    <div className="form-field">
+      <label className="form-label">Write-Off Amount</label>
+      <Field
+        name="writeOffAmount"
+        type="number"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Write-Off Date</label>
+      <Field
+        name="writeOffDate"
+        type="date"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Reason for Write-Off</label>
+      <Field
+        name="reasonForWriteOff"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Recovery Actions Taken</label>
+      <Field
+        name="recoveryActionsTaken"
+        className="form-input"
+      />
+    </div>
+
+  </div>
+</div>
+
+
+{/* ================= FINANCIAL IMPACT ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">Financial Impact</h3>
+  <div className="form-fields">
+
+    <div className="form-field">
+      <label className="form-label">Provision Available</label>
+      <Field
+        name="provisionAvailable"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Impact Amount</label>
+      <Field
+        name="impactAmount"
+        type="number"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Impact Description</label>
+      <Field
+        name="impactDescription"
+        className="form-input"
+      />
+    </div>
+
+  </div>
+</div>
 
               <FormCustomFields values={values}/>
               <FormAttachments values={values}/>

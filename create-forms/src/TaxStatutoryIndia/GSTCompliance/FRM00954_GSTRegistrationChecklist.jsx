@@ -95,89 +95,199 @@ const FRM00954_GSTRegistrationChecklist = () => {
               department="Tax & Statutory (India) – GST Compliance"
             >
 
-              {/* ================= GENERAL INFORMATION ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">General Information</h3>
-                <div className="form-fields">
-                  <Field name="formId" disabled className="form-input"/>
-                  <Field name="date" type="date" className="form-input"/>
-                  <Field name="department" className="form-input"/>
-                  <Field name="function" className="form-input"/>
-                  <Field name="referenceNumber" placeholder="Reference Number" className="form-input"/>
-                  <Field name="location" placeholder="Location" className="form-input"/>
-                  <Field name="applicantName" placeholder="Applicant Name" className="form-input"/>
-                  <Field name="businessEntityType" placeholder="Business Entity Type" className="form-input"/>
-                </div>
-              </div>
+           {/* ================= GENERAL INFORMATION ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">General Information</h3>
+  <div className="form-fields">
 
-              {/* ================= BUSINESS DETAILS ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Business Details</h3>
-                <div className="form-fields">
-                  <Field name="legalNameOfBusiness" placeholder="Legal Name of Business" className="form-input"/>
-                  <Field name="tradeName" placeholder="Trade Name" className="form-input"/>
-                  <Field name="pan" placeholder="PAN" className="form-input"/>
-                  <Field name="constitutionOfBusiness" placeholder="Constitution of Business" className="form-input"/>
-                  <Field name="dateOfCommencement" type="date" className="form-input"/>
-                </div>
-              </div>
+    <div className="form-field">
+      <label className="form-label">Form ID</label>
+      <Field name="formId" disabled className="form-input"/>
+    </div>
 
-              {/* ================= ADDRESS DETAILS ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Address Details</h3>
-                <div className="form-fields">
-                  <Field name="principalPlaceOfBusinessAddress" placeholder="Principal Place of Business Address" className="form-input"/>
-                  <Field name="state" placeholder="State" className="form-input"/>
-                  <Field name="district" placeholder="District" className="form-input"/>
-                  <Field name="pinCode" placeholder="PIN Code" className="form-input"/>
-                  <Field name="contactNumber" placeholder="Contact Number" className="form-input"/>
-                  <Field name="email" type="email" placeholder="Email" className="form-input"/>
-                </div>
-              </div>
+    <div className="form-field">
+      <label className="form-label">Date</label>
+      <Field name="date" type="date" className="form-input"/>
+    </div>
 
-              {/* ================= DOCUMENT CHECKLIST ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Document Checklist</h3>
-                <div className="form-fields">
-                  <Field name="panCardCopy" as="select" className="form-input">
-                    <option value="">PAN Card Copy</option>
-                    <option>Yes</option>
-                    <option>No</option>
-                  </Field>
-                  <Field name="aadhaarCardCopy" as="select" className="form-input">
-                    <option value="">Aadhaar Card Copy</option>
-                    <option>Yes</option>
-                    <option>No</option>
-                  </Field>
-                  <Field name="addressProof" as="select" className="form-input">
-                    <option value="">Address Proof</option>
-                    <option>Yes</option>
-                    <option>No</option>
-                  </Field>
-                  <Field name="bankAccountProof" as="select" className="form-input">
-                    <option value="">Bank Account Proof</option>
-                    <option>Yes</option>
-                    <option>No</option>
-                  </Field>
-                  <Field name="photograph" as="select" className="form-input">
-                    <option value="">Photograph</option>
-                    <option>Yes</option>
-                    <option>No</option>
-                  </Field>
-                  <Field name="authorizationLetter" as="select" className="form-input">
-                    <option value="">Authorization Letter</option>
-                    <option>Yes</option>
-                    <option>No</option>
-                  </Field>
-                  <Field name="incorporationCertificate" as="select" className="form-input">
-                    <option value="">Incorporation Certificate</option>
-                    <option>Yes</option>
-                    <option>No</option>
-                  </Field>
-                </div>
-              </div>
+    <div className="form-field">
+      <label className="form-label">Department</label>
+      <Field name="department" className="form-input"/>
+    </div>
 
+    <div className="form-field">
+      <label className="form-label">Function</label>
+      <Field name="function" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Reference Number</label>
+      <Field name="referenceNumber" placeholder="Reference Number" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Location</label>
+      <Field name="location" placeholder="Location" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Applicant Name</label>
+      <Field name="applicantName" placeholder="Applicant Name" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Business Entity Type</label>
+      <Field name="businessEntityType" placeholder="Business Entity Type" className="form-input"/>
+    </div>
+
+  </div>
+</div>
+
+
+{/* ================= BUSINESS DETAILS ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">Business Details</h3>
+  <div className="form-fields">
+
+    <div className="form-field">
+      <label className="form-label">Legal Name of Business</label>
+      <Field name="legalNameOfBusiness" placeholder="Legal Name of Business" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Trade Name</label>
+      <Field name="tradeName" placeholder="Trade Name" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">PAN</label>
+      <Field name="pan" placeholder="PAN" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Constitution of Business</label>
+      <Field name="constitutionOfBusiness" placeholder="Constitution of Business" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Date of Commencement</label>
+      <Field name="dateOfCommencement" type="date" className="form-input"/>
+    </div>
+
+  </div>
+</div>
+
+
+{/* ================= ADDRESS DETAILS ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">Address Details</h3>
+  <div className="form-fields">
+
+    <div className="form-field">
+      <label className="form-label">Principal Place of Business Address</label>
+      <Field name="principalPlaceOfBusinessAddress" placeholder="Principal Place of Business Address" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">State</label>
+      <Field name="state" placeholder="State" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">District</label>
+      <Field name="district" placeholder="District" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">PIN Code</label>
+      <Field name="pinCode" placeholder="PIN Code" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Contact Number</label>
+      <Field name="contactNumber" placeholder="Contact Number" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Email</label>
+      <Field name="email" type="email" placeholder="Email" className="form-input"/>
+    </div>
+
+  </div>
+</div>
+
+
+{/* ================= DOCUMENT CHECKLIST ================= */}
+<div className="form-section">
               <FormAttachments values={values}/>
+  <div className="form-fields">
+
+    <div className="form-field">
+      <label className="form-label">PAN Card Copy</label>
+      <Field name="panCardCopy" as="select" className="form-input">
+        <option value="">PAN Card Copy</option>
+        <option>Yes</option>
+        <option>No</option>
+      </Field>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Aadhaar Card Copy</label>
+      <Field name="aadhaarCardCopy" as="select" className="form-input">
+        <option value="">Aadhaar Card Copy</option>
+        <option>Yes</option>
+        <option>No</option>
+      </Field>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Address Proof</label>
+      <Field name="addressProof" as="select" className="form-input">
+        <option value="">Address Proof</option>
+        <option>Yes</option>
+        <option>No</option>
+      </Field>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Bank Account Proof</label>
+      <Field name="bankAccountProof" as="select" className="form-input">
+        <option value="">Bank Account Proof</option>
+        <option>Yes</option>
+        <option>No</option>
+      </Field>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Photograph</label>
+      <Field name="photograph" as="select" className="form-input">
+        <option value="">Photograph</option>
+        <option>Yes</option>
+        <option>No</option>
+      </Field>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Authorization Letter</label>
+      <Field name="authorizationLetter" as="select" className="form-input">
+        <option value="">Authorization Letter</option>
+        <option>Yes</option>
+        <option>No</option>
+      </Field>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Incorporation Certificate</label>
+      <Field name="incorporationCertificate" as="select" className="form-input">
+        <option value="">Incorporation Certificate</option>
+        <option>Yes</option>
+        <option>No</option>
+      </Field>
+    </div>
+
+  </div>
+</div>
+
               <FormCustomFields values={values}/>
 
               {/* ================= VERIFICATION / AUTHORIZATION ================= */}

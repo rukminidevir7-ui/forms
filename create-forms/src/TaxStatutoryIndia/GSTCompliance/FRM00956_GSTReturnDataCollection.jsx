@@ -106,82 +106,212 @@ const FRM00956_GSTReturnDataCollection = () => {
             >
 
               {/* ================= GENERAL INFORMATION ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">General Information</h3>
-                <div className="form-fields">
-                  <Field name="formId" disabled className="form-input"/>
-                  <Field name="date" type="date" className="form-input"/>
-                  <Field name="department" className="form-input"/>
-                  <Field name="function" className="form-input"/>
-                  <Field name="returnPeriodFrom" type="date" className="form-input"/>
-                  <Field name="returnPeriodTo" type="date" className="form-input"/>
-                  <Field name="referenceNumber" placeholder="Reference Number" className="form-input"/>
-                  <Field name="location" placeholder="Location" className="form-input"/>
-                  <Field name="gstin" placeholder="GSTIN" className="form-input"/>
-                  <Field name="returnType" placeholder="Return Type" className="form-input"/>
-                </div>
-              </div>
+<div className="form-section">
+  <h3 className="form-section-title">General Information</h3>
+  <div className="form-fields">
 
-              {/* ================= BUSINESS DETAILS ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Business Details</h3>
-                <div className="form-fields">
-                  <Field name="legalNameOfBusiness" placeholder="Legal Name of Business" className="form-input"/>
-                  <Field name="tradeName" placeholder="Trade Name" className="form-input"/>
-                  <Field name="pan" placeholder="PAN" className="form-input"/>
-                  <Field name="contactPerson" placeholder="Contact Person" className="form-input"/>
-                  <Field name="phone" placeholder="Phone" className="form-input"/>
-                  <Field name="email" type="email" placeholder="Email" className="form-input"/>
-                </div>
-              </div>
+    <div className="form-field">
+      <label className="form-label">Form ID</label>
+      <Field name="formId" disabled className="form-input"/>
+    </div>
 
-              {/* ================= TAX DATA SUMMARY ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Tax Data Summary</h3>
-                <div className="form-fields">
-                  <Field name="taxableValue" type="number" placeholder="Taxable Value" className="form-input"/>
-                  <Field name="currency" placeholder="Currency" className="form-input"/>
-                  <Field name="outputTaxLiability" type="number" placeholder="Output Tax Liability" className="form-input"/>
-                  <Field name="inputTaxCredit" type="number" placeholder="Input Tax Credit" className="form-input"/>
-                  <Field name="netTaxPayable" type="number" placeholder="Net Tax Payable" className="form-input"/>
-                  <Field name="interestLateFee" type="number" placeholder="Interest / Late Fee" className="form-input"/>
-                </div>
-              </div>
+    <div className="form-field">
+      <label className="form-label">Date</label>
+      <Field name="date" type="date" className="form-input"/>
+    </div>
 
-              {/* ================= FILING DETAILS ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Filing Details</h3>
-                <div className="form-fields">
-                  <Field name="returnFilingDueDate" type="date" className="form-input"/>
-                  <Field name="proposedFilingDate" type="date" className="form-input"/>
-                  <Field name="filingStatus" placeholder="Filing Status" className="form-input"/>
-                  <Field name="preparedByTeam" placeholder="Prepared By Team" className="form-input"/>
-                </div>
-              </div>
+    <div className="form-field">
+      <label className="form-label">Department</label>
+      <Field name="department" className="form-input"/>
+    </div>
 
-              {/* ================= NOTES ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Notes</h3>
-                <div className="form-fields">
-                  <Field name="keyNotes" placeholder="Key Notes" className="form-input"/>
-                  <Field name="issuesObservations" placeholder="Issues / Observations" className="form-input"/>
-                </div>
-              </div>
+    <div className="form-field">
+      <label className="form-label">Function</label>
+      <Field name="function" className="form-input"/>
+    </div>
 
-              {/* ================= ATTACHMENTS ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Attachments</h3>
-                <div className="form-fields">
-                  <Field name="supportingDocumentsAttached" as="select" className="form-input">
-                    <option value="">Supporting Documents Attached?</option>
-                    <option>Yes</option>
-                    <option>No</option>
-                  </Field>
-                  <Field name="documentReference" placeholder="Document Reference" className="form-input"/>
-                </div>
-              </div>
+    <div className="form-field">
+      <label className="form-label">Return Period From</label>
+      <Field name="returnPeriodFrom" type="date" className="form-input"/>
+    </div>
 
+    <div className="form-field">
+      <label className="form-label">Return Period To</label>
+      <Field name="returnPeriodTo" type="date" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Reference Number</label>
+      <Field name="referenceNumber" placeholder="Reference Number" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Location</label>
+      <Field name="location" placeholder="Location" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">GSTIN</label>
+      <Field name="gstin" placeholder="GSTIN" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Return Type</label>
+      <Field name="returnType" placeholder="Return Type" className="form-input"/>
+    </div>
+
+  </div>
+</div>
+
+
+{/* ================= BUSINESS DETAILS ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">Business Details</h3>
+  <div className="form-fields">
+
+    <div className="form-field">
+      <label className="form-label">Legal Name of Business</label>
+      <Field name="legalNameOfBusiness" placeholder="Legal Name of Business" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Trade Name</label>
+      <Field name="tradeName" placeholder="Trade Name" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">PAN</label>
+      <Field name="pan" placeholder="PAN" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Contact Person</label>
+      <Field name="contactPerson" placeholder="Contact Person" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Phone</label>
+      <Field name="phone" placeholder="Phone" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Email</label>
+      <Field name="email" type="email" placeholder="Email" className="form-input"/>
+    </div>
+
+  </div>
+</div>
+
+
+{/* ================= TAX DATA SUMMARY ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">Tax Data Summary</h3>
+  <div className="form-fields">
+
+    <div className="form-field">
+      <label className="form-label">Taxable Value</label>
+      <Field name="taxableValue" type="number" placeholder="Taxable Value" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Currency</label>
+      <Field name="currency" placeholder="Currency" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Output Tax Liability</label>
+      <Field name="outputTaxLiability" type="number" placeholder="Output Tax Liability" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Input Tax Credit</label>
+      <Field name="inputTaxCredit" type="number" placeholder="Input Tax Credit" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Net Tax Payable</label>
+      <Field name="netTaxPayable" type="number" placeholder="Net Tax Payable" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Interest / Late Fee</label>
+      <Field name="interestLateFee" type="number" placeholder="Interest / Late Fee" className="form-input"/>
+    </div>
+
+  </div>
+</div>
+
+
+{/* ================= FILING DETAILS ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">Filing Details</h3>
+  <div className="form-fields">
+
+    <div className="form-field">
+      <label className="form-label">Return Filing Due Date</label>
+      <Field name="returnFilingDueDate" type="date" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Proposed Filing Date</label>
+      <Field name="proposedFilingDate" type="date" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Filing Status</label>
+      <Field name="filingStatus" placeholder="Filing Status" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Prepared By Team</label>
+      <Field name="preparedByTeam" placeholder="Prepared By Team" className="form-input"/>
+    </div>
+
+  </div>
+</div>
+
+
+{/* ================= NOTES ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">Notes</h3>
+  <div className="form-fields">
+
+    <div className="form-field">
+      <label className="form-label">Key Notes</label>
+      <Field name="keyNotes" placeholder="Key Notes" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Issues / Observations</label>
+      <Field name="issuesObservations" placeholder="Issues / Observations" className="form-input"/>
+    </div>
+
+  </div>
+</div>
+
+
+{/* ================= ATTACHMENTS ================= */}
+<div className="form-section">
               <FormAttachments values={values}/>
+  <div className="form-fields">
+
+    <div className="form-field">
+      <label className="form-label">Supporting Documents Attached?</label>
+      <Field name="supportingDocumentsAttached" as="select" className="form-input">
+        <option value="">Supporting Documents Attached?</option>
+        <option>Yes</option>
+        <option>No</option>
+      </Field>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Document Reference</label>
+      <Field name="documentReference" placeholder="Document Reference" className="form-input"/>
+    </div>
+
+  </div>
+</div>
+
               <FormCustomFields values={values}/>
 
               {/* ================= AUTHORIZATION ================= */}

@@ -116,28 +116,96 @@ const FRM00924_CustomerMasterChangeRequest = () => {
               department="Finance & Accounting (Advanced) – Accounts Receivable, Credit & Collections"
             >
 
-              {/* ================= GENERAL INFORMATION ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">General Information</h3>
-                <div className="form-fields">
-                  <Field name="date" type="date" className="form-input"/>
-                  <Field name="referenceNumber" placeholder="Reference Number" className="form-input"/>
-                  <Field name="location" placeholder="Location" className="form-input"/>
-                  <Field name="changeRequestType" placeholder="Change Request Type" className="form-input"/>
-                  <Field name="effectiveDate" type="date" className="form-input"/>
-                </div>
-              </div>
+             {/* ================= GENERAL INFORMATION ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">General Information</h3>
+  <div className="form-fields">
 
-              {/* ================= CUSTOMER IDENTIFICATION ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Customer Identification</h3>
-                <div className="form-fields">
-                  <Field name="customerName" placeholder="Customer Name" className="form-input"/>
-                  <Field name="customerId" placeholder="Customer ID" className="form-input"/>
-                  <Field name="accountNumber" placeholder="Account Number" className="form-input"/>
-                  <Field name="businessAddress" placeholder="Business Address" className="form-input"/>
-                </div>
-              </div>
+    <div className="form-field">
+      <label className="form-label">Request Date</label>
+      <Field
+        name="date"
+        type="date"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Reference Number</label>
+      <Field
+        name="referenceNumber"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Location / Branch</label>
+      <Field
+        name="location"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Change Request Type</label>
+      <Field
+        name="changeRequestType"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Effective Date</label>
+      <Field
+        name="effectiveDate"
+        type="date"
+        className="form-input"
+      />
+    </div>
+
+  </div>
+</div>
+
+
+{/* ================= CUSTOMER IDENTIFICATION ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">Customer Identification</h3>
+  <div className="form-fields">
+
+    <div className="form-field">
+      <label className="form-label">Customer Name</label>
+      <Field
+        name="customerName"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Customer ID</label>
+      <Field
+        name="customerId"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Account Number</label>
+      <Field
+        name="accountNumber"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Business Address</label>
+      <Field
+        name="businessAddress"
+        className="form-input"
+      />
+    </div>
+
+  </div>
+</div>
 
               {/* ================= CHANGE DETAILS ================= */}
               <div className="form-section">
@@ -235,7 +303,7 @@ const FRM00924_CustomerMasterChangeRequest = () => {
 
               {/* ================= ATTACHMENTS ================= */}
               <div className="form-section">
-                <h3 className="form-section-title">Attachments</h3>
+              <FormAttachments values={values}/>
                 <div className="form-fields">
                   <Field name="supportingDocsAttached" placeholder="Supporting Documents Attached (Y/N)" className="form-input"/>
                   <Field name="documentReference" placeholder="Document Reference" className="form-input"/>
@@ -253,7 +321,6 @@ const FRM00924_CustomerMasterChangeRequest = () => {
               </div>
 
               <FormCustomFields values={values}/>
-              <FormAttachments values={values}/>
 
               {/* ================= AUTHORIZATION ================= */}
               <div className="form-section">

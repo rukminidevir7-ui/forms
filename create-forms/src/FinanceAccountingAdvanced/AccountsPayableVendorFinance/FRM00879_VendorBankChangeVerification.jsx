@@ -140,48 +140,138 @@ const FRM00879_VendorBankChangeVerification = () => {
               department="Finance & Accounting – Accounts Payable & Vendor Finance"
             >
 
-              {/* ================= DOCUMENT CONTROL ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">1. Document Control</h3>
-                <div className="form-fields">
-                  <Field name="version" placeholder="Version No" className="form-input"/>
-                  <Field name="date" type="date" className="form-input"/>
-                  <Field name="preparedBy" placeholder="Prepared By" className="form-input"/>
-                  <Field name="department" placeholder="Department" className="form-input"/>
-                  <Field name="requestId" placeholder="Reference Ticket / Request ID" className="form-input"/>
-                </div>
-              </div>
+             {/* ================= DOCUMENT CONTROL ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">1. Document Control</h3>
+  <div className="form-fields">
 
-              {/* ================= VENDOR DETAILS ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">2. Vendor Details</h3>
-                <div className="form-fields">
-                  <Field name="vendorName" placeholder="Vendor Name" className="form-input"/>
-                  <Field name="vendorCode" placeholder="Vendor Code / ID" className="form-input"/>
-                  <Field name="vendorCategory" placeholder="Vendor Category" className="form-input"/>
-                  <Field name="businessUnit" placeholder="Business Unit" className="form-input"/>
-                  <Field name="contactPerson" placeholder="Contact Person" className="form-input"/>
-                  <Field name="contactEmail" placeholder="Contact Email" className="form-input"/>
-                  <Field name="contactPhone" placeholder="Contact Phone" className="form-input"/>
-                </div>
-              </div>
+    <div className="form-field">
+      <label className="form-label">Version Number</label>
+      <Field name="version" className="form-input"/>
+    </div>
 
-              {/* ================= BANK CHANGE SUMMARY ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">3. Bank Change Request Summary</h3>
-                <div className="form-fields">
-                  <Field name="changeType" placeholder="Type of Change" className="form-input"/>
-                  <Field name="effectiveDate" type="date" className="form-input"/>
-                  <Field name="reason" placeholder="Reason for Change" className="form-input"/>
-                  <Field name="previousBank" placeholder="Previous Bank Name" className="form-input"/>
-                  <Field name="previousAccountMasked" placeholder="Previous Account (Masked)" className="form-input"/>
-                  <Field name="newBankName" placeholder="New Bank Name" className="form-input"/>
-                  <Field name="newAccountMasked" placeholder="New Account (Masked)" className="form-input"/>
-                  <Field name="ifscSwift" placeholder="IFSC / SWIFT Code" className="form-input"/>
-                  <Field name="branchName" placeholder="Branch Name" className="form-input"/>
-                  <Field name="country" placeholder="Country" className="form-input"/>
-                </div>
-              </div>
+    <div className="form-field">
+      <label className="form-label">Form Date</label>
+      <Field name="date" type="date" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Prepared By</label>
+      <Field name="preparedBy" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Department</label>
+      <Field name="department" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Reference Ticket / Request ID</label>
+      <Field name="requestId" className="form-input"/>
+    </div>
+
+  </div>
+</div>
+
+             {/* ================= VENDOR DETAILS ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">2. Vendor Details</h3>
+  <div className="form-fields">
+
+    <div className="form-field">
+      <label className="form-label">Vendor Name</label>
+      <Field name="vendorName" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Vendor Code / ID</label>
+      <Field name="vendorCode" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Vendor Category</label>
+      <Field name="vendorCategory" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Business Unit</label>
+      <Field name="businessUnit" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Contact Person</label>
+      <Field name="contactPerson" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Contact Email</label>
+      <Field name="contactEmail" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Contact Phone</label>
+      <Field name="contactPhone" className="form-input"/>
+    </div>
+
+  </div>
+</div>
+             {/* ================= BANK CHANGE SUMMARY ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">3. Bank Change Request Summary</h3>
+  <div className="form-fields">
+
+    <div className="form-field">
+      <label className="form-label">Type of Change</label>
+      <Field name="changeType" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Effective Date</label>
+      <Field name="effectiveDate" type="date" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Reason for Change</label>
+      <Field name="reason" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Previous Bank Name</label>
+      <Field name="previousBank" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Previous Account (Masked)</label>
+      <Field name="previousAccountMasked" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">New Bank Name</label>
+      <Field name="newBankName" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">New Account (Masked)</label>
+      <Field name="newAccountMasked" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">IFSC / SWIFT Code</label>
+      <Field name="ifscSwift" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Branch Name</label>
+      <Field name="branchName" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Country</label>
+      <Field name="country" className="form-input"/>
+    </div>
+
+  </div>
+</div>
 
               {/* ================= CHECKLIST TABLE ================= */}
               <div className="form-section">

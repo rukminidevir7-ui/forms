@@ -110,38 +110,136 @@ const FRM00900_PaymentReleaseRequest = () => {
               department="Finance & Accounting – Accounts Payable & Vendor Finance"
             >
 
-              {/* ================= REQUEST INFORMATION ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Request Information</h3>
-                <div className="form-fields">
-                  <Field name="requestId" placeholder="Request ID" className="form-input"/>
-                  <Field name="date" type="date" className="form-input"/>
-                  <Field name="businessUnit" placeholder="Business Unit" className="form-input"/>
-                  <Field name="department" placeholder="Department" className="form-input"/>
-                </div>
-              </div>
+             {/* ================= REQUEST INFORMATION ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">Request Information</h3>
+  <div className="form-fields">
 
-              {/* ================= VENDOR & INVOICE DETAILS ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Vendor & Invoice Details</h3>
-                <div className="form-fields">
-                  <Field name="vendorName" placeholder="Vendor Name" className="form-input"/>
-                  <Field name="vendorId" placeholder="Vendor ID" className="form-input"/>
-                  <Field name="invoiceNumber" placeholder="Invoice Number" className="form-input"/>
-                  <Field name="invoiceDate" type="date" className="form-input"/>
-                  <Field name="paymentAmount" type="number" placeholder="Payment Amount" className="form-input"/>
-                  <Field name="currency" placeholder="Currency" className="form-input"/>
-                  <Field name="paymentMethod" placeholder="Payment Method" className="form-input"/>
-                  <Field name="priority" placeholder="Priority" className="form-input"/>
-                </div>
-              </div>
+    <div className="form-field">
+      <label className="form-label">Request ID</label>
+      <Field
+        name="requestId"
+        className="form-input"
+      />
+    </div>
 
-              {/* ================= BUSINESS JUSTIFICATION ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Business Justification</h3>
-                <Field name="businessJustification" className="form-input"/>
-              </div>
+    <div className="form-field">
+      <label className="form-label">Request Date</label>
+      <Field
+        name="date"
+        type="date"
+        className="form-input"
+      />
+    </div>
 
+    <div className="form-field">
+      <label className="form-label">Business Unit</label>
+      <Field
+        name="businessUnit"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Department</label>
+      <Field
+        name="department"
+        className="form-input"
+      />
+    </div>
+
+  </div>
+</div>
+
+             {/* ================= VENDOR & INVOICE DETAILS ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">Vendor & Invoice Details</h3>
+  <div className="form-fields">
+
+    <div className="form-field">
+      <label className="form-label">Vendor Name</label>
+      <Field
+        name="vendorName"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Vendor ID</label>
+      <Field
+        name="vendorId"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Invoice Number</label>
+      <Field
+        name="invoiceNumber"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Invoice Date</label>
+      <Field
+        name="invoiceDate"
+        type="date"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Payment Amount</label>
+      <Field
+        name="paymentAmount"
+        type="number"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Currency</label>
+      <Field
+        name="currency"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Payment Method</label>
+      <Field
+        name="paymentMethod"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Payment Priority</label>
+      <Field
+        name="priority"
+        className="form-input"
+      />
+    </div>
+
+  </div>
+</div>
+
+             {/* ================= BUSINESS JUSTIFICATION ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">Business Justification</h3>
+
+  <div className="form-fields">
+    <div className="form-field">
+      <label className="form-label">Justification for Payment</label>
+      <Field
+        name="businessJustification"
+        className="form-input"
+      />
+    </div>
+  </div>
+
+</div>
               {/* ================= RISK & COMPLIANCE CHECKS ================= */}
               <div className="form-section">
                 <h3 className="form-section-title">Risk & Compliance Checks</h3>
@@ -227,16 +325,39 @@ const FRM00900_PaymentReleaseRequest = () => {
                 </FieldArray>
               </div>
 
-              {/* ================= AUDIT TRAIL ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Audit Trail</h3>
-                <div className="form-fields">
-                  <Field name="createdOn" type="date" className="form-input"/>
-                  <Field name="lastUpdatedOn" type="date" className="form-input"/>
-                  <Field name="documentOwner" className="form-input"/>
-                </div>
-              </div>
+             {/* ================= AUDIT TRAIL ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">Audit Trail</h3>
+  <div className="form-fields">
 
+    <div className="form-field">
+      <label className="form-label">Created On</label>
+      <Field
+        name="createdOn"
+        type="date"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Last Updated On</label>
+      <Field
+        name="lastUpdatedOn"
+        type="date"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Document Owner</label>
+      <Field
+        name="documentOwner"
+        className="form-input"
+      />
+    </div>
+
+  </div>
+</div>
               <FormCustomFields values={values}/>
               <FormAttachments values={values}/>
 

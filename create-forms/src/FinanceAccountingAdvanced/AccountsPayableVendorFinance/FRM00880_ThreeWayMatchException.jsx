@@ -118,91 +118,220 @@ const FRM00880_ThreeWayMatchException = () => {
             >
 
               {/* 1. DOCUMENT CONTROL */}
-              <div className="form-section">
-                <h3 className="form-section-title">1. Document Control</h3>
-                <div className="form-fields">
-                  <Field name="version" placeholder="Version" className="form-input"/>
-                  <Field name="effectiveDate" type="date" className="form-input"/>
-                  <Field name="department" placeholder="Department" className="form-input"/>
-                  <Field name="process" placeholder="Process" className="form-input"/>
-                </div>
-              </div>
+<div className="form-section">
+  <h3 className="form-section-title">1. Document Control</h3>
+  <div className="form-fields">
 
-              {/* 2. REQUEST INFORMATION */}
-              <div className="form-section">
-                <h3 className="form-section-title">2. Request Information</h3>
-                <div className="form-fields">
-                  <Field name="requestNumber" placeholder="Request Number" className="form-input"/>
-                  <Field name="requestDate" type="date" className="form-input"/>
-                  <Field name="requestedBy" placeholder="Requested By" className="form-input"/>
-                  <Field name="employeeId" placeholder="Employee ID" className="form-input"/>
-                  <Field name="costCenter" placeholder="Department / Cost Center" className="form-input"/>
-                  <Field name="location" placeholder="Location" className="form-input"/>
-                </div>
-              </div>
+    <div className="form-field">
+      <label className="form-label">Version Number</label>
+      <Field name="version" className="form-input"/>
+    </div>
 
-              {/* 3. VENDOR DETAILS */}
-              <div className="form-section">
-                <h3 className="form-section-title">3. Vendor Details</h3>
-                <div className="form-fields">
-                  <Field name="vendorName" placeholder="Vendor Name" className="form-input"/>
-                  <Field name="vendorCode" placeholder="Vendor Code" className="form-input"/>
-                  <Field name="vendorContact" placeholder="Vendor Contact" className="form-input"/>
-                </div>
-              </div>
+    <div className="form-field">
+      <label className="form-label">Effective Date</label>
+      <Field name="effectiveDate" type="date" className="form-input"/>
+    </div>
 
-              {/* 4. INVOICE DETAILS */}
-              <div className="form-section">
-                <h3 className="form-section-title">4. Invoice Details</h3>
-                <div className="form-fields">
-                  <Field name="invoiceNumber" placeholder="Invoice Number" className="form-input"/>
-                  <Field name="invoiceDate" type="date" className="form-input"/>
-                  <Field name="invoiceAmount" type="number" placeholder="Invoice Amount" className="form-input"/>
-                  <Field name="currency" placeholder="Currency" className="form-input"/>
-                </div>
-              </div>
+    <div className="form-field">
+      <label className="form-label">Department</label>
+      <Field name="department" className="form-input"/>
+    </div>
 
-              {/* 5. PO DETAILS */}
-              <div className="form-section">
-                <h3 className="form-section-title">5. Purchase Order Details</h3>
-                <div className="form-fields">
-                  <Field name="poNumber" placeholder="PO Number" className="form-input"/>
-                  <Field name="poDate" type="date" className="form-input"/>
-                  <Field name="poAmount" type="number" placeholder="PO Amount" className="form-input"/>
-                </div>
-              </div>
+    <div className="form-field">
+      <label className="form-label">Process</label>
+      <Field name="process" className="form-input"/>
+    </div>
 
-              {/* 6. GRN DETAILS */}
-              <div className="form-section">
-                <h3 className="form-section-title">6. Goods Receipt Details</h3>
-                <div className="form-fields">
-                  <Field name="grnNumber" placeholder="GRN Number" className="form-input"/>
-                  <Field name="grnDate" type="date" className="form-input"/>
-                  <Field name="receivedQuantity" type="number" placeholder="Received Quantity" className="form-input"/>
-                </div>
-              </div>
+  </div>
+</div>
 
-              {/* 7. EXCEPTION DETAILS */}
-              <div className="form-section">
-                <h3 className="form-section-title">7. Exception Details</h3>
-                <div className="form-fields">
-                  <Field name="exceptionType" placeholder="Exception Type" className="form-input"/>
-                  <Field name="description" placeholder="Description" className="form-input"/>
-                  <Field name="rootCause" placeholder="Root Cause" className="form-input"/>
-                  <Field name="impactAssessment" placeholder="Impact Assessment" className="form-input"/>
-                </div>
-              </div>
+             {/* 2. REQUEST INFORMATION */}
+<div className="form-section">
+  <h3 className="form-section-title">2. Request Information</h3>
+  <div className="form-fields">
+
+    <div className="form-field">
+      <label className="form-label">Request Number</label>
+      <Field name="requestNumber" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Request Date</label>
+      <Field name="requestDate" type="date" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Requested By</label>
+      <Field name="requestedBy" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Employee ID</label>
+      <Field name="employeeId" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Department / Cost Center</label>
+      <Field name="costCenter" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Location</label>
+      <Field name="location" className="form-input"/>
+    </div>
+
+  </div>
+</div>
+{/* 3. VENDOR DETAILS */}
+<div className="form-section">
+  <h3 className="form-section-title">3. Vendor Details</h3>
+  <div className="form-fields">
+
+    <div className="form-field">
+      <label className="form-label">Vendor Name</label>
+      <Field name="vendorName" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Vendor Code</label>
+      <Field name="vendorCode" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Vendor Contact</label>
+      <Field name="vendorContact" className="form-input"/>
+    </div>
+
+  </div>
+</div>
+
+            {/* 4. INVOICE DETAILS */}
+<div className="form-section">
+  <h3 className="form-section-title">4. Invoice Details</h3>
+  <div className="form-fields">
+
+    <div className="form-field">
+      <label className="form-label">Invoice Number</label>
+      <Field name="invoiceNumber" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Invoice Date</label>
+      <Field name="invoiceDate" type="date" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Invoice Amount</label>
+      <Field name="invoiceAmount" type="number" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Currency</label>
+      <Field name="currency" className="form-input"/>
+    </div>
+
+  </div>
+</div>
+
+             {/* 5. PURCHASE ORDER DETAILS */}
+<div className="form-section">
+  <h3 className="form-section-title">5. Purchase Order Details</h3>
+  <div className="form-fields">
+
+    <div className="form-field">
+      <label className="form-label">PO Number</label>
+      <Field name="poNumber" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">PO Date</label>
+      <Field name="poDate" type="date" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">PO Amount</label>
+      <Field name="poAmount" type="number" className="form-input"/>
+    </div>
+
+  </div>
+</div>
+{/* 6. GOODS RECEIPT DETAILS */}
+<div className="form-section">
+  <h3 className="form-section-title">6. Goods Receipt Details</h3>
+  <div className="form-fields">
+
+    <div className="form-field">
+      <label className="form-label">GRN Number</label>
+      <Field name="grnNumber" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">GRN Date</label>
+      <Field name="grnDate" type="date" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Received Quantity</label>
+      <Field name="receivedQuantity" type="number" className="form-input"/>
+    </div>
+
+  </div>
+</div>
+            {/* 7. EXCEPTION DETAILS */}
+<div className="form-section">
+  <h3 className="form-section-title">7. Exception Details</h3>
+  <div className="form-fields">
+
+    <div className="form-field">
+      <label className="form-label">Exception Type</label>
+      <Field name="exceptionType" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Description of Exception</label>
+      <Field name="description" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Root Cause Analysis</label>
+      <Field name="rootCause" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Operational / Financial Impact Assessment</label>
+      <Field name="impactAssessment" className="form-input"/>
+    </div>
+
+  </div>
+</div>
 
               {/* 8. FINANCIAL IMPACT */}
-              <div className="form-section">
-                <h3 className="form-section-title">8. Financial Impact</h3>
-                <div className="form-fields">
-                  <Field name="impactAmount" type="number" placeholder="Impact Amount" className="form-input"/>
-                  <Field name="glAccount" placeholder="GL Account" className="form-input"/>
-                  <Field name="financialCostCenter" placeholder="Cost Center" className="form-input"/>
-                  <Field name="budgetImpact" placeholder="Budget Impact" className="form-input"/>
-                </div>
-              </div>
+<div className="form-section">
+  <h3 className="form-section-title">8. Financial Impact</h3>
+  <div className="form-fields">
+
+    <div className="form-field">
+      <label className="form-label">Impact Amount</label>
+      <Field name="impactAmount" type="number" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">GL Account</label>
+      <Field name="glAccount" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Financial Cost Center</label>
+      <Field name="financialCostCenter" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Budget Impact</label>
+      <Field name="budgetImpact" className="form-input"/>
+    </div>
+
+  </div>
+</div>
 
               {/* 9. SUPPORTING DOCUMENTS */}
               {/* <div className="form-section">

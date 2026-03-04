@@ -119,52 +119,136 @@ const FRM00916_CustomerCreditApplication = () => {
             >
 
               {/* ================= DOCUMENT CONTROL ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Document Control</h3>
-                <div className="form-fields">
-                  <Field name="formId" disabled className="form-input"/>
-                  <Field name="version" className="form-input"/>
-                  <Field name="date" type="date" className="form-input"/>
-                  <Field name="referenceNumber" placeholder="Reference Number" className="form-input"/>
-                  <Field name="location" placeholder="Location" className="form-input"/>
-                </div>
-              </div>
+<div className="form-section">
+  <h3 className="form-section-title">Document Control</h3>
+  <div className="form-fields">
 
-              {/* ================= CUSTOMER INFORMATION ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Customer Information</h3>
-                <div className="form-fields">
-                  <Field name="customerName" placeholder="Customer Name" className="form-input"/>
-                  <Field name="registeredAddress" placeholder="Registered Address" className="form-input"/>
-                  <Field name="contactPerson" placeholder="Contact Person" className="form-input"/>
-                  <Field name="phone" placeholder="Phone" className="form-input"/>
-                  <Field name="email" placeholder="Email" className="form-input"/>
-                  <Field name="taxId" placeholder="Tax ID / GST" className="form-input"/>
-                </div>
-              </div>
+    <div className="form-field">
+      <label className="form-label">Form ID</label>
+      <Field name="formId" disabled className="form-input"/>
+    </div>
 
-              {/* ================= CREDIT DETAILS ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Credit Details</h3>
-                <div className="form-fields">
-                  <Field name="requestedCreditLimit" type="number" placeholder="Requested Credit Limit" className="form-input"/>
-                  <Field name="currency" placeholder="Currency" className="form-input"/>
-                  <Field name="paymentTerms" placeholder="Payment Terms" className="form-input"/>
-                  <Field name="creditPeriodDays" type="number" placeholder="Credit Period (Days)" className="form-input"/>
-                  <Field name="purposeJustification" placeholder="Purpose / Justification" className="form-input"/>
-                </div>
-              </div>
+    <div className="form-field">
+      <label className="form-label">Version</label>
+      <Field name="version" className="form-input"/>
+    </div>
 
-              {/* ================= FINANCIAL INFORMATION ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Financial Information</h3>
-                <div className="form-fields">
-                  <Field name="annualRevenue" type="number" placeholder="Annual Revenue" className="form-input"/>
-                  <Field name="bankName" placeholder="Bank Name" className="form-input"/>
-                  <Field name="bankAccountNumber" placeholder="Bank Account Number" className="form-input"/>
-                  <Field name="ifscSwift" placeholder="IFSC / SWIFT" className="form-input"/>
-                </div>
-              </div>
+    <div className="form-field">
+      <label className="form-label">Document Date</label>
+      <Field name="date" type="date" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Reference Number</label>
+      <Field name="referenceNumber" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Location / Branch</label>
+      <Field name="location" className="form-input"/>
+    </div>
+
+  </div>
+</div>
+
+            {/* ================= CUSTOMER INFORMATION ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">Customer Information</h3>
+  <div className="form-fields">
+
+    <div className="form-field">
+      <label className="form-label">Customer Name</label>
+      <Field name="customerName" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Registered Address</label>
+      <Field name="registeredAddress" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Contact Person</label>
+      <Field name="contactPerson" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Phone Number</label>
+      <Field name="phone" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Email Address</label>
+      <Field name="email" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Tax ID / GST Number</label>
+      <Field name="taxId" className="form-input"/>
+    </div>
+
+  </div>
+</div>
+
+             {/* ================= CREDIT DETAILS ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">Credit Details</h3>
+  <div className="form-fields">
+
+    <div className="form-field">
+      <label className="form-label">Requested Credit Limit</label>
+      <Field name="requestedCreditLimit" type="number" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Currency</label>
+      <Field name="currency" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Payment Terms</label>
+      <Field name="paymentTerms" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Credit Period (Days)</label>
+      <Field name="creditPeriodDays" type="number" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Purpose / Business Justification</label>
+      <Field name="purposeJustification" className="form-input"/>
+    </div>
+
+  </div>
+</div>
+
+            {/* ================= FINANCIAL INFORMATION ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">Financial Information</h3>
+  <div className="form-fields">
+
+    <div className="form-field">
+      <label className="form-label">Annual Revenue</label>
+      <Field name="annualRevenue" type="number" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Bank Name</label>
+      <Field name="bankName" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Bank Account Number</label>
+      <Field name="bankAccountNumber" className="form-input"/>
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">IFSC / SWIFT Code</label>
+      <Field name="ifscSwift" className="form-input"/>
+    </div>
+
+  </div>
+</div>
 
               {/* ================= TRADE REFERENCES ================= */}
               <div className="form-section">
@@ -237,25 +321,63 @@ const FRM00916_CustomerCreditApplication = () => {
                 </FieldArray>
               </div>
 
-              {/* ================= SUPPORTING INFO ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Supporting Information</h3>
-                <div className="form-fields">
-                  <Field name="supportingDocsAttached" placeholder="Supporting Documents Attached (Y/N)" className="form-input"/>
-                  <Field name="documentReference" placeholder="Document Reference" className="form-input"/>
-                </div>
-              </div>
+             {/* ================= SUPPORTING INFORMATION ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">Supporting Information</h3>
+  <div className="form-fields">
 
-              {/* ================= AUDIT TRAIL ================= */}
-              <div className="form-section">
-                <h3 className="form-section-title">Audit Trail</h3>
-                <div className="form-fields">
-                  <Field name="createdOn" type="date" className="form-input"/>
-                  <Field name="lastUpdatedOn" type="date" className="form-input"/>
-                  <Field name="documentOwner" placeholder="Document Owner" className="form-input"/>
-                </div>
-              </div>
+    <div className="form-field">
+      <label className="form-label">Supporting Documents Attached</label>
+      <Field
+        name="supportingDocsAttached"
+        className="form-input"
+      />
+    </div>
 
+    <div className="form-field">
+      <label className="form-label">Document Reference</label>
+      <Field
+        name="documentReference"
+        className="form-input"
+      />
+    </div>
+
+  </div>
+</div>
+
+            {/* ================= AUDIT TRAIL ================= */}
+<div className="form-section">
+  <h3 className="form-section-title">Audit Trail</h3>
+  <div className="form-fields">
+
+    <div className="form-field">
+      <label className="form-label">Created On</label>
+      <Field
+        name="createdOn"
+        type="date"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Last Updated On</label>
+      <Field
+        name="lastUpdatedOn"
+        type="date"
+        className="form-input"
+      />
+    </div>
+
+    <div className="form-field">
+      <label className="form-label">Document Owner</label>
+      <Field
+        name="documentOwner"
+        className="form-input"
+      />
+    </div>
+
+  </div>
+</div>
               <FormCustomFields values={values}/>
               <FormAttachments values={values}/>
 
